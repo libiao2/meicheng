@@ -2,7 +2,7 @@
 	"miniprogramRoot": "dist/",
 	"projectname": "myApp",
 	"description": "ceshi",
-	"appid": "wxcebfe7887c79b58e",
+	"appid": "你的id",
 	"setting": {
 		"urlCheck": true,
 		"es6": false,
