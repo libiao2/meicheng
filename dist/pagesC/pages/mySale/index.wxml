@@ -1,0 +1,36 @@
+<block wx:if="{{$taroCompReady}}">
+    <view class="container">
+        <at-tabs compid="{{$compid__256}}">
+            <at-tabs-pane wx:for="{{loopArray97}}" wx:for-item="item" wx:for-index="index" compid="{{item.$compid__255}}">
+                <block>
+                    <block wx:if="{{orderList.length > 0}}">
+                        <view class="orderBox" bindtap="anonymousFunc0" wx:for="{{item.$anonymousCallee__14}}" wx:for-item="orderItem" wx:for-index="itemIndx" data-e-tap-so="this" data-e-tap-a-a="{{orderItem._$indexKey}}"><text class="orderNo">订单号: {{orderItem.$original.orderNo}}</text>
+                            <view class="goodsInfo" wx:for="{{orderItem.$original.orderItemList}}" wx:for-item="infoItem" wx:for-index="infoIndex">
+                                <image class="goodsImg" src="{{infoItem.pic}}"></image>
+                                <view class="goodsDetail">
+                                    <view class="nameBox"><text>{{infoItem.productItemName}}</text><text>${{infoItem.groupOriginalPrice || infoItem.price}}</text>
+                                    </view>
+                                    <view class="countBox"><text>{{orderItem.$original.createTimeString}}</text><text>x{{infoItem.quantity}}</text>
+                                    </view>
+                                    <view class="footerBox">
+                                        <block wx:if="{{orderItem.$original.orderStatus == 30}}">
+                                            <view class="box already"><text>已验证</text>
+                                            </view>
+                                        </block>
+                                        <block wx:if="{{orderItem.$original.orderStatus == 20}}">
+                                            <view class="box"><text>未验证</text>
+                                            </view>
+                                        </block>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </block>
+                    <block wx:else>
+                        <view class="noData">暂无更多数据~</view>
+                    </block>
+                </block>
+            </at-tabs-pane>
+        </at-tabs>
+    </view>
+</block>

@@ -1,0 +1,88 @@
+.container{
+  .itemBox{
+    display: flex;
+    align-items: center;
+    padding: 15px 25px;
+    background: #fff;
+    margin-bottom: 10px;
+    .img{
+      width: 200px;
+      height: 140px;
+      margin-right: 15px;
+    }
+    .content{
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      .name{
+        font-size: 30px;
+        color: #333;
+        font-weight: 600;
+        margin-bottom: 6px;
+      }
+      .detail{
+        // width: 100%;
+        width: calc(100vw - 220px - 220px);
+        font-size: 26px;
+        color: #666;
+        overflow: hidden;
+        text-overflow:ellipsis;
+        white-space: nowrap;
+      }
+      .priceBox{
+        display: flex;
+        align-items: center;
+        .nowTitle{
+          font-size: 28px;
+          font-weight: 500;
+          color: red;
+        }
+        .danw{
+          font-size: 22px;
+          color: red;
+        }
+        .nowPrice{
+          font-size: 30px;
+          color: red;
+          font-weight: 600;
+        }
+        .oldBox{
+          display: flex;
+          align-items: center;
+          font-size: 22px;
+          color: #666;
+          margin-left: 10px;
+          .price{
+            text-decoration: line-through;
+          }
+        }
+      }
+      .time{
+        font-size: 30px;
+        color: #666;
+        font-weight: 500;
+      }
+    }
+    .btn{
+      padding: 5px 18px;
+      font-size: 30px;
+      color: #fff;
+      background: red;
+      border-radius: 10px;
+      margin-left: 15px;
+    }
+    .noDoing{
+      background: rgb(200,200,200);
+    }
+  }
+}
+
+.noPinglun{
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  color: #999;
+  margin-top: 200px;
+}

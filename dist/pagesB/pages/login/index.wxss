@@ -1,0 +1,44 @@
+.container {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.container .img {
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 70rpx;
+  margin-top: 300rpx;
+  margin-bottom: 20rpx;
+}
+.container .name {
+  font-size: 30rpx;
+  color: #333;
+  margin-bottom: 200rpx;
+}
+.container .btnBox {
+  height: 60rpx;
+  padding: 6rpx 30rpx;
+  border-radius: 12rpx;
+  background: #24c8b2;
+  font-size: 30rpx;
+  color: #fff;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+

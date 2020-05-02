@@ -1,0 +1,263 @@
+.container .orderBox {
+  width: 100vw;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #fff;
+  margin-bottom: 15rpx;
+}
+.container .orderBox .name {
+  width: 100vw;
+  font-size: 26rpx;
+  font-weight: 500;
+  color: #333;
+  padding: 20rpx 25rpx;
+  padding-bottom: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.container .orderBox .orderInfo {
+  width: 100vw;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20rpx 25rpx;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.container .orderBox .orderInfo .imgBox {
+  width: 120rpx;
+  height: 120rpx;
+  position: relative;
+}
+.container .orderBox .orderInfo .imgBox .img {
+  width: 120rpx;
+  height: 120rpx;
+}
+.container .orderBox .orderInfo .imgBox .type {
+  position: absolute;
+  top: 0;
+  width: 120rpx;
+  height: 35rpx;
+  line-height: 35rpx;
+  left: 0;
+  right: 0;
+  font-size: 18rpx;
+  color: #fff;
+  text-align: center;
+  background: #24c8b2;
+}
+.container .orderBox .orderInfo .countInfo {
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  height: 120rpx;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-left: 20rpx;
+  font-size: 26rpx;
+  color: #999;
+  background: #e2e2e2;
+}
+.container .orderBox .tuan {
+  font-size: 24rpx;
+  color: #999;
+  width: 100vw;
+  padding: 10rpx 25rpx;
+  padding-top: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.bottomBtnBox {
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 25rpx;
+  padding-bottom: 20rpx;
+}
+.bottomBtnBox .allPrice {
+  font-size: 26rpx;
+  color: #666;
+}
+.bottomBtnBox .box {
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: flex-end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+.bottomBtnBox .box .oneBtn {
+  padding: 16rpx 30rpx;
+  border: 1rpx solid #d1d1d1;
+  border-radius: 8rpx;
+  font-size: 26rpx;
+  color: #999;
+  margin-left: 25rpx;
+}
+.bottomBtnBox .box .nowPay {
+  border-color: #24c8b2;
+  color: #24c8b2;
+}
+.bottomBtnBox .box .success {
+  border-color: #999;
+  color: #999;
+}
+.payTitle {
+  width: 100%;
+  font-size: 30rpx;
+  color: #333;
+  padding-top: 15rpx;
+  padding-bottom: 30rpx;
+  text-align: center;
+}
+.payBox .oneBox {
+  width: 100%;
+  height: 80rpx;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0 !important;
+  background: transparent !important;
+}
+.payBox .oneBox .payImgBox {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 26rpx;
+  color: #333;
+}
+.payBox .oneBox .payImgBox .payImg {
+  width: 60rpx;
+  height: 60rpx;
+  margin-right: 15rpx;
+}
+.titleBox {
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative;
+}
+.titleBox .delet {
+  width: 100rpx;
+  height: 80rpx;
+  text-align: right;
+  position: absolute;
+  right: 20rpx;
+  font-size: 34rpx;
+  color: #999;
+}
+.toastBox {
+  padding: 20rpx 0;
+}
+.toastBox .oneCard {
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 26rpx;
+  color: #666;
+  border-bottom: 1rpx solid #d1d1d1;
+  padding: 0 20rpx;
+}
+.toastBox .isChooseCard {
+  border: 2rpx solid #24c8b2;
+  border-radius: 10rpx;
+  -webkit-box-shadow: inset 2rpx 2rpx 2rpx #24c8b2;
+          box-shadow: inset 2rpx 2rpx 2rpx #24c8b2;
+}
+.toastBox .addPayCard {
+  width: 100%;
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 24rpx;
+  color: #24c8b2;
+  text-align: right;
+}
+.surePayBtn {
+  width: 100%;
+  margin: 0 auto;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.surePayBtn .payBtn {
+  width: 50%;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  background: #24c8b2;
+  border-radius: 12rpx;
+  font-size: 28rpx;
+  color: #fff;
+  margin-top: 30rpx;
+  margin-bottom: 40rpx;
+}
+.noData {
+  width: 100%;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 200rpx 0;
+  font-size: 28rpx;
+  color: #999;
+}
+button::after {
+  border: none;
+}
+

@@ -1,0 +1,30 @@
+<block wx:if="{{$taroCompReady}}">
+    <view class="twoBox">
+        <view class="top">
+            <view class="topLeft" bindtap="anonymousFunc0">
+                <image class="goodsImg" src="{{item.icon}}"></image>
+                <view class="infoBox">
+                    <view class="leftTop"><text class="leftTopTitle">{{item.name}}</text><text class="time">{{item.createTimeString}} 发布</text>
+                    </view>
+                    <view class="leftBottom">{{item.detail}}</view>
+                </view>
+            </view>
+            <block wx:if="{{type != 5}}">
+                <view class="topRight" bindtap="anonymousFunc1">请联系我</view>
+            </block>
+        </view>
+        <view class="bottomBox" bindtap="anonymousFunc2">
+            <block wx:if="{{item && item.picList != null && item.picList.length > 0}}">
+                <view style="{{anonymousState__temp}}" class="box">
+                    <image class="img" src="{{oneItem}}" wx:for="{{item.picList}}" wx:for-item="oneItem" wx:for-index="_anonIdx2"></image>
+                </view>
+            </block>
+        </view>
+        <at-modal compid="{{$compid__226}}">
+            <at-modal-content>
+                <view class="toastBox"><text class="text">手机号：{{item.telephone == '' ? '暂无' : item.telephone}}</text><text class="text">微信号：{{item.weixinno == '' ? '暂无' : item.weixinno}}</text><text class="text">邮箱号：{{item.email == '' ? '暂无' : item.email}}</text><text class="text last" bindtap="anonymousFunc3">站内消息</text>
+                </view>
+            </at-modal-content>
+        </at-modal>
+    </view>
+</block>

@@ -1,0 +1,110 @@
+.container .itemBox {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 15rpx 25rpx;
+  background: #fff;
+  margin-bottom: 10rpx;
+}
+.container .itemBox .img {
+  width: 200rpx;
+  height: 140rpx;
+  margin-right: 15rpx;
+}
+.container .itemBox .content {
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.container .itemBox .content .name {
+  font-size: 30rpx;
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 6rpx;
+}
+.container .itemBox .content .detail {
+  width: calc(100vw - 220rpx - 220rpx);
+  font-size: 26rpx;
+  color: #666;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+     text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.container .itemBox .content .priceBox {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.container .itemBox .content .priceBox .nowTitle {
+  font-size: 28rpx;
+  font-weight: 500;
+  color: red;
+}
+.container .itemBox .content .priceBox .danw {
+  font-size: 22rpx;
+  color: red;
+}
+.container .itemBox .content .priceBox .nowPrice {
+  font-size: 30rpx;
+  color: red;
+  font-weight: 600;
+}
+.container .itemBox .content .priceBox .oldBox {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 22rpx;
+  color: #666;
+  margin-left: 10rpx;
+}
+.container .itemBox .content .priceBox .oldBox .price {
+  text-decoration: line-through;
+}
+.container .itemBox .content .time {
+  font-size: 30rpx;
+  color: #666;
+  font-weight: 500;
+}
+.container .itemBox .btn {
+  padding: 5rpx 18rpx;
+  font-size: 30rpx;
+  color: #fff;
+  background: red;
+  border-radius: 10rpx;
+  margin-left: 15rpx;
+}
+.container .itemBox .noDoing {
+  background: #c8c8c8;
+}
+.noPinglun {
+  width: 100vw;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 26rpx;
+  color: #999;
+  margin-top: 200rpx;
+}
+

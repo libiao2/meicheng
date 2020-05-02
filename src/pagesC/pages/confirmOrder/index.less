@@ -1,0 +1,294 @@
+.container{
+  .listBox{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .oneBox{
+      width: 100%;
+      background: #fff;
+      
+      .shopInfo{
+        display: flex;
+        align-items: center;
+        font-size: 30px;
+        font-weight: 500;
+        color: #333;
+        border-bottom: 1px solid #d1d1d1;
+        padding: 20px 25px;
+        .shopImg{
+          width: 40px;
+          height: 40px;
+          border-radius: 20px;
+          margin-right: 15px;
+        }
+      }
+      .goodsInfo{
+        display: flex;
+        align-items: center;
+        padding: 20px 25px;
+        border-bottom: 1px solid #d1d1d1;
+        .goodsImg{
+          width: 120px;
+          height: 120px;
+          border-radius: 10px;
+          margin-right: 15px;
+        }
+        .goodsBox{
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          .goodsName{
+            font-size: 27px;
+            font-weight: 500;
+            color: #333;
+          }
+          .goodsDetail{
+            font-size: 20px;
+            color: #999;
+          }
+          .goodsCount{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .price{
+              font-size: 26px;
+              color: red;
+              font-weight: 400;
+            }
+          }
+        }
+      }
+    }
+  }
+  .infoList{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .infoOne{
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 25px;
+      border-bottom: 1px solid #d1d1d1;
+      font-size: 26px;
+      color: #333;
+      box-sizing: border-box;
+      background: #fff;
+      .left{
+        width: 170px;
+        color: #999;
+      }
+      .waimaiChoose{
+        display: flex;
+        align-items: center;
+        .chooseItem{
+          display: flex;
+          align-items: center;
+          margin-right: 30px;
+          font-size: 26px;
+          color: #666;
+          .chooseBox{
+            width: 34px;
+            height: 34px;
+            border-radius: 17px;
+            border: 1px solid #d1d1d1;
+            margin-right: 10px;
+          }
+          .isChoose{
+            background: rgb(36, 200, 178);
+          }
+        }
+      }
+      .smallInput{
+        flex: 1;
+        margin-left: 15px;
+        height: 60px;
+        font-size: 26px;
+        padding: 0 15px;
+        // border: 1px solid #d1d1d1;
+      }
+      .address{
+        font-size: 26px;
+        color: #999;
+      }
+      .paySure{
+        color: red;
+      }
+      .pay{
+        font-weight: 500;
+      }
+      .no{
+        font-size: 22px;
+        color: #999;
+      }
+    }
+  }
+  .btn{
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .btnBox{
+      width: 65vw;
+      height: 80px;
+      line-height: 80px;
+      font-size: 30px;
+      color: #fff;
+      margin: 150px 0;
+      text-align: center;
+      border-radius: 12px;
+      background: rgb(36, 200, 178);
+    }
+  }
+  
+}
+
+.payTitle{
+  width: 100%;
+  font-size: 30px;
+  color: #333;
+  padding-top: 15px;
+  padding-bottom: 30px;
+  text-align: center;
+}
+.payBox{
+  .oneBox{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 0 !important;
+      background: transparent !important;
+    .payImgBox{
+      display: flex;
+      align-items: center;
+      font-size: 26px;
+      color: #333;
+      .payImg{
+        width: 60px;
+        height: 60px;
+        margin-right: 15px;
+      }
+    }
+  }
+}
+.titleBox{
+  width: 100%;
+  height: 80px;
+  line-height: 80px;
+  text-align: center;
+  box-sizing: border-box;
+  position: relative;
+  .delet{
+    width: 100px;
+    height: 80px;
+    text-align: right;
+    position: absolute;
+    // top: 20px;
+    right: 20px;
+    font-size: 34px;
+    color: #999;
+  }
+}
+.toastBox{
+  padding: 20px 0;
+  .oneCard{
+    height: 80px;
+    line-height: 80px;
+    font-size: 26px;
+    color: #666;
+    border-bottom: 1px solid #d1d1d1;
+    padding: 0 20px;
+  }
+  .isChooseCard{
+    border: 2px solid rgb(36, 200, 178);
+    border-radius: 10px;
+    box-shadow: inset 2px 2px 2px rgb(36, 200, 178);
+  }
+  .addPayCard{
+    width: 100%;
+    height: 70px;
+    line-height: 70px;
+    font-size: 24px;
+    color: rgb(36, 200, 178);
+    text-align: right;
+  }
+}
+.surePayBtn{
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .payBtn{
+    width: 50%;
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+    background: rgb(36, 200, 178);
+    border-radius: 12px;
+    font-size: 28px;
+    color: #fff;
+    margin-top: 30px;
+    margin-bottom: 40px;
+  }
+}
+
+button::after{
+  border: none;
+}
+.shareFriendBox{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  .topTitleBox{
+    width: 100%;
+    height: 120px;
+    line-height: 120px;
+    text-align: center;
+    padding-top: 40px;
+    position: relative;
+    .shareTitle{
+      font-size: 28px;
+      color: #666;
+    }
+    .cha{
+      font-size: 24px;
+      color: #666;
+      position: absolute;
+      right: 10px;
+      top: 0;
+      width: 60px;
+    }
+  }
+  
+  .shareFriendBtnBox{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    line-height: 80px;
+    // .line{
+    //   width: 1px;
+    //   height: 100px;
+    //   border: 1px solid #999;
+    // }
+    .shareFriendBtn{
+      flex: 1;
+      border: none;
+      background: #fff;
+      font-size: 28px;
+      color: #666;
+    }
+    .okBtn{
+      color: rgb(36, 200, 178);
+    }
+  }
+}

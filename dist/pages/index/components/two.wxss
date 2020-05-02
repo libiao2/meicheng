@@ -1,0 +1,130 @@
+.twoBox {
+  width: 100vw;
+  padding: 20rpx;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background: #fff;
+  margin-bottom: 10rpx;
+}
+.twoBox .top {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.twoBox .top .topLeft {
+  width: 70%;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.twoBox .top .topLeft .goodsImg {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 40rpx;
+  margin-right: 20rpx;
+}
+.twoBox .top .topLeft .infoBox {
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+.twoBox .top .topLeft .infoBox .leftTop {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.twoBox .top .topLeft .infoBox .leftTop .leftTopTitle {
+  width: 150rpx;
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #333;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+     text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.twoBox .top .topLeft .infoBox .leftTop .time {
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  font-size: 22rpx;
+  color: #999;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+     text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.twoBox .top .topLeft .infoBox .leftBottom {
+  width: 400rpx;
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #333;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+     text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-top: 15rpx;
+}
+.twoBox .top .topRight {
+  width: 160rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 28rpx;
+  color: #fff;
+  border-radius: 12rpx;
+  text-align: center;
+  background: #24c8b2;
+}
+.twoBox .bottomBox {
+  width: 100%;
+  margin-top: 20rpx;
+  overflow-x: auto;
+}
+.twoBox .bottomBox .box {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.twoBox .bottomBox .box .img {
+  width: 240rpx;
+  height: 150rpx;
+  border-radius: 12rpx;
+  margin-right: 20rpx;
+}
+.twoBox .toastBox {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-size: 28rpx;
+}
+.twoBox .toastBox .text {
+  height: 80rpx;
+  line-height: 80rpx;
+  border-bottom: 1rpx solid #e1e1e1;
+}
+.twoBox .toastBox .last {
+  text-align: center;
+  border: none;
+}
+

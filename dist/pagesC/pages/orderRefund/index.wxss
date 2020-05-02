@@ -1,0 +1,90 @@
+.container {
+  padding: 0 30rpx;
+}
+.container .titleBox {
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 28rpx;
+  font-weight: 500;
+  color: #333;
+  background: #e1e1e1;
+  padding: 0 25rpx;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.container .orderNo {
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  padding: 0 25rpx;
+  font-size: 26rpx;
+  color: #333;
+}
+.container .money {
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  padding: 0 25rpx;
+  font-size: 26rpx;
+  color: #333;
+}
+.container .listBox {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 30rpx;
+}
+.container .listBox .itemBox {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 80rpx;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 26rpx;
+  color: #666;
+  border-bottom: 1rpx solid #d1d1d1;
+  padding: 0 25rpx;
+}
+.container .listBox .itemBox .checkBox {
+  width: 36rpx;
+  height: 36rpx;
+  border-radius: 6rpx;
+  border: 1rpx solid #d1d1d1;
+}
+.container .listBox .itemBox .isChoos {
+  background: #24c8b2;
+}
+.btnBox {
+  width: 100%;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.btnBox .btn {
+  width: 60%;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: #fff;
+  border-radius: 12rpx;
+  background: #24c8b2;
+  margin-top: 30rpx;
+  margin-bottom: 40rpx;
+}
+

@@ -1,0 +1,219 @@
+.container .topBox {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20rpx 30rpx;
+  background: #fff;
+}
+.container .topBox .okImg {
+  width: 110rpx;
+  height: 110rpx;
+  margin-right: 20rpx;
+}
+.container .topBox .labelBox {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.container .topBox .labelBox .title {
+  font-size: 30rpx;
+  font-weight: 500;
+  color: #333;
+}
+.container .topBox .labelBox .label {
+  font-size: 24rpx;
+  color: #666;
+  margin-top: 10rpx;
+}
+.container .infoBox {
+  margin-top: 15rpx;
+  background: #fff;
+  padding-bottom: 20rpx;
+}
+.container .infoBox .shopBox {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20rpx 30rpx;
+  font-size: 26rpx;
+  color: #999;
+}
+.container .infoBox .shopBox .icon {
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 10rpx;
+}
+.container .infoBox .shopInfoBox {
+  margin: 0 30rpx;
+  border: 1rpx solid #d1d1d1;
+  border-radius: 12rpx;
+  padding: 20rpx;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.container .infoBox .shopInfoBox .name {
+  font-size: 26rpx;
+  color: #333;
+  font-weight: 500;
+  margin-bottom: 15rpx;
+}
+.container .infoBox .shopInfoBox .num {
+  font-style: 28rpx;
+  color: #24c8b2;
+}
+.btnBox {
+  width: 100vw;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.btnBox .btn {
+  width: 60vw;
+  height: 90rpx;
+  line-height: 90rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: #fff;
+  background: #24c8b2;
+  border-radius: 12rpx;
+  margin-top: 80rpx;
+}
+.toastBox {
+  padding: 30rpx 0;
+}
+.toastBox .line {
+  width: 100%;
+  height: 10rpx;
+  background: #e8e8e8;
+}
+.toastBox .toastTopBox {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 26rpx;
+  color: #333;
+  padding-bottom: 15rpx;
+}
+.toastBox .toastTopBox .userImg {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50rpx;
+  margin-bottom: 20rpx;
+}
+.toastBox .toastBottomBox {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10rpx 20rpx;
+}
+.toastBox .toastBottomBox .goodsImg {
+  width: 150rpx;
+  height: 130rpx;
+  margin-right: 15rpx;
+}
+.toastBox .toastBottomBox .goodsInfoBox {
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.toastBox .toastBottomBox .goodsInfoBox .goodsName {
+  font-size: 26rpx;
+  font-weight: 500;
+  color: #333;
+}
+.toastBox .toastBottomBox .goodsInfoBox .goodsDetail {
+  width: 300rpx;
+  font-size: 22rpx;
+  color: #666;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+     text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.toastBox .toastBottomBox .goodsInfoBox .priceBox {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.toastBox .toastBottomBox .goodsInfoBox .priceBox .now {
+  font-size: 26rpx;
+  font-weight: 500;
+  color: red;
+  margin-right: 20rpx;
+}
+.toastBox .toastBottomBox .goodsInfoBox .priceBox .oldBox {
+  font-size: 18rpx;
+  color: #999;
+}
+.toastBox .toastBottomBox .goodsInfoBox .priceBox .oldBox .old {
+  text-decoration: line-through;
+}
+.toastBox .shareBox {
+  width: 100%;
+  margin-top: 30rpx;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.toastBox .shareBox .shareBtn {
+  width: 70%;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  background: red;
+  border-radius: 40rpx;
+  font-size: 26rpx;
+  color: #fff;
+  border: none;
+}
+button::after {
+  border: none;
+}
+.at-modal__content {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+

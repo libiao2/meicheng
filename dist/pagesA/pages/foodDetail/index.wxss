@@ -1,0 +1,498 @@
+.container .topBox {
+  padding-bottom: 130rpx;
+}
+.container .topBox .swiper {
+  width: 100vw;
+  height: 470rpx;
+}
+.container .topBox .swiper .swiperImg {
+  width: 100%;
+  height: 100%;
+}
+.container .topBox .nameBox {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 20rpx 25rpx;
+  border-bottom: 1rpx solid #e1e1e1;
+  background: #fff;
+}
+.container .topBox .nameBox .name {
+  width: 600rpx;
+  font-size: 40rpx;
+  color: #333;
+  font-weight: 600;
+  overflow: hidden;
+  white-space: nowrap;
+  -o-text-overflow: ellipsis;
+     text-overflow: ellipsis;
+}
+.container .topBox .timeBox {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10rpx 25rpx;
+  background: #fff;
+}
+.container .topBox .timeBox .icon {
+  margin-right: 15rpx;
+}
+.container .topBox .timeBox .info {
+  font-size: 25rpx;
+  color: #999;
+}
+.container .topBox .youhui {
+  background: #fff;
+  margin: 15rpx 0;
+}
+.container .topBox .youhui .titleBox {
+  padding: 20rpx 25rpx;
+  padding-bottom: 0;
+}
+.container .topBox .youhui .titleBox .title {
+  font-size: 30rpx;
+  color: #333;
+  font-weight: 500;
+}
+.container .topBox .youhui .youhuiItmeBox {
+  max-height: 360rpx;
+  overflow-y: scroll;
+}
+.container .topBox .youhui .youhuiItmeBox .itemBox {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10rpx 25rpx;
+  padding-top: 0;
+  background: #fff;
+}
+.container .topBox .youhui .youhuiItmeBox .itemBox .img {
+  width: 170rpx;
+  height: 110rpx;
+  margin-right: 15rpx;
+}
+.container .topBox .youhui .youhuiItmeBox .itemBox .content {
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.container .topBox .youhui .youhuiItmeBox .itemBox .content .name {
+  font-size: 30rpx;
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 6rpx;
+}
+.container .topBox .youhui .youhuiItmeBox .itemBox .content .detail {
+  width: calc(100vw - 220rpx - 220rpx);
+  font-size: 26rpx;
+  color: #666;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+     text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.container .topBox .youhui .youhuiItmeBox .itemBox .content .priceBox {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.container .topBox .youhui .youhuiItmeBox .itemBox .content .priceBox .nowTitle {
+  font-size: 28rpx;
+  font-weight: 500;
+  color: red;
+}
+.container .topBox .youhui .youhuiItmeBox .itemBox .content .priceBox .danw {
+  font-size: 22rpx;
+  color: red;
+}
+.container .topBox .youhui .youhuiItmeBox .itemBox .content .priceBox .nowPrice {
+  font-size: 30rpx;
+  color: red;
+  font-weight: 600;
+}
+.container .topBox .youhui .youhuiItmeBox .itemBox .content .priceBox .oldBox {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 22rpx;
+  color: #666;
+  margin-left: 10rpx;
+}
+.container .topBox .youhui .youhuiItmeBox .itemBox .content .priceBox .oldBox .price {
+  text-decoration: line-through;
+}
+.container .topBox .youhui .youhuiItmeBox .itemBox .content .time {
+  font-size: 30rpx;
+  color: #666;
+  font-weight: 500;
+}
+.container .topBox .youhui .youhuiItmeBox .itemBox .btn {
+  width: 120rpx;
+  padding: 4rpx 18rpx;
+  font-size: 28rpx;
+  color: #fff;
+  background: red;
+  border-radius: 10rpx;
+  margin-left: 15rpx;
+  text-align: center;
+}
+.container .topBox .tuijian {
+  background: #fff;
+  margin-top: 15rpx;
+}
+.container .topBox .tuijian .titleBox {
+  padding: 20rpx 25rpx;
+  padding-bottom: 0;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.container .topBox .tuijian .titleBox .title {
+  font-size: 30rpx;
+  color: #333;
+  font-weight: 500;
+}
+.container .topBox .tuijian .titleBox .readMore {
+  font-size: 22rpx;
+  color: #999;
+}
+.container .topBox .tuijian .tuijianItemBox {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10rpx 15rpx;
+}
+.container .topBox .tuijian .tuijianItemBox .item {
+  width: 31vw;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0 1.3%;
+}
+.container .topBox .tuijian .tuijianItemBox .item .img {
+  width: 100%;
+  height: 140rpx;
+}
+.container .topBox .tuijian .tuijianItemBox .item .info {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.container .topBox .tuijian .tuijianItemBox .item .info .smallBox {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.container .topBox .tuijian .tuijianItemBox .item .info .smallBox .name {
+  font-size: 22rpx;
+  color: #333;
+  margin-right: 15rpx;
+}
+.container .topBox .tuijian .tuijianItemBox .item .info .smallBox .price {
+  font-size: 22rpx;
+  color: red;
+}
+.container .topBox .fuwu {
+  margin-top: 15rpx;
+  background: #fff;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-size: 24rpx;
+  color: #666;
+  padding: 15rpx 25rpx;
+}
+.container .topBox .fuwu .titleBox {
+  margin-bottom: 10rpx;
+}
+.container .topBox .fuwu .titleBox .title {
+  font-size: 30rpx;
+  color: #333;
+  font-weight: 500;
+}
+.container .topBox .pingjia {
+  margin-top: 15rpx;
+  background: #fff;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.container .topBox .pingjia .titleBox {
+  padding: 20rpx 25rpx;
+  padding-bottom: 0;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.container .topBox .pingjia .titleBox .title {
+  font-size: 30rpx;
+  color: #333;
+  font-weight: 500;
+}
+.container .topBox .pingjia .titleBox .pinglunBox {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.container .topBox .pingjia .titleBox .pinglunBox .pinglun {
+  font-size: 25rpx;
+  color: #666;
+  margin-right: 8rpx;
+}
+.container .topBox .pingjia .titleBox .pinglunBox .pinglunIcon {
+  margin-bottom: 4rpx;
+}
+.container .topBox .pingjia .pinjiaList {
+  width: 100vw;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.container .topBox .pingjia .pinjiaList .bigBxo {
+  width: 100%;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-bottom: 1rpx solid #d4d4d4;
+}
+.container .topBox .pingjia .pinjiaList .bigBxo .pinglunItem {
+  width: 100%;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding: 15rpx 25rpx;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.container .topBox .pingjia .pinjiaList .bigBxo .pinglunItem .img {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 30rpx;
+  border: 1rpx solid #d1d1d1;
+  margin-right: 15rpx;
+}
+.container .topBox .pingjia .pinjiaList .bigBxo .pinglunItem .right {
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.container .topBox .pingjia .pinjiaList .bigBxo .pinglunItem .right .name {
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  font-size: 26rpx;
+  color: #333;
+  margin-bottom: 15rpx;
+}
+.container .topBox .pingjia .pinjiaList .bigBxo .pinglunItem .right .detailBox {
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  font-size: 28rpx;
+  color: #333;
+}
+.container .topBox .pingjia .pinjiaList .bigBxo .pinglunItem .right .huifuBox {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 22rpx;
+  color: #999;
+  margin-top: 10rpx;
+}
+.container .topBox .pingjia .pinjiaList .bigBxo .pinglunItem .right .huifuBox .huifuBtnBox {
+  width: 100%;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 50rpx;
+}
+.container .topBox .pingjia .pinjiaList .bigBxo .pinglunItem .right .huifuBox .huifuBtnBox .huifu {
+  width: 200rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  text-align: right;
+  color: #9face2;
+}
+.container .topBox .pingjia .pinjiaList .bigBxo .othersPinglun {
+  background: #f2f2ec;
+  border-radius: 8rpx;
+  margin: 15rpx 25rpx;
+  margin-left: 90rpx;
+  margin-top: 0;
+  padding: 10rpx 20rpx;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+.container .topBox .pingjia .pinjiaList .bigBxo .othersPinglun .otherImg {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 30rpx;
+  margin-right: 15rpx;
+}
+.container .topBox .pingjia .pinjiaList .bigBxo .othersPinglun .otherDetail {
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  font-size: 28rpx;
+  color: #333;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.container .topBox .pingjia .pinjiaList .bigBxo .othersPinglun .otherDetail .otherName {
+  font-size: 26rpx;
+  color: #333;
+  margin-bottom: 10rpx;
+}
+.noPinglun {
+  width: 100vw;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 26rpx;
+  color: #999;
+  padding: 60rpx 0;
+}
+.addBox {
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: flex-end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+.messageToastBox {
+  padding: 15rpx 25rpx;
+}
+.messageToastBox .title {
+  font-size: 28rpx;
+  color: #333;
+  margin-bottom: 15rpx;
+}
+.messageToastBox .text {
+  width: 100%;
+  border: 1rpx solid #d4d4d4;
+  border-radius: 8rpx;
+  margin-bottom: 30rpx;
+  text-align: left;
+}
+.messageToastBox .btn {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.messageToastBox .btn .btnBox {
+  width: 40vw;
+  height: 75rpx;
+  line-height: 75rpx;
+  font-size: 28rpx;
+  color: #fff;
+  text-align: center;
+  background: #24c8b2;
+  border-radius: 8rpx;
+  margin-bottom: 20rpx;
+}
+.messageToastBox .btn .otherBtn {
+  background: #c8c8c8;
+}
+

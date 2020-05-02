@@ -1,0 +1,69 @@
+<block wx:if="{{$taroCompReady}}">
+    <view class="container">
+        <view class="erweiImgBox">
+            <image bindtap="anonymousFunc0" class="erweiImg" src="{{orderDetail.qrcode}}"></image>
+        </view>
+        <view class="fuwuBox">
+            <view class="shopName">
+                <image class="icon" src="{{anonymousState__temp}}"></image><text>美城美事365券</text>
+            </view>
+            <block wx:if="{{orderDetail.orderStatus == 20 && goodsType == 2}}">
+                <view class="tuikuan" bindtap="anonymousFunc1">申请退款</view>
+            </block>
+        </view>
+        <view class="orderNoBox"><text>订单号</text><text>{{orderDetail.orderNo}}</text>
+        </view>
+        <view class="goodsListInfo">
+            <view class="titleName">
+                <image class="icon" src="{{anonymousState__temp2}}"></image><text>{{orderDetail.name}}</text>
+            </view>
+            <view class="goodsInfoBox" wx:for="{{orderDetail.orderItemList}}" wx:for-item="item" wx:for-index="index">
+                <image class="goodsImg" src="{{item.pic}}"></image>
+                <view class="goodsDetail">
+                    <view class="countInfo"><text>{{item.productItemName}}</text><text>x{{item.quantity}}</text>
+                    </view>
+                    <view class="detail">${{item.price}}</view>
+                </view>
+            </view>
+            <view class="connectBox">
+                <view class="left">
+                    <view class="smallBox phone" bindtap="anonymousFunc2">
+                        <image class="icon" src="{{anonymousState__temp3}}"></image><text>商家电话</text>
+                    </view>
+                    <view class="smallBox">
+                        <image class="icon" src="{{anonymousState__temp4}}"></image><text class="address">{{orderDetail.addressMall}}</text>
+                    </view>
+                </view>
+                <view class="needPay">实付: $<text class="money">{{orderDetail.orderFee}}</text>
+                </view>
+            </view>
+        </view>
+        <view class="orderIndoBox">
+            <view class="title">订单信息</view>
+            <view class="listBox">
+                <view class="oneBox"><text>外卖</text>
+                    <view class="isNoBox">
+                        <view class="oneChooseBox">
+                            <view class="{{'cicle ' + (orderDetail.takeaway && 'ischoose')}}"></view><text>是</text>
+                        </view>
+                        <view class="oneChooseBox">
+                            <view class="{{'cicle ' + (!orderDetail.takeaway && 'ischoose')}}"></view><text>否</text>
+                        </view>
+                    </view>
+                </view>
+                <view class="oneBox"><text>支付方式</text><text class="right">{{orderDetail.payWay == 1 ? '微信支付' : orderDetail.payWay == 2 ? '信用卡支付' : '他人代付'}}</text>
+                </view>
+                <view class="oneBox"><text>下单时间</text><text class="right">{{orderDetail.createTimeString}}</text>
+                </view>
+                <view class="oneBox"><text>手机</text><text class="right">{{orderDetail.telephone}}</text>
+                </view>
+                <block wx:if="{{orderDetail.takeaway}}">
+                    <view class="oneBox"><text>地址</text><text class="right">{{orderDetail.address}}</text>
+                    </view>
+                </block>
+                <view class="oneBox"><text>备注</text><text class="right">{{orderDetail.remark}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</block>

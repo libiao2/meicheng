@@ -1,0 +1,76 @@
+<block wx:if="{{$taroCompReady}}">
+    <view class="container">
+        <view class="topBox">
+            <swiper class="swiper" indicator-color="#999" indicator-active-color="#fff" circular="{{true}}" indicator-dots="{{true}}" autoplay="{{true}}">
+                <swiper-item wx:key="index" wx:for="{{goodsInfo.picList}}" wx:for-item="item" wx:for-index="index">
+                    <image src="{{item}}" class="swiperImg"></image>
+                </swiper-item>
+            </swiper>
+            <view class="nameBox"><text class="name">{{goodsInfo.name}}</text>
+                <at-icon compid="{{$compid__334}}"></at-icon>
+            </view>
+            <view class="TopShareBox">
+                <view class="addressBox">
+                    <view class="timeBox">
+                        <image src="{{anonymousState__temp}}" style="width:15px;height:15px;margin-right: 6px"></image><text class="info">营业时间: {{goodsInfo.openTimeStart}}-{{goodsInfo.openTimeEnd}}</text>
+                    </view>
+                    <view class="timeBox">
+                        <image src="{{anonymousState__temp2}}" style="width:15px;height:15px;margin-right: 6px"></image><text class="info">{{goodsInfo.address}}</text>
+                    </view>
+                </view>
+                <view class="share" bindtap="anonymousFunc1">
+                    <image class="img" src="{{anonymousState__temp3}}"></image><text class="text">分享</text>
+                </view>
+            </view>
+            <view class="kaiTuanBox">
+                <view class="kaiTuanBtn" bindtap="anonymousFunc2">立即开团</view>
+            </view>
+            <view class="goodsBigBox">
+                <block wx:if="{{goodsInfo && goodsInfo.groupList}}">
+                    <view class="goodsItemBox" wx:for="{{loopArray128}}" wx:for-item="item" wx:for-index="index">
+                        <image class="img" src="{{item.$original.pic}}"></image>
+                        <view class="content"><text class="name">{{item.$original.name}}</text>
+                            <view class="priceBox"><text class="nowTitle">现价:</text><text class="danw">$</text><text class="nowPrice">{{item.$original.groupPrice}}</text>
+                                <view class="oldBox"><text>原价:</text><text class="price">${{item.$original.price}}</text>
+                                </view>
+                            </view>
+                            <view class="time">
+                                <block wx:if="{{item.$original && item.$original.groupTime}}">
+                                    <at-countdown compid="{{item.$compid__333}}"></at-countdown>
+                                </block><text>后结束</text>
+                            </view>
+                        </view>
+                        <view class="btn" bindtap="anonymousFunc3" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey}}">参与拼团</view>
+                    </view>
+                </block>
+            </view>
+            <view class="fuwu">
+                <view class="titleBox"><text class="title">商品详情</text>
+                </view><text>{{goodsInfo.detail}}</text>
+            </view>
+            <view class="fuwu">
+                <view class="titleBox"><text class="title">使用说明</text>
+                </view><text>{{goodsInfo.note}}</text>
+            </view>
+        </view>
+        <at-action-sheet compid="{{$compid__335}}">
+            <at-action-sheet-item>
+                <view class="shareTitle"><text>分享</text>
+                </view>
+                <view class="shareBox">
+                    <button class="shareItem" open-type="share">
+                        <view class="wechatBox">
+                            <image src="{{anonymousState__temp6}}" class="wechatIconImg"></image><text>微信好友</text>
+                        </view>
+                    </button>
+                    <button class="shareItem" bindtap="anonymousFunc5">
+                        <view class="wechatBox">
+                            <image src="{{anonymousState__temp7}}" class="wechatIconImg"></image><text>朋友圈</text>
+                        </view>
+                    </button>
+                </view>
+            </at-action-sheet-item>
+        </at-action-sheet>
+        <at-toast compid="{{$compid__336}}"></at-toast>
+    </view>
+</block>

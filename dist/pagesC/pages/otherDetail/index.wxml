@@ -1,0 +1,120 @@
+<block wx:if="{{$taroCompReady}}">
+    <view class="container">
+        <view class="topBox">
+            <swiper class="swiper" indicator-color="#999" indicator-active-color="#fff" circular="{{true}}" indicator-dots="{{true}}" autoplay="{{true}}">
+                <swiper-item wx:key="index" wx:for="{{goodsInfo.picList}}" wx:for-item="item" wx:for-index="index">
+                    <image src="{{item}}" class="swiperImg"></image>
+                </swiper-item>
+            </swiper>
+            <view class="nameBox"><text class="name">{{goodsInfo.name}}</text>
+                <block wx:if="{{type == 3 || type == 4}}">
+                    <view class="priceBox"><text>$</text><text class="price">{{goodsInfo.price}}</text>
+                    </view>
+                </block>
+            </view>
+            <view class="timeBox" style="justify-content: space-between;">
+                <view class="peopleInfo">
+                    <image class="pic" src="{{goodsInfo.icon}}"></image><text>{{goodsInfo.nickname}}</text>
+                </view><text class="timeInfo">{{goodsInfo.createTimeString}}发布</text>
+            </view>
+            <view class="timeBox bt">
+                <block>
+                    <block wx:if="{{type != 5}}">
+                        <view class="left">
+                            <at-icon compid="{{$compid__352}}"></at-icon><text class="info">{{goodsInfo.address}}</text>
+                        </view>
+                    </block>
+                    <block wx:else>
+                        <view class="left"></view>
+                    </block>
+                </block>
+                <view class="share" bindtap="anonymousFunc0">
+                    <image class="img" src="{{anonymousState__temp}}"></image><text class="text">分享</text>
+                </view>
+            </view>
+            <view class="fuwu">
+                <view class="titleBox"><text class="title">{{type == 2 ? '生活详情' : type == 5 ? '部落详情' : '商品详情'}}</text>
+                </view><text>{{goodsInfo.detail}}</text>
+            </view>
+            <block wx:if="{{type != 5}}">
+                <view class="fuwu">
+                    <view class="titleBox"><text class="title">特别提醒</text>
+                    </view><text>{{goodsInfo.note}}</text>
+                </view>
+            </block>
+            <block wx:if="{{type != 5}}">
+                <view class="fuwu">
+                    <view class="titleBox"><text class="title">类型</text>
+                    </view><text>{{goodsInfo.productType}}</text>
+                </view>
+            </block>
+            <view class="pingjia">
+                <view class="titleBox"><text class="title">评价</text>
+                    <view class="pinglunBox" bindtap="anonymousFunc1"><text class="pinglun">我要评论</text>
+                        <at-icon compid="{{$compid__353}}"></at-icon>
+                    </view>
+                </view>
+                <block>
+                    <block wx:if="{{chatList.length > 0}}">
+                        <view class="pinjiaList">
+                            <view class="bigBxo" wx:for="{{loopArray135}}" wx:for-item="item" wx:for-index="index">
+                                <view class="pinglunItem">
+                                    <image class="img" src="{{item.$original.memberIcon}}"></image>
+                                    <view class="right"><text class="name">{{item.$original.memberNickName}}</text>
+                                        <view class="detailBox"><text>{{item.$original.content}}</text>
+                                        </view>
+                                        <view class="huifuBox" bindtap="anonymousFunc2" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey}}"><text>{{item.$original.createTimeString}}</text>
+                                            <view class="huifu"><text>回复</text>
+                                            </view>
+                                        </view>
+                                    </view>
+                                </view>
+                                <view class="othersPinglun" wx:for="{{item.$original.commentReplayList}}" wx:for-item="item2" wx:for-index="_anonIdx2">
+                                    <image class="otherImg" src="{{item2.memberIcon}}"></image>
+                                    <view class="otherDetail"><text class="otherName">{{item2.memberNickName}}</text><text>{{item2.content}}</text>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </block>
+                    <block wx:else>
+                        <view class="noPinglun"><text>暂无评论~~</text>
+                        </view>
+                    </block>
+                </block>
+            </view>
+        </view>
+        <at-toast compid="{{$compid__354}}"></at-toast>
+        <at-action-sheet compid="{{$compid__355}}">
+            <at-action-sheet-item>
+                <view class="messageToastBox">
+                    <view class="title"><text>发表评论</text>
+                    </view>
+                    <at-textarea compid="{{$compid__356}}"></at-textarea>
+                    <view class="btn">
+                        <view class="btnBox" bindtap="anonymousFunc4"><text>发布</text>
+                        </view>
+                    </view>
+                </view>
+            </at-action-sheet-item>
+        </at-action-sheet>
+        <at-action-sheet compid="{{$compid__357}}">
+            <at-action-sheet-item>
+                <view class="shareTitle"><text>分享</text>
+                </view>
+                <view class="shareBox">
+                    <button class="shareItem" open-type="share">
+                        <view class="wechatBox">
+                            <image src="{{anonymousState__temp2}}" class="wechatIconImg"></image><text>微信好友</text>
+                        </view>
+                    </button>
+                    <button class="shareItem" bindtap="anonymousFunc6">
+                        <view class="wechatBox">
+                            <image src="{{anonymousState__temp3}}" class="wechatIconImg"></image><text>朋友圈</text>
+                        </view>
+                    </button>
+                </view>
+            </at-action-sheet-item>
+        </at-action-sheet>
+    </view>
+</block>

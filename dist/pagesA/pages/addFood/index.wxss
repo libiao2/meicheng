@@ -1,0 +1,326 @@
+.container /deep/ .at-form::after {
+  border: none !important;
+}
+.container .shopImgBox {
+  margin: 10rpx 15rpx;
+  padding: 15rpx 20rpx;
+  border: 1rpx dashed #f1f1f1;
+}
+.container .shopImgBox .shopTop {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 40rpx;
+}
+.container .shopImgBox .shopTop .left {
+  font-size: 30rpx;
+  color: #333;
+}
+.container .shopImgBox .shopTop .right {
+  font-size: 24rpx;
+  color: #999;
+}
+.container .shopImgBox .imgBox {
+  margin: 0 auto;
+}
+.container .contentTitle {
+  font-size: 30rpx;
+  color: #333;
+  margin: 10rpx 15rpx;
+}
+.container .itemBox {
+  margin: 20rpx 25rpx;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.container .itemBox .leftPart {
+  width: 160rpx;
+  font-size: 30rpx;
+  color: #333;
+}
+.container .itemBox .shopNameInput {
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  height: 80rpx;
+  font-size: 26rpx;
+  padding: 0 15rpx;
+  border: 1rpx solid #e1e1e1;
+}
+.container .itemBox .cityChooseBox {
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  height: 80rpx;
+  padding: 0 15rpx;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 26rpx;
+  border: 1rpx solid #e1e1e1;
+}
+.container .itemBox .areaBox {
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  height: 80rpx;
+  padding: 0 15rpx;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 26rpx;
+  border: 1rpx solid #e1e1e1;
+}
+.container .itemBox .areaBox .areaInput {
+  width: 80%;
+  height: 80rpx;
+}
+.container .itemBox .areaBox .picker {
+  width: 400rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 26rpx;
+  color: #666;
+}
+.container .itemBox .areaBox .iconBox {
+  width: 200rpx;
+  height: 80rpx !important;
+  line-height: 80rpx;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: flex-end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+.container .itemBox .time {
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+.container .itemBox .radioGroup {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 26rpx;
+  color: #333;
+}
+.container .itemBox .radioGroup .radioBox {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 40rpx;
+}
+.container .itemBox .radioGroup .radioBox .yuan {
+  width: 30rpx;
+  height: 30rpx;
+  border-radius: 15rpx;
+  border: 1rpx solid #e1e1e1;
+  margin-right: 6rpx;
+}
+.container .itemBox .radioGroup .radioBox .isChoose {
+  background: #24c8b2;
+}
+.container .leixing {
+  margin: 10rpx 15rpx;
+}
+.container .leixing .title {
+  font-size: 30rpx;
+  color: #333;
+}
+.container .leixing .allChoose {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  margin: 10rpx  20rpx;
+}
+.container .leixing .allChoose .oneChoose {
+  width: 25%;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 26rpx;
+  color: #555;
+  margin-bottom: 15rpx;
+}
+.container .leixing .allChoose .oneChoose .fang {
+  width: 30rpx;
+  height: 30rpx;
+  border: 1rpx solid #e1e1e1;
+  margin-right: 8rpx;
+}
+.container .leixing .allChoose .oneChoose .typeChooseClick {
+  background: #24c8b2;
+}
+.container .quanBox {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 20rpx 15rpx;
+}
+.container .quanBox .leftPart {
+  font-size: 30rpx;
+  color: #333;
+}
+.container .quanBox .moreBox {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.container .quanBox .moreBox .more {
+  font-size: 24rpx;
+  color: #999;
+}
+.container .lastTitle {
+  margin: 20rpx 15rpx;
+  font-size: 30rpx;
+  color: #333;
+}
+/deep/ .at-form {
+  padding: 15rpx 0;
+}
+.youhuiList {
+  max-height: 600rpx;
+  overflow-y: scroll;
+}
+.youhuiList .youhui {
+  margin: 10rpx 15rpx;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+.youhuiList .youhui .youhuiImg {
+  width: 160rpx;
+  height: 160rpx;
+  margin-right: 20rpx;
+}
+.youhuiList .youhui .right {
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.youhuiList .youhui .right .btnbox {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: flex-end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+.youhuiList .youhui .right .btnbox .deleteBtn {
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 26rpx;
+  margin: 0;
+  margin-right: 30rpx;
+}
+.youhuiList .youhui .right .btnbox .changeBtn {
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 26rpx;
+  margin: 0;
+}
+.youhuiList .youhui .right .box {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 10rpx;
+}
+.youhuiList .youhui .right .box .title {
+  font-size: 30rpx;
+  color: #333;
+  margin-right: 20rpx;
+}
+.youhuiList .youhui .right .box .titleName {
+  font-size: 26rpx;
+  color: #666;
+}
+.youhuiList .youhui .right .box .smallBox {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 15rpx;
+}
+.youhuiList .youhui .right .box .smallBox .title {
+  font-size: 30rpx;
+  color: #333;
+  margin-right: 10rpx;
+}
+.youhuiList .youhui .right .box .smallBox .input {
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  font-size: 26rpx;
+  color: #666;
+  padding: 0 10rpx;
+  border: 1rpx solid #e1e1e1;
+}
+.btn {
+  width: 80%;
+  margin-top: 60rpx;
+  margin-bottom: 30rpx;
+  background: #24c8b2;
+  color: #fff;
+}
+

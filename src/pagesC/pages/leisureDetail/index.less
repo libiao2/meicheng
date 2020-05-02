@@ -1,0 +1,380 @@
+.container{
+  .topBox{
+    padding-bottom: 130px;
+    .swiper{
+      width: 100vw;
+      height: 470px;
+      .swiperImg{
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .nameBox{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 25px;
+      border-bottom: 1px solid #e1e1e1;
+      background: #fff;
+      .name{
+        width: 600px;
+        font-size: 40px;
+        color: #333;
+        font-weight: 600;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+    }
+    .timeBox{
+      display: flex;
+      align-items: center;
+      padding: 10px 25px;
+      background: #fff;
+      .icon{
+        margin-right: 15px;
+      }
+      .info{
+        font-size: 25px;
+        color: #999;
+      }
+    }
+    .youhui{
+      background: #fff;
+      margin: 15px 0;
+      .titleBox{
+        padding: 20px 25px;
+        padding-bottom: 0;
+        .title{
+          font-size: 30px;
+          color: #333;
+          font-weight: 500;
+        }
+      }
+      
+      .youhuiItmeBox{
+        max-height: 360px;
+        overflow-y: scroll;
+        .itemBox{
+          display: flex;
+          align-items: center;
+          padding: 10px 25px;
+          padding-top: 0;
+          background: #fff;
+          .img{
+            width: 170px;
+            height: 110px;
+            margin-right: 15px;
+          }
+          .content{
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            .name{
+              font-size: 30px;
+              color: #333;
+              font-weight: 600;
+              margin-bottom: 6px;
+            }
+            .detail{
+              // width: 100%;
+              width: calc(100vw - 220px - 220px);
+              font-size: 26px;
+              color: #666;
+              overflow: hidden;
+              text-overflow:ellipsis;
+              white-space: nowrap;
+            }
+            .price{
+              font-size: 28px;
+              color: red;
+            }
+            .priceBox{
+              display: flex;
+              align-items: center;
+              .nowTitle{
+                font-size: 28px;
+                font-weight: 500;
+                color: red;
+              }
+              .danw{
+                font-size: 22px;
+                color: red;
+              }
+              .nowPrice{
+                font-size: 30px;
+                color: red;
+                font-weight: 600;
+              }
+              .oldBox{
+                display: flex;
+                align-items: center;
+                font-size: 22px;
+                color: #666;
+                margin-left: 10px;
+              }
+            }
+            
+          }
+          .carBtn{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 20px;
+            color: #666;
+            .car{
+              width: 55px;
+              height: 55px;
+              margin-bottom: 10px;
+            }
+          }
+          .btn{
+            padding: 5px 18px;
+            font-size: 30px;
+            color: #fff;
+            background: red;
+            border-radius: 10px;
+            margin-left: 15px;
+          }
+        }
+      }
+    }
+    .tuijian{
+      background: #fff;
+      margin-top: 15px;
+      .titleBox{
+        padding: 20px 25px;
+        padding-bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .title{
+          font-size: 30px;
+          color: #333;
+          font-weight: 500;
+        }
+        .readMore{
+          font-size: 22px;
+          color: #999;
+        }
+      }
+      .tuijianItemBox{
+        display: flex;
+        align-items: center;
+        // justify-content: space-around;
+        padding: 10px 15px;
+        .item{
+          width: 31vw;
+          box-sizing: border-box;
+          margin:0 1.3%;
+          .img{
+            width: 100%;
+            height: 140px;
+          }
+          .info{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .smallBox{
+              display: flex;
+              align-items: center;
+              .name{
+                font-size: 22px;
+                color: #333;
+                margin-right: 15px;
+              }
+              .price{
+                font-size: 22px;
+                color: red;
+              }
+            }
+            
+          }
+        }
+      }
+    }
+    .fuwu{
+      margin-top: 15px;
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      font-size: 24px;
+      color: #666;
+      padding: 15px 25px;
+      .titleBox{
+        margin-bottom: 10px;
+        .title{
+          font-size: 30px;
+          color: #333;
+          font-weight: 500;
+        }
+      }
+    }
+    .pingjia{
+      margin-top: 15px;
+      background: #fff;
+      box-sizing: border-box;
+      .titleBox{
+        padding: 20px 25px;
+        padding-bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .title{
+          font-size: 30px;
+          color: #333;
+          font-weight: 500;
+        }
+        .pinglunBox{
+          display: flex;
+          align-items: center;
+          .pinglun{
+            font-size: 25px;
+            color: #666;
+            margin-right: 8px;
+          }
+          .pinglunIcon{
+            margin-bottom: 4px;
+          }
+        }
+        
+      }
+
+      .pinjiaList{
+        width: 100vw;
+        // display: flex;
+        // flex-direction: column;
+        box-sizing: border-box;
+        .bigBxo{
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          border-bottom: 1px solid #d4d4d4;
+          .pinglunItem{
+            width: 100%;
+            display: flex;
+            align-items: flex-start;
+            padding: 15px 25px;
+            box-sizing: border-box;
+            .img{
+              width: 60px;
+              height: 60px;
+              border-radius: 30px;
+              border: 1px solid #d1d1d1;
+              margin-right: 15px;
+            }
+            .right{
+              flex: 1;
+              display: flex;
+              flex-direction: column;
+              .name{
+                flex: 1;
+                font-size: 26px;
+                color: #333;
+                margin-bottom: 15px;
+              }
+              .detailBox{
+                flex: 1;
+                font-size: 28px;
+                color: #333;
+              }
+              .huifuBox{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                font-size: 22px;
+                color: #999;
+                margin-top: 10px;
+                .huifu{
+                  width: 200px;
+                  height: 40px;
+                  line-height: 40px;
+                  text-align: right;
+                  color: #9face2;
+                }
+              }
+            }
+          }
+          .othersPinglun{
+            background: rgb(242,242,236);
+            border-radius: 8px;
+            margin: 15px 25px;
+            margin-left: 90px;
+            margin-top: 0;
+            padding: 10px 20px;
+            display: flex;
+            align-items: flex-start;
+            .otherImg{
+              width: 60px;
+              height: 60px;
+              border-radius: 30px;
+              margin-right: 15px;
+            }
+            .otherDetail{
+              flex: 1;
+              font-size: 28px;
+              color: #333;
+              display: flex;
+              flex-direction: column;
+              .otherName{
+                font-size: 26px;
+                color: #333;
+                margin-bottom: 10px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.noPinglun{
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  color: #999;
+  padding: 60px 0;
+}
+.addBox{
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.messageToastBox{
+  padding: 15px 25px;
+  .title{
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  .text{
+    width: 100%;
+    border: 1px solid #d4d4d4;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    text-align: left;
+  }
+  .btn{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .btnBox{
+      width: 40vw;
+      height: 75px;
+      line-height: 75px;
+      font-size: 28px;
+      color: #fff;
+      text-align: center;
+      background: rgb(36, 200, 178);
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    .otherBtn{
+      background: rgb(200,200,200);
+    }
+  }
+  
+}

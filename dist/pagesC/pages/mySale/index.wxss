@@ -1,0 +1,121 @@
+.container .orderBox {
+  width: 100vw;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #fff;
+  margin-bottom: 15rpx;
+}
+.container .orderBox .orderNo {
+  width: 100vw;
+  padding: 20rpx 25rpx;
+  font-size: 24rpx;
+  color: #333;
+  border-bottom: 1rpx solid #d1d1d1;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.container .orderBox .goodsInfo {
+  width: 100vw;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20rpx 25rpx;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.container .orderBox .goodsInfo .goodsImg {
+  width: 200rpx;
+  height: 150rpx;
+  border: 1rpx solid #e1e1e1;
+  margin-right: 15rpx;
+}
+.container .orderBox .goodsInfo .goodsDetail {
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  height: 150rpx;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+}
+.container .orderBox .goodsInfo .goodsDetail .nameBox {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 26rpx;
+  font-weight: 500;
+  color: #333;
+}
+.container .orderBox .goodsInfo .goodsDetail .countBox {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 24rpx;
+  color: #999;
+}
+.container .orderBox .goodsInfo .goodsDetail .footerBox {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: flex-end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+.container .orderBox .goodsInfo .goodsDetail .footerBox .box {
+  font-size: 20rpx;
+  color: #999;
+  border: 1rpx solid #d1d1d1;
+  padding: 4rpx 10rpx;
+  margin-left: 15rpx;
+}
+.container .orderBox .goodsInfo .goodsDetail .footerBox .already {
+  color: #24c8b2;
+  border: 1rpx solid #24c8b2;
+}
+.noData {
+  width: 100%;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 200rpx 0;
+  font-size: 28rpx;
+  color: #999;
+}
+

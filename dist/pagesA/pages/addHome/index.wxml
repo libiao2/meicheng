@@ -1,0 +1,64 @@
+<block wx:if="{{$taroCompReady}}">
+    <view class="container">
+        <at-form>
+            <view class="shopImgBox">
+                <view class="shopTop"><text class="left">请添加展示图片</text><text class="right">(可上传1-30张图片)</text>
+                </view>
+                <view class="imgBox">
+                    <choose-image compid="{{$compid__309}}"></choose-image>
+                </view>
+            </view><text class="concentTitle">基本信息</text>
+            <view class="itemBox"><text class="leftPart">标题名称:</text>
+                <input type="text" class="shopNameInput" placeholder="请输入名称" value="{{name}}" bindchange="nameChange" data-e-change-so="this" />
+            </view>
+            <view class="itemBox"><text class="leftPart">所在城市:</text>
+                <view class="cityChooseBox" bindtap="anonymousFunc0"><text>{{cityName}}</text>
+                    <at-icon compid="{{$compid__310}}"></at-icon>
+                </view>
+                <at-action-sheet compid="{{$compid__311}}">
+                    <at-action-sheet-item wx:key="index" wx:for="{{loopArray119}}" wx:for-item="item" wx:for-index="index" compid="{{item.$compid__308}}">{{item.$original.name}}</at-action-sheet-item>
+                </at-action-sheet>
+            </view>
+            <view class="itemBox"> <text class="leftPart">地址:</text>
+                <view class="areaBox">
+                    <input type="text" class="areaInput" placeholder="点击地区图标定位当前地址" value="{{address}}" bindchange="areaNameChange" data-e-change-so="this" />
+                    <view class="iconBox" bindtap="anonymousFunc3">
+                        <at-icon compid="{{$compid__312}}"></at-icon>
+                    </view>
+                </view>
+            </view>
+            <view class="itemBox"><text class="leftPart">价格:</text>
+                <input type="text" class="shopNameInput" placeholder="请输入价格" value="{{price}}" bindchange="priceChange" data-e-change-so="this" /><text style="font-size: 12px;color: #333;margin-left: 6px">元</text>
+            </view>
+            <view class="itemBox flexEnd"><text class="leftPart" style="margin-top: 20rpx">联系方式:</text>
+                <view>
+                    <view class="itemBox"><text class="leftPart ss">手机号:</text>
+                        <input type="text" class="shopNameInput" placeholder="请输入手机号" value="{{telephone}}" bindchange="phoneChange" data-e-change-so="this" />
+                    </view>
+                    <view class="itemBox"><text class="leftPart ss">微信:</text>
+                        <input type="text" class="shopNameInput" placeholder="请输入微信" value="{{weixinno}}" bindchange="weixinnoChange" data-e-change-so="this" />
+                    </view>
+                    <view class="itemBox"><text class="leftPart ss">邮箱:</text>
+                        <input type="text" class="shopNameInput" placeholder="请输入邮箱" value="{{email}}" bindchange="emailChange" data-e-change-so="this" />
+                    </view>
+                </view>
+            </view>
+            <view style="height: 5px;background:#f1f1f1"></view>
+            <view class="typeListBox">
+                <view bindtap="anonymousFunc4" class="{{'textListBox ' + (typeChoose == index && 'isChoose')}}" wx:for="{{loopArray120}}" wx:for-item="item" wx:for-index="index" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey2}}"><text>{{item.$original.title}}</text>
+                </view>
+            </view>
+            <view style="height: 5px;background:#f1f1f1"></view>
+            <view class="textBox"><text class="title">详细说明:</text>
+                <at-textarea compid="{{$compid__313}}"></at-textarea>
+            </view>
+            <view style="height: 5px;background:#f1f1f1"></view>
+            <view class="textBox"><text class="title">购买须知:</text>
+                <at-textarea compid="{{$compid__314}}"></at-textarea>
+            </view>
+            <at-button compid="{{$compid__315}}">确认</at-button>
+            <view style="height: 30px;background:#fff"></view>
+        </at-form>
+        <at-toast compid="{{$compid__316}}"></at-toast>
+    </view>
+</block>

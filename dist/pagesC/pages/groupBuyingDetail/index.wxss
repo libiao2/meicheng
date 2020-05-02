@@ -1,0 +1,272 @@
+.container .itemBox {
+  margin-bottom: 15rpx;
+}
+.container .itemBox .titleBox {
+  width: 100%;
+  height: 80rpx;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 30rpx;
+  border-bottom: 1rpx solid #d1d1d1;
+  background: #fff;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.container .itemBox .titleBox .title {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 28rpx;
+  color: #333;
+}
+.container .itemBox .titleBox .title .shopIcon {
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 8rpx;
+}
+.container .itemBox .titleBox .needP {
+  font-size: 24rpx;
+  color: red;
+}
+.container .itemBox .listBox {
+  width: 100%;
+  padding-top: 20rpx;
+  background: #fff;
+}
+.container .itemBox .listBox .orderInfoBox {
+  width: 100%;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 30rpx;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding-bottom: 20rpx;
+  border-bottom: 1rpx solid #d1d1d1;
+}
+.container .itemBox .listBox .orderInfoBox .goodsImg {
+  width: 200rpx;
+  height: 140rpx;
+  margin-right: 15rpx;
+}
+.container .itemBox .listBox .orderInfoBox .rightInfo {
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  height: 140rpx;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.container .itemBox .listBox .orderInfoBox .rightInfo .nameBox {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 24rpx;
+  color: #333;
+}
+.container .itemBox .listBox .orderInfoBox .rightInfo .nameBox .name {
+  font-size: 30rpx;
+  font-weight: 500;
+  color: #333;
+}
+.container .itemBox .listBox .orderInfoBox .rightInfo .priceBox {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.container .itemBox .listBox .orderInfoBox .rightInfo .priceBox .moneyBox {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.container .itemBox .listBox .orderInfoBox .rightInfo .priceBox .moneyBox .now {
+  font-size: 30rpx;
+  font-weight: 500;
+  color: red;
+  margin-right: 20rpx;
+}
+.container .itemBox .listBox .orderInfoBox .rightInfo .priceBox .moneyBox .old {
+  font-size: 20rpx;
+  color: #999;
+}
+.container .itemBox .listBox .orderInfoBox .rightInfo .priceBox .moneyBox .old .oldP {
+  text-decoration: line-through;
+}
+.container .itemBox .listBox .orderInfoBox .rightInfo .priceBox .btn {
+  font-size: 26rpx;
+  font-weight: 500;
+  color: #666;
+  padding: 10rpx 20rpx;
+  background: #e1e1e1;
+  border-radius: 12rpx;
+  margin-left: 20rpx;
+}
+.container .itemBox .listBox .orderInfoBox .rightInfo .priceBox .yao {
+  color: #fff;
+  background: #24c8b2;
+}
+.container .itemBox .footerBox {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-align-items: flex-end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  padding: 0 30rpx;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background: #fff;
+}
+.container .itemBox .footerBox .needPay {
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 24rpx;
+  color: #333;
+}
+.container .itemBox .footerBox .btnList {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-bottom: 25rpx;
+}
+.container .itemBox .footerBox .btnList .btn {
+  font-size: 26rpx;
+  font-weight: 500;
+  color: #666;
+  padding: 10rpx 20rpx;
+  background: #e1e1e1;
+  border-radius: 12rpx;
+  margin-left: 20rpx;
+}
+.container .itemBox .footerBox .btnList .yao {
+  color: #fff;
+  background: #24c8b2;
+}
+.noData {
+  width: 100%;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 200rpx 0;
+  font-size: 28rpx;
+  color: #999;
+}
+.shareTitle {
+  width: 100%;
+  font-size: 30rpx;
+  color: #333;
+  padding-top: 15rpx;
+  padding-bottom: 30rpx;
+  text-align: center;
+}
+.shareBox {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 40rpx;
+  margin-bottom: 20rpx;
+}
+.shareBox .shareItem {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 28rpx;
+  color: #333;
+  background: #fff;
+  padding: 0;
+  margin: 0;
+}
+.shareBox .shareItem .shareIconImg {
+  width: 70rpx;
+  height: 70rpx;
+  margin-bottom: 30rpx;
+}
+.shareBox .shareItem .wechatBox {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.shareBox .shareItem .wechatBox .wechatIconImg {
+  width: 70rpx;
+  height: 70rpx;
+  margin-bottom: 15rpx;
+}
+button::after {
+  border: none;
+}
+button {
+  margin: 0;
+  line-height: normal;
+}
+

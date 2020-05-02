@@ -1,0 +1,26 @@
+<block wx:if="{{$taroCompReady}}">
+    <view class="container">
+        <block>
+            <block wx:if="{{messageList.length > 0}}">
+                <view class="oneBox" bindtap="anonymousFunc0" wx:for="{{loopArray86}}" wx:for-item="item" wx:for-index="__index0" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey}}">
+                    <view class="imgBox">
+                        <image class="img" src="{{item.$original.sendToImg}}"></image>
+                        <block wx:if="{{item.$original.unreadQuantity > 0}}">
+                            <view class="count">{{item.$original.unreadQuantity}}</view>
+                        </block>
+                    </view>
+                    <view class="bottomBox">
+                        <view class="topBox"><text class="name">{{item.$original.sendToName}}</text><text class="time">{{item.$original.createTime}}</text>
+                        </view>
+                        <view class="messageBox"><text class="message">{{item.$original.content}}</text>
+                        </view>
+                    </view>
+                </view>
+            </block>
+            <block wx:else>
+                <view class="noData"><text>暂无消息~~</text>
+                </view>
+            </block>
+        </block>
+    </view>
+</block>

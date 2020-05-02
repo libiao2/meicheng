@@ -1,0 +1,20 @@
+<block wx:if="{{$taroCompReady}}">
+    <view class="container">
+        <view class="itemBox"><text class="title">邮箱：</text>
+            <at-input compid="{{$compid__257}}"></at-input>
+        </view>
+        <view class="itemBox"><text class="title">电话：</text>
+            <at-input compid="{{$compid__258}}"></at-input>
+        </view>
+        <view class="itemBox"><text class="title">微信：</text>
+            <at-input compid="{{$compid__259}}"></at-input>
+        </view>
+        <view class="box"><text>请至少填写一项</text>
+        </view>
+        <view class="btn">
+            <view class="btnBox" bindtap="anonymousFunc0"><text>提交</text>
+            </view>
+        </view>
+        <at-toast compid="{{$compid__260}}"></at-toast>
+    </view>
+</block>

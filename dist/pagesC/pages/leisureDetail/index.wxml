@@ -1,0 +1,102 @@
+<block wx:if="{{$taroCompReady}}">
+    <view class="container">
+        <view class="topBox">
+            <swiper class="swiper" indicator-color="#999" indicator-active-color="#fff" circular="{{true}}" indicator-dots="{{true}}" autoplay="{{true}}">
+                <swiper-item wx:key="index" wx:for="{{goodsInfo.picList}}" wx:for-item="item" wx:for-index="index">
+                    <image src="{{item}}" class="swiperImg"></image>
+                </swiper-item>
+            </swiper>
+            <view class="nameBox"><text class="name">{{goodsInfo.name}}</text>
+                <at-icon compid="{{$compid__346}}"></at-icon>
+            </view>
+            <view class="timeBox">
+                <image src="{{anonymousState__temp}}" style="width:15px;height:15px;margin-right: 6px"></image><text class="info">营业时间: {{goodsInfo.openTimeStart}}-{{goodsInfo.openTimeEnd}}</text>
+            </view>
+            <view class="timeBox">
+                <image src="{{anonymousState__temp2}}" style="width:15px;height:15px;margin-right: 6px"></image><text class="info">{{goodsInfo.address}}</text>
+            </view>
+            <block wx:if="{{goodsInfo.commonList && goodsInfo.commonList.length > 0}}">
+                <view class="youhui">
+                    <view class="titleBox"><text class="title">项目</text>
+                    </view>
+                    <view class="youhuiItmeBox">
+                        <block wx:if="{{goodsInfo.commonList && goodsInfo.commonList.length > 0}}">
+                            <view class="itemBox" wx:for="{{loopArray132}}" wx:for-item="item" wx:for-index="index">
+                                <image class="img" src="{{item.$original.pic}}" bindtap="anonymousFunc1" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey}}"></image>
+                                <view class="content" bindtap="anonymousFunc2" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey2}}"><text class="name">{{item.$original.name}}</text><text class="detail">{{item.$original.detail}}</text><text class="price">${{item.$original.price}}</text>
+                                </view>
+                                <view class="carBtn" bindtap="anonymousFunc3" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey3}}">
+                                    <image class="car" src="{{item.$loopState__temp4}}"></image><text>已售{{item.$original.sale}}份</text>
+                                </view>
+                            </view>
+                        </block>
+                    </view>
+                </view>
+            </block>
+            <view class="fuwu">
+                <view class="titleBox"><text class="title">项目详情</text>
+                </view><text>{{goodsInfo.detail}}</text>
+            </view>
+            <view class="fuwu">
+                <view class="titleBox"><text class="title">购买须知</text>
+                </view><text>{{goodsInfo.note}}</text>
+            </view>
+            <view class="fuwu">
+                <view class="titleBox"><text class="title">服务支持</text>
+                </view><text>{{goodsInfo.serviceSupport}}</text>
+            </view>
+            <view class="pingjia">
+                <view class="titleBox"><text class="title">评价</text>
+                    <view class="pinglunBox" bindtap="anonymousFunc4"><text class="pinglun">我要评论</text>
+                        <at-icon compid="{{$compid__347}}"></at-icon>
+                    </view>
+                </view>
+                <block>
+                    <block wx:if="{{chatList.length > 0}}">
+                        <view class="pinjiaList">
+                            <view class="bigBxo" wx:for="{{loopArray133}}" wx:for-item="item" wx:for-index="index">
+                                <view class="pinglunItem">
+                                    <image class="img" src="{{item.$original.memberIcon}}"></image>
+                                    <view class="right"><text class="name">{{item.$original.memberNickName}}</text>
+                                        <view class="detailBox"><text>{{item.$original.content}}</text>
+                                        </view>
+                                        <view class="huifuBox" bindtap="anonymousFunc5" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey4}}"><text>{{item.$original.createTimeString}}</text>
+                                            <view class="huifu"><text>回复</text>
+                                            </view>
+                                        </view>
+                                    </view>
+                                </view>
+                                <view class="othersPinglun" wx:for="{{item.$original.commentReplayList}}" wx:for-item="item2" wx:for-index="_anonIdx2">
+                                    <image class="otherImg" src="{{item2.memberIcon}}"></image>
+                                    <view class="otherDetail"><text class="otherName">{{item2.memberNickName}}</text><text>{{item2.content}}</text>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </block>
+                    <block wx:else>
+                        <view class="noPinglun"><text>暂无评论~~</text>
+                        </view>
+                    </block>
+                </block>
+            </view>
+        </view>
+        <footer compid="{{$compid__348}}"></footer>
+        <at-toast compid="{{$compid__349}}"></at-toast>
+        <at-action-sheet compid="{{$compid__350}}">
+            <at-action-sheet-item>
+                <view class="messageToastBox">
+                    <view class="title"><text>发表评论</text>
+                    </view>
+                    <at-textarea compid="{{$compid__351}}"></at-textarea>
+                    <view class="btn">
+                        <view class="btnBox" bindtap="anonymousFunc7"><text>匿名发布</text>
+                        </view>
+                        <view class="btnBox otherBtn" bindtap="anonymousFunc8"><text>发布</text>
+                        </view>
+                    </view>
+                </view>
+            </at-action-sheet-item>
+        </at-action-sheet>
+    </view>
+</block>

@@ -1,0 +1,91 @@
+.chatCcontainer {
+  padding-bottom: 80rpx;
+}
+.chatCcontainer .itemBox {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100vw;
+  padding: 10rpx 25rpx;
+  font-size: 28rpx;
+  color: #333;
+}
+.chatCcontainer .itemBox .right {
+  padding-left: 15vw;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: flex-end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+.chatCcontainer .itemBox .right .rightText {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: flex-end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+.chatCcontainer .itemBox .left {
+  padding-right: 15vw;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.chatCcontainer .itemBox .time {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 24rpx;
+  color: #999;
+}
+.chatCcontainer .footer {
+  width: 100vw;
+  position: fixed;
+  bottom: 0;
+  background: #f1f1f1;
+}
+.chatCcontainer .footer .box {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10rpx 20rpx;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.chatCcontainer .footer .box .input {
+  width: 90vw;
+  height: 70rpx;
+  background: #fff;
+  border-radius: 10rpx;
+  margin-right: 10rpx;
+  padding: 0 15rpx;
+  font-size: 28rpx;
+  color: #666;
+}
+.peopleImg {
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 10rpx;
+}
+.text {
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+

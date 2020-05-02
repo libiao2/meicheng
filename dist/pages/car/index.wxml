@@ -1,0 +1,42 @@
+<block wx:if="{{$taroCompReady}}">
+    <view class="container">
+        <view class="listBox">
+            <view class="itemBox" wx:for="{{loopArray113}}" wx:for-item="item" wx:for-index="index1">
+                <view class="topBox">
+                    <view bindtap="anonymousFunc0" class="{{'cicle ' + (item.$original.checked && 'chooseCicle')}}" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey}}"></view><text>{{item.$original.name}}</text>
+                </view>
+                <view class="bottomList">
+                    <at-swipe-action wx:for="{{item.$anonymousCallee__17}}" wx:for-item="item2" wx:for-index="index2" compid="{{item2.$compid__296}}">
+                        <view class="bottomBox">
+                            <view bindtap="anonymousFunc2" class="{{'cicle ' + (item2.$original.checked && 'chooseCicle')}}" data-e-tap-so="this" data-e-tap-a-a="{{item2._$indexKey3}}"></view>
+                            <image class="pic" src="{{item2.$original.productPic}}"></image>
+                            <view class="rightPart"><text class="title">{{item2.$original.productItemName}}</text>
+                                <view class="rightPart"><text class="price">${{item2.$original.price}}</text>
+                                    <at-input-number compid="{{item2.$compid__297}}"></at-input-number>
+                                </view>
+                            </view>
+                        </view>
+                    </at-swipe-action>
+                </view>
+            </view>
+        </view>
+        <view class="footerBox">
+            <view class="footer">
+                <view class="leftFooter">
+                    <view bindtap="anonymousFunc3" class="{{'cicle ' + (checkAll && 'chooseCicle')}}"></view><text class="allText">全选</text>
+                    <view class="priceBox"><text class="allPrice">合计: ${{anonymousState__temp3}}</text>
+                        <view class="yingPay"><text>总额: ${{anonymousState__temp4}}</text>
+                        </view>
+                    </view>
+                </view>
+                <view class="btnBox" bindtap="anonymousFunc4"><text>去结算({{buyCount}})</text>
+                </view>
+            </view>
+        </view>
+        <block wx:if="{{dataList.length == 0}}">
+            <view class="noData"><text>暂无数据~~</text>
+            </view>
+        </block>
+        <at-toast compid="{{$compid__298}}"></at-toast>
+    </view>
+</block>

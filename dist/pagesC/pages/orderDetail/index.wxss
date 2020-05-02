@@ -1,0 +1,281 @@
+.container .erweiImgBox {
+  width: 100%;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 20rpx 0;
+  background: #fff;
+}
+.container .erweiImgBox .erweiImg {
+  width: 160rpx;
+  height: 160rpx;
+}
+.container .fuwuBox {
+  width: 100%;
+  height: 80rpx;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 30rpx;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background: #fff;
+}
+.container .fuwuBox .shopName {
+  font-size: 28rpx;
+  color: #333;
+  font-weight: 500;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.container .fuwuBox .shopName .icon {
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 10rpx;
+}
+.container .fuwuBox .tuikuan {
+  font-size: 26rpx;
+  color: #24c8b2;
+  border: 1rpx solid #24c8b2;
+  padding: 5rpx 14rpx;
+}
+.container .orderNoBox {
+  width: 100%;
+  height: 80rpx;
+  font-size: 26rpx;
+  color: #333;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 30rpx;
+  background: #fff;
+  border-top: 1rpx solid #d1d1d1;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.container .goodsListInfo {
+  margin-top: 15rpx;
+  background: #fff;
+}
+.container .goodsListInfo .titleName {
+  width: 100vw;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 28rpx;
+  color: #333;
+  font-weight: 500;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 30rpx;
+  border-bottom: 1rpx solid #d1d1d1;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.container .goodsListInfo .titleName .icon {
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 10rpx;
+}
+.container .goodsListInfo .goodsInfoBox {
+  width: 100vw;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 15rpx 30rpx;
+  margin-bottom: 10rpx;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.container .goodsListInfo .goodsInfoBox .goodsImg {
+  width: 130rpx;
+  height: 110rpx;
+  margin-right: 15rpx;
+}
+.container .goodsListInfo .goodsInfoBox .goodsDetail {
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.container .goodsListInfo .goodsInfoBox .goodsDetail .countInfo {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 26rpx;
+  color: #333;
+}
+.container .goodsListInfo .goodsInfoBox .goodsDetail .detail {
+  width: 300rpx;
+  font-size: 24rpx;
+  color: #999;
+  margin-top: 10rpx;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+     text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.container .goodsListInfo .connectBox {
+  width: 100vw;
+  height: 80rpx;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 30rpx;
+  border-top: 1rpx solid #d1d1d1;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.container .goodsListInfo .connectBox .left {
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.container .goodsListInfo .connectBox .left .smallBox {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 24rpx;
+  color: #333;
+}
+.container .goodsListInfo .connectBox .left .smallBox .icon {
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 6rpx;
+}
+.container .goodsListInfo .connectBox .left .smallBox .address {
+  width: 250rpx;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+     text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.container .goodsListInfo .connectBox .left .phone {
+  color: #24c8b2;
+  margin-right: 20rpx;
+}
+.container .goodsListInfo .connectBox .needPay {
+  font-size: 28rpx;
+  color: #333;
+}
+.container .goodsListInfo .connectBox .needPay .money {
+  font-weight: 500;
+}
+.container .orderIndoBox {
+  margin-top: 15rpx;
+  background: #fff;
+}
+.container .orderIndoBox .title {
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 28rpx;
+  color: #333;
+  font-weight: 500;
+  padding-left: 30rpx;
+}
+.container .orderIndoBox .listBox .oneBox {
+  width: 100vw;
+  height: 80rpx;
+  line-height: 80rpx;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 30rpx;
+  font-size: 26rpx;
+  color: #333;
+  border-bottom: 1rpx solid #d1d1d1;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.container .orderIndoBox .listBox .oneBox .right {
+  color: #999;
+}
+.container .orderIndoBox .listBox .oneBox .isNoBox {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.container .orderIndoBox .listBox .oneBox .isNoBox .oneChooseBox {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 30rpx;
+}
+.container .orderIndoBox .listBox .oneBox .isNoBox .oneChooseBox .cicle {
+  width: 30rpx;
+  height: 30rpx;
+  border-radius: 15rpx;
+  border: 1rpx solid #d1d1d1;
+  margin-right: 6rpx;
+}
+.container .orderIndoBox .listBox .oneBox .isNoBox .oneChooseBox .ischoose {
+  background: #24c8b2;
+}
+

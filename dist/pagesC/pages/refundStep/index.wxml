@@ -1,0 +1,51 @@
+<block wx:if="{{$taroCompReady}}">
+    <view class="container">
+        <view class="topBox">美城美事处理完成，退款入账中</view>
+        <view class="infoBox">
+            <view class="itemBox"><text class="left">退款金额</text><text>${{orderDetail.totalFee}}</text>
+            </view>
+            <view class="itemBox"><text class="left">退款方式</text><text>{{orderDetail.payWay == 1 ? '微信零钱' : orderDetail.payWay == 2 ? '信用卡' : '他人账户'}}</text>
+            </view>
+            <view class="itemBox"><text class="left">到账时间</text><text>3个工作日内</text>
+            </view>
+        </view>
+        <view class="step">
+            <view class="title">退款进度</view>
+            <view class="ys-list">
+                <view class="des-mes first">
+                    <view class="list-dot">
+                        <view class="dot isNow"></view>
+                    </view><text class="">退款申请已提交</text><text>您的退款申请已成功提交！</text>
+                </view>
+            </view>
+            <view class="ys-list">
+                <view class="{{'des-mes ' + (orderDetail.orderStatus == 50 && 'first')}}">
+                    <view class="list-dot">
+                        <view class="dot isNow"></view>
+                    </view><text class="{{'' + (orderDetail.orderStatus == 40 && 'isNowText')}}">美城美事365处理完毕，退款入账中</text>
+                    <view>您的退款申请已受理，预计<text>3个工作日内</text>，退回至<text>{{orderDetail.payWay == 1 ? '微信零钱' : orderDetail.payWay == 2 ? '信用卡' : '他人账户'}}</text>
+                    </view>
+                </view>
+            </view>
+            <view class="{{'ys-list ' + (orderDetail.orderStatus == 40 && 'no')}}">
+                <view class="{{'des-mes ' + (orderDetail.orderStatus == 50 && 'first')}}">
+                    <view class="list-dot">
+                        <view class="{{'dot ' + (orderDetail.orderStatus == 50 && 'isNow')}}"></view>
+                    </view><text class="{{'' + (orderDetail.orderStatus == 50 && 'isNowText')}}">退款成功</text>
+                    <block>
+                        <block wx:if="{{orderDetail.payWay == 1}}"><text class="">已将退款入账至您微信零钱账户中，您可以打开微信，依次点击我的->钱包->支付中心->账单核实，如有疑问请拨打客服95017查询</text>
+                        </block>
+                        <block wx:else>
+                            <block>
+                                <block wx:if="{{orderDetail.payWay == 2}}"><text>已将退款入账至您信用卡账户中</text>
+                                </block>
+                                <block wx:else><text>已将退款入账至您好友账户中</text>
+                                </block>
+                            </block>
+                        </block>
+                    </block>
+                </view>
+            </view>
+        </view>
+    </view>
+</block>

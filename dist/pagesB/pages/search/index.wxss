@@ -1,0 +1,135 @@
+.container .searchHeader {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #fff;
+}
+.container .searchHeader .searchBox {
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+.container .searchHeader .cancel {
+  font-size: 30rpx;
+  color: #666;
+  margin-right: 20rpx;
+}
+.container .typeBox {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 15rpx 20rpx;
+}
+.container .typeBox .title {
+  font-size: 28rpx;
+  color: #666;
+  margin-right: 15rpx;
+}
+.container .typeBox .box {
+  margin-right: 15rpx;
+  padding: 6rpx 12rpx;
+  background: #e2e2e2;
+  border-radius: 10rpx;
+  font-size: 24rpx;
+  color: #fff;
+}
+.container .typeBox .chooseBox {
+  background: #24c8b2;
+}
+.container .listBox .itemBox {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10rpx 25rpx;
+  margin-bottom: 10rpx;
+  background: #fff;
+}
+.container .listBox .itemBox .img {
+  width: 180rpx;
+  height: 140rpx;
+  margin-right: 15rpx;
+}
+.container .listBox .itemBox .rightPart {
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.container .listBox .itemBox .rightPart .nameBox {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.container .listBox .itemBox .rightPart .nameBox .name {
+  font-size: 30rpx;
+  font-weight: 500;
+  color: #333;
+}
+.container .listBox .itemBox .rightPart .nameBox .jl {
+  font-size: 20rpx;
+  color: #999;
+}
+.container .listBox .itemBox .rightPart .price {
+  font-size: 21rpx;
+  color: #666;
+}
+.container .listBox .itemBox .rightPart .adressBox {
+  width: 300rpx;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 18rpx;
+  color: #666;
+}
+.container .listBox .itemBox .rightPart .adressBox .adress {
+  max-width: 200rpx;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+     text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.container .listBox .itemBox .rightPart .adressBox .type {
+  max-width: 100rpx;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+     text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.container .listBox .itemBox .rightPart .detail {
+  width: 400rpx;
+  font-size: 18rpx;
+  color: #666;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+     text-overflow: ellipsis;
+  white-space: nowrap;
+}
+

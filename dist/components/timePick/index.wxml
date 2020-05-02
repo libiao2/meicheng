@@ -1,0 +1,52 @@
+<block wx:if="{{$taroCompReady}}">
+    <view class="datetime-picker-wrap wrap-class">
+        <view class="selector-wrap">
+            <view class="select-item select-item-class" bindtap="openModal">{{current || placeholder}}</view>
+            <block wx:if="{{current}}">
+                <view class="clear-icon">
+                    <at-icon compid="{{$compid__299}}"></at-icon>
+                </view>
+            </block>
+        </view>
+        <block wx:if="{{visible}}">
+            <view class="wrapper">
+                <view class="model-box-bg"></view>
+                <view class="model-box">
+                    <view class="model-picker">
+                        <view class="button-model"><text class="btn-txt" bindtap="cancelHandel">取消</text><text class="btn-txt" bindtap="okHandel">确定</text>
+                        </view>
+                        <view class="cont_model">
+                            <picker-view class="pick-view" indicator-style="height: 50px;" value="{{selectIndexList}}" bindchange="changeHandel">
+                                <picker-view-column class="picker-view-column">
+                                    <block wx:if="{{yearList.length}}">
+                                        <view wx:key="$loopState__temp2" class="pick-view-column-item" wx:for="{{loopArray114}}" wx:for-item="item" wx:for-index="index">{{item.$original}}</view>
+                                    </block>
+                                </picker-view-column>
+                                <picker-view-column class="picker-view-column">
+                                    <block wx:if="{{monthLsit.length}}">
+                                        <view wx:key="$loopState__temp4" class="pick-view-column-item" wx:for="{{loopArray115}}" wx:for-item="item" wx:for-index="index">{{item.$original}}</view>
+                                    </block>
+                                </picker-view-column>
+                                <picker-view-column class="picker-view-column">
+                                    <block wx:if="{{dayList.length}}">
+                                        <view wx:key="$loopState__temp6" class="pick-view-column-item" wx:for="{{loopArray116}}" wx:for-item="item" wx:for-index="index">{{item.$original}}</view>
+                                    </block>
+                                </picker-view-column>
+                                <picker-view-column class="picker-view-column">
+                                    <block wx:if="{{hourList.length}}">
+                                        <view wx:key="$loopState__temp8" class="pick-view-column-item" wx:for="{{loopArray117}}" wx:for-item="item" wx:for-index="index">{{item.$original}}</view>
+                                    </block>
+                                </picker-view-column>
+                                <picker-view-column class="picker-view-column">
+                                    <block wx:if="{{minuteList.length}}">
+                                        <view wx:key="$loopState__temp10" class="pick-view-column-item" wx:for="{{loopArray118}}" wx:for-item="item" wx:for-index="index">{{item.$original}}</view>
+                                    </block>
+                                </picker-view-column>
+                            </picker-view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </block>
+    </view>
+</block>

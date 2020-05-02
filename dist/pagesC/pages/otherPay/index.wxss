@@ -1,0 +1,107 @@
+.container .title {
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 28rpx;
+  font-weight: 500;
+  color: #333;
+  margin-top: 50rpx;
+  margin-bottom: 50rpx;
+}
+.container .payType {
+  width: 100%;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 70rpx;
+}
+.container .payType .btn {
+  width: 65vw;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  font-size: 26rpx;
+  color: #fff;
+  background: #24c8b2;
+  border-radius: 12rpx;
+  margin-bottom: 50rpx;
+}
+.titleBox {
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative;
+}
+.titleBox .delet {
+  width: 100rpx;
+  height: 80rpx;
+  text-align: right;
+  position: absolute;
+  right: 20rpx;
+  font-size: 34rpx;
+  color: #999;
+}
+.toastBox {
+  padding: 20rpx 0;
+}
+.toastBox .oneCard {
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 26rpx;
+  color: #666;
+  border-bottom: 1rpx solid #d1d1d1;
+  padding: 0 20rpx;
+}
+.toastBox .isChooseCard {
+  border: 2rpx solid #24c8b2;
+  border-radius: 10rpx;
+  -webkit-box-shadow: inset 2rpx 2rpx 2rpx #24c8b2;
+          box-shadow: inset 2rpx 2rpx 2rpx #24c8b2;
+}
+.toastBox .addPayCard {
+  width: 100%;
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 24rpx;
+  color: #24c8b2;
+  text-align: right;
+}
+.surePayBtn {
+  width: 100%;
+  margin: 0 auto;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.surePayBtn .payBtn {
+  width: 50%;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  background: #24c8b2;
+  border-radius: 12rpx;
+  font-size: 28rpx;
+  color: #fff;
+  margin-top: 30rpx;
+  margin-bottom: 40rpx;
+}
+

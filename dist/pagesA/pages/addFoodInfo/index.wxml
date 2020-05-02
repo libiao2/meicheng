@@ -1,0 +1,26 @@
+<block wx:if="{{$taroCompReady}}">
+    <view class="container">
+        <at-form>
+            <view class="shopImgBox">
+                <view class="shopTop"><text class="left">请添加菜品图片</text><text class="right">(可上传1-30张图片)</text>
+                </view>
+                <view class="imgBox">
+                    <choose-image compid="{{$compid__234}}"></choose-image>
+                </view>
+            </view>
+            <view class="itemBox"><text class="leftPart">菜品名称:</text>
+                <input type="text" class="shopNameInput" placeholder="请输入名称" value="{{name}}" bindchange="foodNameChange" data-e-change-so="this" />
+            </view>
+            <view class="itemBox"><text class="leftPart">价格:</text>
+                <input type="text" class="shopNameInput" placeholder="请输入价格" value="{{price}}" bindchange="priceChange" data-e-change-so="this" /><text class="rightText">元</text>
+            </view>
+            <view style="height: 5px;background:#f1f1f1"></view>
+            <view class="textBox"><text class="title">详细说明:</text>
+                <at-textarea compid="{{$compid__235}}"></at-textarea>
+            </view>
+            <at-button compid="{{$compid__236}}">确认</at-button>
+            <view style="height: 30px;background:#fff"></view>
+        </at-form>
+        <at-toast compid="{{$compid__237}}"></at-toast>
+    </view>
+</block>

@@ -1,0 +1,1 @@
+{"usingComponents":{"at-tabs":"../../../npm/_taro-ui@2.3.3@taro-ui/dist/weapp/components/tabs/index","at-tabs-pane":"../../../npm/_taro-ui@2.3.3@taro-ui/dist/weapp/components/tabs-pane/index"},"navigationBarTitleText":"我卖出的","enablePullDownRefresh":true,"onReachBottomDistance":50}

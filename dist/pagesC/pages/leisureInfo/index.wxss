@@ -1,0 +1,469 @@
+.container .topBox {
+  padding-bottom: 130rpx;
+}
+.container .topBox .swiper {
+  width: 100vw;
+  height: 470rpx;
+}
+.container .topBox .swiper .swiperImg {
+  width: 100%;
+  height: 100%;
+}
+.container .topBox .nameBox {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 20rpx 25rpx;
+  border-bottom: 1rpx solid #e1e1e1;
+  background: #fff;
+}
+.container .topBox .nameBox .name {
+  width: 600rpx;
+  font-size: 40rpx;
+  color: #333;
+  font-weight: 600;
+  overflow: hidden;
+  white-space: nowrap;
+  -o-text-overflow: ellipsis;
+     text-overflow: ellipsis;
+}
+.container .topBox .TopShareBox {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 10rpx 25rpx;
+  background: #fff;
+}
+.container .topBox .TopShareBox .addressBox {
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.container .topBox .TopShareBox .addressBox .timeBox {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.container .topBox .TopShareBox .addressBox .timeBox .icon {
+  margin-right: 15rpx;
+}
+.container .topBox .TopShareBox .addressBox .timeBox .info {
+  font-size: 25rpx;
+  color: #999;
+}
+.container .topBox .TopShareBox .share {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.container .topBox .TopShareBox .share .img {
+  width: 35rpx;
+  height: 35rpx;
+}
+.container .topBox .TopShareBox .share .text {
+  font-size: 24rpx;
+  color: #666;
+}
+.container .topBox .youhui {
+  background: #fff;
+  margin: 15rpx 0;
+}
+.container .topBox .youhui .titleBox {
+  padding: 20rpx 25rpx;
+  padding-bottom: 0;
+}
+.container .topBox .youhui .titleBox .title {
+  font-size: 30rpx;
+  color: #333;
+  font-weight: 500;
+}
+.container .topBox .tuijian {
+  background: #fff;
+  margin-top: 15rpx;
+}
+.container .topBox .tuijian .titleBox {
+  padding: 20rpx 25rpx;
+  padding-bottom: 0;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.container .topBox .tuijian .titleBox .title {
+  font-size: 30rpx;
+  color: #333;
+  font-weight: 500;
+}
+.container .topBox .tuijian .titleBox .readMore {
+  font-size: 22rpx;
+  color: #999;
+}
+.container .topBox .tuijian .tuijianItemBox {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10rpx 15rpx;
+}
+.container .topBox .tuijian .tuijianItemBox .item {
+  width: 31vw;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0 1.3%;
+}
+.container .topBox .tuijian .tuijianItemBox .item .img {
+  width: 100%;
+  height: 140rpx;
+  border-radius: 30rpx;
+  margin-right: 15rpx;
+}
+.container .topBox .tuijian .tuijianItemBox .item .info {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.container .topBox .tuijian .tuijianItemBox .item .info .smallBox {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.container .topBox .tuijian .tuijianItemBox .item .info .smallBox .name {
+  font-size: 22rpx;
+  color: #333;
+  margin-right: 15rpx;
+}
+.container .topBox .tuijian .tuijianItemBox .item .info .smallBox .price {
+  font-size: 22rpx;
+  color: red;
+}
+.container .topBox .fuwu {
+  margin-top: 15rpx;
+  background: #fff;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-size: 24rpx;
+  color: #666;
+  padding: 15rpx 25rpx;
+}
+.container .topBox .fuwu .titleBox {
+  margin-bottom: 10rpx;
+}
+.container .topBox .fuwu .titleBox .title {
+  font-size: 30rpx;
+  color: #333;
+  font-weight: 500;
+}
+.container .topBox .pingjia {
+  margin-top: 15rpx;
+  background: #fff;
+}
+.container .topBox .pingjia .titleBox {
+  padding: 20rpx 25rpx;
+  padding-bottom: 0;
+}
+.container .topBox .pingjia .titleBox .title {
+  font-size: 30rpx;
+  color: #333;
+  font-weight: 500;
+}
+.container .topBox .pingjia .pinjiaList {
+  width: 100vw;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.container .topBox .pingjia .pinjiaList .pingjiaItemBox {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10rpx 25rpx;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-bottom: 1rpx solid #e1e1e1;
+}
+.container .topBox .pingjia .pinjiaList .pingjiaItemBox .img {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 40rpx;
+  margin-right: 15rpx;
+}
+.container .topBox .pingjia .pinjiaList .pingjiaItemBox .rightBox {
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.container .topBox .pingjia .pinjiaList .pingjiaItemBox .rightBox .nameBox2 {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 20rpx;
+  color: #999;
+}
+.container .topBox .pingjia .pinjiaList .pingjiaItemBox .rightBox .nameBox2 .peopleName {
+  font-size: 25rpx;
+  color: #333;
+}
+.container .topBox .pingjia .pinjiaList .pingjiaItemBox .rightBox .pingjiaDetail {
+  font-size: 25rpx;
+  color: #666;
+  line-height: -20rpx;
+}
+.noPinglun {
+  width: 100vw;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 26rpx;
+  color: #999;
+  padding: 60rpx 0;
+}
+.addBox {
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: flex-end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+.time {
+  font-size: 25rpx;
+  color: #666;
+  font-weight: 500;
+}
+.goodsItemBox {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10rpx 25rpx;
+  background: #fff;
+  margin-top: 15rpx;
+}
+.goodsItemBox .img {
+  width: 170rpx;
+  height: 110rpx;
+  margin-right: 15rpx;
+}
+.goodsItemBox .content {
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.goodsItemBox .content .name {
+  font-size: 30rpx;
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 6rpx;
+}
+.goodsItemBox .content .detail {
+  width: calc(100vw - 220rpx - 220rpx);
+  font-size: 26rpx;
+  color: #666;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+     text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.goodsItemBox .content .priceBox {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.goodsItemBox .content .priceBox .nowTitle {
+  font-size: 28rpx;
+  font-weight: 500;
+  color: red;
+}
+.goodsItemBox .content .priceBox .danw {
+  font-size: 22rpx;
+  color: red;
+}
+.goodsItemBox .content .priceBox .nowPrice {
+  font-size: 30rpx;
+  color: red;
+  font-weight: 600;
+}
+.goodsItemBox .content .priceBox .oldBox {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 22rpx;
+  color: #666;
+  margin-left: 10rpx;
+}
+.goodsItemBox .content .priceBox .oldBox .price {
+  text-decoration: line-through;
+}
+.goodsItemBox .content .time {
+  font-size: 30rpx;
+  color: #666;
+  font-weight: 500;
+}
+.goodsItemBox .btn {
+  padding: 5rpx 18rpx;
+  font-size: 30rpx;
+  color: #fff;
+  background: red;
+  border-radius: 10rpx;
+  margin-left: 15rpx;
+}
+.shareTitle {
+  width: 100%;
+  font-size: 30rpx;
+  color: #333;
+  padding-top: 15rpx;
+  padding-bottom: 30rpx;
+  text-align: center;
+}
+.shareBox {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 40rpx;
+  margin-bottom: 20rpx;
+}
+.shareBox .shareItem {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 28rpx;
+  color: #333;
+  background: #fff;
+  padding: 0;
+  margin: 0;
+}
+.shareBox .shareItem .shareIconImg {
+  width: 70rpx;
+  height: 70rpx;
+  margin-bottom: 30rpx;
+}
+.shareBox .shareItem .wechatBox {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.shareBox .shareItem .wechatBox .wechatIconImg {
+  width: 70rpx;
+  height: 70rpx;
+  margin-bottom: 15rpx;
+}
+button::after {
+  border: none;
+}
+

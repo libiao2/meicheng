@@ -1,0 +1,180 @@
+.container {
+  height: 100%;
+  .heade{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 15px;
+    .left{
+      flex-direction: row;
+      align-items: center;
+      margin-right: 30px;
+      font-size: 26px;
+    }
+    .search{
+      flex: 1;
+      display: flex;
+      align-items: center;
+      height: 60px;
+      border: 1px solid #f1f1f1;
+      border-radius: 12px;
+      padding: 0 30px;
+      text-align: center;
+      background: #fff;
+      .text{
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        font-size: 26px;
+        color: #999;
+        margin-right: 30px;
+      }
+    }
+  }
+  .swiperBox{
+    width: 100%;
+    height: 330px;
+    position: relative;
+    .swiper{
+      height: 100%;
+      .swiperImg{
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .noticeBox{
+      width: 90%;
+      // padding: 0 50px;
+      position: absolute;
+      bottom: 20px;
+      left: 5%;
+      right: 5%;
+    }
+  }
+  .tpyeBox{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 26px;
+    color: #333;
+    // margin-top: 15px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    background: #fff;
+    .itemBox{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      .yuan{
+        width: 80px;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 80px;
+        background: rgb(191, 205, 217);
+        margin-bottom: 15px;
+        .icon{
+          font-size: 40px;
+          font-weight: 500;
+          color: #fff;
+        }
+        .iconImg{
+          width: 40px;
+          height: 40px;
+        }
+      }
+      .yuanChoose{
+        background: rgb(36, 200, 178);
+      }
+      .chooseType{
+        color: rgb(36, 200, 178);
+      }
+    }
+  }
+  .xainshi{
+    margin-top: 10px;
+    background: #fff;
+    padding: 10px 15px;
+    padding-bottom: 30px;
+    .topBox{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      .title{
+        font-size: 28px;
+        font-weight: bold;
+        color: #333;
+      }
+      .right{
+        display: flex;
+        align-items: center;
+        text-align: center;
+        .rightText{
+          font-size: 22px;
+          color: #999;
+        }
+      }
+    }
+    .quanList{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .box{
+        width: 46%;
+        height: 200px;
+        border-radius: 12px;
+        border: 1px solid #f1f1f1;
+        // line-height: 200px;
+        // background: rgb(148,184,193);
+        // text-align: center;
+        // font-size: 23px;
+        // color: #fff;
+      }
+    }
+    
+  }
+  .googsList{
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    flex-wrap:wrap;
+    margin-top: 10px;
+    
+  }
+  
+}
+.at-noticebar {
+  background: #fff !important;
+  border-radius: 15px;
+  padding: 8px 24px;
+}
+.shouquan{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  .myBtn{
+    width: 200px;
+    height: 60px;
+    font-size: 24px;
+    color: #fff;
+    background: rgb(36, 200, 178);
+    margin-top: 60px;
+  }
+}
+.noData{
+  width: 100vw;
+  height: 200px;
+  line-height: 200px;
+  text-align: center;
+  font-size: 30px;
+  color: #666;
+}
+.at-noticebar__content-inner{
+  animation: marquee 5s linear infinite both !important;
+}
+
+

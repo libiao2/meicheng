@@ -1,0 +1,52 @@
+<block wx:if="{{$taroCompReady}}">
+    <view class="container">
+        <block>
+            <block wx:if="{{dataList.length > 0}}">
+                <view class="itemBox" wx:for="{{loopArray100}}" wx:for-item="item" wx:for-index="index">
+                    <view class="titleBox">
+                        <view class="title">
+                            <image class="shopIcon" src="{{item.$loopState__temp2}}"></image>
+                            <view>{{item.$original.name}}</view>
+                        </view>
+                        <view class="needP">待分享，差{{item.$original.chaNum}}人</view>
+                    </view>
+                    <view class="listBox" wx:for="{{item.$anonymousCallee__15}}" wx:for-item="item2" wx:for-index="index2">
+                        <view class="orderInfoBox">
+                            <image class="goodsImg" src="{{item2.$original.pic}}"></image>
+                            <view class="rightInfo">
+                                <view class="nameBox"><text class="name">{{item2.$original.productItemName}}</text><text>x{{item2.$original.quantity}}</text>
+                                </view>
+                                <view class="priceBox">
+                                    <view class="moneyBox"><text class="now">现价:${{item2.$original.price}}</text>
+                                        <view class="old">原价:<text class="oldP">${{item2.$original.groupOriginalPrice}}</text>
+                                        </view>
+                                    </view>
+                                    <view class="btn yao" bindtap="anonymousFunc0" data-e-tap-so="this" data-e-tap-a-a="{{item2._$indexKey}}">邀请拼团</view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="footerBox">
+                        <view class="needPay">实付：${{item.$original.orderFee}}</view>
+                    </view>
+                </view>
+            </block>
+            <block wx:else>
+                <view class="noData">暂无更多数据~</view>
+            </block>
+        </block>
+        <at-action-sheet compid="{{$compid__262}}">
+            <at-action-sheet-item>
+                <view class="shareTitle"><text>邀请好友拼团</text>
+                </view>
+                <view class="shareBox">
+                    <button class="shareItem" open-type="share">
+                        <view class="wechatBox">
+                            <image src="{{anonymousState__temp3}}" class="wechatIconImg"></image><text>微信好友</text>
+                        </view>
+                    </button>
+                </view>
+            </at-action-sheet-item>
+        </at-action-sheet>
+    </view>
+</block>

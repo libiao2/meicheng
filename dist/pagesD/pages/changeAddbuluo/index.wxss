@@ -1,0 +1,142 @@
+.container .shopImgBox {
+  margin: 10rpx 15rpx;
+  padding: 15rpx 20rpx;
+  border: 1rpx dashed #e8e8e8;
+}
+.container .shopImgBox .shopTop {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 40rpx;
+}
+.container .shopImgBox .shopTop .left {
+  font-size: 30rpx;
+  color: #333;
+}
+.container .shopImgBox .shopTop .right {
+  font-size: 24rpx;
+  color: #999;
+}
+.container .shopImgBox .chooseImgList {
+  width: 100%;
+  padding: 10rpx;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+.container .shopImgBox .chooseImgList .chooseImgBox {
+  width: 140rpx;
+  height: 140rpx;
+  position: relative;
+  margin-bottom: 20rpx;
+  margin-right: 15rpx;
+  margin-left: 10rpx;
+}
+.container .shopImgBox .chooseImgList .chooseImgBox .shooseImg {
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 10rpx;
+}
+.container .shopImgBox .chooseImgList .chooseImgBox .deleteImg {
+  position: absolute;
+  top: 10rpx;
+  right: 10rpx;
+  width: 40rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  text-align: center;
+  border-radius: 20rpx;
+  background: rgba(130, 130, 130, 0.8);
+  font-size: 28rpx;
+  color: #fff;
+}
+.container .shopImgBox .imgBox {
+  margin: 0 auto;
+}
+.container .itemBox {
+  margin: 20rpx 25rpx;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.container .itemBox .leftPart {
+  width: 160rpx;
+  font-size: 30rpx;
+  color: #333;
+}
+.container .itemBox .shopNameInput {
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  height: 80rpx;
+  font-size: 26rpx;
+  padding: 0 15rpx;
+  border: 1rpx solid #d1d1d1;
+}
+.container .itemBox .rightText {
+  font-size: 30rpx;
+  color: #333;
+  margin-left: 15rpx;
+}
+.container .textBox {
+  margin: 10rpx 13rpx;
+  padding: 15rpx 20rpx;
+  border: 1rpx dashed #e8e8e8;
+}
+.container .textBox .title {
+  font-size: 30rpx;
+  color: #333;
+}
+.container .textBox .placeholderClass {
+  font-size: 20rpx;
+}
+.container .textBox .text {
+  height: 150rpx;
+  font-size: 26rpx;
+  color: #666;
+  margin-top: 20rpx;
+}
+.container .textBox .text::-webkit-input-placeholder {
+  font-size: 25rpx;
+}
+.btn {
+  width: 80%;
+  margin-top: 60rpx;
+  margin-bottom: 30rpx;
+  background: #24c8b2;
+  color: #fff;
+}
+.typeBox {
+  margin: 10rpx 25rpx;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.typeBox .typeBoxItem {
+  padding: 6rpx 15rpx;
+  background: #24c8b2;
+  border-radius: 15rpx;
+  font-size: 26rpx;
+  color: #fff;
+}
+

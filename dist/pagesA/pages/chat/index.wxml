@@ -1,0 +1,33 @@
+<block wx:if="{{$taroCompReady}}">
+    <view class="chatCcontainer" id="chatCcontainer">
+        <scroll-view>
+            <view class="itemBox" wx:for="{{loopArray89}}" wx:for-item="item" wx:for-index="_anonIdx2">
+                <block>
+                    <block wx:if="{{item.$loopState__temp2}}">
+                        <view class="right"><text class="text rightText" style="margin-right: 10px">{{item.$original.content}}</text>
+                            <image class="peopleImg" src="{{item.$original.sendImg}}"></image>
+                        </view>
+                    </block>
+                    <block wx:else>
+                        <block>
+                            <block wx:if="{{item.$original.sendId == info.memberId}}">
+                                <view class="left">
+                                    <image style="margin-right: 10px" class="peopleImg" src="{{item.$original.sendImg}}"></image><text class="text">{{item.$original.content}}</text>
+                                </view>
+                            </block>
+                            <block wx:else><text class="time">时间</text>
+                            </block>
+                        </block>
+                    </block>
+                </block>
+            </view>
+        </scroll-view>
+        <view id="hideBox" style="float:left;clear: both"></view>
+        <view class="footer">
+            <view class="box">
+                <input type="text" class="input" value="{{message}}" bindchange="messageChange" data-e-change-so="this" />
+                <at-icon compid="{{$compid__244}}"></at-icon>
+            </view>
+        </view>
+    </view>
+</block>

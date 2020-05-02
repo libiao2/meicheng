@@ -1,0 +1,79 @@
+.container{
+  .orderBox{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #fff;
+    margin-bottom: 15px;
+    .orderNo{
+      width: 100vw;
+      padding: 20px 25px;
+      font-size: 24px;
+      color: #333;
+      border-bottom: 1px solid #d1d1d1;
+      box-sizing: border-box;
+    }
+    .goodsInfo{
+      width: 100vw;
+      display: flex;
+      align-items: center;
+      padding: 20px 25px;
+      box-sizing: border-box;
+      .goodsImg{
+        width: 200px;
+        height: 150px;
+        border: 1px solid #e1e1e1;
+        margin-right: 15px;
+      }
+      .goodsDetail{
+        flex: 1;
+        height: 150px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        // align-items: center;
+        .nameBox{
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          font-size: 26px;
+          font-weight: 500;
+          color: #333;
+        }
+        .countBox{
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          font-size: 24px;
+          color: #999;
+        }
+        .footerBox{
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          .box{
+            font-size: 20px;
+            color: #999;
+            border: 1px solid #d1d1d1;
+            padding: 4px 10px;
+            margin-left: 15px;
+          }
+          .already{
+            color: rgb(36, 200, 178);
+            border: 1px solid rgb(36, 200, 178);
+          }
+        }
+      }
+    }
+  }
+}
+.noData{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 200px 0;
+  font-size: 28px;
+  color: #999;
+}

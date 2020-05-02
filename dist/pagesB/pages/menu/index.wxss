@@ -1,0 +1,71 @@
+.container .itemBox {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.container .itemBox .item {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #fff;
+  margin-bottom: 10rpx;
+}
+.container .itemBox .item .img {
+  width: 160rpx;
+  height: 110rpx;
+  margin-right: 15rpx;
+  margin-left: 25rpx;
+}
+.container .itemBox .item .right {
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  height: 110rpx;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-right: 25rpx;
+}
+.container .itemBox .item .right .leftPart .name {
+  font-size: 28rpx;
+  color: #333;
+  font-weight: 500;
+  margin-right: 20rpx;
+}
+.container .itemBox .item .right .leftPart .price {
+  font-size: 24rpx;
+  color: red;
+}
+.noData {
+  width: 100vw;
+  margin-top: 120rpx;
+  font-size: 28rpx;
+  color: #666;
+  text-align: center;
+}
+.iconBox {
+  width: 150rpx;
+  height: 100rpx;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: flex-end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+

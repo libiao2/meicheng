@@ -1,0 +1,6 @@
+<block wx:if="{{$taroCompReady}}">
+    <view class="container">
+        <image class="img" src="{{userInfo.avatarUrl}}"></image><text class="name">{{userInfo.nickName}}</text>
+        <button class="btnBox" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">点击登录</button>
+    </view>
+</block>

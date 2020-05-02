@@ -1,0 +1,29 @@
+<block wx:if="{{$taroCompReady}}">
+    <view class="container">
+        <view class="itemBox" wx:key="name" wx:for="{{loopArray91}}" wx:for-item="item" wx:for-index="index">
+            <image class="img" src="{{item.$original.pic}}"></image>
+            <view class="content" bindtap="anonymousFunc0" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey}}"><text class="name">{{item.$original.name}}</text><text class="detail">{{item.$original.detail}}</text>
+                <view class="priceBox"><text class="nowTitle">现价:</text><text class="danw">$</text><text class="nowPrice">{{item.$original.groupPrice}}</text>
+                    <view class="oldBox"><text>原价:</text><text class="price">${{item.$original.price}}</text>
+                    </view>
+                </view>
+                <block>
+                    <block wx:if="{{item.$original.processingIs}}">
+                        <view class="time">
+                            <at-countdown compid="{{item.$compid__247}}"></at-countdown><text>后结束</text>
+                        </view>
+                    </block>
+                    <block wx:else>
+                        <view class="time"><text style="margin-right:10px">{{item.$original.startTimeString}}</text><text>后开始</text>
+                        </view>
+                    </block>
+                </block>
+            </view>
+            <view bindtap="anonymousFunc1" class="{{'btn ' + (!item.$original.processingIs && 'noDoing')}}" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey2}}">参与拼团</view>
+        </view>
+        <block wx:if="{{dataList.length == 0}}">
+            <view class="noPinglun"><text>暂无数据~~</text>
+            </view>
+        </block>
+    </view>
+</block>

@@ -1,0 +1,43 @@
+<block wx:if="{{$taroCompReady}}">
+    <view class="container">
+        <at-form>
+            <view class="shopImgBox">
+                <view class="shopTop"><text class="left">请添加服务图片</text><text class="right">(可上传1-30张图片)</text>
+                </view>
+                <block wx:if="{{fuwuImgList.length > 0}}">
+                    <view class="chooseImgList">
+                        <view class="chooseImgBox" wx:for="{{loopArray103}}" wx:for-item="item" wx:for-index="index">
+                            <image class="shooseImg" src="{{item.$original}}"></image>
+                            <view class="deleteImg" bindtap="anonymousFunc0" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey}}"><text>x</text>
+                            </view>
+                        </view>
+                    </view>
+                </block>
+                <view class="imgBox">
+                    <choose-image compid="{{$compid__270}}"></choose-image>
+                </view>
+            </view>
+            <view class="itemBox"><text class="leftPart">服务名称:</text>
+                <input type="text" class="shopNameInput" placeholder="请输入名称" value="{{name}}" bindchange="foodNameChange" data-e-change-so="this" />
+            </view>
+            <view class="itemBox"><text class="leftPart">价格:</text>
+                <input type="text" class="shopNameInput" placeholder="请输入价格" value="{{price}}" bindchange="priceChange" data-e-change-so="this" /><text class="rightText">元</text>
+            </view>
+            <view style="height: 5px;background:#f1f1f1"></view>
+            <view class="textBox"><text class="title">详细说明:</text>
+                <at-textarea compid="{{$compid__271}}"></at-textarea>
+            </view>
+            <view style="height: 5px;background:#f1f1f1"></view>
+            <view class="textBox"><text class="title">购买须知:</text>
+                <at-textarea compid="{{$compid__272}}"></at-textarea>
+            </view>
+            <view style="height: 5px;background:#f1f1f1"></view>
+            <view class="textBox"><text class="title">其他说明:</text>
+                <at-textarea compid="{{$compid__273}}"></at-textarea>
+            </view>
+            <at-button compid="{{$compid__274}}">确认</at-button>
+            <view style="height: 30px;background:#fff"></view>
+        </at-form>
+        <at-toast compid="{{$compid__275}}"></at-toast>
+    </view>
+</block>

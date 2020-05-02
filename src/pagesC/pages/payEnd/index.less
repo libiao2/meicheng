@@ -1,0 +1,171 @@
+.container{
+  .topBox{
+    display: flex;
+    align-items: center;
+    padding: 20px 30px;
+    background: #fff;
+    .okImg{
+      width: 110px;
+      height: 110px;
+      margin-right: 20px;
+    }
+    .labelBox{
+      display: flex;
+      flex-direction: column;
+      .title{
+        font-size: 30px;
+        font-weight: 500;
+        color: #333;
+      }
+      .label{
+        font-size: 24px;
+        color: #666;
+        margin-top: 10px;
+      }
+    }
+  }
+  .infoBox{
+    margin-top: 15px;
+    background: #fff;
+    padding-bottom: 20px;
+    .shopBox{
+      display: flex;
+      align-items: center;
+      padding: 20px 30px;
+      font-size: 26px;
+      color: #999;
+      .icon{
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+      }
+    }
+    .shopInfoBox{
+      margin: 0 30px;
+      border: 1px solid #d1d1d1;
+      border-radius: 12px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      .name{
+        font-size: 26px;
+        color: #333;
+        font-weight: 500;
+        margin-bottom: 15px;
+      }
+      .num{
+        font-style: 28px;
+        color: rgb(36, 200, 178);
+      }
+    }
+  }
+}
+.btnBox{
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .btn{
+    width: 60vw;
+    height: 90px;
+    line-height: 90px;
+    text-align: center;
+    font-size: 28px;
+    color: #fff;
+    background: rgb(36, 200, 178);
+    border-radius: 12px;
+    margin-top: 80px;
+  }
+}
+.toastBox{
+  padding: 30px 0;
+  .line{
+    width: 100%;
+    height: 10px;
+    background: #e8e8e8;
+  }
+  .toastTopBox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 26px;
+    color: #333;
+    padding-bottom: 15px;
+    .userImg{
+      width: 100px;
+      height: 100px;
+      border-radius: 50px;
+      margin-bottom: 20px;
+    }
+  }
+  .toastBottomBox{
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    .goodsImg{
+      width: 150px;
+      height: 130px;
+      margin-right: 15px;
+    }
+    .goodsInfoBox{
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      .goodsName{
+        font-size: 26px;
+        font-weight: 500;
+        color: #333;
+      }
+      .goodsDetail{
+        width: 300px;
+        font-size: 22px;
+        color: #666;
+        overflow: hidden;
+        text-overflow:ellipsis;
+        white-space: nowrap;
+      }
+      .priceBox{
+        display: flex;
+        align-items: center;
+        .now{
+          font-size: 26px;
+          font-weight: 500;
+          color: red;
+          margin-right: 20px;
+        }
+        .oldBox{
+          font-size: 18px;
+          color: #999;
+          .old{
+            text-decoration: line-through;
+          }
+        }
+      }
+    }
+  }
+  .shareBox{
+    width: 100%;
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .shareBtn{
+      width: 70%;
+      height: 80px;
+      line-height: 80px;
+      text-align: center;
+      background: red;
+      border-radius: 40px;
+      font-size: 26px;
+      color: #fff;
+      border: none;
+    }
+  }
+}
+button::after{
+  border: none;
+}
+.at-modal__content{
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}

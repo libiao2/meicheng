@@ -1,0 +1,299 @@
+.container{
+  /deep/ .at-form::after{
+    border: none !important;
+  }
+  
+  .shopImgBox{
+    margin: 10px 15px;
+    padding: 15px 20px;
+    border: 1px dashed #f1f1f1;
+    .shopTop{
+      display: flex;
+      align-items: center;
+      margin-bottom: 40px;
+      .left{
+        font-size: 30px;
+        color: #333;
+      }
+      .right{
+        font-size: 24px;
+        color: #999;
+      }
+    }
+    .imgBox{
+      margin: 0 auto;
+    }
+  }
+  .contentTitle{
+    font-size: 30px;
+    color: #333;
+    margin: 10px 15px;
+  }
+  .itemBox{
+    margin: 20px 25px;
+    display: flex;
+    align-items: center;
+    .leftPart{
+      width: 160px;
+      font-size: 30px;
+      color: #333;
+    }
+    .shopNameInput{
+      flex: 1;
+      height: 80px;
+      font-size: 26px;
+      padding: 0 15px;
+      border: 1px solid #d1d1d1;
+    }
+    .cityChooseBox{
+      flex: 1;
+      height: 80px;
+      padding: 0 15px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 26px;
+      border: 1px solid #e1e1e1;
+    }
+    .areaBox{
+      flex: 1;
+      height: 80px;
+      padding: 0 15px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 26px;
+      border: 1px solid #e1e1e1;
+      .areaInput{
+        width: 80%;
+        height: 80px;
+      }
+      .picker{
+        width: 400px;
+        height: 80px;
+        line-height: 80px;
+        font-size: 26px;
+        color: #666;
+      }
+      .iconBox{
+        width: 200px;
+        height: 80px !important;
+        line-height: 80px;
+        display: flex;
+        justify-content: flex-end;
+      }
+    }
+    .time{
+      flex-direction: row;
+    }
+    .radioGroup{
+      display: flex;
+      align-items: center;
+      font-size: 26px;
+      color: #333;
+      .radioBox{
+        display: flex;
+        align-items: center;
+        margin-right: 40px;
+        .yuan{
+          width: 30px;
+          height: 30px;
+          border-radius: 15px;
+          border: 1px solid #e1e1e1;
+          margin-right: 6px;
+        }
+        .isChoose{
+          background: rgb(36, 200, 178);
+        }
+      }
+    }
+  }
+  .leixing{
+    margin: 10px 15px;
+    .title{
+      font-size: 30px;
+      color: #333;
+    }
+    .allChoose{
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      margin: 10px  20px;
+      .oneChoose{
+        width: 25%;
+        display: flex;
+        align-items: center;
+        font-size: 26px;
+        color: #555;
+        margin-bottom: 15px;
+        .fang{
+          width: 30px;
+          height: 30px;
+          border: 1px solid #e1e1e1;
+          margin-right: 8px;
+        }
+        .typeChooseClick{
+          background: rgb(36, 200, 178);
+        }
+      }
+    }
+    
+  }
+
+  .quanBox{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 15px;
+    .leftPart{
+      font-size: 30px;
+      color: #333;
+    }
+    .moreBox{
+      display: flex;
+      align-items: center;
+      .more{
+        font-size: 24px;
+        color: #999;
+      }
+    }
+  }
+  .lastTitle{
+    margin:20px 15px;
+    font-size: 30px;
+    color: #333;
+  }
+  
+}
+
+/deep/.at-form{
+  padding: 15px 0;
+}
+.youhuiList{
+  max-height: 600px;
+  overflow-y: scroll;
+  .youhui{
+    margin: 10px 15px;
+    display: flex;
+    
+    .youhuiImg{
+      width: 160px;
+      height: 160px;
+      margin-right: 20px;
+    }
+    .right{
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      .btnbox{
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        .deleteBtn{
+          height: 50px;
+          line-height: 50px;
+          font-size: 26px;
+          margin: 0;
+          margin-right: 30px;
+        }
+        .changeBtn{
+          height: 50px;
+          line-height: 50px;
+          font-size: 26px;
+          margin: 0;
+        }
+      }
+      .box{
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        .title{
+          font-size: 30px;
+          color: #333;
+          margin-right: 20px;
+        }
+        .titleName{
+          font-size: 26px;
+          color: #666;
+        }
+        .smallBox{
+          display: flex;
+          align-items: center;
+          margin-right: 15px;
+          .title{
+            font-size: 30px;
+            color: #333;
+            margin-right: 10px;
+          }
+          .input{
+            flex: 1;
+            font-size: 26px;
+            color: #666;
+            padding: 0 10px;
+            border: 1px solid #e1e1e1;
+          }
+        }
+      }
+    }
+  }
+
+}
+.btn{
+  width: 80%;
+  margin-top: 60px;
+  margin-bottom: 30px;
+  background: rgb(36, 200, 178);
+  color: #fff;
+}
+
+.textBox{
+  margin: 10px 13px;
+  padding: 15px 20px;
+  border: 1px dashed #e8e8e8;
+  .title{
+    font-size: 30px;
+    color: #333;
+  }
+  .placeholderClass{
+    font-size: 20px;
+  }
+  .text{
+    height: 150px;
+    font-size: 26px;
+    color: #666;
+    margin-top: 20px;
+  }
+  .text::-webkit-input-placeholder {
+    font-size: 25px;
+  }
+}
+
+.ss{
+  width: 120px !important;
+}
+.flexEnd{
+  align-items: flex-start !important;
+}
+
+.concentTitle{
+  font-size: 32px;
+  color: #333;
+  margin-left: 15px;
+}
+.typeListBox{
+  display :flex;
+  align-items: center;
+  padding: 20px 15px;
+  .textListBox{
+    padding: 8px 18px;
+    border-radius: 18px;
+    font-size: 30px;
+    color: #333;
+    margin-right: 20px;
+  }
+  .isChoose{
+    background: rgb(36, 200, 178);
+    color: #fff;
+  }
+}

@@ -1,0 +1,90 @@
+.footer{
+  position: fixed;
+  bottom: 0;
+  z-index: 1000;
+  .box{
+    width: 100vw;
+    height: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: #fff;
+    border-top: 1px solid #e1e1e1;
+    .item{
+      height: 110px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-size: 26px;
+      color: #333;
+      .boxItem{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .iconImg{
+          width: 50px;
+          height: 50px;
+        }
+      }
+    }
+  }
+}
+.shareBtn{
+  background: #fff;
+  border: none;
+  font-size: 26px;
+  color: #333;
+  padding: 0;
+}
+button::after{
+  border: none;
+}
+
+.icon{
+  font-size: 20px;
+  color: #999;
+}
+.shareTitle{
+  width: 100%;
+  font-size: 30px;
+  color: #333;
+  padding-top: 15px;
+  padding-bottom: 30px;
+  text-align: center;
+}
+.shareBox{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  margin-bottom: 20px;
+  .shareItem{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    color: #333;
+    background: #fff;
+    padding: 0;
+    margin: 0;
+    .shareIconImg{
+      width: 70px;
+      height: 70px;
+      margin-bottom: 30px;
+    }
+    .wechatBox{
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+      .wechatIconImg{
+        width: 70px;
+        height: 70px;
+        margin-bottom: 15px;
+      }
+    }
+  }
+}

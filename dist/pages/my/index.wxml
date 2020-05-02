@@ -1,0 +1,35 @@
+<block wx:if="{{$taroCompReady}}">
+    <view class="container">
+        <view class="header">
+            <view class="headerLeft">
+                <image class="img" src="{{userInfo.avatarUrl}}"></image><text class="name">{{userInfo.nickName}}</text>
+            </view>
+            <image class="headerRight" src="{{anonymousState__temp}}" bindtap="anonymousFunc0"></image>
+        </view>
+        <view class="tabBox">
+            <view class="tab">
+                <view class="box" bindtap="anonymousFunc1" wx:for="{{loopArray84}}" wx:for-item="item" wx:for-index="index" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey}}"><text class="top">{{item.$original.num}}</text><text>{{item.$original.title}}</text>
+                </view>
+            </view>
+        </view>
+        <view class="bottom">
+            <view class="flexBox">
+                <view class="smallBox" bindtap="anonymousFunc2">
+                    <image class="iconImg" src="{{anonymousState__temp2}}"></image><text class="text">联系方式</text>
+                </view>
+                <view class="smallBox" bindtap="anonymousFunc3">
+                    <image class="iconImg" src="{{anonymousState__temp3}}"></image><text class="text">拼团详情</text>
+                </view>
+                <button class="smallBox" open-type="contact">
+                    <image class="iconImg" src="{{anonymousState__temp4}}"></image><text class="text">联系客服</text>
+                </button>
+                <view class="smallBox"></view>
+                <view class="smallBox"></view>
+                <view class="smallBox"></view>
+                <view class="smallBox"></view>
+                <view class="smallBox"></view>
+                <view class="smallBox"></view>
+            </view>
+        </view>
+    </view>
+</block>

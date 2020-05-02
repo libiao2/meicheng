@@ -1,0 +1,206 @@
+.container{
+  .erweiImgBox{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+    background: #fff;
+    .erweiImg{
+      width: 160px;
+      height: 160px;
+    }
+  }
+  .fuwuBox{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+    box-sizing: border-box;
+    background: #fff;
+    .shopName{
+      font-size: 28px;
+      color: #333;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      .icon{
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+      }
+    }
+    .tuikuan{
+      font-size: 26px;
+      color: rgb(36, 200, 178);
+      border: 1px solid rgb(36, 200, 178);
+      padding: 5px 14px;
+    }
+  }
+  .orderNoBox{
+    width: 100%;
+    height: 80px;
+    font-size: 26px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+    background: #fff;
+    border-top: 1px solid #d1d1d1;
+    box-sizing: border-box;
+  }
+  .goodsListInfo{
+    margin-top: 15px;
+    background: #fff;
+    .titleName{
+      width: 100vw;
+      height: 80px;
+      line-height: 80px;
+      font-size: 28px;
+      color: #333;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      padding: 0 30px;
+      border-bottom: 1px solid #d1d1d1;
+      box-sizing: border-box;
+      .icon{
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+      }
+    }
+    .goodsInfoBox{
+      width: 100vw;
+      display: flex;
+      align-items: center;
+      padding: 15px 30px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+      .goodsImg{
+        width: 130px;
+        height: 110px;
+        margin-right: 15px;
+      }
+      .goodsDetail{
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        .countInfo{
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          font-size: 26px;
+          color: #333;
+        }
+        .detail{
+          width: 300px;
+          font-size: 24px;
+          color: #999;
+          margin-top: 10px;
+          overflow: hidden;
+          text-overflow:ellipsis;
+          white-space: nowrap;
+        }
+      }
+    }
+    .connectBox{
+      width: 100vw;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 30px;
+      border-top: 1px solid #d1d1d1;
+      box-sizing: border-box;
+      .left{
+        flex: 1;
+        display: flex;
+        align-items: center;
+        .smallBox{
+          display: flex;
+          align-items: center;
+          font-size: 24px;
+          color: #333;
+          .icon{
+            width: 30px;
+            height: 30px;
+            margin-right: 6px;
+          }
+          .address{
+            width: 250px;
+            overflow: hidden;
+            text-overflow:ellipsis;
+            white-space: nowrap;
+          }
+        }
+        
+        .phone{
+          color: rgb(36, 200, 178);
+          margin-right: 20px;
+        }
+      }
+      .needPay{
+        font-size: 28px;
+        color: #333;
+        
+        .money{
+          font-weight: 500;
+        }
+      }
+    }
+  }
+  .orderIndoBox{
+    margin-top: 15px;
+    background: #fff;
+    .title{
+      width: 100%;
+      height: 80px;
+      line-height: 80px;
+      font-size: 28px;
+      color: #333;
+      font-weight: 500;
+      padding-left: 30px;
+    }
+    .listBox{
+      .oneBox{
+        width: 100vw;
+        height: 80px;
+        line-height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 30px;
+        font-size: 26px;
+        color: #333;
+        border-bottom: 1px solid #d1d1d1;
+        box-sizing: border-box;
+        .right{
+          color: #999;
+        }
+        .isNoBox{
+          display: flex;
+          align-items: center;
+          .oneChooseBox{
+            display: flex;
+            align-items: center;
+            margin-left: 30px;
+            .cicle{
+              width: 30px;
+              height: 30px;
+              border-radius: 15px;
+              border: 1px solid #d1d1d1;
+              margin-right: 6px;
+            }
+            .ischoose{
+              background: rgb(36, 200, 178);
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,134 @@
+.footer {
+  position: fixed;
+  bottom: 0;
+  z-index: 1000;
+}
+.footer .box {
+  width: 100vw;
+  height: 110rpx;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+  background: #fff;
+  border-top: 1rpx solid #e1e1e1;
+}
+.footer .box .item {
+  height: 110rpx;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 26rpx;
+  color: #333;
+}
+.footer .box .item .boxItem {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.footer .box .item .boxItem .iconImg {
+  width: 50rpx;
+  height: 50rpx;
+}
+.shareBtn {
+  background: #fff;
+  border: none;
+  font-size: 26rpx;
+  color: #333;
+  padding: 0;
+}
+button::after {
+  border: none;
+}
+.icon {
+  font-size: 20rpx;
+  color: #999;
+}
+.shareTitle {
+  width: 100%;
+  font-size: 30rpx;
+  color: #333;
+  padding-top: 15rpx;
+  padding-bottom: 30rpx;
+  text-align: center;
+}
+.shareBox {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 40rpx;
+  margin-bottom: 20rpx;
+}
+.shareBox .shareItem {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 28rpx;
+  color: #333;
+  background: #fff;
+  padding: 0;
+  margin: 0;
+}
+.shareBox .shareItem .shareIconImg {
+  width: 70rpx;
+  height: 70rpx;
+  margin-bottom: 30rpx;
+}
+.shareBox .shareItem .wechatBox {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.shareBox .shareItem .wechatBox .wechatIconImg {
+  width: 70rpx;
+  height: 70rpx;
+  margin-bottom: 15rpx;
+}
+

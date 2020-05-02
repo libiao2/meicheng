@@ -1,0 +1,30 @@
+<block wx:if="{{$taroCompReady}}">
+    <view class="footer">
+        <view class="box">
+            <view class="item" bindtap="anonymousFunc0" wx:for="{{loopArray88}}" wx:for-item="item" wx:for-index="index" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey}}">
+                <view class="boxItem">
+                    <image src="{{item.$loopState__temp2}}" class="iconImg"></image><text>{{item.$original.title}}</text>
+                </view>
+            </view>
+        </view>
+        <at-action-sheet compid="{{$compid__231}}">
+            <at-action-sheet-item wx:key="index" compid="{{$compid__232}}">
+                <view class="shareTitle"><text>分享</text>
+                </view>
+                <view class="shareBox">
+                    <button class="shareItem" open-type="share">
+                        <view class="wechatBox">
+                            <image src="{{anonymousState__temp3}}" class="wechatIconImg"></image><text>微信好友</text>
+                        </view>
+                    </button>
+                    <button class="shareItem" bindtap="anonymousFunc3">
+                        <view class="wechatBox">
+                            <image src="{{anonymousState__temp4}}" class="wechatIconImg"></image><text>朋友圈</text>
+                        </view>
+                    </button>
+                </view>
+            </at-action-sheet-item>
+        </at-action-sheet>
+        <at-toast compid="{{$compid__233}}"></at-toast>
+    </view>
+</block>
