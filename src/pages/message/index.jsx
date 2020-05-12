@@ -41,7 +41,6 @@ class Message extends Component {
     
   }
   componentDidMount() {
-    console.log('5555555555555555555')
     
   }
   componentWillReceiveProps (nextProps) {
@@ -51,7 +50,9 @@ class Message extends Component {
   componentWillUnmount () { }
 
   componentDidShow () {
-    this.getMessageList()
+    if(Taro.getStorageSync('userInfo') != '') {
+      this.getMessageList()
+    }
   }
 
   componentDidHide () { }
@@ -80,6 +81,12 @@ class Message extends Component {
       }
     })
     
+  }
+
+  goLogin() {
+    Taro.switchTab({
+      url: `/pages/my/index`
+    })
   }
 
 
@@ -117,7 +124,17 @@ class Message extends Component {
           })
           :
           <View className='noData'>
-            <Text>暂无消息~~</Text>
+            {
+              Taro.getStorageSync('token') != '' ?
+              <Text>暂无消息~~</Text>
+              :
+              <View>
+                <Text>暂未登录~~</Text>
+                <View className='bigBox' onClick={() => this.goLogin()}>
+                  <View className='loginBtn'>登录</View>
+                </View>
+              </View>
+            }
           </View>
         }
       </View>

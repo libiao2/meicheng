@@ -6,7 +6,7 @@
                     <view class="shopTop"><text class="left">请添加店面展示图片</text><text class="right">(可上传1-30张图片)</text>
                     </view>
                     <view class="imgBox">
-                        <choose-image compid="{{$compid__461}}"></choose-image>
+                        <choose-image compid="{{$compid__435}}"></choose-image>
                     </view>
                 </view><text class="contentTitle">店面基本信息</text>
                 <view class="itemBox"><text class="leftPart">店名:</text>
@@ -14,17 +14,17 @@
                 </view>
                 <view class="itemBox"><text class="leftPart">所在城市:</text>
                     <view class="cityChooseBox" bindtap="anonymousFunc0"><text>{{cityName}}</text>
-                        <at-icon compid="{{$compid__462}}"></at-icon>
+                        <at-icon compid="{{$compid__436}}"></at-icon>
                     </view>
-                    <at-action-sheet compid="{{$compid__463}}">
-                        <at-action-sheet-item wx:key="index" wx:for="{{loopArray174}}" wx:for-item="item" wx:for-index="index" compid="{{item.$compid__460}}">{{item.$original.name}}</at-action-sheet-item>
+                    <at-action-sheet compid="{{$compid__437}}">
+                        <at-action-sheet-item wx:key="index" wx:for="{{loopArray155}}" wx:for-item="item" wx:for-index="index" compid="{{item.$compid__434}}">{{item.$original.name}}</at-action-sheet-item>
                     </at-action-sheet>
                 </view>
                 <view class="itemBox"> <text class="leftPart">地址:</text>
                     <view class="areaBox">
                         <input type="text" class="areaInput" placeholder="点击地区图标定位当前地址" value="{{address}}" bindchange="areaNameChange" data-e-change-so="this" />
                         <view class="iconBox" bindtap="anonymousFunc3">
-                            <at-icon compid="{{$compid__464}}"></at-icon>
+                            <at-icon compid="{{$compid__438}}"></at-icon>
                         </view>
                     </view>
                 </view>
@@ -39,7 +39,7 @@
                     </picker>
                 </view>
                 <view class="itemBox"><text class="leftPart">联系电话:</text>
-                    <input type="number" class="shopNameInput" placeholder="请输入联系电话" value="{{telephone}}" bindchange="phoneChange" data-e-change-so="this" />
+                    <input type="number" class="shopNameInput" placeholder="请输入联系电话" value="{{telephone}}" bindblur="phoneBlur" bindchange="phoneChange" data-e-blur-so="this" data-e-change-so="this" />
                 </view>
                 <view class="itemBox"><text class="leftPart">外卖:</text>
                     <view class="radioGroup">
@@ -53,24 +53,24 @@
                 </view>
                 <block wx:if="{{takeaway}}">
                     <view class="itemBox"><text class="leftPart">外卖配送费:</text>
-                        <input type="text" class="shopNameInput" placeholder="请输入配送费" value="{{takeawayFee}}" bindchange="deliverFeeChange" data-e-change-so="this" />
+                        <input type="text" class="shopNameInput" placeholder="请输入配送费" value="{{takeawayFee}}" bindchange="deliverFeeChange" data-e-change-so="this" /><text class="doller">$</text>
                     </view>
                 </block>
                 <view class="leixing"><text class="title">类型</text>
                     <view class="allChoose">
-                        <view class="oneChoose" wx:key="value" bindtap="anonymousFunc6" wx:for="{{loopArray175}}" wx:for-item="item" wx:for-index="index" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey2}}">
+                        <view class="oneChoose" wx:key="value" bindtap="anonymousFunc6" wx:for="{{loopArray156}}" wx:for-item="item" wx:for-index="index" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey2}}">
                             <view class="{{'fang ' + (item.$original.isChoose ? 'typeChooseClick' : null)}}"></view><text>{{item.$original.label}}</text>
                         </view>
                     </view>
                 </view>
                 <view style="height: 5px;background:#f1f1f1"></view>
                 <view class="quanBox" bindtap="anonymousFunc7"><text class="leftPart">优惠券</text>
-                    <view class="moreBox"><text class="more">添加优惠券</text>
-                        <at-icon compid="{{$compid__465}}"></at-icon>
+                    <view class="moreBox"><text class="more">点击添加优惠券</text>
+                        <at-icon compid="{{$compid__439}}"></at-icon>
                     </view>
                 </view>
                 <view class="youhuiList">
-                    <view class="youhui" wx:for="{{loopArray176}}" wx:for-item="item" wx:for-index="index">
+                    <view class="youhui" wx:for="{{loopArray157}}" wx:for-item="item" wx:for-index="index">
                         <image class="youhuiImg" src="{{item.$original.picList[0]}}"></image>
                         <view class="right">
                             <view class="box"><text class="title">名称:</text><text class="titleName">{{item.$original.name}}</text>
@@ -86,12 +86,12 @@
                 </view>
                 <view style="height: 5px;background:#f1f1f1"></view>
                 <view class="quanBox" bindtap="anonymousFunc10"><text class="leftPart">推荐菜</text>
-                    <view class="moreBox"><text class="more">添加推荐菜</text>
-                        <at-icon compid="{{$compid__466}}"></at-icon>
+                    <view class="moreBox"><text class="more">点击添加推荐菜</text>
+                        <at-icon compid="{{$compid__440}}"></at-icon>
                     </view>
                 </view>
                 <view class="youhuiList">
-                    <view class="youhui" wx:for="{{loopArray177}}" wx:for-item="item" wx:for-index="index">
+                    <view class="youhui" wx:for="{{loopArray158}}" wx:for-item="item" wx:for-index="index">
                         <image class="youhuiImg" src="{{item.$original.picList[0]}}"></image>
                         <view class="right">
                             <view class="box"><text class="title">名称:</text><text class="titleName">{{item.$original.name}}</text>
@@ -108,19 +108,19 @@
                 <view style="height: 5px;background:#f1f1f1"></view>
                 <view class="leixing"><text class="title">服务支持</text>
                     <view class="allChoose">
-                        <view bindtap="anonymousFunc13" class="oneChoose" wx:key="value" wx:for="{{loopArray178}}" wx:for-item="item" wx:for-index="index" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey7}}">
+                        <view bindtap="anonymousFunc13" class="oneChoose" wx:key="value" wx:for="{{loopArray159}}" wx:for-item="item" wx:for-index="index" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey7}}">
                             <view class="{{'fang ' + (item.$original.isChoose ? 'typeChooseClick' : null)}}"></view><text>{{item.$original.label}}</text>
                         </view>
                     </view>
                 </view>
                 <view style="height: 5px;background:#f1f1f1"></view>
                 <view class="quanBox" bindtap="anonymousFunc14"><text class="leftPart">上传菜单</text>
-                    <view class="moreBox"><text class="more">添加菜单</text>
-                        <at-icon compid="{{$compid__467}}"></at-icon>
+                    <view class="moreBox"><text class="more">点击添加菜单</text>
+                        <at-icon compid="{{$compid__441}}"></at-icon>
                     </view>
                 </view>
                 <view class="youhuiList">
-                    <view class="youhui" wx:for="{{loopArray179}}" wx:for-item="item" wx:for-index="index">
+                    <view class="youhui" wx:for="{{loopArray160}}" wx:for-item="item" wx:for-index="index">
                         <image class="youhuiImg" src="{{item.$original.picList[0]}}"></image>
                         <view class="right">
                             <view class="box"><text class="title">名称:</text><text class="titleName">{{item.$original.name}}</text>
@@ -135,10 +135,10 @@
                     </view>
                 </view>
                 <view style="height: 5px;background:#f1f1f1"></view>
-                <at-button compid="{{$compid__468}}">确认</at-button>
+                <at-button compid="{{$compid__442}}">确认</at-button>
                 <view style="height: 30px;background:#fff"></view>
             </at-form>
-            <at-toast compid="{{$compid__469}}">duration={{2000}}</at-toast>
+            <at-toast compid="{{$compid__443}}">duration={{2000}}</at-toast>
         </view>
     </view>
 </block>

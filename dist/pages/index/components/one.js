@@ -65,7 +65,7 @@ var One = (_temp2 = _class = function (_BaseComponent) {
 
       if (type == 1) {
         _taroWeapp2.default.navigateTo({
-          url: "/pagesA/pages/foodDetail/index?id=" + id
+          url: "/pagesB/pages/foodDetail/index?id=" + id
         });
       }
       if (type == 2) {

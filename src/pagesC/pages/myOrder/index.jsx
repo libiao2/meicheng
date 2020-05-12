@@ -50,7 +50,9 @@ class MyOrder extends Component {
   componentWillMount() {
   }
   componentDidMount() {
-    this.getList()
+    if(Taro.getStorageSync('token') != '') {
+      this.getList()
+    }
   }
   componentWillReceiveProps (nextProps) {
     console.log(this.props, nextProps)
@@ -314,6 +316,31 @@ class MyOrder extends Component {
     }
   }
 
+  deleteCard(item, index) {
+    const { creditCardList } = this.state;
+    let newArr = creditCardList;
+    api.post('/pay/delCard',{cardId: item.cardId}).then(res => {
+      console.log('ppp', res)
+      if(res.data.code == 200) {
+        newArr.splice(index, 1);
+        Taro.showToast({
+          title: '信用卡删除成功！',
+          icon: 'none',
+          mask:true,
+        });
+        this.setState({
+          creditCardList: newArr
+        })
+      }
+    })
+  }
+
+  goLogin() {
+    Taro.switchTab({
+      url: `/pages/my/index`
+    })
+  }
+
 
   render () {
     const {
@@ -380,7 +407,19 @@ class MyOrder extends Component {
                       )
                     })
                     :
-                    <View className='noData'>暂无更多数据~</View>
+                    <View className='noData'>
+                      {
+                        Taro.getStorageSync('token') != '' ?
+                        <Text>暂无更多数据~~</Text>
+                        :
+                        <View>
+                          <Text>暂未登录~~</Text>
+                          <View className='bigBox' onClick={() => this.goLogin()}>
+                            <View className='loginBtn'>登录</View>
+                          </View>
+                        </View>
+                      }
+                    </View>
                   }
                 </AtTabsPane>
               )
@@ -429,9 +468,12 @@ class MyOrder extends Component {
               {
                 creditCardList.length > 0 &&
                 creditCardList.map((item,index) => {
-                  return <View onClick={() => this.clickChooseCard(index)} className={`oneCard ${item.defaultSource && 'isChooseCard'}`}>
-                    <Text>卡号后四位</Text>
-                    <Text style='color: #333'>({item.last4})</Text>
+                  return <View className={`oneCard ${item.defaultSource && 'isChooseCard'}`}>
+                    <View className='leftCard' onClick={() => this.clickChooseCard(index)}>
+                      <Text>卡号后四位</Text>
+                      <Text style='color: #333'>({item.last4})</Text>
+                    </View>
+                    <View onClick={() => this.deleteCard(item, index)} className='deleteCard'>X</View>
                   </View>
                 })
               }

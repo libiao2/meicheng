@@ -14,7 +14,7 @@
                     </view>
                 </block>
                 <view class="imgBox">
-                    <choose-image compid="{{$compid__276}}"></choose-image>
+                    <choose-image compid="{{$compid__279}}"></choose-image>
                 </view>
             </view>
             <view class="itemBox"><text class="leftPart">标题名称:</text>
@@ -26,11 +26,11 @@
             </view>
             <view style="height: 5px;background:#f1f1f1"></view>
             <view class="textBox"><text class="title">部落详情:</text>
-                <at-textarea compid="{{$compid__277}}"></at-textarea>
+                <at-textarea compid="{{$compid__280}}"></at-textarea>
             </view>
-            <at-button compid="{{$compid__278}}">确认</at-button>
+            <at-button compid="{{$compid__281}}">确认</at-button>
             <view style="height: 30px;background:#fff"></view>
         </at-form>
-        <at-toast compid="{{$compid__279}}"></at-toast>
+        <at-toast compid="{{$compid__282}}"></at-toast>
     </view>
 </block>

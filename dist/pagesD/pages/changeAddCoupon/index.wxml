@@ -6,7 +6,7 @@
                 </view>
                 <block wx:if="{{chooseCouponImgList.length > 0}}">
                     <view class="chooseImgList">
-                        <view class="chooseImgBox" wx:for="{{loopArray181}}" wx:for-item="item" wx:for-index="index">
+                        <view class="chooseImgBox" wx:for="{{loopArray138}}" wx:for-item="item" wx:for-index="index">
                             <image class="shooseImg" src="{{item.$original}}"></image>
                             <view class="deleteImg" bindtap="anonymousFunc0" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey}}"><text>x</text>
                             </view>
@@ -14,7 +14,7 @@
                     </view>
                 </block>
                 <view class="imgBox">
-                    <choose-image compid="{{$compid__478}}"></choose-image>
+                    <choose-image compid="{{$compid__370}}"></choose-image>
                 </view>
             </view>
             <view class="itemBox"><text class="leftPart">标题名称:</text>
@@ -22,17 +22,18 @@
             </view>
             <view style="height: 5px;background:#f1f1f1"></view>
             <view class="textBox"><text class="title">详细说明:</text>
-                <at-textarea compid="{{$compid__479}}"></at-textarea>
+                <at-textarea compid="{{$compid__371}}"></at-textarea>
             </view>
             <view style="height: 5px;background:#f1f1f1"></view>
             <view class="textBox"><text class="title">购买须知:</text>
-                <at-textarea compid="{{$compid__480}}"></at-textarea>
+                <at-textarea compid="{{$compid__372}}"></at-textarea>
             </view>
             <view style="height: 5px;background:#f1f1f1"></view>
             <view class="textBox"><text class="title">其他说明:</text>
-                <at-textarea compid="{{$compid__481}}"></at-textarea>
+                <at-textarea compid="{{$compid__373}}"></at-textarea>
             </view>
             <view style="height: 5px;background:#f1f1f1"></view>
+            <view class="tip">(以下价格均为美元！)</view>
             <view class="bottomBox">
                 <view class="onSmallBox"><text class="title">团购价:</text>
                     <input type="text" class="smallInput" value="{{groupPrice}}" bindchange="tuanPriceChange" data-e-change-so="this" />
@@ -46,17 +47,17 @@
             </view>
             <view class="timeBox"><text class="timeTitle">开始时间:</text>
                 <view class="timeInputBox">
-                    <deta-pick wrap-class="my-class" select-item-class="mySelector" compid="{{$compid__482}}"></deta-pick>
+                    <deta-pick wrap-class="my-class" select-item-class="mySelector" compid="{{$compid__374}}"></deta-pick>
                 </view>
             </view>
             <view class="timeBox"><text class="timeTitle">结束时间:</text>
                 <view class="timeInputBox">
-                    <deta-pick wrap-class="my-class" select-item-class="mySelector" compid="{{$compid__483}}"></deta-pick>
+                    <deta-pick wrap-class="my-class" select-item-class="mySelector" compid="{{$compid__375}}"></deta-pick>
                 </view>
             </view>
-            <at-button compid="{{$compid__484}}">确认</at-button>
+            <at-button compid="{{$compid__376}}">确认</at-button>
             <view style="height: 30px;background:#fff"></view>
         </at-form>
-        <at-toast compid="{{$compid__485}}"></at-toast>
+        <at-toast compid="{{$compid__377}}"></at-toast>
     </view>
 </block>

@@ -75,7 +75,7 @@ var AddBuluo = (_dec = (0, _redux.connect)(function (_ref) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = AddBuluo.__proto__ || Object.getPrototypeOf(AddBuluo)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["$compid__227", "$compid__228", "$compid__229", "$compid__230", "foodImg", "picList", "name", "detail", "isOpen", "toast"], _this.config = {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = AddBuluo.__proto__ || Object.getPrototypeOf(AddBuluo)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["$compid__230", "$compid__231", "$compid__232", "$compid__233", "foodImg", "picList", "name", "detail", "isOpen", "toast"], _this.config = {
       navigationBarTitleText: '部落'
     }, _this.customComponents = ["AtForm", "ChooseImage", "AtTextarea", "AtButton", "AtToast"], _temp), _possibleConstructorReturn(_this, _ret);
   }
@@ -234,25 +234,25 @@ var AddBuluo = (_dec = (0, _redux.connect)(function (_ref) {
       var __prefix = this.$prefix;
       ;
 
-      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__227"),
+      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__230"),
           _genCompid2 = _slicedToArray(_genCompid, 2),
-          $prevCompid__227 = _genCompid2[0],
-          $compid__227 = _genCompid2[1];
+          $prevCompid__230 = _genCompid2[0],
+          $compid__230 = _genCompid2[1];
 
-      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__228"),
+      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__231"),
           _genCompid4 = _slicedToArray(_genCompid3, 2),
-          $prevCompid__228 = _genCompid4[0],
-          $compid__228 = _genCompid4[1];
+          $prevCompid__231 = _genCompid4[0],
+          $compid__231 = _genCompid4[1];
 
-      var _genCompid5 = (0, _taroWeapp.genCompid)(__prefix + "$compid__229"),
+      var _genCompid5 = (0, _taroWeapp.genCompid)(__prefix + "$compid__232"),
           _genCompid6 = _slicedToArray(_genCompid5, 2),
-          $prevCompid__229 = _genCompid6[0],
-          $compid__229 = _genCompid6[1];
+          $prevCompid__232 = _genCompid6[0],
+          $compid__232 = _genCompid6[1];
 
-      var _genCompid7 = (0, _taroWeapp.genCompid)(__prefix + "$compid__230"),
+      var _genCompid7 = (0, _taroWeapp.genCompid)(__prefix + "$compid__233"),
           _genCompid8 = _slicedToArray(_genCompid7, 2),
-          $prevCompid__230 = _genCompid8[0],
-          $compid__230 = _genCompid8[1];
+          $prevCompid__233 = _genCompid8[0],
+          $compid__233 = _genCompid8[1];
 
       this.anonymousFunc0 = function () {
         return _this2.goAdd();
@@ -263,26 +263,26 @@ var AddBuluo = (_dec = (0, _redux.connect)(function (_ref) {
         "onFilesValue": this.getOnFilesValue.bind(this),
         "returnImgSrc": this.getReturnImgSrc.bind(this),
         "deleteImgSrc": this.deleteImgSrc.bind(this)
-      }, $compid__227, $prevCompid__227);
+      }, $compid__230, $prevCompid__230);
       _taroWeapp.propsManager.set({
         "className": "text",
         "count": false,
         "value": this.__state.detail,
         "onChange": this.detailChange.bind(this)
-      }, $compid__228, $prevCompid__228);
+      }, $compid__231, $prevCompid__231);
       _taroWeapp.propsManager.set({
         "className": "btn",
         "onClick": this.anonymousFunc0
-      }, $compid__229, $prevCompid__229);
+      }, $compid__232, $prevCompid__232);
       _taroWeapp.propsManager.set({
         "isOpened": this.__state.isOpen,
         "text": this.__state.toast
-      }, $compid__230, $prevCompid__230);
+      }, $compid__233, $prevCompid__233);
       Object.assign(this.__state, {
-        $compid__227: $compid__227,
-        $compid__228: $compid__228,
-        $compid__229: $compid__229,
-        $compid__230: $compid__230
+        $compid__230: $compid__230,
+        $compid__231: $compid__231,
+        $compid__232: $compid__232,
+        $compid__233: $compid__233
       });
       return this.__state;
     }

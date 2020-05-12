@@ -71,7 +71,7 @@ var GroupBuyingDetail = (_dec = (0, _redux.connect)(function (_ref) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = GroupBuyingDetail.__proto__ || Object.getPrototypeOf(GroupBuyingDetail)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["anonymousState__temp3", "loopArray100", "$compid__262", "dataList", "pageNum", "pageSize", "openShare", "shareItem"], _this.state = {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = GroupBuyingDetail.__proto__ || Object.getPrototypeOf(GroupBuyingDetail)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["anonymousState__temp3", "anonymousState__temp4", "loopArray375", "$compid__875", "dataList", "pageNum", "pageSize", "openShare", "shareItem"], _this.state = {
       dataList: [],
       pageNum: 1,
       pageSize: 10,
@@ -97,7 +97,9 @@ var GroupBuyingDetail = (_dec = (0, _redux.connect)(function (_ref) {
   }, {
     key: 'componentDidMount',
     value: function componentDidMount() {
-      this.getData();
+      if (_taroWeapp2.default.getStorageSync('token') != '') {
+        this.getData();
+      }
     }
   }, {
     key: 'componentWillReceiveProps',
@@ -186,7 +188,7 @@ var GroupBuyingDetail = (_dec = (0, _redux.connect)(function (_ref) {
 
       console.log('nnnmmm', shareItem);
       return {
-        title: '分享',
+        title: shareItem.productItemName + ',\u539F\u4EF7' + shareItem.groupOriginalPrice + ',\u73B0\u4EF7' + shareItem.price + ',\u9650\u65F6\u56E2\u8D2D',
         path: "/pagesA/pages/foodTuan/index?goodsId=" + shareItem.productItemId,
         success: function success(res) {
           console.log('成功', res);
@@ -236,6 +238,13 @@ var GroupBuyingDetail = (_dec = (0, _redux.connect)(function (_ref) {
       });
     }
   }, {
+    key: 'goLogin',
+    value: function goLogin() {
+      _taroWeapp2.default.switchTab({
+        url: "/pages/my/index"
+      });
+    }
+  }, {
     key: '_createData',
     value: function _createData() {
       var _this5 = this;
@@ -246,10 +255,10 @@ var GroupBuyingDetail = (_dec = (0, _redux.connect)(function (_ref) {
       var __prefix = this.$prefix;
       ;
 
-      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__262"),
+      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__875"),
           _genCompid2 = _slicedToArray(_genCompid, 2),
-          $prevCompid__262 = _genCompid2[0],
-          $compid__262 = _genCompid2[1];
+          $prevCompid__875 = _genCompid2[0],
+          $compid__875 = _genCompid2[1];
 
       var _state2 = this.__state,
           dataList = _state2.dataList,
@@ -257,21 +266,26 @@ var GroupBuyingDetail = (_dec = (0, _redux.connect)(function (_ref) {
 
 
       this.anonymousFunc1 = function () {
+        return _this5.goLogin();
+      };
+
+      this.anonymousFunc2 = function () {
         return _this5.handleClose();
       };
 
       var anonymousState__temp3 = __webpack_require__(/*! ./../../../image/wechatP.png */ "./src/image/wechatP.png");
 
-      var loopArray100 = dataList.length > 0 ? dataList.map(function (item, index) {
+      var anonymousState__temp4 = _taroWeapp2.default.getStorageSync('token') != '';
+      var loopArray375 = dataList.length > 0 ? dataList.map(function (item, index) {
         item = {
           $original: (0, _taroWeapp.internal_get_original)(item)
         };
         var $loopState__temp2 = dataList.length > 0 ? __webpack_require__(/*! ./../../../image/shop.jpg */ "./src/image/shop.jpg") : null;
-        var $anonymousCallee__15 = dataList.length > 0 ? item.$original.orderItemList.map(function (item2, index2) {
+        var $anonymousCallee__93 = dataList.length > 0 ? item.$original.orderItemList.map(function (item2, index2) {
           item2 = {
             $original: (0, _taroWeapp.internal_get_original)(item2)
           };
-          var _$indexKey = 'bcizz' + index + '-' + index2;
+          var _$indexKey = 'fjhzz' + index + '-' + index2;
 
           _this5.anonymousFunc0Map[_$indexKey] = function () {
             return _this5.shareOther(item2.$original);
@@ -284,18 +298,19 @@ var GroupBuyingDetail = (_dec = (0, _redux.connect)(function (_ref) {
         }) : [];
         return {
           $loopState__temp2: $loopState__temp2,
-          $anonymousCallee__15: $anonymousCallee__15,
+          $anonymousCallee__93: $anonymousCallee__93,
           $original: item.$original
         };
       }) : [];
       _taroWeapp.propsManager.set({
         "isOpened": openShare,
-        "onClose": this.anonymousFunc1
-      }, $compid__262, $prevCompid__262);
+        "onClose": this.anonymousFunc2
+      }, $compid__875, $prevCompid__875);
       Object.assign(this.__state, {
         anonymousState__temp3: anonymousState__temp3,
-        loopArray100: loopArray100,
-        $compid__262: $compid__262
+        anonymousState__temp4: anonymousState__temp4,
+        loopArray375: loopArray375,
+        $compid__875: $compid__875
       });
       return this.__state;
     }
@@ -317,10 +332,15 @@ var GroupBuyingDetail = (_dec = (0, _redux.connect)(function (_ref) {
     value: function anonymousFunc1(e) {
       ;
     }
+  }, {
+    key: 'anonymousFunc2',
+    value: function anonymousFunc2(e) {
+      ;
+    }
   }]);
 
   return GroupBuyingDetail;
-}(_taroWeapp.Component), _class2.$$events = ["anonymousFunc0"], _class2.$$componentPath = "pagesC/pages/groupBuyingDetail/index", _temp2)) || _class);
+}(_taroWeapp.Component), _class2.$$events = ["anonymousFunc0", "anonymousFunc1"], _class2.$$componentPath = "pagesC/pages/groupBuyingDetail/index", _temp2)) || _class);
 exports.default = GroupBuyingDetail;
 
 Component(__webpack_require__(/*! @tarojs/taro-weapp */ "./node_modules/_@tarojs_taro-weapp@2.0.6@@tarojs/taro-weapp/index.js").default.createComponent(GroupBuyingDetail, true));

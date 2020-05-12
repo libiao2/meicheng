@@ -248,7 +248,7 @@ class AddFuwu extends Component {
               value={this.state.price}
               onChange={this.priceChange.bind(this)}
             />
-            <Text className='rightText'>元</Text>
+            <Text className='rightText'>$</Text>
           </View>
           <View style='height: 5px;background:#f1f1f1'></View>
           <View className='textBox'>

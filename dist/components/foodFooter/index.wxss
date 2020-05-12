@@ -34,6 +34,7 @@
           align-items: center;
   font-size: 26rpx;
   color: #333;
+  position: relative;
 }
 .footer .box .item .boxItem {
   display: -webkit-flex;
@@ -52,6 +53,19 @@
 .footer .box .item .boxItem .iconImg {
   width: 50rpx;
   height: 50rpx;
+}
+.footer .box .item .count {
+  position: absolute;
+  top: 6rpx;
+  right: -20rpx;
+  width: 40rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  text-align: center;
+  border-radius: 20rpx;
+  background: red;
+  font-size: 24rpx;
+  color: #fff;
 }
 .shareBtn {
   background: #fff;

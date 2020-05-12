@@ -73,7 +73,7 @@ var PublishInfo = (_dec = (0, _redux.connect)(function (_ref) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = PublishInfo.__proto__ || Object.getPrototypeOf(PublishInfo)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["loopArray85", "typeList"], _this.config = {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = PublishInfo.__proto__ || Object.getPrototypeOf(PublishInfo)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["loopArray323", "typeList"], _this.config = {
       navigationBarTitleText: '美城美食365'
     }, _this.anonymousFunc0Map = {}, _this.customComponents = [], _temp), _possibleConstructorReturn(_this, _ret);
   }
@@ -110,37 +110,43 @@ var PublishInfo = (_dec = (0, _redux.connect)(function (_ref) {
   }, {
     key: 'chooseType',
     value: function chooseType(key) {
-      switch (key) {
-        case 'food':
-          _taroWeapp2.default.navigateTo({
-            url: '/pagesA/pages/addFood/index'
-          });
-          break;
-        case 'leisure':
-          _taroWeapp2.default.navigateTo({
-            url: '/pagesA/pages/addLeisure/index'
-          });
-          break;
-        case 'life':
-          _taroWeapp2.default.navigateTo({
-            url: '/pagesA/pages/addLife/index'
-          });
-          break;
-        case 'secondhand':
-          _taroWeapp2.default.navigateTo({
-            url: '/pagesB/pages/secondhand/index'
-          });
-          break;
-        case 'housing':
-          _taroWeapp2.default.navigateTo({
-            url: '/pagesA/pages/addHome/index'
-          });
-          break;
-        case 'tribe':
-          _taroWeapp2.default.navigateTo({
-            url: '/pagesA/pages/addBuluo/index'
-          });
-          break;
+      if (_taroWeapp2.default.getStorageSync('userInfo') != '') {
+        switch (key) {
+          case 'food':
+            _taroWeapp2.default.navigateTo({
+              url: '/pagesA/pages/addFood/index'
+            });
+            break;
+          case 'leisure':
+            _taroWeapp2.default.navigateTo({
+              url: '/pagesA/pages/addLeisure/index'
+            });
+            break;
+          case 'life':
+            _taroWeapp2.default.navigateTo({
+              url: '/pagesA/pages/addLife/index'
+            });
+            break;
+          case 'secondhand':
+            _taroWeapp2.default.navigateTo({
+              url: '/pagesB/pages/secondhand/index'
+            });
+            break;
+          case 'housing':
+            _taroWeapp2.default.navigateTo({
+              url: '/pagesA/pages/addHome/index'
+            });
+            break;
+          case 'tribe':
+            _taroWeapp2.default.navigateTo({
+              url: '/pagesA/pages/addBuluo/index'
+            });
+            break;
+        }
+      } else {
+        _taroWeapp2.default.switchTab({
+          url: "/pages/my/index"
+        });
       }
     }
   }, {
@@ -154,12 +160,12 @@ var PublishInfo = (_dec = (0, _redux.connect)(function (_ref) {
       var __prefix = this.$prefix;
       ;
 
-      var loopArray85 = this.__state.typeList.map(function (item, __index0) {
+      var loopArray323 = this.__state.typeList.map(function (item, __index0) {
         item = {
           $original: (0, _taroWeapp.internal_get_original)(item)
         };
 
-        var _$indexKey = "bbbzz" + __index0;
+        var _$indexKey = "ebjzz" + __index0;
 
         _this2.anonymousFunc0Map[_$indexKey] = function () {
           return _this2.chooseType(item.$original.key);
@@ -172,7 +178,7 @@ var PublishInfo = (_dec = (0, _redux.connect)(function (_ref) {
       });
 
       Object.assign(this.__state, {
-        loopArray85: loopArray85
+        loopArray323: loopArray323
       });
       return this.__state;
     }

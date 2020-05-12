@@ -179,4 +179,9 @@
   background: #24c8b2;
   color: #fff;
 }
+.tip {
+  padding: 10rpx 20rpx;
+  font-size: 20rpx;
+  color: #999;
+}
 

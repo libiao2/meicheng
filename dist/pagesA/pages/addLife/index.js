@@ -312,6 +312,67 @@ var AddLife = (_dec = (0, _redux.connect)(function (_ref) {
       });
     }
   }, {
+    key: 'emailBlur',
+    value: function emailBlur(e) {
+      var reg = /^(\w-*\.*)+@(\w-?)+(\.\w{2,})+$/;
+      if (!reg.test(e.detail.value)) {
+        _taroWeapp2.default.showToast({
+          title: '请输入正确邮箱',
+          icon: 'none',
+          mask: true
+        });
+        this.setState({
+          email: ''
+        });
+        return;
+      }
+    }
+  }, {
+    key: 'weixinBlur',
+    value: function weixinBlur(e) {
+      var reg = /^[a-zA-Z\d_]{5,}$/;
+      if (!reg.test(e.detail.value)) {
+        _taroWeapp2.default.showToast({
+          title: '请输入正确微信号',
+          icon: 'none',
+          mask: true
+        });
+        this.setState({
+          weixinno: ''
+        });
+        return;
+      }
+    }
+  }, {
+    key: 'phoneBlur',
+    value: function phoneBlur(e) {
+      console.log('.....', e.detail.value);
+      var reg = /\D/g;
+      if (reg.test(parseFloat(e.detail.value))) {
+        _taroWeapp2.default.showToast({
+          title: '请输入正确手机号',
+          icon: 'none',
+          mask: true
+        });
+        this.setState({
+          telephone: ''
+        });
+        return;
+      } else {
+        if (e.detail.value.length > 11 || e.detail.value.length < 10) {
+          _taroWeapp2.default.showToast({
+            title: '请输入正确手机号',
+            icon: 'none',
+            mask: true
+          });
+          this.setState({
+            telephone: ''
+          });
+          return;
+        }
+      }
+    }
+  }, {
     key: 'submitForm',
     value: function submitForm() {
       var _state = this.state,
@@ -464,13 +525,13 @@ var AddLife = (_dec = (0, _redux.connect)(function (_ref) {
           $original: (0, _taroWeapp.internal_get_original)(item)
         };
 
-        var _$indexKey = "bejzz" + index;
+        var _$indexKey = "bfgzz" + index;
 
         _this4.anonymousFunc2Map[_$indexKey] = function () {
           return _this4.selectCity(item.$original);
         };
 
-        var _genCompid17 = (0, _taroWeapp.genCompid)(__prefix + 'bfbzzzzzzz' + index, true),
+        var _genCompid17 = (0, _taroWeapp.genCompid)(__prefix + 'bfizzzzzzz' + index, true),
             _genCompid18 = _slicedToArray(_genCompid17, 2),
             $prevCompid__317 = _genCompid18[0],
             $compid__317 = _genCompid18[1];
@@ -490,7 +551,7 @@ var AddLife = (_dec = (0, _redux.connect)(function (_ref) {
           $original: (0, _taroWeapp.internal_get_original)(item)
         };
 
-        var _$indexKey2 = "bfazz" + index;
+        var _$indexKey2 = "bfhzz" + index;
 
         _this4.anonymousFunc4Map[_$indexKey2] = function () {
           return _this4.typeClick(index);
@@ -605,7 +666,7 @@ var AddLife = (_dec = (0, _redux.connect)(function (_ref) {
   }]);
 
   return AddLife;
-}(_taroWeapp.Component), _class2.$$events = ["nameChange", "anonymousFunc0", "areaNameChange", "anonymousFunc3", "phoneChange", "weixinnoChange", "emailChange", "anonymousFunc4"], _class2.$$componentPath = "pagesA/pages/addLife/index", _temp2)) || _class);
+}(_taroWeapp.Component), _class2.$$events = ["nameChange", "anonymousFunc0", "areaNameChange", "anonymousFunc3", "phoneBlur", "phoneChange", "weixinBlur", "weixinnoChange", "emailBlur", "emailChange", "anonymousFunc4"], _class2.$$componentPath = "pagesA/pages/addLife/index", _temp2)) || _class);
 exports.default = AddLife;
 
 Component(__webpack_require__(/*! @tarojs/taro-weapp */ "./node_modules/_@tarojs_taro-weapp@2.0.6@@tarojs/taro-weapp/index.js").default.createComponent(AddLife, true));

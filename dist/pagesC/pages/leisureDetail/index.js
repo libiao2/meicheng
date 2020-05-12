@@ -69,7 +69,7 @@ var LeisureDetail = (_dec = (0, _redux.connect)(function (_ref) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = LeisureDetail.__proto__ || Object.getPrototypeOf(LeisureDetail)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["anonymousState__temp", "anonymousState__temp2", "goodsInfo", "loopArray132", "loopArray133", "$compid__346", "$compid__347", "$compid__348", "$compid__349", "$compid__350", "$compid__351", "chatList", "shopId", "pageNum", "pageSize", "toastText", "isOpenToast", "openMessage", "myMessage", "memberId"], _this.state = {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = LeisureDetail.__proto__ || Object.getPrototypeOf(LeisureDetail)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["anonymousState__temp", "anonymousState__temp2", "goodsInfo", "loopArray132", "loopArray133", "$compid__351", "$compid__352", "$compid__353", "$compid__354", "$compid__355", "$compid__356", "chatList", "shopId", "pageNum", "pageSize", "toastText", "isOpenToast", "openMessage", "myMessage", "memberId", "carCount", "dianCount"], _this.state = {
       goodsInfo: {},
       shopId: '',
       chatList: [],
@@ -79,10 +79,12 @@ var LeisureDetail = (_dec = (0, _redux.connect)(function (_ref) {
       isOpenToast: false,
       openMessage: false,
       myMessage: '', /// 评论信息
-      memberId: '' /// 评论时保留评论id
+      memberId: '', /// 评论时保留评论id
+      carCount: 0,
+      dianCount: 0
     }, _this.config = {
       navigationBarTitleText: '美城美事365'
-    }, _this.anonymousFunc1Map = {}, _this.anonymousFunc2Map = {}, _this.anonymousFunc3Map = {}, _this.anonymousFunc5Map = {}, _this.customComponents = ["AtIcon", "Footer", "AtToast", "AtActionSheet", "AtActionSheetItem", "AtTextarea"], _temp), _possibleConstructorReturn(_this, _ret);
+    }, _this.anonymousFunc2Map = {}, _this.anonymousFunc3Map = {}, _this.anonymousFunc4Map = {}, _this.anonymousFunc6Map = {}, _this.customComponents = ["AtIcon", "Footer", "AtToast", "AtActionSheet", "AtActionSheetItem", "AtTextarea"], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(LeisureDetail, [{
@@ -127,7 +129,8 @@ var LeisureDetail = (_dec = (0, _redux.connect)(function (_ref) {
       _api2.default.post('/home/getProductInfo', { id: id }).then(function (res) {
         if (res.data.code == 200) {
           _this2.setState({
-            goodsInfo: res.data.data
+            goodsInfo: res.data.data,
+            dianCount: res.data.data.upvote
           });
         }
       });
@@ -264,10 +267,15 @@ var LeisureDetail = (_dec = (0, _redux.connect)(function (_ref) {
   }, {
     key: 'getCarCount',
     value: function getCarCount() {
+      var _this5 = this;
+
       _api2.default.post('/cart/count', {}).then(function (res) {
         console.log('sssss', res);
         if (res.data.code == 200) {
           if (res.data.data != 0) {
+            _this5.setState({
+              carCount: res.data.data
+            });
             _taroWeapp2.default.setTabBarBadge({
               index: 2,
               text: "" + res.data.data
@@ -283,9 +291,8 @@ var LeisureDetail = (_dec = (0, _redux.connect)(function (_ref) {
   }, {
     key: 'addCard',
     value: function addCard(item) {
-      var _this5 = this;
+      var _this6 = this;
 
-      console.log('HHHHH', item);
       var _state3 = this.state,
           shopId = _state3.shopId,
           goodsInfo = _state3.goodsInfo;
@@ -302,18 +309,40 @@ var LeisureDetail = (_dec = (0, _redux.connect)(function (_ref) {
       _api2.default.post('/cart/add', obj).then(function (res) {
         console.log('aaaa', res);
         if (res.data.code == 200) {
-          _this5.setState({
+          _this6.setState({
             isOpenToast: true,
             toastText: '成功添加购物车！'
           });
-          _this5.getCarCount();
+          _this6.getCarCount();
         }
+      });
+    }
+  }, {
+    key: 'openMap',
+    value: function openMap() {
+      var goodsInfo = this.state.goodsInfo;
+      ////使用微信内置地图查看标记点位置，并进行导航
+
+      _taroWeapp2.default.openLocation({
+        latitude: parseInt(goodsInfo.latitude), //要去的纬度-地址
+        longitude: parseInt(goodsInfo.longitude) //要去的经度-地址
+      });
+    }
+  }, {
+    key: 'dianCountChange',
+    value: function dianCountChange() {
+      var dianCount = this.state.dianCount;
+
+      var val = dianCount;
+      val += 1;
+      this.setState({
+        dianCount: val
       });
     }
   }, {
     key: '_createData',
     value: function _createData() {
-      var _this6 = this;
+      var _this7 = this;
 
       this.__state = arguments[0] || this.state || {};
       this.__props = arguments[1] || this.props || {};
@@ -321,35 +350,35 @@ var LeisureDetail = (_dec = (0, _redux.connect)(function (_ref) {
       var __prefix = this.$prefix;
       ;
 
-      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__346"),
+      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__351"),
           _genCompid2 = _slicedToArray(_genCompid, 2),
-          $prevCompid__346 = _genCompid2[0],
-          $compid__346 = _genCompid2[1];
+          $prevCompid__351 = _genCompid2[0],
+          $compid__351 = _genCompid2[1];
 
-      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__347"),
+      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__352"),
           _genCompid4 = _slicedToArray(_genCompid3, 2),
-          $prevCompid__347 = _genCompid4[0],
-          $compid__347 = _genCompid4[1];
+          $prevCompid__352 = _genCompid4[0],
+          $compid__352 = _genCompid4[1];
 
-      var _genCompid5 = (0, _taroWeapp.genCompid)(__prefix + "$compid__348"),
+      var _genCompid5 = (0, _taroWeapp.genCompid)(__prefix + "$compid__353"),
           _genCompid6 = _slicedToArray(_genCompid5, 2),
-          $prevCompid__348 = _genCompid6[0],
-          $compid__348 = _genCompid6[1];
+          $prevCompid__353 = _genCompid6[0],
+          $compid__353 = _genCompid6[1];
 
-      var _genCompid7 = (0, _taroWeapp.genCompid)(__prefix + "$compid__349"),
+      var _genCompid7 = (0, _taroWeapp.genCompid)(__prefix + "$compid__354"),
           _genCompid8 = _slicedToArray(_genCompid7, 2),
-          $prevCompid__349 = _genCompid8[0],
-          $compid__349 = _genCompid8[1];
+          $prevCompid__354 = _genCompid8[0],
+          $compid__354 = _genCompid8[1];
 
-      var _genCompid9 = (0, _taroWeapp.genCompid)(__prefix + "$compid__350"),
+      var _genCompid9 = (0, _taroWeapp.genCompid)(__prefix + "$compid__355"),
           _genCompid10 = _slicedToArray(_genCompid9, 2),
-          $prevCompid__350 = _genCompid10[0],
-          $compid__350 = _genCompid10[1];
+          $prevCompid__355 = _genCompid10[0],
+          $compid__355 = _genCompid10[1];
 
-      var _genCompid11 = (0, _taroWeapp.genCompid)(__prefix + "$compid__351"),
+      var _genCompid11 = (0, _taroWeapp.genCompid)(__prefix + "$compid__356"),
           _genCompid12 = _slicedToArray(_genCompid11, 2),
-          $prevCompid__351 = _genCompid12[0],
-          $compid__351 = _genCompid12[1];
+          $prevCompid__356 = _genCompid12[0],
+          $compid__356 = _genCompid12[1];
 
       var _state4 = this.__state,
           goodsInfo = _state4.goodsInfo,
@@ -358,33 +387,39 @@ var LeisureDetail = (_dec = (0, _redux.connect)(function (_ref) {
           isOpenToast = _state4.isOpenToast,
           openMessage = _state4.openMessage,
           myMessage = _state4.myMessage,
+          carCount = _state4.carCount,
+          dianCount = _state4.dianCount,
           toastText = _state4.toastText;
 
 
       var url = "/pagesC/pages/leisureDetail/index?id=" + shopId;
 
       this.anonymousFunc0 = function () {
-        return _this6.callMe(goodsInfo.telephone);
+        return _this7.callMe(goodsInfo.telephone);
       };
 
       var anonymousState__temp = __webpack_require__(/*! ./../../../image/time.png */ "./src/image/time.png");
 
-      var anonymousState__temp2 = __webpack_require__(/*! ./../../../image/dingwei.png */ "./src/image/dingwei.png");
-
-      this.anonymousFunc4 = function () {
-        return _this6.openMessage();
+      this.anonymousFunc1 = function () {
+        return _this7.openMap();
       };
 
-      this.anonymousFunc6 = function () {
-        return _this6.handleClose();
+      var anonymousState__temp2 = __webpack_require__(/*! ./../../../image/dingwei.png */ "./src/image/dingwei.png");
+
+      this.anonymousFunc5 = function () {
+        return _this7.openMessage();
       };
 
       this.anonymousFunc7 = function () {
-        return _this6.publishMessage(1);
+        return _this7.handleClose();
       };
 
       this.anonymousFunc8 = function () {
-        return _this6.publishMessage(0);
+        return _this7.publishMessage(1);
+      };
+
+      this.anonymousFunc9 = function () {
+        return _this7.publishMessage(0);
       };
 
       var loopArray132 = goodsInfo.commonList && goodsInfo.commonList.length > 0 ? goodsInfo.commonList.map(function (item, index) {
@@ -392,22 +427,22 @@ var LeisureDetail = (_dec = (0, _redux.connect)(function (_ref) {
           $original: (0, _taroWeapp.internal_get_original)(item)
         };
 
-        var _$indexKey = "bgdzz" + index;
+        var _$indexKey = "bhbzz" + index;
 
-        _this6.anonymousFunc1Map[_$indexKey] = function () {
-          return _this6.goInfo(item.$original.id);
+        _this7.anonymousFunc2Map[_$indexKey] = function () {
+          return _this7.goInfo(item.$original.id);
         };
 
-        var _$indexKey2 = "bgezz" + index;
+        var _$indexKey2 = "bhczz" + index;
 
-        _this6.anonymousFunc2Map[_$indexKey2] = function () {
-          return _this6.goInfo(item.$original.id);
+        _this7.anonymousFunc3Map[_$indexKey2] = function () {
+          return _this7.goInfo(item.$original.id);
         };
 
-        var _$indexKey3 = "bgfzz" + index;
+        var _$indexKey3 = "bhdzz" + index;
 
-        _this6.anonymousFunc3Map[_$indexKey3] = function () {
-          return _this6.addCard(item.$original);
+        _this7.anonymousFunc4Map[_$indexKey3] = function () {
+          return _this7.addCard(item.$original);
         };
 
         var $loopState__temp4 = goodsInfo.commonList && goodsInfo.commonList.length > 0 ? __webpack_require__(/*! ./../../../image/carIcon.png */ "./src/image/carIcon.png") : null;
@@ -424,10 +459,10 @@ var LeisureDetail = (_dec = (0, _redux.connect)(function (_ref) {
           $original: (0, _taroWeapp.internal_get_original)(item)
         };
 
-        var _$indexKey4 = "bggzz" + index;
+        var _$indexKey4 = "bhezz" + index;
 
-        _this6.anonymousFunc5Map[_$indexKey4] = function () {
-          return _this6.aa(item.$original);
+        _this7.anonymousFunc6Map[_$indexKey4] = function () {
+          return _this7.aa(item.$original);
         };
 
         return {
@@ -441,45 +476,48 @@ var LeisureDetail = (_dec = (0, _redux.connect)(function (_ref) {
         "value": "phone",
         "size": "26",
         "color": "#666"
-      }, $compid__346, $prevCompid__346);
+      }, $compid__351, $prevCompid__351);
       _taroWeapp.propsManager.set({
         "className": "pinglunIcon",
         "value": "message",
         "size": "15",
         "color": "#999"
-      }, $compid__347, $prevCompid__347);
+      }, $compid__352, $prevCompid__352);
       _taroWeapp.propsManager.set({
         "shopId": this.__state.shopId,
         "shopName": goodsInfo.name,
         "url": url,
+        "carCount": carCount,
+        "dianCount": dianCount,
+        "changeDian": this.dianCountChange,
         "isDian": goodsInfo.upvoteIs,
         "list": goodsInfo.commonList
-      }, $compid__348, $prevCompid__348);
+      }, $compid__353, $prevCompid__353);
       _taroWeapp.propsManager.set({
         "isOpened": isOpenToast,
         "text": toastText
-      }, $compid__349, $prevCompid__349);
+      }, $compid__354, $prevCompid__354);
       _taroWeapp.propsManager.set({
         "isOpened": openMessage,
-        "onClose": this.anonymousFunc6
-      }, $compid__350, $prevCompid__350);
+        "onClose": this.anonymousFunc7
+      }, $compid__355, $prevCompid__355);
       _taroWeapp.propsManager.set({
         "className": "text",
         "count": false,
         "value": myMessage,
         "onChange": this.messageChange.bind(this)
-      }, $compid__351, $prevCompid__351);
+      }, $compid__356, $prevCompid__356);
       Object.assign(this.__state, {
         anonymousState__temp: anonymousState__temp,
         anonymousState__temp2: anonymousState__temp2,
         loopArray132: loopArray132,
         loopArray133: loopArray133,
-        $compid__346: $compid__346,
-        $compid__347: $compid__347,
-        $compid__348: $compid__348,
-        $compid__349: $compid__349,
-        $compid__350: $compid__350,
-        $compid__351: $compid__351
+        $compid__351: $compid__351,
+        $compid__352: $compid__352,
+        $compid__353: $compid__353,
+        $compid__354: $compid__354,
+        $compid__355: $compid__355,
+        $compid__356: $compid__356
       });
       return this.__state;
     }
@@ -490,8 +528,13 @@ var LeisureDetail = (_dec = (0, _redux.connect)(function (_ref) {
     }
   }, {
     key: 'anonymousFunc1',
-    value: function anonymousFunc1(_$indexKey) {
-      var _anonymousFunc1Map;
+    value: function anonymousFunc1(e) {
+      ;
+    }
+  }, {
+    key: 'anonymousFunc2',
+    value: function anonymousFunc2(_$indexKey) {
+      var _anonymousFunc2Map;
 
       ;
 
@@ -499,12 +542,12 @@ var LeisureDetail = (_dec = (0, _redux.connect)(function (_ref) {
         e[_key2 - 1] = arguments[_key2];
       }
 
-      return this.anonymousFunc1Map[_$indexKey] && (_anonymousFunc1Map = this.anonymousFunc1Map)[_$indexKey].apply(_anonymousFunc1Map, e);
+      return this.anonymousFunc2Map[_$indexKey] && (_anonymousFunc2Map = this.anonymousFunc2Map)[_$indexKey].apply(_anonymousFunc2Map, e);
     }
   }, {
-    key: 'anonymousFunc2',
-    value: function anonymousFunc2(_$indexKey2) {
-      var _anonymousFunc2Map;
+    key: 'anonymousFunc3',
+    value: function anonymousFunc3(_$indexKey2) {
+      var _anonymousFunc3Map;
 
       ;
 
@@ -512,12 +555,12 @@ var LeisureDetail = (_dec = (0, _redux.connect)(function (_ref) {
         e[_key3 - 1] = arguments[_key3];
       }
 
-      return this.anonymousFunc2Map[_$indexKey2] && (_anonymousFunc2Map = this.anonymousFunc2Map)[_$indexKey2].apply(_anonymousFunc2Map, e);
+      return this.anonymousFunc3Map[_$indexKey2] && (_anonymousFunc3Map = this.anonymousFunc3Map)[_$indexKey2].apply(_anonymousFunc3Map, e);
     }
   }, {
-    key: 'anonymousFunc3',
-    value: function anonymousFunc3(_$indexKey3) {
-      var _anonymousFunc3Map;
+    key: 'anonymousFunc4',
+    value: function anonymousFunc4(_$indexKey3) {
+      var _anonymousFunc4Map;
 
       ;
 
@@ -525,17 +568,17 @@ var LeisureDetail = (_dec = (0, _redux.connect)(function (_ref) {
         e[_key4 - 1] = arguments[_key4];
       }
 
-      return this.anonymousFunc3Map[_$indexKey3] && (_anonymousFunc3Map = this.anonymousFunc3Map)[_$indexKey3].apply(_anonymousFunc3Map, e);
-    }
-  }, {
-    key: 'anonymousFunc4',
-    value: function anonymousFunc4(e) {
-      ;
+      return this.anonymousFunc4Map[_$indexKey3] && (_anonymousFunc4Map = this.anonymousFunc4Map)[_$indexKey3].apply(_anonymousFunc4Map, e);
     }
   }, {
     key: 'anonymousFunc5',
-    value: function anonymousFunc5(_$indexKey4) {
-      var _anonymousFunc5Map;
+    value: function anonymousFunc5(e) {
+      ;
+    }
+  }, {
+    key: 'anonymousFunc6',
+    value: function anonymousFunc6(_$indexKey4) {
+      var _anonymousFunc6Map;
 
       ;
 
@@ -543,12 +586,7 @@ var LeisureDetail = (_dec = (0, _redux.connect)(function (_ref) {
         e[_key5 - 1] = arguments[_key5];
       }
 
-      return this.anonymousFunc5Map[_$indexKey4] && (_anonymousFunc5Map = this.anonymousFunc5Map)[_$indexKey4].apply(_anonymousFunc5Map, e);
-    }
-  }, {
-    key: 'anonymousFunc6',
-    value: function anonymousFunc6(e) {
-      ;
+      return this.anonymousFunc6Map[_$indexKey4] && (_anonymousFunc6Map = this.anonymousFunc6Map)[_$indexKey4].apply(_anonymousFunc6Map, e);
     }
   }, {
     key: 'anonymousFunc7',
@@ -560,10 +598,15 @@ var LeisureDetail = (_dec = (0, _redux.connect)(function (_ref) {
     value: function anonymousFunc8(e) {
       ;
     }
+  }, {
+    key: 'anonymousFunc9',
+    value: function anonymousFunc9(e) {
+      ;
+    }
   }]);
 
   return LeisureDetail;
-}(_taroWeapp.Component), _class2.$$events = ["anonymousFunc1", "anonymousFunc2", "anonymousFunc3", "anonymousFunc4", "anonymousFunc5", "anonymousFunc7", "anonymousFunc8"], _class2.$$componentPath = "pagesC/pages/leisureDetail/index", _temp2)) || _class);
+}(_taroWeapp.Component), _class2.$$events = ["anonymousFunc1", "anonymousFunc2", "anonymousFunc3", "anonymousFunc4", "anonymousFunc5", "anonymousFunc6", "anonymousFunc8", "anonymousFunc9"], _class2.$$componentPath = "pagesC/pages/leisureDetail/index", _temp2)) || _class);
 exports.default = LeisureDetail;
 
 Component(__webpack_require__(/*! @tarojs/taro-weapp */ "./node_modules/_@tarojs_taro-weapp@2.0.6@@tarojs/taro-weapp/index.js").default.createComponent(LeisureDetail, true));

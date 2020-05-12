@@ -513,10 +513,13 @@ class AddFood extends Component {
   deleteCoupon(index) {
     let arr = this.state.groupList;
     arr.splice(index,1);
+    Taro.showToast({
+      title: '删除成功！',
+      icon: 'none',
+      mask:true,
+    });
     this.setState({
       groupList: arr,
-      isOpenToast: true,
-      toastText: '删除成功！'
     })
   }
 
@@ -524,17 +527,20 @@ class AddFood extends Component {
     this.saveData();
     let obj = this.state.groupList[index];
     Taro.navigateTo({
-      url: `/pagesA/pages/addCoupon/index?type=change&obj=${JSON.stringify(obj)}&itemIndex=${index}`
+      url: `/pagesA/pages/addCoupon/index?type=change&obj=${encodeURIComponent(JSON.stringify(obj))}&itemIndex=${index}`
     })
   }
 
   deleteHotItem(index) {
     let arr = this.state.hotList;
     arr.splice(index,1);
+    Taro.showToast({
+      title: '删除成功！',
+      icon: 'none',
+      mask:true,
+    });
     this.setState({
       hotList: arr,
-      isOpenToast: true,
-      toastText: '删除成功！'
     })
   }
 
@@ -542,7 +548,7 @@ class AddFood extends Component {
     this.saveData();
     let obj = this.state.hotList[index];
     Taro.navigateTo({
-      url: `/pagesA/pages/addFoodInfo/index?index=${e}&type=change&obj=${JSON.stringify(obj)}&itemIndex=${index}`
+      url: `/pagesA/pages/addFoodInfo/index?index=${e}&type=change&obj=${encodeURIComponent(JSON.stringify(obj))}&itemIndex=${index}`
     })
   }
 
@@ -550,8 +556,36 @@ class AddFood extends Component {
     this.saveData();
     let obj = this.state.commonList[index];
     Taro.navigateTo({
-      url: `/pagesA/pages/addFoodInfo/index?index=${e}&type=change&obj=${JSON.stringify(obj)}&itemIndex=${index}`
+      url: `/pagesA/pages/addFoodInfo/index?index=${e}&type=change&obj=${encodeURIComponent(JSON.stringify(obj))}&itemIndex=${index}`
     })
+  }
+
+  phoneBlur(e) {
+    console.log('.....',e.detail.value);
+    let reg = /\D/g;
+    if(reg.test(parseFloat(e.detail.value))){
+      Taro.showToast({
+        title: '请输入正确手机号',
+        icon: 'none',
+        mask:true,
+      });
+      this.setState({
+        telephone: ''
+      })
+      return
+    } else {
+      if(e.detail.value.length > 11 || e.detail.value.length < 10) {
+        Taro.showToast({
+          title: '请输入正确手机号',
+          icon: 'none',
+          mask:true,
+        });
+        this.setState({
+          telephone: ''
+        })
+        return
+      }
+    }
   }
 
   deleteCommonItem(index) {
@@ -790,6 +824,7 @@ class AddFood extends Component {
                   className='shopNameInput'
                   placeholder='请输入联系电话'
                   value={this.state.telephone}
+                  onBlur={this.phoneBlur.bind(this)}
                   onChange={this.phoneChange.bind(this)}
                 />
               </View>
@@ -823,6 +858,7 @@ class AddFood extends Component {
                     value={this.state.takeawayFee}
                     onChange={this.deliverFeeChange.bind(this)}
                   />
+                  <Text className='doller'>$</Text>
                 </View>
               }
               <View className='leixing'>
@@ -848,8 +884,8 @@ class AddFood extends Component {
               <View className='quanBox' onClick={() => this.goAddCoupon()}>
                 <Text className='leftPart'>优惠券</Text>
                 <View className='moreBox'>
-                  <Text className='more'>添加优惠券</Text>
-                  <AtIcon value='chevron-right' size='12' color='#999'></AtIcon>
+                  <Text className='more'>点击添加优惠券</Text>
+                  <AtIcon value='chevron-right' size='15' color='rgb(36, 200, 178)'></AtIcon>
                 </View>
               </View>
               <View className='youhuiList'>
@@ -892,8 +928,8 @@ class AddFood extends Component {
               <View className='quanBox' onClick={() => this.goAddcai(1)}>
                 <Text className='leftPart'>推荐菜</Text>
                 <View className='moreBox'>
-                  <Text className='more'>添加推荐菜</Text>
-                  <AtIcon value='chevron-right' size='12' color='#999'></AtIcon>
+                  <Text className='more'>点击添加推荐菜</Text>
+                  <AtIcon value='chevron-right' size='15' color='rgb(36, 200, 178)'></AtIcon>
                 </View>
               </View>
               <View className='youhuiList'>
@@ -949,8 +985,8 @@ class AddFood extends Component {
               <View className='quanBox' onClick={() => this.goAddcai(2)}>
                 <Text className='leftPart'>上传菜单</Text>
                 <View className='moreBox'>
-                  <Text className='more'>添加菜单</Text>
-                  <AtIcon value='chevron-right' size='12' color='#999'></AtIcon>
+                  <Text className='more'>点击添加菜单</Text>
+                  <AtIcon value='chevron-right' size='15' color='rgb(36, 200, 178)'></AtIcon>
                 </View>
               </View>
               <View className='youhuiList'>

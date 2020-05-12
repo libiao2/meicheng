@@ -14,22 +14,22 @@
                     </view>
                 </block>
                 <view class="imgBox">
-                    <choose-image compid="{{$compid__266}}"></choose-image>
+                    <choose-image compid="{{$compid__269}}"></choose-image>
                 </view>
             </view>
             <view class="itemBox"><text class="leftPart">菜品名称:</text>
                 <input type="text" class="shopNameInput" placeholder="请输入名称" value="{{name}}" bindchange="foodNameChange" data-e-change-so="this" />
             </view>
             <view class="itemBox"><text class="leftPart">价格:</text>
-                <input type="text" class="shopNameInput" placeholder="请输入价格" value="{{price}}" bindchange="priceChange" data-e-change-so="this" /><text class="rightText">元</text>
+                <input type="text" class="shopNameInput" placeholder="请输入价格" value="{{price}}" bindchange="priceChange" data-e-change-so="this" /><text class="rightText">$</text>
             </view>
             <view style="height: 5px;background:#f1f1f1"></view>
             <view class="textBox"><text class="title">详细说明:</text>
-                <at-textarea compid="{{$compid__267}}"></at-textarea>
+                <at-textarea compid="{{$compid__270}}"></at-textarea>
             </view>
-            <at-button compid="{{$compid__268}}">确认</at-button>
+            <at-button compid="{{$compid__271}}">确认</at-button>
             <view style="height: 30px;background:#fff"></view>
         </at-form>
-        <at-toast compid="{{$compid__269}}"></at-toast>
+        <at-toast compid="{{$compid__272}}"></at-toast>
     </view>
 </block>

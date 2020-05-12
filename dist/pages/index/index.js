@@ -73,11 +73,11 @@ var Home = (_dec = (0, _redux.connect)(function (_ref) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = Home.__proto__ || Object.getPrototypeOf(Home)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["loopArray108", "loopArray109", "loopArray110", "loopArray111", "loopArray112", "$compid__291", "$compid__292", "$compid__293", "$compid__294", "$compid__295", "dataList", "typeKey", "areaList", "selectArea", "city", "isSearch", "imgList", "typeList", "isGetInfo", "isMove", "recommendList", "stationMessage", "categoryId", "pageNum", "pageSize", "listInfo", "SocketTask", "counter", "addChat"], _this.config = {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = Home.__proto__ || Object.getPrototypeOf(Home)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["loopArray303", "loopArray304", "loopArray305", "loopArray306", "loopArray307", "$compid__676", "$compid__677", "$compid__678", "$compid__679", "dataList", "typeKey", "areaList", "selectArea", "city", "isSearch", "imgList", "typeList", "isMove", "recommendList", "stationMessage", "categoryId", "pageNum", "pageSize", "listInfo", "SocketTask", "counter", "addChat"], _this.config = {
       navigationBarTitleText: '美城美食365',
       "enablePullDownRefresh": true,
       onReachBottomDistance: 50
-    }, _this.anonymousFunc2Map = {}, _this.anonymousFunc3Map = {}, _this.anonymousFunc5Map = {}, _this.anonymousFunc7Map = {}, _this.customComponents = ["AtIcon", "AtNoticebar", "One", "Two", "AtActionSheet", "AtActionSheetItem", "AtModal", "AtModalHeader", "AtModalContent"], _temp), _possibleConstructorReturn(_this, _ret);
+    }, _this.anonymousFunc2Map = {}, _this.anonymousFunc3Map = {}, _this.anonymousFunc5Map = {}, _this.anonymousFunc7Map = {}, _this.customComponents = ["AtIcon", "AtNoticebar", "One", "Two", "AtActionSheet", "AtActionSheetItem"], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(Home, [{
@@ -92,7 +92,7 @@ var Home = (_dec = (0, _redux.connect)(function (_ref) {
         imgList: [],
         typeList: [{ name: '美食', pic: __webpack_require__(/*! ./../../image/food.png */ "./src/image/food.png") }, { name: '休闲', pic: __webpack_require__(/*! ./../../image/xiuxian.png */ "./src/image/xiuxian.png") }, { name: '生活', pic: __webpack_require__(/*! ./../../image/shenghuo.png */ "./src/image/shenghuo.png") }, { name: '二手', pic: __webpack_require__(/*! ./../../image/old.png */ "./src/image/old.png") }, { name: '房源', pic: __webpack_require__(/*! ./../../image/fangyuan.png */ "./src/image/fangyuan.png") }, { name: '部落', pic: __webpack_require__(/*! ./../../image/buluo.png */ "./src/image/buluo.png") }],
         typeKey: 0,
-        isGetInfo: false, // 获取用户信息弹框
+
         isMove: true,
         recommendList: [],
         stationMessage: '',
@@ -116,7 +116,7 @@ var Home = (_dec = (0, _redux.connect)(function (_ref) {
           if (arr[1] == 1) {
             ///1->美食；2->休闲；3->生活；4->二手；5->房源；6->部落
             _taroWeapp2.default.navigateTo({
-              url: "/pagesA/pages/foodDetail/index?id=" + arr[2]
+              url: "/pagesB/pages/foodDetail/index?id=" + arr[2]
             });
           } else if (arr[1] == 2) {
             _taroWeapp2.default.navigateTo({
@@ -133,15 +133,7 @@ var Home = (_dec = (0, _redux.connect)(function (_ref) {
   }, {
     key: 'componentDidMount',
     value: function componentDidMount() {
-      var _this2 = this;
-
-      if (_taroWeapp2.default.getStorageSync('userInfo') == '') {
-        setTimeout(function () {
-          _this2.setState({
-            isGetInfo: true
-          });
-        }, 100);
-      } else {
+      if (_taroWeapp2.default.getStorageSync('userInfo') != '') {
         this.getCarCount();
       }
 
@@ -159,20 +151,20 @@ var Home = (_dec = (0, _redux.connect)(function (_ref) {
   }, {
     key: 'componentDidShow',
     value: function componentDidShow() {
-      var _this3 = this;
+      var _this2 = this;
 
       console.log('diaoyongjiekou');
       this.setState({
         pageNum: 1,
         dataList: []
       }, function () {
-        _this3.getList();
+        _this2.getList();
       });
 
       _taroWeapp2.default.onSocketMessage(function (res) {
         var message = JSON.parse(res.data);
         var myId = _taroWeapp2.default.getStorageSync('userId');
-        var allList = _this3.props.counter.allChat;
+        var allList = _this2.props.counter.allChat;
         if (message.sendId == myId || message.sendToId == myId) {
           /// 判断该条信息是否与自己相关
           if (message.sendId == myId) {
@@ -191,15 +183,15 @@ var Home = (_dec = (0, _redux.connect)(function (_ref) {
               });
               if (isHave) {
                 allList[haveIndex].list.push(message);
-                _this3.props.addChat(allList);
+                _this2.props.addChat(allList);
               } else {
                 allList.push({ id: message.sendToId, list: [message] });
-                _this3.props.addChat(allList);
+                _this2.props.addChat(allList);
               }
             } else {
               var _allList = [];
               _allList.push({ id: message.sendToId, list: [message] });
-              _this3.props.addChat(_allList);
+              _this2.props.addChat(_allList);
             }
           }
           if (message.sendToId == myId) {
@@ -228,15 +220,15 @@ var Home = (_dec = (0, _redux.connect)(function (_ref) {
               });
               if (_isHave) {
                 allList[_haveIndex].list.push(message);
-                _this3.props.addChat(allList);
+                _this2.props.addChat(allList);
               } else {
                 allList.push({ id: message.sendId, list: [message] });
-                _this3.props.addChat(allList);
+                _this2.props.addChat(allList);
               }
             } else {
               var _allList2 = [];
               _allList2.push({ id: message.sendId, list: [message] });
-              _this3.props.addChat(_allList2);
+              _this2.props.addChat(_allList2);
             }
           }
         }
@@ -263,14 +255,14 @@ var Home = (_dec = (0, _redux.connect)(function (_ref) {
   }, {
     key: 'onReachBottom',
     value: function onReachBottom() {
-      var _this4 = this;
+      var _this3 = this;
 
       //上拉事件监听
       console.log('sssssssssssss');
       this.setState({
         pageNum: this.state.pageNum + 1
       }, function () {
-        _this4.getList();
+        _this3.getList();
       });
     }
   }, {
@@ -302,7 +294,7 @@ var Home = (_dec = (0, _redux.connect)(function (_ref) {
   }, {
     key: 'selectArea',
     value: function selectArea(e) {
-      var _this5 = this;
+      var _this4 = this;
 
       this.setState({
         selectArea: e.name,
@@ -311,27 +303,33 @@ var Home = (_dec = (0, _redux.connect)(function (_ref) {
         pageNum: 1,
         dataList: []
       }, function () {
-        _this5.getList();
+        _this4.getList();
       });
     }
   }, {
     key: 'typeChoose',
     value: function typeChoose(e) {
-      var _this6 = this;
-
-      this.setState({
-        typeKey: e,
-        categoryId: e + 1,
-        pageNum: 1,
-        dataList: []
-      }, function () {
-        _this6.getList();
-      });
+      var timer = null;
+      var that = this;
+      if (timer) {
+        clearTimeout(timer);
+      }
+      timer = setTimeout(function () {
+        console.log('0000000', that.state);
+        that.setState({
+          typeKey: e,
+          categoryId: e + 1,
+          pageNum: 1,
+          dataList: []
+        }, function () {
+          that.getList();
+        });
+      }, 700);
     }
   }, {
     key: 'initList',
     value: function initList() {
-      var _this7 = this;
+      var _this5 = this;
 
       this.setState({
         typeKey: 0,
@@ -339,22 +337,20 @@ var Home = (_dec = (0, _redux.connect)(function (_ref) {
         pageNum: 1,
         dataList: []
       }, function () {
-        _this7.getList();
+        _this5.getList();
       });
       _taroWeapp2.default.stopPullDownRefresh();
     }
   }, {
     key: 'getList',
     value: function getList() {
-      var _this8 = this;
+      var _this6 = this;
 
-      console.log('555555555555555555550000000000000调用接口了');
       var _state = this.state,
           city = _state.city,
           categoryId = _state.categoryId,
           pageNum = _state.pageNum,
           pageSize = _state.pageSize;
-
 
       var obj = {
         city: city,
@@ -366,11 +362,18 @@ var Home = (_dec = (0, _redux.connect)(function (_ref) {
       _api2.default.post('/home/productListByType', obj).then(function (res) {
         console.log('$$$$$', res);
         if (res.data.code == 200) {
-          var list = _this8.state.dataList;
-          _this8.setState({
-            dataList: [].concat(_toConsumableArray(list), _toConsumableArray(res.data.data.list)),
-            listInfo: res.data.data
-          });
+          var list = _this6.state.dataList;
+          if (pageNum == 1) {
+            _this6.setState({
+              dataList: res.data.data.list,
+              listInfo: res.data.data
+            });
+          } else {
+            _this6.setState({
+              dataList: [].concat(_toConsumableArray(list), _toConsumableArray(res.data.data.list)),
+              listInfo: res.data.data
+            });
+          }
         }
       });
     }
@@ -384,9 +387,7 @@ var Home = (_dec = (0, _redux.connect)(function (_ref) {
   }, {
     key: 'goSearch',
     value: function goSearch() {
-      var _state2 = this.state,
-          city = _state2.city,
-          categoryId = _state2.categoryId;
+      var city = this.state.city;
 
       _taroWeapp2.default.navigateTo({
         url: "/pagesB/pages/search/index?city=" + city
@@ -395,12 +396,12 @@ var Home = (_dec = (0, _redux.connect)(function (_ref) {
   }, {
     key: 'getData',
     value: function getData() {
-      var _this9 = this;
+      var _this7 = this;
 
       _api2.default.post('/home/content', {}).then(function (res) {
         if (res.data.code == 200) {
           var huiList = res.data.data.recommendList;
-          _this9.setState({
+          _this7.setState({
             imgList: res.data.data.advertiseList,
             recommendList: huiList.length > 2 ? [huiList[0], huiList[1]] : huiList,
             stationMessage: res.data.data.stationMessage
@@ -423,52 +424,6 @@ var Home = (_dec = (0, _redux.connect)(function (_ref) {
       });
     }
   }, {
-    key: 'bindGetUserInfo',
-    value: function bindGetUserInfo(value) {
-      console.log('ffg', value);
-      var that = this;
-      if (value.detail.userInfo) {
-        console.log('授权成功！');
-        // 保存用户信息微信登录
-        _taroWeapp2.default.setStorageSync('userInfo', value.detail.userInfo);
-
-        this.setState({
-          isGetInfo: false
-        });
-        var _that = this;
-        _taroWeapp2.default.login({
-          success: function success(res) {
-            if (res.code) {
-              var obj = {
-                withCredentials: true
-              };
-              _taroWeapp2.default.getSetting().then(function (a) {
-                console.log('999900000', a);
-                if (a.authSetting['scope.userInfo']) {
-                  _taroWeapp2.default.getUserInfo(obj).then(function (e) {
-                    _taroWeapp2.default.setStorageSync('userInfo', JSON.parse(e.rawData));
-                    _api2.default.post('/me/weixiLogin', {
-                      encryptedData: e.encryptedData,
-                      code: res.code,
-                      iv: e.iv
-                    }).then(function (v) {
-                      if (v.data.code == 200) {
-                        _taroWeapp2.default.setStorageSync('token', v.data.data.token);
-                        _taroWeapp2.default.setStorageSync('userId', v.data.data.userId);
-                        _that.getCarCount();
-                      }
-                    });
-                  });
-                }
-              });
-            } else {
-              console.log('登录失败！' + res.errMsg);
-            }
-          }
-        });
-      }
-    }
-  }, {
     key: 'swiperClick',
     value: function swiperClick(index) {
       var imgList = this.state.imgList;
@@ -476,7 +431,7 @@ var Home = (_dec = (0, _redux.connect)(function (_ref) {
       console.log('00000', imgList[index]);
       var url = '';
       if (imgList[index].linkType == 0 && imgList[index].categoryId == 1) {
-        url = "/pagesA/pages/foodDetail/index?id=" + imgList[index].linkId;
+        url = "/pagesB/pages/foodDetail/index?id=" + imgList[index].linkId;
       } else if (imgList[index].linkType == 0 && imgList[index].categoryId == 2) {
         url = "/pagesC/pages/leisureDetail/index?id=" + imgList[index].linkId;
       } else if (imgList[index].linkType == 1 && imgList[index].categoryId == 1) {
@@ -484,9 +439,17 @@ var Home = (_dec = (0, _redux.connect)(function (_ref) {
       } else if (imgList[index].linkType == 1 && imgList[index].categoryId == 2) {
         url = "/pagesC/pages/leisureInfo/index?id=" + imgList[index].linkId;
       }
-      _taroWeapp2.default.navigateTo({
-        url: url
-      });
+      if (_taroWeapp2.default.getStorageSync('userInfo') != '') {
+        _taroWeapp2.default.navigateTo({
+          url: url
+        });
+      } else {
+        _taroWeapp2.default.showToast({
+          title: "请先去'我的'页面进行登录！",
+          icon: 'none',
+          mask: true
+        });
+      }
     }
   }, {
     key: 'onShareAppMessage',
@@ -502,7 +465,7 @@ var Home = (_dec = (0, _redux.connect)(function (_ref) {
   }, {
     key: '_createData',
     value: function _createData() {
-      var _this10 = this;
+      var _this8 = this;
 
       this.__state = arguments[0] || this.state || {};
       this.__props = arguments[1] || this.props || {};
@@ -510,61 +473,56 @@ var Home = (_dec = (0, _redux.connect)(function (_ref) {
       var __prefix = this.$prefix;
       ;
 
-      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__291"),
+      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__676"),
           _genCompid2 = _slicedToArray(_genCompid, 2),
-          $prevCompid__291 = _genCompid2[0],
-          $compid__291 = _genCompid2[1];
+          $prevCompid__676 = _genCompid2[0],
+          $compid__676 = _genCompid2[1];
 
-      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__292"),
+      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__677"),
           _genCompid4 = _slicedToArray(_genCompid3, 2),
-          $prevCompid__292 = _genCompid4[0],
-          $compid__292 = _genCompid4[1];
+          $prevCompid__677 = _genCompid4[0],
+          $compid__677 = _genCompid4[1];
 
-      var _genCompid5 = (0, _taroWeapp.genCompid)(__prefix + "$compid__293"),
+      var _genCompid5 = (0, _taroWeapp.genCompid)(__prefix + "$compid__678"),
           _genCompid6 = _slicedToArray(_genCompid5, 2),
-          $prevCompid__293 = _genCompid6[0],
-          $compid__293 = _genCompid6[1];
+          $prevCompid__678 = _genCompid6[0],
+          $compid__678 = _genCompid6[1];
 
-      var _genCompid7 = (0, _taroWeapp.genCompid)(__prefix + "$compid__294"),
+      var _genCompid7 = (0, _taroWeapp.genCompid)(__prefix + "$compid__679"),
           _genCompid8 = _slicedToArray(_genCompid7, 2),
-          $prevCompid__294 = _genCompid8[0],
-          $compid__294 = _genCompid8[1];
+          $prevCompid__679 = _genCompid8[0],
+          $compid__679 = _genCompid8[1];
 
-      var _genCompid9 = (0, _taroWeapp.genCompid)(__prefix + "$compid__295"),
-          _genCompid10 = _slicedToArray(_genCompid9, 2),
-          $prevCompid__295 = _genCompid10[0],
-          $compid__295 = _genCompid10[1];
-
-      var _state3 = this.__state,
-          dataList = _state3.dataList,
-          typeKey = _state3.typeKey;
+      var _state2 = this.__state,
+          dataList = _state2.dataList,
+          typeKey = _state2.typeKey;
 
 
       this.anonymousFunc0 = function () {
-        return _this10.serchArea();
+        return _this8.serchArea();
       };
 
       this.anonymousFunc1 = function () {
-        return _this10.goSearch();
+        return _this8.goSearch();
       };
 
       this.anonymousFunc4 = function () {
-        return _this10.goMoreYouhui();
+        return _this8.goMoreYouhui();
       };
 
       this.anonymousFunc6 = function () {
-        return _this10.handleClose();
+        return _this8.handleClose();
       };
 
-      var loopArray108 = this.__state.imgList.map(function (item, index) {
+      var loopArray303 = this.__state.imgList.map(function (item, index) {
         item = {
           $original: (0, _taroWeapp.internal_get_original)(item)
         };
 
-        var _$indexKey = "bdezz" + index;
+        var _$indexKey = "eahzz" + index;
 
-        _this10.anonymousFunc2Map[_$indexKey] = function () {
-          return _this10.swiperClick(index);
+        _this8.anonymousFunc2Map[_$indexKey] = function () {
+          return _this8.swiperClick(index);
         };
 
         return {
@@ -573,15 +531,15 @@ var Home = (_dec = (0, _redux.connect)(function (_ref) {
         };
       });
 
-      var loopArray109 = this.__state.typeList.map(function (item, index) {
+      var loopArray304 = this.__state.typeList.map(function (item, index) {
         item = {
           $original: (0, _taroWeapp.internal_get_original)(item)
         };
 
-        var _$indexKey2 = "bdfzz" + index;
+        var _$indexKey2 = "eaizz" + index;
 
-        _this10.anonymousFunc3Map[_$indexKey2] = function () {
-          return _this10.typeChoose(index);
+        _this8.anonymousFunc3Map[_$indexKey2] = function () {
+          return _this8.typeChoose(index);
         };
 
         return {
@@ -590,15 +548,15 @@ var Home = (_dec = (0, _redux.connect)(function (_ref) {
         };
       });
 
-      var loopArray110 = this.__state.typeKey == 0 || this.__state.typeKey == 1 ? this.__state.recommendList.map(function (item, index) {
+      var loopArray305 = this.__state.typeKey == 0 || this.__state.typeKey == 1 ? this.__state.recommendList.map(function (item, index) {
         item = {
           $original: (0, _taroWeapp.internal_get_original)(item)
         };
 
-        var _$indexKey3 = "bdgzz" + index;
+        var _$indexKey3 = "eajzz" + index;
 
-        _this10.anonymousFunc5Map[_$indexKey3] = function () {
-          return _this10.goDetail(item.$original);
+        _this8.anonymousFunc5Map[_$indexKey3] = function () {
+          return _this8.goDetail(item.$original);
         };
 
         return {
@@ -606,59 +564,59 @@ var Home = (_dec = (0, _redux.connect)(function (_ref) {
           $original: item.$original
         };
       }) : [];
-      var loopArray111 = dataList.length > 0 ? dataList.map(function (item, index) {
+      var loopArray306 = dataList.length > 0 ? dataList.map(function (item, index) {
         item = {
           $original: (0, _taroWeapp.internal_get_original)(item)
         };
 
-        var _genCompid11 = (0, _taroWeapp.genCompid)(__prefix + 'bdizzzzzzz' + index, true),
-            _genCompid12 = _slicedToArray(_genCompid11, 2),
-            $prevCompid__288 = _genCompid12[0],
-            $compid__288 = _genCompid12[1];
+        var _genCompid9 = (0, _taroWeapp.genCompid)(__prefix + 'ebbzzzzzzz' + index, true),
+            _genCompid10 = _slicedToArray(_genCompid9, 2),
+            $prevCompid__673 = _genCompid10[0],
+            $compid__673 = _genCompid10[1];
 
         (typeKey == 0 || typeKey == 1) && _taroWeapp.propsManager.set({
           "item": item.$original,
-          "type": _this10.__state.categoryId
-        }, $compid__288, $prevCompid__288);
+          "type": _this8.__state.categoryId
+        }, $compid__673, $prevCompid__673);
 
-        var _genCompid13 = (0, _taroWeapp.genCompid)(__prefix + 'bdjzzzzzzz' + index, true),
-            _genCompid14 = _slicedToArray(_genCompid13, 2),
-            $prevCompid__289 = _genCompid14[0],
-            $compid__289 = _genCompid14[1];
+        var _genCompid11 = (0, _taroWeapp.genCompid)(__prefix + 'ebczzzzzzz' + index, true),
+            _genCompid12 = _slicedToArray(_genCompid11, 2),
+            $prevCompid__674 = _genCompid12[0],
+            $compid__674 = _genCompid12[1];
 
         !(typeKey == 0 || typeKey == 1) && _taroWeapp.propsManager.set({
           "item": item.$original,
           "type": typeKey
-        }, $compid__289, $prevCompid__289);
+        }, $compid__674, $prevCompid__674);
         return {
-          $compid__288: $compid__288,
-          $compid__289: $compid__289,
+          $compid__673: $compid__673,
+          $compid__674: $compid__674,
           $original: item.$original
         };
       }) : [];
 
-      var loopArray112 = this.__state.areaList.map(function (item, index) {
+      var loopArray307 = this.__state.areaList.map(function (item, index) {
         item = {
           $original: (0, _taroWeapp.internal_get_original)(item)
         };
 
-        var _$indexKey4 = "bdhzz" + index;
+        var _$indexKey4 = "ebazz" + index;
 
-        _this10.anonymousFunc7Map[_$indexKey4] = function () {
-          return _this10.selectArea(item.$original);
+        _this8.anonymousFunc7Map[_$indexKey4] = function () {
+          return _this8.selectArea(item.$original);
         };
 
-        var _genCompid15 = (0, _taroWeapp.genCompid)(__prefix + 'beazzzzzzz' + index, true),
-            _genCompid16 = _slicedToArray(_genCompid15, 2),
-            $prevCompid__290 = _genCompid16[0],
-            $compid__290 = _genCompid16[1];
+        var _genCompid13 = (0, _taroWeapp.genCompid)(__prefix + 'ebdzzzzzzz' + index, true),
+            _genCompid14 = _slicedToArray(_genCompid13, 2),
+            $prevCompid__675 = _genCompid14[0],
+            $compid__675 = _genCompid14[1];
 
         _taroWeapp.propsManager.set({
-          "onClick": _this10.anonymousFunc7.bind(_this10, _$indexKey4)
-        }, $compid__290, $prevCompid__290);
+          "onClick": _this8.anonymousFunc7.bind(_this8, _$indexKey4)
+        }, $compid__675, $prevCompid__675);
         return {
           _$indexKey4: _$indexKey4,
-          $compid__290: $compid__290,
+          $compid__675: $compid__675,
           $original: item.$original
         };
       });
@@ -667,35 +625,31 @@ var Home = (_dec = (0, _redux.connect)(function (_ref) {
         "value": "search",
         "size": "12",
         "color": "#666"
-      }, $compid__291, $prevCompid__291);
+      }, $compid__676, $prevCompid__676);
       _taroWeapp.propsManager.set({
         "single": true,
         "marquee": true,
         "icon": "volume-plus"
-      }, $compid__292, $prevCompid__292);
+      }, $compid__677, $prevCompid__677);
       (this.__state.typeKey == 0 || this.__state.typeKey == 1) && _taroWeapp.propsManager.set({
         "value": "chevron-right",
         "size": "10",
         "color": "#999"
-      }, $compid__293, $prevCompid__293);
+      }, $compid__678, $prevCompid__678);
       _taroWeapp.propsManager.set({
         "isOpened": this.__state.isSearch,
         "onClose": this.anonymousFunc6
-      }, $compid__294, $prevCompid__294);
-      _taroWeapp.propsManager.set({
-        "isOpened": this.__state.isGetInfo
-      }, $compid__295, $prevCompid__295);
+      }, $compid__679, $prevCompid__679);
       Object.assign(this.__state, {
-        loopArray108: loopArray108,
-        loopArray109: loopArray109,
-        loopArray110: loopArray110,
-        loopArray111: loopArray111,
-        loopArray112: loopArray112,
-        $compid__291: $compid__291,
-        $compid__292: $compid__292,
-        $compid__293: $compid__293,
-        $compid__294: $compid__294,
-        $compid__295: $compid__295
+        loopArray303: loopArray303,
+        loopArray304: loopArray304,
+        loopArray305: loopArray305,
+        loopArray306: loopArray306,
+        loopArray307: loopArray307,
+        $compid__676: $compid__676,
+        $compid__677: $compid__677,
+        $compid__678: $compid__678,
+        $compid__679: $compid__679
       });
       return this.__state;
     }
@@ -774,7 +728,7 @@ var Home = (_dec = (0, _redux.connect)(function (_ref) {
   }]);
 
   return Home;
-}(_taroWeapp.Component), _class2.$$events = ["anonymousFunc0", "anonymousFunc1", "anonymousFunc2", "anonymousFunc3", "anonymousFunc4", "anonymousFunc5", "bindGetUserInfo"], _class2.$$componentPath = "pages/index/index", _temp2)) || _class);
+}(_taroWeapp.Component), _class2.$$events = ["anonymousFunc0", "anonymousFunc1", "anonymousFunc2", "anonymousFunc3", "anonymousFunc4", "anonymousFunc5"], _class2.$$componentPath = "pages/index/index", _temp2)) || _class);
 exports.default = Home;
 
 Component(__webpack_require__(/*! @tarojs/taro-weapp */ "./node_modules/_@tarojs_taro-weapp@2.0.6@@tarojs/taro-weapp/index.js").default.createComponent(Home, true));

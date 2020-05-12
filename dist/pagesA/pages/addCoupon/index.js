@@ -59,7 +59,7 @@ var AddCoupon = (_dec = (0, _redux.connect)(function (_ref) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = AddCoupon.__proto__ || Object.getPrototypeOf(AddCoupon)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["$compid__300", "$compid__301", "$compid__302", "$compid__303", "$compid__304", "$compid__305", "$compid__306", "$compid__307", "chooseShopImg", "picList", "name", "detail", "note", "description", "groupPrice", "price", "peopleCount", "startTime", "startTimeMiao", "endTime", "endTimeMiao", "isOpen", "toast", "pageType"], _this.config = {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = AddCoupon.__proto__ || Object.getPrototypeOf(AddCoupon)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["$compid__305", "$compid__306", "$compid__307", "$compid__308", "$compid__309", "$compid__310", "$compid__311", "$compid__312", "chooseShopImg", "picList", "name", "detail", "note", "description", "groupPrice", "price", "peopleCount", "startTime", "startTimeMiao", "endTime", "endTimeMiao", "isOpen", "toast", "pageType"], _this.config = {
       navigationBarTitleText: '美城美食365'
     }, _this.customComponents = ["AtForm", "ChooseImage", "AtTextarea", "DetaPick", "AtButton", "AtToast"], _temp), _possibleConstructorReturn(_this, _ret);
   }
@@ -98,7 +98,8 @@ var AddCoupon = (_dec = (0, _redux.connect)(function (_ref) {
       var parmars = this.$router.params;
 
       if (parmars.type == 'change') {
-        var obj = JSON.parse(parmars.obj);
+        console.log('>>>>>>>', parmars.obj);
+        var obj = JSON.parse(decodeURIComponent(parmars.obj));
         this.setState({
           chooseShopImg: obj.chooseShopImg,
           picList: obj.picList,
@@ -228,7 +229,7 @@ var AddCoupon = (_dec = (0, _redux.connect)(function (_ref) {
               price: ''
             });
             _taroWeapp2.default.showToast({
-              title: '外卖费填写有误！！',
+              title: '价格填写有误！！',
               icon: 'none',
               mask: true
             });
@@ -250,7 +251,6 @@ var AddCoupon = (_dec = (0, _redux.connect)(function (_ref) {
   }, {
     key: 'startOnOK',
     value: function startOnOK(e) {
-      console.log('7778888889999', e);
       var T = new Date(e.current);
       console.log('tttt', T.getTime());
       this.setState({
@@ -299,51 +299,58 @@ var AddCoupon = (_dec = (0, _redux.connect)(function (_ref) {
           startTimeMiao = _state.startTimeMiao;
 
       if (picList.length == 0) {
-        this.setState({
-          isOpen: true,
-          toast: '请上传团购图片'
+        _taroWeapp2.default.showToast({
+          title: '请上传团购图片',
+          icon: 'none',
+          mask: true
         });
         return;
       }
       if (name == '') {
-        this.setState({
-          isOpen: true,
-          toast: '请填写团购名称'
+        _taroWeapp2.default.showToast({
+          title: '请填写团购名称',
+          icon: 'none',
+          mask: true
         });
         return;
       }
       if (groupPrice == '') {
-        this.setState({
-          isOpen: true,
-          toast: '请填写团购价格'
+        _taroWeapp2.default.showToast({
+          title: '请填写团购价格',
+          icon: 'none',
+          mask: true
         });
         return;
       }
       if (price == '') {
-        this.setState({
-          isOpen: true,
-          toast: '请填写原价格'
+        _taroWeapp2.default.showToast({
+          title: '请填写原价格',
+          icon: 'none',
+          mask: true
         });
         return;
       }
       if (peopleCount == '') {
-        this.setState({
-          isOpen: true,
-          toast: '请填写原人数'
+        _taroWeapp2.default.showToast({
+          title: '请填写团购人数',
+          icon: 'none',
+          mask: true
         });
         return;
       }
       if (startTime == '') {
-        this.setState({
-          isOpen: true,
-          toast: '请选择开始时间'
+        _taroWeapp2.default.showToast({
+          title: '请选择开始时间',
+          icon: 'none',
+          mask: true
         });
         return;
       }
       if (endTime == '') {
-        this.setState({
-          isOpen: true,
-          toast: '请选择结束时间'
+        _taroWeapp2.default.showToast({
+          title: '请选择结束时间',
+          icon: 'none',
+          mask: true
         });
         return;
       }
@@ -384,45 +391,45 @@ var AddCoupon = (_dec = (0, _redux.connect)(function (_ref) {
       var __prefix = this.$prefix;
       ;
 
-      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__300"),
+      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__305"),
           _genCompid2 = _slicedToArray(_genCompid, 2),
-          $prevCompid__300 = _genCompid2[0],
-          $compid__300 = _genCompid2[1];
+          $prevCompid__305 = _genCompid2[0],
+          $compid__305 = _genCompid2[1];
 
-      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__301"),
+      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__306"),
           _genCompid4 = _slicedToArray(_genCompid3, 2),
-          $prevCompid__301 = _genCompid4[0],
-          $compid__301 = _genCompid4[1];
+          $prevCompid__306 = _genCompid4[0],
+          $compid__306 = _genCompid4[1];
 
-      var _genCompid5 = (0, _taroWeapp.genCompid)(__prefix + "$compid__302"),
+      var _genCompid5 = (0, _taroWeapp.genCompid)(__prefix + "$compid__307"),
           _genCompid6 = _slicedToArray(_genCompid5, 2),
-          $prevCompid__302 = _genCompid6[0],
-          $compid__302 = _genCompid6[1];
+          $prevCompid__307 = _genCompid6[0],
+          $compid__307 = _genCompid6[1];
 
-      var _genCompid7 = (0, _taroWeapp.genCompid)(__prefix + "$compid__303"),
+      var _genCompid7 = (0, _taroWeapp.genCompid)(__prefix + "$compid__308"),
           _genCompid8 = _slicedToArray(_genCompid7, 2),
-          $prevCompid__303 = _genCompid8[0],
-          $compid__303 = _genCompid8[1];
+          $prevCompid__308 = _genCompid8[0],
+          $compid__308 = _genCompid8[1];
 
-      var _genCompid9 = (0, _taroWeapp.genCompid)(__prefix + "$compid__304"),
+      var _genCompid9 = (0, _taroWeapp.genCompid)(__prefix + "$compid__309"),
           _genCompid10 = _slicedToArray(_genCompid9, 2),
-          $prevCompid__304 = _genCompid10[0],
-          $compid__304 = _genCompid10[1];
+          $prevCompid__309 = _genCompid10[0],
+          $compid__309 = _genCompid10[1];
 
-      var _genCompid11 = (0, _taroWeapp.genCompid)(__prefix + "$compid__305"),
+      var _genCompid11 = (0, _taroWeapp.genCompid)(__prefix + "$compid__310"),
           _genCompid12 = _slicedToArray(_genCompid11, 2),
-          $prevCompid__305 = _genCompid12[0],
-          $compid__305 = _genCompid12[1];
+          $prevCompid__310 = _genCompid12[0],
+          $compid__310 = _genCompid12[1];
 
-      var _genCompid13 = (0, _taroWeapp.genCompid)(__prefix + "$compid__306"),
+      var _genCompid13 = (0, _taroWeapp.genCompid)(__prefix + "$compid__311"),
           _genCompid14 = _slicedToArray(_genCompid13, 2),
-          $prevCompid__306 = _genCompid14[0],
-          $compid__306 = _genCompid14[1];
+          $prevCompid__311 = _genCompid14[0],
+          $compid__311 = _genCompid14[1];
 
-      var _genCompid15 = (0, _taroWeapp.genCompid)(__prefix + "$compid__307"),
+      var _genCompid15 = (0, _taroWeapp.genCompid)(__prefix + "$compid__312"),
           _genCompid16 = _slicedToArray(_genCompid15, 2),
-          $prevCompid__307 = _genCompid16[0],
-          $compid__307 = _genCompid16[1];
+          $prevCompid__312 = _genCompid16[0],
+          $compid__312 = _genCompid16[1];
 
       console.log('oooo', this.__state.chooseShopImg);
 
@@ -435,50 +442,50 @@ var AddCoupon = (_dec = (0, _redux.connect)(function (_ref) {
         "onFilesValue": this.getOnFilesValue.bind(this),
         "returnImgSrc": this.getReturnImgSrc.bind(this),
         "deleteImgSrc": this.deleteImgSrc.bind(this)
-      }, $compid__300, $prevCompid__300);
+      }, $compid__305, $prevCompid__305);
       _taroWeapp.propsManager.set({
         "className": "text",
         "count": false,
         "value": this.__state.detail,
         "onChange": this.detailChange.bind(this)
-      }, $compid__301, $prevCompid__301);
+      }, $compid__306, $prevCompid__306);
       _taroWeapp.propsManager.set({
         "className": "text",
         "count": false,
         "value": this.__state.note,
         "onChange": this.needKnowChange.bind(this)
-      }, $compid__302, $prevCompid__302);
+      }, $compid__307, $prevCompid__307);
       _taroWeapp.propsManager.set({
         "className": "text",
         "count": false,
         "value": this.__state.description,
         "onChange": this.otherKnowChange.bind(this)
-      }, $compid__303, $prevCompid__303);
+      }, $compid__308, $prevCompid__308);
       _taroWeapp.propsManager.set({
         "onOk": this.startOnOK.bind(this),
         "initValue": "2020/4/15 17:22:37"
-      }, $compid__304, $prevCompid__304);
+      }, $compid__309, $prevCompid__309);
       _taroWeapp.propsManager.set({
         "onOk": this.endOnOK.bind(this),
         "initValue": "2020/4/15 17:22:37"
-      }, $compid__305, $prevCompid__305);
+      }, $compid__310, $prevCompid__310);
       _taroWeapp.propsManager.set({
         "className": "btn",
         "onClick": this.anonymousFunc0
-      }, $compid__306, $prevCompid__306);
+      }, $compid__311, $prevCompid__311);
       _taroWeapp.propsManager.set({
         "isOpened": this.__state.isOpen,
         "text": this.__state.toast
-      }, $compid__307, $prevCompid__307);
+      }, $compid__312, $prevCompid__312);
       Object.assign(this.__state, {
-        $compid__300: $compid__300,
-        $compid__301: $compid__301,
-        $compid__302: $compid__302,
-        $compid__303: $compid__303,
-        $compid__304: $compid__304,
         $compid__305: $compid__305,
         $compid__306: $compid__306,
-        $compid__307: $compid__307
+        $compid__307: $compid__307,
+        $compid__308: $compid__308,
+        $compid__309: $compid__309,
+        $compid__310: $compid__310,
+        $compid__311: $compid__311,
+        $compid__312: $compid__312
       });
       return this.__state;
     }

@@ -254,52 +254,59 @@ class AddCoupon extends Component {
       chooseCouponImgList
     } = this.state;
     if(picList.length == 0 && chooseCouponImgList.length == 0) {
-      this.setState({
-        isOpen: true,
-        toast: '请上传团购图片'
-      })
+      Taro.showToast({
+        title: '请上传团购图片',
+        icon: 'none',
+        mask:true,
+      });
       return
     }
     if(name == '') {
-      this.setState({
-        isOpen: true,
-        toast: '请填写团购名称'
-      })
+      Taro.showToast({
+        title: '请填写团购名称',
+        icon: 'none',
+        mask:true,
+      });
       return
     }
     if(groupPrice == '') {
-      this.setState({
-        isOpen: true,
-        toast: '请填写团购价格'
-      })
+      Taro.showToast({
+        title: '请填写团购价格',
+        icon: 'none',
+        mask:true,
+      });
       return
     }
     if(price == '') {
-      this.setState({
-        isOpen: true,
-        toast: '请填写原价格'
-      })
+      Taro.showToast({
+        title: '请填写原价格',
+        icon: 'none',
+        mask:true,
+      });
       return
     }
     if(peopleCount == '') {
-      this.setState({
-        isOpen: true,
-        toast: '请填写原人数'
-      })
+      Taro.showToast({
+        title: '请填写团购人数',
+        icon: 'none',
+        mask:true,
+      });
       return
     }
     if(startTime == '') {
-      this.setState({
-        isOpen: true,
-        toast: '请选择开始时间'
-      })
+      Taro.showToast({
+        title: '请选择开始时间',
+        icon: 'none',
+        mask:true,
+      });
       return
     }
     if(endTime == '') {
-      this.setState({
-        isOpen: true,
-        toast: '请选择结束时间'
-      })
+      Taro.showToast({
+        title: '请选择结束时间',
+        icon: 'none',
+        mask:true,
+      });
       return
     }
     if(startTimeMiao > endTimeMiao) {
@@ -407,6 +414,7 @@ class AddCoupon extends Component {
             />
           </View>
           <View style='height: 5px;background:#f1f1f1'></View>
+          <View className='tip'>(以下价格均为美元！)</View>
           <View className='bottomBox'>
             <View className='onSmallBox'>
               <Text className='title'>团购价:</Text>

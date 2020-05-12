@@ -2,7 +2,7 @@
     <view class="container">
         <block>
             <block wx:if="{{messageList.length > 0}}">
-                <view class="oneBox" bindtap="anonymousFunc0" wx:for="{{loopArray86}}" wx:for-item="item" wx:for-index="__index0" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey}}">
+                <view class="oneBox" bindtap="anonymousFunc0" wx:for="{{loopArray337}}" wx:for-item="item" wx:for-index="__index0" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey}}">
                     <view class="imgBox">
                         <image class="img" src="{{item.$original.sendToImg}}"></image>
                         <block wx:if="{{item.$original.unreadQuantity > 0}}">
@@ -18,7 +18,18 @@
                 </view>
             </block>
             <block wx:else>
-                <view class="noData"><text>暂无消息~~</text>
+                <view class="noData">
+                    <block>
+                        <block wx:if="{{anonymousState__temp}}"><text>暂无消息~~</text>
+                        </block>
+                        <block wx:else>
+                            <view><text>暂未登录~~</text>
+                                <view class="bigBox" bindtap="anonymousFunc1">
+                                    <view class="loginBtn">登录</view>
+                                </view>
+                            </view>
+                        </block>
+                    </block>
                 </view>
             </block>
         </block>

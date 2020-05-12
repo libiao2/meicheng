@@ -65,7 +65,7 @@ var ChangeAddLeisure = (_dec = (0, _redux.connect)(function (_ref) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = ChangeAddLeisure.__proto__ || Object.getPrototypeOf(ChangeAddLeisure)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["loopArray152", "loopArray153", "loopArray154", "$compid__420", "$compid__421", "$compid__422", "$compid__423", "$compid__424", "$compid__425", "$compid__426", "$compid__427", "$compid__428", "$compid__429", "chooseLeisureImgList", "picList", "areaList", "chooseShopImg", "isOpencity", "name", "cityName", "city", "address", "openTimeStart", "openTimeEnd", "projectName", "price", "telephone", "detail", "note", "description", "commonList", "isOpenToast", "toastText", "longitude", "latitude", "id"], _this.config = {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = ChangeAddLeisure.__proto__ || Object.getPrototypeOf(ChangeAddLeisure)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["loopArray152", "loopArray153", "loopArray154", "$compid__424", "$compid__425", "$compid__426", "$compid__427", "$compid__428", "$compid__429", "$compid__430", "$compid__431", "$compid__432", "$compid__433", "chooseLeisureImgList", "picList", "areaList", "chooseShopImg", "isOpencity", "name", "cityName", "city", "address", "openTimeStart", "openTimeEnd", "projectName", "price", "telephone", "detail", "note", "description", "commonList", "isOpenToast", "toastText", "longitude", "latitude", "id"], _this.config = {
       navigationBarTitleText: '休闲'
     }, _this.anonymousFunc0Map = {}, _this.anonymousFunc3Map = {}, _this.anonymousFunc6Map = {}, _this.anonymousFunc7Map = {}, _this.customComponents = ["AtForm", "ChooseImage", "AtIcon", "AtActionSheet", "AtActionSheetItem", "AtTextarea", "AtButton", "AtToast"], _temp), _possibleConstructorReturn(_this, _ret);
   }
@@ -657,55 +657,55 @@ var ChangeAddLeisure = (_dec = (0, _redux.connect)(function (_ref) {
       var __prefix = this.$prefix;
       ;
 
-      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__420"),
+      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__424"),
           _genCompid2 = _slicedToArray(_genCompid, 2),
-          $prevCompid__420 = _genCompid2[0],
-          $compid__420 = _genCompid2[1];
+          $prevCompid__424 = _genCompid2[0],
+          $compid__424 = _genCompid2[1];
 
-      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__421"),
+      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__425"),
           _genCompid4 = _slicedToArray(_genCompid3, 2),
-          $prevCompid__421 = _genCompid4[0],
-          $compid__421 = _genCompid4[1];
+          $prevCompid__425 = _genCompid4[0],
+          $compid__425 = _genCompid4[1];
 
-      var _genCompid5 = (0, _taroWeapp.genCompid)(__prefix + "$compid__422"),
+      var _genCompid5 = (0, _taroWeapp.genCompid)(__prefix + "$compid__426"),
           _genCompid6 = _slicedToArray(_genCompid5, 2),
-          $prevCompid__422 = _genCompid6[0],
-          $compid__422 = _genCompid6[1];
+          $prevCompid__426 = _genCompid6[0],
+          $compid__426 = _genCompid6[1];
 
-      var _genCompid7 = (0, _taroWeapp.genCompid)(__prefix + "$compid__423"),
+      var _genCompid7 = (0, _taroWeapp.genCompid)(__prefix + "$compid__427"),
           _genCompid8 = _slicedToArray(_genCompid7, 2),
-          $prevCompid__423 = _genCompid8[0],
-          $compid__423 = _genCompid8[1];
+          $prevCompid__427 = _genCompid8[0],
+          $compid__427 = _genCompid8[1];
 
-      var _genCompid9 = (0, _taroWeapp.genCompid)(__prefix + "$compid__424"),
+      var _genCompid9 = (0, _taroWeapp.genCompid)(__prefix + "$compid__428"),
           _genCompid10 = _slicedToArray(_genCompid9, 2),
-          $prevCompid__424 = _genCompid10[0],
-          $compid__424 = _genCompid10[1];
+          $prevCompid__428 = _genCompid10[0],
+          $compid__428 = _genCompid10[1];
 
-      var _genCompid11 = (0, _taroWeapp.genCompid)(__prefix + "$compid__425"),
+      var _genCompid11 = (0, _taroWeapp.genCompid)(__prefix + "$compid__429"),
           _genCompid12 = _slicedToArray(_genCompid11, 2),
-          $prevCompid__425 = _genCompid12[0],
-          $compid__425 = _genCompid12[1];
+          $prevCompid__429 = _genCompid12[0],
+          $compid__429 = _genCompid12[1];
 
-      var _genCompid13 = (0, _taroWeapp.genCompid)(__prefix + "$compid__426"),
+      var _genCompid13 = (0, _taroWeapp.genCompid)(__prefix + "$compid__430"),
           _genCompid14 = _slicedToArray(_genCompid13, 2),
-          $prevCompid__426 = _genCompid14[0],
-          $compid__426 = _genCompid14[1];
+          $prevCompid__430 = _genCompid14[0],
+          $compid__430 = _genCompid14[1];
 
-      var _genCompid15 = (0, _taroWeapp.genCompid)(__prefix + "$compid__427"),
+      var _genCompid15 = (0, _taroWeapp.genCompid)(__prefix + "$compid__431"),
           _genCompid16 = _slicedToArray(_genCompid15, 2),
-          $prevCompid__427 = _genCompid16[0],
-          $compid__427 = _genCompid16[1];
+          $prevCompid__431 = _genCompid16[0],
+          $compid__431 = _genCompid16[1];
 
-      var _genCompid17 = (0, _taroWeapp.genCompid)(__prefix + "$compid__428"),
+      var _genCompid17 = (0, _taroWeapp.genCompid)(__prefix + "$compid__432"),
           _genCompid18 = _slicedToArray(_genCompid17, 2),
-          $prevCompid__428 = _genCompid18[0],
-          $compid__428 = _genCompid18[1];
+          $prevCompid__432 = _genCompid18[0],
+          $compid__432 = _genCompid18[1];
 
-      var _genCompid19 = (0, _taroWeapp.genCompid)(__prefix + "$compid__429"),
+      var _genCompid19 = (0, _taroWeapp.genCompid)(__prefix + "$compid__433"),
           _genCompid20 = _slicedToArray(_genCompid19, 2),
-          $prevCompid__429 = _genCompid20[0],
-          $compid__429 = _genCompid20[1];
+          $prevCompid__433 = _genCompid20[0],
+          $compid__433 = _genCompid20[1];
 
       var chooseLeisureImgList = this.__state.chooseLeisureImgList;
 
@@ -735,7 +735,7 @@ var ChangeAddLeisure = (_dec = (0, _redux.connect)(function (_ref) {
           $original: (0, _taroWeapp.internal_get_original)(item)
         };
 
-        var _$indexKey = "bjezz" + index;
+        var _$indexKey = "caezz" + index;
 
         _this5.anonymousFunc0Map[_$indexKey] = function () {
           return _this5.deleteChooseImg(index);
@@ -752,23 +752,23 @@ var ChangeAddLeisure = (_dec = (0, _redux.connect)(function (_ref) {
           $original: (0, _taroWeapp.internal_get_original)(item)
         };
 
-        var _$indexKey2 = "bjfzz" + index;
+        var _$indexKey2 = "cafzz" + index;
 
         _this5.anonymousFunc3Map[_$indexKey2] = function () {
           return _this5.selectCity(item.$original);
         };
 
-        var _genCompid21 = (0, _taroWeapp.genCompid)(__prefix + 'bjizzzzzzz' + index, true),
+        var _genCompid21 = (0, _taroWeapp.genCompid)(__prefix + 'caizzzzzzz' + index, true),
             _genCompid22 = _slicedToArray(_genCompid21, 2),
-            $prevCompid__419 = _genCompid22[0],
-            $compid__419 = _genCompid22[1];
+            $prevCompid__423 = _genCompid22[0],
+            $compid__423 = _genCompid22[1];
 
         _taroWeapp.propsManager.set({
           "onClick": _this5.anonymousFunc3.bind(_this5, _$indexKey2)
-        }, $compid__419, $prevCompid__419);
+        }, $compid__423, $prevCompid__423);
         return {
           _$indexKey2: _$indexKey2,
-          $compid__419: $compid__419,
+          $compid__423: $compid__423,
           $original: item.$original
         };
       });
@@ -778,13 +778,13 @@ var ChangeAddLeisure = (_dec = (0, _redux.connect)(function (_ref) {
           $original: (0, _taroWeapp.internal_get_original)(item)
         };
 
-        var _$indexKey3 = "bjgzz" + index;
+        var _$indexKey3 = "cagzz" + index;
 
         _this5.anonymousFunc6Map[_$indexKey3] = function () {
           return _this5.deleteItem(index);
         };
 
-        var _$indexKey4 = "bjhzz" + index;
+        var _$indexKey4 = "cahzz" + index;
 
         _this5.anonymousFunc7Map[_$indexKey4] = function () {
           return _this5.changeItem(index);
@@ -802,66 +802,66 @@ var ChangeAddLeisure = (_dec = (0, _redux.connect)(function (_ref) {
         "onFilesValue": this.getOnFilesValue.bind(this),
         "returnImgSrc": this.getReturnImgSrc.bind(this),
         "deleteImgSrc": this.deleteImgSrc.bind(this)
-      }, $compid__420, $prevCompid__420);
+      }, $compid__424, $prevCompid__424);
       _taroWeapp.propsManager.set({
         "value": "chevron-down",
         "size": "13",
         "color": "#999"
-      }, $compid__421, $prevCompid__421);
+      }, $compid__425, $prevCompid__425);
       _taroWeapp.propsManager.set({
         "isOpened": this.__state.isOpencity,
         "onClose": this.anonymousFunc2
-      }, $compid__422, $prevCompid__422);
+      }, $compid__426, $prevCompid__426);
       _taroWeapp.propsManager.set({
         "value": "map-pin",
         "size": "13",
         "color": "#999"
-      }, $compid__423, $prevCompid__423);
+      }, $compid__427, $prevCompid__427);
       _taroWeapp.propsManager.set({
         "className": "text",
         "count": false,
         "value": this.__state.detail,
         "onChange": this.shuomingChange.bind(this)
-      }, $compid__424, $prevCompid__424);
+      }, $compid__428, $prevCompid__428);
       _taroWeapp.propsManager.set({
         "className": "text",
         "count": false,
         "value": this.__state.note,
         "onChange": this.noteChange.bind(this)
-      }, $compid__425, $prevCompid__425);
+      }, $compid__429, $prevCompid__429);
       _taroWeapp.propsManager.set({
         "className": "text",
         "count": false,
         "value": this.__state.description,
         "onChange": this.descriptionChange.bind(this)
-      }, $compid__426, $prevCompid__426);
+      }, $compid__430, $prevCompid__430);
       _taroWeapp.propsManager.set({
         "value": "chevron-right",
         "size": "12",
         "color": "#999"
-      }, $compid__427, $prevCompid__427);
+      }, $compid__431, $prevCompid__431);
       _taroWeapp.propsManager.set({
         "className": "btn",
         "onClick": this.anonymousFunc8
-      }, $compid__428, $prevCompid__428);
+      }, $compid__432, $prevCompid__432);
       _taroWeapp.propsManager.set({
         "isOpened": this.__state.isOpenToast,
         "text": this.__state.toastText
-      }, $compid__429, $prevCompid__429);
+      }, $compid__433, $prevCompid__433);
       Object.assign(this.__state, {
         loopArray152: loopArray152,
         loopArray153: loopArray153,
         loopArray154: loopArray154,
-        $compid__420: $compid__420,
-        $compid__421: $compid__421,
-        $compid__422: $compid__422,
-        $compid__423: $compid__423,
         $compid__424: $compid__424,
         $compid__425: $compid__425,
         $compid__426: $compid__426,
         $compid__427: $compid__427,
         $compid__428: $compid__428,
-        $compid__429: $compid__429
+        $compid__429: $compid__429,
+        $compid__430: $compid__430,
+        $compid__431: $compid__431,
+        $compid__432: $compid__432,
+        $compid__433: $compid__433
       });
       return this.__state;
     }

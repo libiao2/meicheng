@@ -77,7 +77,7 @@ var ChangeAddbuluo = (_dec = (0, _redux.connect)(function (_ref) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = ChangeAddbuluo.__proto__ || Object.getPrototypeOf(ChangeAddbuluo)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["loopArray104", "$compid__276", "$compid__277", "$compid__278", "$compid__279", "buluoImgList", "foodImg", "picList", "name", "detail", "isOpen", "toast", "id"], _this.config = {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = ChangeAddbuluo.__proto__ || Object.getPrototypeOf(ChangeAddbuluo)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["loopArray104", "$compid__279", "$compid__280", "$compid__281", "$compid__282", "buluoImgList", "foodImg", "picList", "name", "detail", "isOpen", "toast", "id"], _this.config = {
       navigationBarTitleText: '部落'
     }, _this.anonymousFunc0Map = {}, _this.customComponents = ["AtForm", "ChooseImage", "AtTextarea", "AtButton", "AtToast"], _temp), _possibleConstructorReturn(_this, _ret);
   }
@@ -279,25 +279,25 @@ var ChangeAddbuluo = (_dec = (0, _redux.connect)(function (_ref) {
       var __prefix = this.$prefix;
       ;
 
-      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__276"),
+      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__279"),
           _genCompid2 = _slicedToArray(_genCompid, 2),
-          $prevCompid__276 = _genCompid2[0],
-          $compid__276 = _genCompid2[1];
+          $prevCompid__279 = _genCompid2[0],
+          $compid__279 = _genCompid2[1];
 
-      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__277"),
+      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__280"),
           _genCompid4 = _slicedToArray(_genCompid3, 2),
-          $prevCompid__277 = _genCompid4[0],
-          $compid__277 = _genCompid4[1];
+          $prevCompid__280 = _genCompid4[0],
+          $compid__280 = _genCompid4[1];
 
-      var _genCompid5 = (0, _taroWeapp.genCompid)(__prefix + "$compid__278"),
+      var _genCompid5 = (0, _taroWeapp.genCompid)(__prefix + "$compid__281"),
           _genCompid6 = _slicedToArray(_genCompid5, 2),
-          $prevCompid__278 = _genCompid6[0],
-          $compid__278 = _genCompid6[1];
+          $prevCompid__281 = _genCompid6[0],
+          $compid__281 = _genCompid6[1];
 
-      var _genCompid7 = (0, _taroWeapp.genCompid)(__prefix + "$compid__279"),
+      var _genCompid7 = (0, _taroWeapp.genCompid)(__prefix + "$compid__282"),
           _genCompid8 = _slicedToArray(_genCompid7, 2),
-          $prevCompid__279 = _genCompid8[0],
-          $compid__279 = _genCompid8[1];
+          $prevCompid__282 = _genCompid8[0],
+          $compid__282 = _genCompid8[1];
 
       var buluoImgList = this.__state.buluoImgList;
 
@@ -311,7 +311,7 @@ var ChangeAddbuluo = (_dec = (0, _redux.connect)(function (_ref) {
           $original: (0, _taroWeapp.internal_get_original)(item)
         };
 
-        var _$indexKey = "bdczz" + index;
+        var _$indexKey = "bdizz" + index;
 
         _this3.anonymousFunc0Map[_$indexKey] = function () {
           return _this3.deleteChooseImg(index);
@@ -327,27 +327,27 @@ var ChangeAddbuluo = (_dec = (0, _redux.connect)(function (_ref) {
         "onFilesValue": this.getOnFilesValue.bind(this),
         "returnImgSrc": this.getReturnImgSrc.bind(this),
         "deleteImgSrc": this.deleteImgSrc.bind(this)
-      }, $compid__276, $prevCompid__276);
+      }, $compid__279, $prevCompid__279);
       _taroWeapp.propsManager.set({
         "className": "text",
         "count": false,
         "value": this.__state.detail,
         "onChange": this.detailChange.bind(this)
-      }, $compid__277, $prevCompid__277);
+      }, $compid__280, $prevCompid__280);
       _taroWeapp.propsManager.set({
         "className": "btn",
         "onClick": this.anonymousFunc1
-      }, $compid__278, $prevCompid__278);
+      }, $compid__281, $prevCompid__281);
       _taroWeapp.propsManager.set({
         "isOpened": this.__state.isOpen,
         "text": this.__state.toast
-      }, $compid__279, $prevCompid__279);
+      }, $compid__282, $prevCompid__282);
       Object.assign(this.__state, {
         loopArray104: loopArray104,
-        $compid__276: $compid__276,
-        $compid__277: $compid__277,
-        $compid__278: $compid__278,
-        $compid__279: $compid__279
+        $compid__279: $compid__279,
+        $compid__280: $compid__280,
+        $compid__281: $compid__281,
+        $compid__282: $compid__282
       });
       return this.__state;
     }

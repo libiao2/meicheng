@@ -35,7 +35,6 @@ class Menu extends Component {
   }
   componentDidMount() {
     let params = this.$router.params;
-    console.log('***((())))+++++', params)
     this.setState({
       list: JSON.parse(decodeURIComponent(params.list)),
       shopId: parseInt(params.shopId),

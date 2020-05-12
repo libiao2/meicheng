@@ -45,7 +45,6 @@ class App extends Component {
           'pages/addLeisure/index',
           'pages/addLife/index',
           'pages/chat/index',
-          'pages/foodDetail/index',
           'pages/foodTuan/index',
           'pages/foodInfo/index',
         ]
@@ -59,6 +58,7 @@ class App extends Component {
           'pages/myPublish/index',
           'pages/search/index',
           'pages/secondhand/index',
+          'pages/foodDetail/index',
         ]
       },
       {
@@ -172,8 +172,6 @@ class App extends Component {
   getMessageCount() {
     let that = this;
     messageTimeout = setTimeout(() => {
-      console.log("获取消息未读数量", Taro.getStorageSync('token'));
-      
       if(Taro.getStorageSync('token') != '') {
         api.post('/ws/messageUnreadQuantity',{}).then(res => {
           console.log('消息数量', res)

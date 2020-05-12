@@ -36,7 +36,9 @@ class GroupBuyingDetail extends Component {
   componentWillMount() {
   }
   componentDidMount() {
-    this.getData()
+    if(Taro.getStorageSync('token') != '') {
+      this.getData()
+    }
   }
   componentWillReceiveProps (nextProps) {
     console.log(this.props, nextProps)
@@ -100,7 +102,7 @@ class GroupBuyingDetail extends Component {
     const { shareItem } = this.state;
     console.log('nnnmmm', shareItem)
     return {
-      title: '分享',
+      title: `${shareItem.productItemName},原价${shareItem.groupOriginalPrice},现价${shareItem.price},限时团购`,
       path: `/pagesA/pages/foodTuan/index?goodsId=${shareItem.productItemId}`,
       success: function (res) {
         console.log('成功', res)
@@ -145,6 +147,12 @@ class GroupBuyingDetail extends Component {
           }
         })
       }
+    })
+  }
+
+  goLogin() {
+    Taro.switchTab({
+      url: `/pages/my/index`
     })
   }
 
@@ -200,7 +208,19 @@ class GroupBuyingDetail extends Component {
             )
           })
           :
-          <View className='noData'>暂无更多数据~</View>
+          <View className='noData'>
+            {
+              Taro.getStorageSync('token') != '' ?
+              <Text>暂无更多数据~~</Text>
+              :
+              <View>
+                <Text>暂未登录~~</Text>
+                <View className='bigBox' onClick={() => this.goLogin()}>
+                  <View className='loginBtn'>登录</View>
+                </View>
+              </View>
+            }
+          </View>
         }
         <AtActionSheet isOpened={openShare} onClose={() => this.handleClose()}>
           <AtActionSheetItem>

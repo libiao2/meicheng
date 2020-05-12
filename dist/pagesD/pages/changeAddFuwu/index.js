@@ -61,7 +61,7 @@ var AddFuwu = (_dec = (0, _redux.connect)(function (_ref) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = AddFuwu.__proto__ || Object.getPrototypeOf(AddFuwu)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["loopArray103", "$compid__270", "$compid__271", "$compid__272", "$compid__273", "$compid__274", "$compid__275", "fuwuImgList", "foodImg", "picList", "name", "price", "detail", "note", "description", "isOpen", "toast", "pageType", "itemIndex"], _this.config = {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = AddFuwu.__proto__ || Object.getPrototypeOf(AddFuwu)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["loopArray103", "$compid__273", "$compid__274", "$compid__275", "$compid__276", "$compid__277", "$compid__278", "fuwuImgList", "foodImg", "picList", "name", "price", "detail", "note", "description", "isOpen", "toast", "pageType", "itemIndex"], _this.config = {
       navigationBarTitleText: '美城美食365'
     }, _this.anonymousFunc0Map = {}, _this.customComponents = ["AtForm", "ChooseImage", "AtTextarea", "AtButton", "AtToast"], _temp), _possibleConstructorReturn(_this, _ret);
   }
@@ -301,35 +301,35 @@ var AddFuwu = (_dec = (0, _redux.connect)(function (_ref) {
       var __prefix = this.$prefix;
       ;
 
-      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__270"),
+      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__273"),
           _genCompid2 = _slicedToArray(_genCompid, 2),
-          $prevCompid__270 = _genCompid2[0],
-          $compid__270 = _genCompid2[1];
+          $prevCompid__273 = _genCompid2[0],
+          $compid__273 = _genCompid2[1];
 
-      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__271"),
+      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__274"),
           _genCompid4 = _slicedToArray(_genCompid3, 2),
-          $prevCompid__271 = _genCompid4[0],
-          $compid__271 = _genCompid4[1];
+          $prevCompid__274 = _genCompid4[0],
+          $compid__274 = _genCompid4[1];
 
-      var _genCompid5 = (0, _taroWeapp.genCompid)(__prefix + "$compid__272"),
+      var _genCompid5 = (0, _taroWeapp.genCompid)(__prefix + "$compid__275"),
           _genCompid6 = _slicedToArray(_genCompid5, 2),
-          $prevCompid__272 = _genCompid6[0],
-          $compid__272 = _genCompid6[1];
+          $prevCompid__275 = _genCompid6[0],
+          $compid__275 = _genCompid6[1];
 
-      var _genCompid7 = (0, _taroWeapp.genCompid)(__prefix + "$compid__273"),
+      var _genCompid7 = (0, _taroWeapp.genCompid)(__prefix + "$compid__276"),
           _genCompid8 = _slicedToArray(_genCompid7, 2),
-          $prevCompid__273 = _genCompid8[0],
-          $compid__273 = _genCompid8[1];
+          $prevCompid__276 = _genCompid8[0],
+          $compid__276 = _genCompid8[1];
 
-      var _genCompid9 = (0, _taroWeapp.genCompid)(__prefix + "$compid__274"),
+      var _genCompid9 = (0, _taroWeapp.genCompid)(__prefix + "$compid__277"),
           _genCompid10 = _slicedToArray(_genCompid9, 2),
-          $prevCompid__274 = _genCompid10[0],
-          $compid__274 = _genCompid10[1];
+          $prevCompid__277 = _genCompid10[0],
+          $compid__277 = _genCompid10[1];
 
-      var _genCompid11 = (0, _taroWeapp.genCompid)(__prefix + "$compid__275"),
+      var _genCompid11 = (0, _taroWeapp.genCompid)(__prefix + "$compid__278"),
           _genCompid12 = _slicedToArray(_genCompid11, 2),
-          $prevCompid__275 = _genCompid12[0],
-          $compid__275 = _genCompid12[1];
+          $prevCompid__278 = _genCompid12[0],
+          $compid__278 = _genCompid12[1];
 
       var fuwuImgList = this.__state.fuwuImgList;
 
@@ -343,7 +343,7 @@ var AddFuwu = (_dec = (0, _redux.connect)(function (_ref) {
           $original: (0, _taroWeapp.internal_get_original)(item)
         };
 
-        var _$indexKey = "bdbzz" + index;
+        var _$indexKey = "bdhzz" + index;
 
         _this2.anonymousFunc0Map[_$indexKey] = function () {
           return _this2.deleteChooseImg(index);
@@ -359,41 +359,41 @@ var AddFuwu = (_dec = (0, _redux.connect)(function (_ref) {
         "onFilesValue": this.getOnFilesValue.bind(this),
         "returnImgSrc": this.getReturnImgSrc.bind(this),
         "deleteImgSrc": this.deleteImgSrc.bind(this)
-      }, $compid__270, $prevCompid__270);
+      }, $compid__273, $prevCompid__273);
       _taroWeapp.propsManager.set({
         "className": "text",
         "count": false,
         "value": this.__state.detail,
         "onChange": this.shuomingChange.bind(this)
-      }, $compid__271, $prevCompid__271);
+      }, $compid__274, $prevCompid__274);
       _taroWeapp.propsManager.set({
         "className": "text",
         "count": false,
         "value": this.__state.note,
         "onChange": this.noteChange.bind(this)
-      }, $compid__272, $prevCompid__272);
+      }, $compid__275, $prevCompid__275);
       _taroWeapp.propsManager.set({
         "className": "text",
         "count": false,
         "value": this.__state.description,
         "onChange": this.descriptionChange.bind(this)
-      }, $compid__273, $prevCompid__273);
+      }, $compid__276, $prevCompid__276);
       _taroWeapp.propsManager.set({
         "className": "btn",
         "onClick": this.anonymousFunc1
-      }, $compid__274, $prevCompid__274);
+      }, $compid__277, $prevCompid__277);
       _taroWeapp.propsManager.set({
         "isOpened": this.__state.isOpen,
         "text": this.__state.toast
-      }, $compid__275, $prevCompid__275);
+      }, $compid__278, $prevCompid__278);
       Object.assign(this.__state, {
         loopArray103: loopArray103,
-        $compid__270: $compid__270,
-        $compid__271: $compid__271,
-        $compid__272: $compid__272,
         $compid__273: $compid__273,
         $compid__274: $compid__274,
-        $compid__275: $compid__275
+        $compid__275: $compid__275,
+        $compid__276: $compid__276,
+        $compid__277: $compid__277,
+        $compid__278: $compid__278
       });
       return this.__state;
     }

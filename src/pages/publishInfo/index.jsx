@@ -53,37 +53,43 @@ class PublishInfo extends Component {
   componentDidHide () { }
 
   chooseType(key) {
-    switch(key) {
-      case 'food':
-        Taro.navigateTo({
-          url: '/pagesA/pages/addFood/index',
-        })
-        break;
-      case 'leisure':
-        Taro.navigateTo({
-          url: '/pagesA/pages/addLeisure/index',
-        })
-        break;
-      case 'life':
-        Taro.navigateTo({
-          url: '/pagesA/pages/addLife/index',
-        })
-        break;
-      case 'secondhand':
-        Taro.navigateTo({
-          url: '/pagesB/pages/secondhand/index',
-        })
-        break;
-      case 'housing':
-        Taro.navigateTo({
-          url: '/pagesA/pages/addHome/index',
-        })
-        break;
-      case 'tribe':
-        Taro.navigateTo({
-          url: '/pagesA/pages/addBuluo/index',
-        })
-        break;
+    if(Taro.getStorageSync('userInfo') != '') {
+      switch(key) {
+        case 'food':
+          Taro.navigateTo({
+            url: '/pagesA/pages/addFood/index',
+          })
+          break;
+        case 'leisure':
+          Taro.navigateTo({
+            url: '/pagesA/pages/addLeisure/index',
+          })
+          break;
+        case 'life':
+          Taro.navigateTo({
+            url: '/pagesA/pages/addLife/index',
+          })
+          break;
+        case 'secondhand':
+          Taro.navigateTo({
+            url: '/pagesB/pages/secondhand/index',
+          })
+          break;
+        case 'housing':
+          Taro.navigateTo({
+            url: '/pagesA/pages/addHome/index',
+          })
+          break;
+        case 'tribe':
+          Taro.navigateTo({
+            url: '/pagesA/pages/addBuluo/index',
+          })
+          break;
+      }
+    } else {
+      Taro.switchTab({
+        url: `/pages/my/index`
+      })
     }
   }
 

@@ -35,6 +35,8 @@ class LeisureDetail extends Component {
     openMessage: false,
     myMessage: '', /// 评论信息
     memberId: '', /// 评论时保留评论id
+    carCount: 0,
+    dianCount: 0,
   };
 
   config = {
@@ -69,7 +71,8 @@ class LeisureDetail extends Component {
     api.post('/home/getProductInfo',{id}).then(res => {
       if(res.data.code == 200) {
         this.setState({
-          goodsInfo: res.data.data
+          goodsInfo: res.data.data,
+          dianCount: res.data.data.upvote,
         })
       }
     })
@@ -186,6 +189,9 @@ class LeisureDetail extends Component {
       console.log('sssss', res)
       if(res.data.code == 200) {
         if(res.data.data != 0) {
+          this.setState({
+            carCount: res.data.data,
+          });
           Taro.setTabBarBadge({
             index: 2,
             text: `${res.data.data}`
@@ -200,7 +206,6 @@ class LeisureDetail extends Component {
   }
 
   addCard(item) {
-    console.log('HHHHH', item)
     const { shopId, goodsInfo } = this.state;
     let obj = {
       productId: shopId,
@@ -223,6 +228,24 @@ class LeisureDetail extends Component {
     })
   }
 
+  openMap() {
+    const { goodsInfo } = this.state;
+    ////使用微信内置地图查看标记点位置，并进行导航
+    Taro.openLocation({
+      latitude: parseInt(goodsInfo.latitude),//要去的纬度-地址
+      longitude: parseInt(goodsInfo.longitude),//要去的经度-地址
+    })
+  }
+
+  dianCountChange() {
+    const {dianCount} = this.state;
+    let val = dianCount;
+    val +=1;
+    this.setState({
+      dianCount: val
+    })
+  }
+
 
   render () {
     const {
@@ -232,6 +255,8 @@ class LeisureDetail extends Component {
       isOpenToast,
       openMessage,
       myMessage,
+      carCount,
+      dianCount,
       toastText } = this.state;
 
     let url = `/pagesC/pages/leisureDetail/index?id=${shopId}`
@@ -263,7 +288,7 @@ class LeisureDetail extends Component {
                 style='width:15px;height:15px;margin-right: 6px' />
             <Text className='info'>营业时间: {goodsInfo.openTimeStart}-{goodsInfo.openTimeEnd}</Text>
           </View>
-          <View className='timeBox'>
+          <View className='timeBox' onClick={() => this.openMap()}>
             <Image
               src={require('./../../../image/dingwei.png')}
               style='width:15px;height:15px;margin-right: 6px' />
@@ -375,6 +400,9 @@ class LeisureDetail extends Component {
           shopId={this.state.shopId}
           shopName={goodsInfo.name}
           url={url}
+          carCount={carCount}
+          dianCount={dianCount}
+          changeDian={this.dianCountChange}
           isDian={goodsInfo.upvoteIs}
           list={goodsInfo.commonList} />
         <AtToast
@@ -397,7 +425,7 @@ class LeisureDetail extends Component {
               <View className='btnBox' onClick={() => this.publishMessage(1)}>
                   <Text>匿名发布</Text>
                 </View>
-                <View className='btnBox otherBtn' onClick={() => this.publishMessage(0)}>
+                <View className='btnBox' onClick={() => this.publishMessage(0)}>
                   <Text>发布</Text>
                 </View>
               </View>

@@ -14,6 +14,8 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
+
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
@@ -67,12 +69,13 @@ var My = (_dec = (0, _redux.connect)(function (_ref) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = My.__proto__ || Object.getPrototypeOf(My)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["anonymousState__temp", "anonymousState__temp2", "anonymousState__temp3", "anonymousState__temp4", "loopArray84", "userInfo", "tabList"], _this.state = {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = My.__proto__ || Object.getPrototypeOf(My)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["anonymousState__temp", "anonymousState__temp2", "anonymousState__temp3", "anonymousState__temp4", "anonymousState__temp5", "anonymousState__temp6", "loopArray369", "$compid__869", "userInfo", "tabList", "isGetInfo"], _this.state = {
       tabList: [{ num: 0, title: '我的发布' }, { num: 0, title: '我卖出的' }, { num: 0, title: '我的订单' }],
-      userInfo: {}
+      userInfo: {},
+      isGetInfo: false // 获取用户信息弹框
     }, _this.config = {
       navigationBarTitleText: '我的'
-    }, _this.anonymousFunc1Map = {}, _this.customComponents = [], _temp), _possibleConstructorReturn(_this, _ret);
+    }, _this.anonymousFunc2Map = {}, _this.customComponents = ["AtModal", "AtModalHeader", "AtModalContent"], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(My, [{
@@ -91,9 +94,7 @@ var My = (_dec = (0, _redux.connect)(function (_ref) {
     }
   }, {
     key: 'componentDidMount',
-    value: function componentDidMount() {
-      this.getData();
-    }
+    value: function componentDidMount() {}
   }, {
     key: 'componentWillReceiveProps',
     value: function componentWillReceiveProps(nextProps) {
@@ -104,7 +105,11 @@ var My = (_dec = (0, _redux.connect)(function (_ref) {
     value: function componentWillUnmount() {}
   }, {
     key: 'componentDidShow',
-    value: function componentDidShow() {}
+    value: function componentDidShow() {
+      if (_taroWeapp2.default.getStorageSync('userInfo') != '') {
+        this.getData();
+      }
+    }
   }, {
     key: 'componentDidHide',
     value: function componentDidHide() {}
@@ -186,6 +191,68 @@ var My = (_dec = (0, _redux.connect)(function (_ref) {
       });
     }
   }, {
+    key: 'getUserInfo',
+    value: function getUserInfo() {
+      this.setState({
+        isGetInfo: true
+      });
+    }
+  }, {
+    key: 'noShou',
+    value: function noShou() {
+      this.setState({
+        isGetInfo: false
+      });
+    }
+  }, {
+    key: 'bindGetUserInfo',
+    value: function bindGetUserInfo(value) {
+      var that = this;
+      if (value.detail.userInfo) {
+        console.log('授权成功！');
+        // 保存用户信息微信登录
+        _taroWeapp2.default.setStorageSync('userInfo', value.detail.userInfo);
+
+        this.setState({
+          isGetInfo: false
+        });
+        var _that = this;
+        _taroWeapp2.default.login({
+          success: function success(res) {
+            if (res.code) {
+              var obj = {
+                withCredentials: true
+              };
+              _taroWeapp2.default.getSetting().then(function (a) {
+                console.log('999900000', a);
+                if (a.authSetting['scope.userInfo']) {
+                  _taroWeapp2.default.getUserInfo(obj).then(function (e) {
+                    _taroWeapp2.default.setStorageSync('userInfo', JSON.parse(e.rawData));
+                    _that.setState({
+                      userInfo: _taroWeapp2.default.getStorageSync('userInfo')
+                    });
+                    _api2.default.post('/me/weixiLogin', {
+                      encryptedData: e.encryptedData,
+                      code: res.code,
+                      iv: e.iv
+                    }).then(function (v) {
+                      if (v.data.code == 200) {
+                        _taroWeapp2.default.setStorageSync('token', v.data.data.token);
+                        _taroWeapp2.default.setStorageSync('userId', v.data.data.userId);
+                        _that.getData();
+                      }
+                    });
+                  });
+                }
+              });
+            } else {
+              console.log('登录失败！' + res.errMsg);
+            }
+          }
+        });
+      }
+    }
+  }, {
     key: '_createData',
     value: function _createData() {
       var _this3 = this;
@@ -196,37 +263,56 @@ var My = (_dec = (0, _redux.connect)(function (_ref) {
       var __prefix = this.$prefix;
       ;
 
-      var userInfo = this.__state.userInfo;
+      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__869"),
+          _genCompid2 = _slicedToArray(_genCompid, 2),
+          $prevCompid__869 = _genCompid2[0],
+          $compid__869 = _genCompid2[1];
 
+      var _state = this.__state,
+          userInfo = _state.userInfo,
+          isGetInfo = _state.isGetInfo;
 
-      var anonymousState__temp = __webpack_require__(/*! ./../../image/qr.png */ "./src/image/qr.png");
 
       this.anonymousFunc0 = function () {
+        return _this3.getUserInfo();
+      };
+
+      var anonymousState__temp = __webpack_require__(/*! ./../../image/toux.jpg */ "./src/image/toux.jpg");
+
+      var anonymousState__temp2 = __webpack_require__(/*! ./../../image/qr.png */ "./src/image/qr.png");
+
+      this.anonymousFunc1 = function () {
         return _this3.qrCode();
       };
 
-      this.anonymousFunc2 = function () {
+      this.anonymousFunc3 = function () {
         return _this3.connectMe();
       };
 
-      var anonymousState__temp2 = __webpack_require__(/*! ./../../image/info.png */ "./src/image/info.png");
+      var anonymousState__temp3 = __webpack_require__(/*! ./../../image/info.png */ "./src/image/info.png");
 
-      this.anonymousFunc3 = function () {
+      this.anonymousFunc4 = function () {
         return _this3.groupBuying();
       };
 
-      var anonymousState__temp3 = __webpack_require__(/*! ./../../image/pt.png */ "./src/image/pt.png");
+      var anonymousState__temp4 = __webpack_require__(/*! ./../../image/pt.png */ "./src/image/pt.png");
 
-      var anonymousState__temp4 = __webpack_require__(/*! ./../../image/kefu.png */ "./src/image/kefu.png");
+      var anonymousState__temp5 = __webpack_require__(/*! ./../../image/kefu.png */ "./src/image/kefu.png");
 
-      var loopArray84 = this.__state.tabList.map(function (item, index) {
+      this.anonymousFunc5 = function () {
+        return _this3.noShou();
+      };
+
+      var anonymousState__temp6 = _taroWeapp2.default.getStorageSync('userInfo') != '';
+
+      var loopArray369 = this.__state.tabList.map(function (item, index) {
         item = {
           $original: (0, _taroWeapp.internal_get_original)(item)
         };
 
-        var _$indexKey = "bbazz" + index;
+        var _$indexKey = "fjbzz" + index;
 
-        _this3.anonymousFunc1Map[_$indexKey] = function () {
+        _this3.anonymousFunc2Map[_$indexKey] = function () {
           return _this3.goMy(index);
         };
 
@@ -236,12 +322,18 @@ var My = (_dec = (0, _redux.connect)(function (_ref) {
         };
       });
 
+      _taroWeapp.propsManager.set({
+        "isOpened": isGetInfo
+      }, $compid__869, $prevCompid__869);
       Object.assign(this.__state, {
         anonymousState__temp: anonymousState__temp,
         anonymousState__temp2: anonymousState__temp2,
         anonymousState__temp3: anonymousState__temp3,
         anonymousState__temp4: anonymousState__temp4,
-        loopArray84: loopArray84
+        anonymousState__temp5: anonymousState__temp5,
+        anonymousState__temp6: anonymousState__temp6,
+        loopArray369: loopArray369,
+        $compid__869: $compid__869
       });
       return this.__state;
     }
@@ -252,8 +344,13 @@ var My = (_dec = (0, _redux.connect)(function (_ref) {
     }
   }, {
     key: 'anonymousFunc1',
-    value: function anonymousFunc1(_$indexKey) {
-      var _anonymousFunc1Map;
+    value: function anonymousFunc1(e) {
+      ;
+    }
+  }, {
+    key: 'anonymousFunc2',
+    value: function anonymousFunc2(_$indexKey) {
+      var _anonymousFunc2Map;
 
       ;
 
@@ -261,22 +358,27 @@ var My = (_dec = (0, _redux.connect)(function (_ref) {
         e[_key2 - 1] = arguments[_key2];
       }
 
-      return this.anonymousFunc1Map[_$indexKey] && (_anonymousFunc1Map = this.anonymousFunc1Map)[_$indexKey].apply(_anonymousFunc1Map, e);
-    }
-  }, {
-    key: 'anonymousFunc2',
-    value: function anonymousFunc2(e) {
-      ;
+      return this.anonymousFunc2Map[_$indexKey] && (_anonymousFunc2Map = this.anonymousFunc2Map)[_$indexKey].apply(_anonymousFunc2Map, e);
     }
   }, {
     key: 'anonymousFunc3',
     value: function anonymousFunc3(e) {
       ;
     }
+  }, {
+    key: 'anonymousFunc4',
+    value: function anonymousFunc4(e) {
+      ;
+    }
+  }, {
+    key: 'anonymousFunc5',
+    value: function anonymousFunc5(e) {
+      ;
+    }
   }]);
 
   return My;
-}(_taroWeapp.Component), _class2.$$events = ["anonymousFunc0", "anonymousFunc1", "anonymousFunc2", "anonymousFunc3"], _class2.$$componentPath = "pages/my/index", _temp2)) || _class);
+}(_taroWeapp.Component), _class2.$$events = ["anonymousFunc0", "anonymousFunc1", "anonymousFunc2", "anonymousFunc3", "anonymousFunc4", "anonymousFunc5", "bindGetUserInfo"], _class2.$$componentPath = "pages/my/index", _temp2)) || _class);
 exports.default = My;
 
 Component(__webpack_require__(/*! @tarojs/taro-weapp */ "./node_modules/_@tarojs_taro-weapp@2.0.6@@tarojs/taro-weapp/index.js").default.createComponent(My, true));
@@ -335,6 +437,17 @@ module.exports = __webpack_require__.p + "image/pt.png";
 /***/ (function(module, exports) {
 
 module.exports = "data:image/png;base64,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"
+
+/***/ }),
+
+/***/ "./src/image/toux.jpg":
+/*!****************************!*\
+  !*** ./src/image/toux.jpg ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "image/toux.jpg";
 
 /***/ }),
 

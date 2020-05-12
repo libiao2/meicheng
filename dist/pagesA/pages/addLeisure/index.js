@@ -65,7 +65,7 @@ var AddLeisure = (_dec = (0, _redux.connect)(function (_ref) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = AddLeisure.__proto__ || Object.getPrototypeOf(AddLeisure)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["loopArray148", "loopArray149", "$compid__402", "$compid__403", "$compid__404", "$compid__405", "$compid__406", "$compid__407", "$compid__408", "$compid__409", "$compid__410", "$compid__411", "picList", "areaList", "chooseShopImg", "isOpencity", "name", "cityName", "city", "address", "openTimeStart", "openTimeEnd", "projectName", "price", "telephone", "detail", "note", "description", "commonList", "isOpenToast", "toastText", "longitude", "latitude"], _this.config = {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = AddLeisure.__proto__ || Object.getPrototypeOf(AddLeisure)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["loopArray148", "loopArray149", "$compid__406", "$compid__407", "$compid__408", "$compid__409", "$compid__410", "$compid__411", "$compid__412", "$compid__413", "$compid__414", "$compid__415", "picList", "areaList", "chooseShopImg", "isOpencity", "name", "cityName", "city", "address", "openTimeStart", "openTimeEnd", "projectName", "price", "telephone", "detail", "note", "description", "commonList", "isOpenToast", "toastText", "longitude", "latitude"], _this.config = {
       navigationBarTitleText: '休闲'
     }, _this.anonymousFunc2Map = {}, _this.anonymousFunc5Map = {}, _this.anonymousFunc6Map = {}, _this.customComponents = ["AtForm", "ChooseImage", "AtIcon", "AtActionSheet", "AtActionSheetItem", "AtTextarea", "AtButton", "AtToast"], _temp), _possibleConstructorReturn(_this, _ret);
   }
@@ -425,6 +425,35 @@ var AddLeisure = (_dec = (0, _redux.connect)(function (_ref) {
       }
     }
   }, {
+    key: 'phoneBlur',
+    value: function phoneBlur(e) {
+      console.log('.....', e.detail.value);
+      var reg = /\D/g;
+      if (reg.test(parseFloat(e.detail.value))) {
+        _taroWeapp2.default.showToast({
+          title: '请输入正确手机号',
+          icon: 'none',
+          mask: true
+        });
+        this.setState({
+          telephone: ''
+        });
+        return;
+      } else {
+        if (e.detail.value.length > 11 || e.detail.value.length < 10) {
+          _taroWeapp2.default.showToast({
+            title: '请输入正确手机号',
+            icon: 'none',
+            mask: true
+          });
+          this.setState({
+            telephone: ''
+          });
+          return;
+        }
+      }
+    }
+  }, {
     key: 'projectNameChange',
     value: function projectNameChange(e) {
       this.setState({
@@ -585,55 +614,55 @@ var AddLeisure = (_dec = (0, _redux.connect)(function (_ref) {
       var __prefix = this.$prefix;
       ;
 
-      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__402"),
+      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__406"),
           _genCompid2 = _slicedToArray(_genCompid, 2),
-          $prevCompid__402 = _genCompid2[0],
-          $compid__402 = _genCompid2[1];
+          $prevCompid__406 = _genCompid2[0],
+          $compid__406 = _genCompid2[1];
 
-      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__403"),
+      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__407"),
           _genCompid4 = _slicedToArray(_genCompid3, 2),
-          $prevCompid__403 = _genCompid4[0],
-          $compid__403 = _genCompid4[1];
+          $prevCompid__407 = _genCompid4[0],
+          $compid__407 = _genCompid4[1];
 
-      var _genCompid5 = (0, _taroWeapp.genCompid)(__prefix + "$compid__404"),
+      var _genCompid5 = (0, _taroWeapp.genCompid)(__prefix + "$compid__408"),
           _genCompid6 = _slicedToArray(_genCompid5, 2),
-          $prevCompid__404 = _genCompid6[0],
-          $compid__404 = _genCompid6[1];
+          $prevCompid__408 = _genCompid6[0],
+          $compid__408 = _genCompid6[1];
 
-      var _genCompid7 = (0, _taroWeapp.genCompid)(__prefix + "$compid__405"),
+      var _genCompid7 = (0, _taroWeapp.genCompid)(__prefix + "$compid__409"),
           _genCompid8 = _slicedToArray(_genCompid7, 2),
-          $prevCompid__405 = _genCompid8[0],
-          $compid__405 = _genCompid8[1];
+          $prevCompid__409 = _genCompid8[0],
+          $compid__409 = _genCompid8[1];
 
-      var _genCompid9 = (0, _taroWeapp.genCompid)(__prefix + "$compid__406"),
+      var _genCompid9 = (0, _taroWeapp.genCompid)(__prefix + "$compid__410"),
           _genCompid10 = _slicedToArray(_genCompid9, 2),
-          $prevCompid__406 = _genCompid10[0],
-          $compid__406 = _genCompid10[1];
+          $prevCompid__410 = _genCompid10[0],
+          $compid__410 = _genCompid10[1];
 
-      var _genCompid11 = (0, _taroWeapp.genCompid)(__prefix + "$compid__407"),
+      var _genCompid11 = (0, _taroWeapp.genCompid)(__prefix + "$compid__411"),
           _genCompid12 = _slicedToArray(_genCompid11, 2),
-          $prevCompid__407 = _genCompid12[0],
-          $compid__407 = _genCompid12[1];
+          $prevCompid__411 = _genCompid12[0],
+          $compid__411 = _genCompid12[1];
 
-      var _genCompid13 = (0, _taroWeapp.genCompid)(__prefix + "$compid__408"),
+      var _genCompid13 = (0, _taroWeapp.genCompid)(__prefix + "$compid__412"),
           _genCompid14 = _slicedToArray(_genCompid13, 2),
-          $prevCompid__408 = _genCompid14[0],
-          $compid__408 = _genCompid14[1];
+          $prevCompid__412 = _genCompid14[0],
+          $compid__412 = _genCompid14[1];
 
-      var _genCompid15 = (0, _taroWeapp.genCompid)(__prefix + "$compid__409"),
+      var _genCompid15 = (0, _taroWeapp.genCompid)(__prefix + "$compid__413"),
           _genCompid16 = _slicedToArray(_genCompid15, 2),
-          $prevCompid__409 = _genCompid16[0],
-          $compid__409 = _genCompid16[1];
+          $prevCompid__413 = _genCompid16[0],
+          $compid__413 = _genCompid16[1];
 
-      var _genCompid17 = (0, _taroWeapp.genCompid)(__prefix + "$compid__410"),
+      var _genCompid17 = (0, _taroWeapp.genCompid)(__prefix + "$compid__414"),
           _genCompid18 = _slicedToArray(_genCompid17, 2),
-          $prevCompid__410 = _genCompid18[0],
-          $compid__410 = _genCompid18[1];
+          $prevCompid__414 = _genCompid18[0],
+          $compid__414 = _genCompid18[1];
 
-      var _genCompid19 = (0, _taroWeapp.genCompid)(__prefix + "$compid__411"),
+      var _genCompid19 = (0, _taroWeapp.genCompid)(__prefix + "$compid__415"),
           _genCompid20 = _slicedToArray(_genCompid19, 2),
-          $prevCompid__411 = _genCompid20[0],
-          $compid__411 = _genCompid20[1];
+          $prevCompid__415 = _genCompid20[0],
+          $compid__415 = _genCompid20[1];
 
       this.anonymousFunc0 = function () {
         return _this4.clickCity();
@@ -660,23 +689,23 @@ var AddLeisure = (_dec = (0, _redux.connect)(function (_ref) {
           $original: (0, _taroWeapp.internal_get_original)(item)
         };
 
-        var _$indexKey = "biizz" + index;
+        var _$indexKey = "bjhzz" + index;
 
         _this4.anonymousFunc2Map[_$indexKey] = function () {
           return _this4.selectCity(item.$original);
         };
 
-        var _genCompid21 = (0, _taroWeapp.genCompid)(__prefix + 'bjbzzzzzzz' + index, true),
+        var _genCompid21 = (0, _taroWeapp.genCompid)(__prefix + 'caazzzzzzz' + index, true),
             _genCompid22 = _slicedToArray(_genCompid21, 2),
-            $prevCompid__401 = _genCompid22[0],
-            $compid__401 = _genCompid22[1];
+            $prevCompid__405 = _genCompid22[0],
+            $compid__405 = _genCompid22[1];
 
         _taroWeapp.propsManager.set({
           "onClick": _this4.anonymousFunc2.bind(_this4, _$indexKey)
-        }, $compid__401, $prevCompid__401);
+        }, $compid__405, $prevCompid__405);
         return {
           _$indexKey: _$indexKey,
-          $compid__401: $compid__401,
+          $compid__405: $compid__405,
           $original: item.$original
         };
       });
@@ -686,13 +715,13 @@ var AddLeisure = (_dec = (0, _redux.connect)(function (_ref) {
           $original: (0, _taroWeapp.internal_get_original)(item)
         };
 
-        var _$indexKey2 = "bijzz" + index;
+        var _$indexKey2 = "bjizz" + index;
 
         _this4.anonymousFunc5Map[_$indexKey2] = function () {
           return _this4.deleteItem(index);
         };
 
-        var _$indexKey3 = "bjazz" + index;
+        var _$indexKey3 = "bjjzz" + index;
 
         _this4.anonymousFunc6Map[_$indexKey3] = function () {
           return _this4.changeItem(index);
@@ -710,65 +739,65 @@ var AddLeisure = (_dec = (0, _redux.connect)(function (_ref) {
         "onFilesValue": this.getOnFilesValue.bind(this),
         "returnImgSrc": this.getReturnImgSrc.bind(this),
         "deleteImgSrc": this.deleteImgSrc.bind(this)
-      }, $compid__402, $prevCompid__402);
+      }, $compid__406, $prevCompid__406);
       _taroWeapp.propsManager.set({
         "value": "chevron-down",
         "size": "13",
         "color": "#999"
-      }, $compid__403, $prevCompid__403);
+      }, $compid__407, $prevCompid__407);
       _taroWeapp.propsManager.set({
         "isOpened": this.__state.isOpencity,
         "onClose": this.anonymousFunc1
-      }, $compid__404, $prevCompid__404);
+      }, $compid__408, $prevCompid__408);
       _taroWeapp.propsManager.set({
         "value": "map-pin",
         "size": "13",
         "color": "#999"
-      }, $compid__405, $prevCompid__405);
+      }, $compid__409, $prevCompid__409);
       _taroWeapp.propsManager.set({
         "className": "text",
         "count": false,
         "value": this.__state.detail,
         "onChange": this.shuomingChange.bind(this)
-      }, $compid__406, $prevCompid__406);
+      }, $compid__410, $prevCompid__410);
       _taroWeapp.propsManager.set({
         "className": "text",
         "count": false,
         "value": this.__state.note,
         "onChange": this.noteChange.bind(this)
-      }, $compid__407, $prevCompid__407);
+      }, $compid__411, $prevCompid__411);
       _taroWeapp.propsManager.set({
         "className": "text",
         "count": false,
         "value": this.__state.description,
         "onChange": this.descriptionChange.bind(this)
-      }, $compid__408, $prevCompid__408);
+      }, $compid__412, $prevCompid__412);
       _taroWeapp.propsManager.set({
         "value": "chevron-right",
         "size": "12",
         "color": "#999"
-      }, $compid__409, $prevCompid__409);
+      }, $compid__413, $prevCompid__413);
       _taroWeapp.propsManager.set({
         "className": "btn",
         "onClick": this.anonymousFunc7
-      }, $compid__410, $prevCompid__410);
+      }, $compid__414, $prevCompid__414);
       _taroWeapp.propsManager.set({
         "isOpened": this.__state.isOpenToast,
         "text": this.__state.toastText
-      }, $compid__411, $prevCompid__411);
+      }, $compid__415, $prevCompid__415);
       Object.assign(this.__state, {
         loopArray148: loopArray148,
         loopArray149: loopArray149,
-        $compid__402: $compid__402,
-        $compid__403: $compid__403,
-        $compid__404: $compid__404,
-        $compid__405: $compid__405,
         $compid__406: $compid__406,
         $compid__407: $compid__407,
         $compid__408: $compid__408,
         $compid__409: $compid__409,
         $compid__410: $compid__410,
-        $compid__411: $compid__411
+        $compid__411: $compid__411,
+        $compid__412: $compid__412,
+        $compid__413: $compid__413,
+        $compid__414: $compid__414,
+        $compid__415: $compid__415
       });
       return this.__state;
     }
@@ -839,7 +868,7 @@ var AddLeisure = (_dec = (0, _redux.connect)(function (_ref) {
   }]);
 
   return AddLeisure;
-}(_taroWeapp.Component), _class2.$$events = ["shopNameChange", "anonymousFunc0", "areaNameChange", "anonymousFunc3", "timeStartChange", "timeEndChange", "projectNameChange", "priceChange", "phoneChange", "anonymousFunc4", "anonymousFunc5", "anonymousFunc6"], _class2.$$componentPath = "pagesA/pages/addLeisure/index", _temp2)) || _class);
+}(_taroWeapp.Component), _class2.$$events = ["shopNameChange", "anonymousFunc0", "areaNameChange", "anonymousFunc3", "timeStartChange", "timeEndChange", "projectNameChange", "priceChange", "phoneBlur", "phoneChange", "anonymousFunc4", "anonymousFunc5", "anonymousFunc6"], _class2.$$componentPath = "pagesA/pages/addLeisure/index", _temp2)) || _class);
 exports.default = AddLeisure;
 
 Component(__webpack_require__(/*! @tarojs/taro-weapp */ "./node_modules/_@tarojs_taro-weapp@2.0.6@@tarojs/taro-weapp/index.js").default.createComponent(AddLeisure, true));

@@ -678,7 +678,7 @@ class ChangeAddLeisure extends Component {
                   value={this.state.price}
                   onChange={this.priceChange.bind(this)}
                 />
-                <Text className='yuan'>元</Text>
+                <Text className='yuan'>$</Text>
               </View>
               <View className='itemBox'>
                 <Text className='leftPart'>联系电话:</Text>

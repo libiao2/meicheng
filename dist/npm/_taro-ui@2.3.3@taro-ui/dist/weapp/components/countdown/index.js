@@ -64,7 +64,7 @@ var AtCountdown = (_temp2 = _class = function (_AtComponent) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = AtCountdown.__proto__ || Object.getPrototypeOf(AtCountdown)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["anonymousState__temp", "anonymousState__temp2", "$compid__282", "$compid__283", "$compid__284", "$compid__285", "isShowDay", "isShowHour", "_day", "_hours", "_minutes", "_seconds", "day", "hours", "minutes", "seconds", "className", "customStyle", "format", "isCard"], _this.customComponents = ["AtCountdownItem"], _temp), _possibleConstructorReturn(_this, _ret);
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = AtCountdown.__proto__ || Object.getPrototypeOf(AtCountdown)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["anonymousState__temp", "anonymousState__temp2", "$compid__285", "$compid__286", "$compid__287", "$compid__288", "isShowDay", "isShowHour", "_day", "_hours", "_minutes", "_seconds", "day", "hours", "minutes", "seconds", "className", "customStyle", "format", "isCard"], _this.customComponents = ["AtCountdownItem"], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(AtCountdown, [{
@@ -200,25 +200,25 @@ var AtCountdown = (_temp2 = _class = function (_AtComponent) {
       var __prefix = this.$prefix;
       ;
 
-      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__282"),
+      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__285"),
           _genCompid2 = _slicedToArray(_genCompid, 2),
-          $prevCompid__282 = _genCompid2[0],
-          $compid__282 = _genCompid2[1];
+          $prevCompid__285 = _genCompid2[0],
+          $compid__285 = _genCompid2[1];
 
-      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__283"),
+      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__286"),
           _genCompid4 = _slicedToArray(_genCompid3, 2),
-          $prevCompid__283 = _genCompid4[0],
-          $compid__283 = _genCompid4[1];
+          $prevCompid__286 = _genCompid4[0],
+          $compid__286 = _genCompid4[1];
 
-      var _genCompid5 = (0, _taroWeapp.genCompid)(__prefix + "$compid__284"),
+      var _genCompid5 = (0, _taroWeapp.genCompid)(__prefix + "$compid__287"),
           _genCompid6 = _slicedToArray(_genCompid5, 2),
-          $prevCompid__284 = _genCompid6[0],
-          $compid__284 = _genCompid6[1];
+          $prevCompid__287 = _genCompid6[0],
+          $compid__287 = _genCompid6[1];
 
-      var _genCompid7 = (0, _taroWeapp.genCompid)(__prefix + "$compid__285"),
+      var _genCompid7 = (0, _taroWeapp.genCompid)(__prefix + "$compid__288"),
           _genCompid8 = _slicedToArray(_genCompid7, 2),
-          $prevCompid__285 = _genCompid8[0],
-          $compid__285 = _genCompid8[1];
+          $prevCompid__288 = _genCompid8[0],
+          $compid__288 = _genCompid8[1];
 
       var _props2 = this.__props,
           className = _props2.className,
@@ -241,26 +241,26 @@ var AtCountdown = (_temp2 = _class = function (_AtComponent) {
       isShowDay && _taroWeapp.propsManager.set({
         "num": _day,
         "separator": format.day
-      }, $compid__282, $prevCompid__282);
+      }, $compid__285, $prevCompid__285);
       isShowHour && _taroWeapp.propsManager.set({
         "num": _hours,
         "separator": format.hours
-      }, $compid__283, $prevCompid__283);
+      }, $compid__286, $prevCompid__286);
       _taroWeapp.propsManager.set({
         "num": _minutes,
         "separator": format.minutes
-      }, $compid__284, $prevCompid__284);
+      }, $compid__287, $prevCompid__287);
       _taroWeapp.propsManager.set({
         "num": _seconds,
         "separator": format.seconds
-      }, $compid__285, $prevCompid__285);
+      }, $compid__288, $prevCompid__288);
       Object.assign(this.__state, {
         anonymousState__temp: anonymousState__temp,
         anonymousState__temp2: anonymousState__temp2,
-        $compid__282: $compid__282,
-        $compid__283: $compid__283,
-        $compid__284: $compid__284,
         $compid__285: $compid__285,
+        $compid__286: $compid__286,
+        $compid__287: $compid__287,
+        $compid__288: $compid__288,
         isShowDay: isShowDay,
         isShowHour: isShowHour
       });

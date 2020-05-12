@@ -7,18 +7,18 @@
                 </swiper-item>
             </swiper>
             <view class="nameBox"><text class="name">{{goodsInfo.name}}</text>
-                <at-icon compid="{{$compid__252}}"></at-icon>
+                <at-icon compid="{{$compid__255}}"></at-icon>
             </view>
             <view class="TopShareBox">
                 <view class="addressBox">
                     <view class="timeBox">
                         <image src="{{anonymousState__temp}}" style="width:15px;height:15px;margin-right: 6px"></image><text class="info">营业时间: {{goodsInfo.openTimeStart}}-{{goodsInfo.openTimeEnd}}</text>
                     </view>
-                    <view class="timeBox">
+                    <view class="timeBox" bindtap="anonymousFunc1">
                         <image src="{{anonymousState__temp2}}" style="width:15px;height:15px;margin-right: 6px"></image><text class="info">{{goodsInfo.address}}</text>
                     </view>
                 </view>
-                <view class="share" bindtap="anonymousFunc1">
+                <view class="share" bindtap="anonymousFunc2">
                     <image class="img" src="{{anonymousState__temp3}}"></image><text class="text">分享</text>
                 </view>
             </view>
@@ -31,7 +31,7 @@
                 </view><text>{{goodsInfo.note}}</text>
             </view>
         </view>
-        <at-action-sheet compid="{{$compid__253}}">
+        <at-action-sheet compid="{{$compid__256}}">
             <at-action-sheet-item>
                 <view class="shareTitle"><text>分享</text>
                 </view>
@@ -41,7 +41,7 @@
                             <image src="{{anonymousState__temp4}}" class="wechatIconImg"></image><text>微信好友</text>
                         </view>
                     </button>
-                    <button class="shareItem" bindtap="anonymousFunc3">
+                    <button class="shareItem" bindtap="anonymousFunc4">
                         <view class="wechatBox">
                             <image src="{{anonymousState__temp5}}" class="wechatIconImg"></image><text>朋友圈</text>
                         </view>
@@ -49,6 +49,6 @@
                 </view>
             </at-action-sheet-item>
         </at-action-sheet>
-        <at-toast compid="{{$compid__254}}"></at-toast>
+        <at-toast compid="{{$compid__257}}"></at-toast>
     </view>
 </block>

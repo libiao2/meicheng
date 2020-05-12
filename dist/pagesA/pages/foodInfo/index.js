@@ -69,7 +69,7 @@ var FoodInfo = (_dec = (0, _redux.connect)(function (_ref) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = FoodInfo.__proto__ || Object.getPrototypeOf(FoodInfo)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["anonymousState__temp", "anonymousState__temp2", "anonymousState__temp3", "anonymousState__temp4", "anonymousState__temp5", "goodsInfo", "$compid__245", "$compid__246", "goodsId", "openShare", "isOpenToast", "toastText"], _this.state = {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = FoodInfo.__proto__ || Object.getPrototypeOf(FoodInfo)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["anonymousState__temp", "anonymousState__temp2", "anonymousState__temp3", "anonymousState__temp4", "anonymousState__temp5", "goodsInfo", "$compid__248", "$compid__249", "goodsId", "openShare", "isOpenToast", "toastText"], _this.state = {
       goodsId: '',
       openShare: false,
       isOpenToast: false,
@@ -213,6 +213,17 @@ var FoodInfo = (_dec = (0, _redux.connect)(function (_ref) {
       });
     }
   }, {
+    key: 'openMap',
+    value: function openMap() {
+      var goodsInfo = this.state.goodsInfo;
+      ////使用微信内置地图查看标记点位置，并进行导航
+
+      _taroWeapp2.default.openLocation({
+        latitude: parseInt(goodsInfo.latitude), //要去的纬度-地址
+        longitude: parseInt(goodsInfo.longitude) //要去的经度-地址
+      });
+    }
+  }, {
     key: '_createData',
     value: function _createData() {
       var _this3 = this;
@@ -223,15 +234,15 @@ var FoodInfo = (_dec = (0, _redux.connect)(function (_ref) {
       var __prefix = this.$prefix;
       ;
 
-      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__245"),
+      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__248"),
           _genCompid2 = _slicedToArray(_genCompid, 2),
-          $prevCompid__245 = _genCompid2[0],
-          $compid__245 = _genCompid2[1];
+          $prevCompid__248 = _genCompid2[0],
+          $compid__248 = _genCompid2[1];
 
-      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__246"),
+      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__249"),
           _genCompid4 = _slicedToArray(_genCompid3, 2),
-          $prevCompid__246 = _genCompid4[0],
-          $compid__246 = _genCompid4[1];
+          $prevCompid__249 = _genCompid4[0],
+          $compid__249 = _genCompid4[1];
 
       var _state = this.__state,
           goodsInfo = _state.goodsInfo,
@@ -242,21 +253,25 @@ var FoodInfo = (_dec = (0, _redux.connect)(function (_ref) {
 
       var anonymousState__temp = __webpack_require__(/*! ./../../../image/time.png */ "./src/image/time.png");
 
+      this.anonymousFunc0 = function () {
+        return _this3.openMap();
+      };
+
       var anonymousState__temp2 = __webpack_require__(/*! ./../../../image/dingwei.png */ "./src/image/dingwei.png");
 
-      this.anonymousFunc0 = function () {
+      this.anonymousFunc1 = function () {
         return _this3.shareClick();
       };
 
       var anonymousState__temp3 = __webpack_require__(/*! ./../../../image/share.png */ "./src/image/share.png");
 
-      this.anonymousFunc1 = function () {
+      this.anonymousFunc2 = function () {
         return _this3.handleClose();
       };
 
       var anonymousState__temp4 = __webpack_require__(/*! ./../../../image/wechatP.png */ "./src/image/wechatP.png");
 
-      this.anonymousFunc2 = function () {
+      this.anonymousFunc3 = function () {
         return _this3.shareFriend();
       };
 
@@ -264,12 +279,12 @@ var FoodInfo = (_dec = (0, _redux.connect)(function (_ref) {
 
       _taroWeapp.propsManager.set({
         "isOpened": openShare,
-        "onClose": this.anonymousFunc1
-      }, $compid__245, $prevCompid__245);
+        "onClose": this.anonymousFunc2
+      }, $compid__248, $prevCompid__248);
       _taroWeapp.propsManager.set({
         "isOpened": isOpenToast,
         "text": toastText
-      }, $compid__246, $prevCompid__246);
+      }, $compid__249, $prevCompid__249);
       Object.assign(this.__state, {
         anonymousState__temp: anonymousState__temp,
         anonymousState__temp2: anonymousState__temp2,
@@ -277,8 +292,8 @@ var FoodInfo = (_dec = (0, _redux.connect)(function (_ref) {
         anonymousState__temp4: anonymousState__temp4,
         anonymousState__temp5: anonymousState__temp5,
         goodsInfo: goodsInfo,
-        $compid__245: $compid__245,
-        $compid__246: $compid__246
+        $compid__248: $compid__248,
+        $compid__249: $compid__249
       });
       return this.__state;
     }
@@ -297,10 +312,15 @@ var FoodInfo = (_dec = (0, _redux.connect)(function (_ref) {
     value: function anonymousFunc2(e) {
       ;
     }
+  }, {
+    key: 'anonymousFunc3',
+    value: function anonymousFunc3(e) {
+      ;
+    }
   }]);
 
   return FoodInfo;
-}(_taroWeapp.Component), _class2.$$events = ["anonymousFunc0", "anonymousFunc2"], _class2.$$componentPath = "pagesA/pages/foodInfo/index", _temp2)) || _class);
+}(_taroWeapp.Component), _class2.$$events = ["anonymousFunc0", "anonymousFunc1", "anonymousFunc3"], _class2.$$componentPath = "pagesA/pages/foodInfo/index", _temp2)) || _class);
 exports.default = FoodInfo;
 
 Component(__webpack_require__(/*! @tarojs/taro-weapp */ "./node_modules/_@tarojs_taro-weapp@2.0.6@@tarojs/taro-weapp/index.js").default.createComponent(FoodInfo, true));

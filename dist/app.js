@@ -97,10 +97,10 @@ var _App = function (_BaseComponent) {
       pages: ['pages/index/index', 'pages/car/index', 'pages/publishInfo/index', 'pages/my/index', 'pages/message/index'],
       subpackages: [{
         "root": "pagesA",
-        "pages": ['pages/addBuluo/index', 'pages/addCoupon/index', 'pages/addFood/index', 'pages/addFoodInfo/index', 'pages/addFuwu/index', 'pages/addHome/index', 'pages/addLeisure/index', 'pages/addLife/index', 'pages/chat/index', 'pages/foodDetail/index', 'pages/foodTuan/index', 'pages/foodInfo/index']
+        "pages": ['pages/addBuluo/index', 'pages/addCoupon/index', 'pages/addFood/index', 'pages/addFoodInfo/index', 'pages/addFuwu/index', 'pages/addHome/index', 'pages/addLeisure/index', 'pages/addLife/index', 'pages/chat/index', 'pages/foodTuan/index', 'pages/foodInfo/index']
       }, {
         "root": "pagesB",
-        "pages": ['pages/login/index', 'pages/menu/index', 'pages/moreFavorable/index', 'pages/myPublish/index', 'pages/search/index', 'pages/secondhand/index']
+        "pages": ['pages/login/index', 'pages/menu/index', 'pages/moreFavorable/index', 'pages/myPublish/index', 'pages/search/index', 'pages/secondhand/index', 'pages/foodDetail/index']
       }, {
         "root": "pagesC",
         "pages": ['pages/leisureDetail/index', 'pages/leisureInfo/index', 'pages/otherDetail/index', 'pages/myConnect/index', 'pages/confirmOrder/index', 'pages/mySale/index', 'pages/myOrder/index', 'pages/addCreditCard/index', 'pages/orderDetail/index', 'pages/orderRefund/index', 'pages/refundStep/index', 'pages/groupBuyingDetail/index', 'pages/payEnd/index', 'pages/otherPay/index']
@@ -186,8 +186,6 @@ var _App = function (_BaseComponent) {
     value: function getMessageCount() {
       var that = this;
       messageTimeout = setTimeout(function () {
-        console.log("获取消息未读数量", _taroWeapp2.default.getStorageSync('token'));
-
         if (_taroWeapp2.default.getStorageSync('token') != '') {
           _api2.default.post('/ws/messageUnreadQuantity', {}).then(function (res) {
             console.log('消息数量', res);

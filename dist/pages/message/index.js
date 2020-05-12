@@ -73,7 +73,7 @@ var Message = (_dec = (0, _redux.connect)(function (_ref) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = Message.__proto__ || Object.getPrototypeOf(Message)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["loopArray86", "messageList"], _this.config = {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = Message.__proto__ || Object.getPrototypeOf(Message)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["anonymousState__temp", "loopArray337", "messageList"], _this.config = {
       navigationBarTitleText: '消息'
     }, _this.anonymousFunc0Map = {}, _this.customComponents = [], _temp), _possibleConstructorReturn(_this, _ret);
   }
@@ -92,9 +92,7 @@ var Message = (_dec = (0, _redux.connect)(function (_ref) {
     value: function componentWillMount() {}
   }, {
     key: 'componentDidMount',
-    value: function componentDidMount() {
-      console.log('5555555555555555555');
-    }
+    value: function componentDidMount() {}
   }, {
     key: 'componentWillReceiveProps',
     value: function componentWillReceiveProps(nextProps) {
@@ -106,7 +104,9 @@ var Message = (_dec = (0, _redux.connect)(function (_ref) {
   }, {
     key: 'componentDidShow',
     value: function componentDidShow() {
-      this.getMessageList();
+      if (_taroWeapp2.default.getStorageSync('userInfo') != '') {
+        this.getMessageList();
+      }
     }
   }, {
     key: 'componentDidHide',
@@ -141,6 +141,13 @@ var Message = (_dec = (0, _redux.connect)(function (_ref) {
       });
     }
   }, {
+    key: 'goLogin',
+    value: function goLogin() {
+      _taroWeapp2.default.switchTab({
+        url: "/pages/my/index"
+      });
+    }
+  }, {
     key: '_createData',
     value: function _createData() {
       var _this3 = this;
@@ -153,12 +160,18 @@ var Message = (_dec = (0, _redux.connect)(function (_ref) {
 
       var messageList = this.__state.messageList;
 
-      var loopArray86 = messageList.length > 0 ? messageList.map(function (item, __index0) {
+
+      this.anonymousFunc1 = function () {
+        return _this3.goLogin();
+      };
+
+      var anonymousState__temp = _taroWeapp2.default.getStorageSync('token') != '';
+      var loopArray337 = messageList.length > 0 ? messageList.map(function (item, __index0) {
         item = {
           $original: (0, _taroWeapp.internal_get_original)(item)
         };
 
-        var _$indexKey = "bbczz" + __index0;
+        var _$indexKey = "fafzz" + __index0;
 
         _this3.anonymousFunc0Map[_$indexKey] = function () {
           return _this3.goTalk(item.$original);
@@ -170,7 +183,8 @@ var Message = (_dec = (0, _redux.connect)(function (_ref) {
         };
       }) : [];
       Object.assign(this.__state, {
-        loopArray86: loopArray86
+        anonymousState__temp: anonymousState__temp,
+        loopArray337: loopArray337
       });
       return this.__state;
     }
@@ -187,10 +201,15 @@ var Message = (_dec = (0, _redux.connect)(function (_ref) {
 
       return this.anonymousFunc0Map[_$indexKey] && (_anonymousFunc0Map = this.anonymousFunc0Map)[_$indexKey].apply(_anonymousFunc0Map, e);
     }
+  }, {
+    key: 'anonymousFunc1',
+    value: function anonymousFunc1(e) {
+      ;
+    }
   }]);
 
   return Message;
-}(_taroWeapp.Component), _class2.$$events = ["anonymousFunc0"], _class2.$$componentPath = "pages/message/index", _temp2)) || _class);
+}(_taroWeapp.Component), _class2.$$events = ["anonymousFunc0", "anonymousFunc1"], _class2.$$componentPath = "pages/message/index", _temp2)) || _class);
 exports.default = Message;
 
 Component(__webpack_require__(/*! @tarojs/taro-weapp */ "./node_modules/_@tarojs_taro-weapp@2.0.6@@tarojs/taro-weapp/index.js").default.createComponent(Message, true));

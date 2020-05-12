@@ -146,6 +146,15 @@ class FoodInfo extends Component {
     })
   }
 
+  openMap() {
+    const { goodsInfo } = this.state;
+    ////使用微信内置地图查看标记点位置，并进行导航
+    Taro.openLocation({
+      latitude: parseInt(goodsInfo.latitude),//要去的纬度-地址
+      longitude: parseInt(goodsInfo.longitude),//要去的经度-地址
+    })
+  }
+
 
   render () {
     const { goodsInfo, openShare, isOpenToast, toastText } = this.state;
@@ -173,13 +182,13 @@ class FoodInfo extends Component {
           </View>
           <View className='TopShareBox'>
             <View className='addressBox'>
-              <View className='timeBox'>
+              <View className='timeBox' style='margin-bottom: 8px'>
                 <Image
                 src={require('./../../../image/time.png')}
                 style='width:15px;height:15px;margin-right: 6px' />
                 <Text className='info'>营业时间: {goodsInfo.openTimeStart}-{goodsInfo.openTimeEnd}</Text>
               </View>
-              <View className='timeBox'>
+              <View className='timeBox' onClick={() => this.openMap()}>
                 <Image
                 src={require('./../../../image/dingwei.png')}
                 style='width:15px;height:15px;margin-right: 6px' />

@@ -3,7 +3,7 @@
         <view class="titleBox">订单号</view>
         <view class="orderNo">{{orderDetail.orderNo}}</view>
         <view class="titleBox">退款内容</view>
-        <view class="money">现金：<text style="color: red">20元</text>
+        <view class="money">现金：<text style="color: red">{{orderDetail.orderFee}}$</text>
         </view>
         <view class="titleBox">退款原因(至少选一项)</view>
         <view class="listBox">
@@ -11,7 +11,7 @@
                 <view class="{{'checkBox ' + (item.$original.isChecked && 'isChoos')}}"></view>
             </view>
         </view>
-        <at-textarea compid="{{$compid__261}}"></at-textarea>
+        <at-textarea compid="{{$compid__264}}"></at-textarea>
         <view class="btnBox">
             <view class="btn" bindtap="anonymousFunc1">申请退款</view>
         </view>

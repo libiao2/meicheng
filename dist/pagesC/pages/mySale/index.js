@@ -71,7 +71,7 @@ var MySale = (_dec = (0, _redux.connect)(function (_ref) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = MySale.__proto__ || Object.getPrototypeOf(MySale)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["loopArray97", "$compid__256", "titleList", "orderList", "current", "orderStatus", "pageNum", "pageSize"], _this.state = {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = MySale.__proto__ || Object.getPrototypeOf(MySale)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["loopArray357", "$compid__833", "titleList", "orderList", "current", "orderStatus", "pageNum", "pageSize"], _this.state = {
       titleList: [{ title: '全部卖出' }, { title: '已验证' }, { title: '未验证' }],
       current: 0,
       orderStatus: 0, //0.全部 20.未验证 30.已验证
@@ -82,7 +82,7 @@ var MySale = (_dec = (0, _redux.connect)(function (_ref) {
       navigationBarTitleText: '我卖出的',
       "enablePullDownRefresh": true,
       onReachBottomDistance: 50
-    }, _this.anonymousFunc0Map = {}, _this.customComponents = ["AtTabs", "AtTabsPane"], _temp), _possibleConstructorReturn(_this, _ret);
+    }, _this.anonymousFunc0Map = {}, _this.anonymousFunc1Map = {}, _this.customComponents = ["AtTabs", "AtTabsPane"], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(MySale, [{
@@ -98,7 +98,9 @@ var MySale = (_dec = (0, _redux.connect)(function (_ref) {
   }, {
     key: 'componentDidMount',
     value: function componentDidMount() {
-      this.getList();
+      if (_taroWeapp2.default.getStorageSync('token') != '') {
+        this.getList();
+      }
     }
   }, {
     key: 'componentWillReceiveProps',
@@ -193,6 +195,13 @@ var MySale = (_dec = (0, _redux.connect)(function (_ref) {
       });
     }
   }, {
+    key: 'goLogin',
+    value: function goLogin() {
+      _taroWeapp2.default.switchTab({
+        url: "/pages/my/index"
+      });
+    }
+  }, {
     key: '_createData',
     value: function _createData() {
       var _this6 = this;
@@ -203,25 +212,33 @@ var MySale = (_dec = (0, _redux.connect)(function (_ref) {
       var __prefix = this.$prefix;
       ;
 
-      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__256"),
+      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__833"),
           _genCompid2 = _slicedToArray(_genCompid, 2),
-          $prevCompid__256 = _genCompid2[0],
-          $compid__256 = _genCompid2[1];
+          $prevCompid__833 = _genCompid2[0],
+          $compid__833 = _genCompid2[1];
 
       var _state2 = this.__state,
           titleList = _state2.titleList,
           current = _state2.current,
           orderList = _state2.orderList;
 
-      var loopArray97 = titleList.map(function (item, index) {
+      var loopArray357 = titleList.map(function (item, index) {
         item = {
           $original: (0, _taroWeapp.internal_get_original)(item)
         };
-        var $anonymousCallee__14 = orderList.length > 0 ? orderList.map(function (orderItem, itemIndx) {
+
+        var _$indexKey2 = "fhizz" + index;
+
+        _this6.anonymousFunc1Map[_$indexKey2] = function () {
+          return _this6.goLogin();
+        };
+
+        var $loopState__temp2 = _taroWeapp2.default.getStorageSync('token') != '';
+        var $anonymousCallee__79 = orderList.length > 0 ? orderList.map(function (orderItem, itemIndx) {
           orderItem = {
             $original: (0, _taroWeapp.internal_get_original)(orderItem)
           };
-          var _$indexKey = 'bcfzz' + index + '-' + itemIndx;
+          var _$indexKey = 'fhhzz' + index + '-' + itemIndx;
 
           _this6.anonymousFunc0Map[_$indexKey] = function () {
             return _this6.goDetail(orderItem.$original);
@@ -233,18 +250,20 @@ var MySale = (_dec = (0, _redux.connect)(function (_ref) {
           };
         }) : [];
 
-        var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + 'bcgzzzzzzz' + index, true),
+        var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + 'fhjzzzzzzz' + index, true),
             _genCompid4 = _slicedToArray(_genCompid3, 2),
-            $prevCompid__255 = _genCompid4[0],
-            $compid__255 = _genCompid4[1];
+            $prevCompid__832 = _genCompid4[0],
+            $compid__832 = _genCompid4[1];
 
         _taroWeapp.propsManager.set({
           "current": current,
           "index": index
-        }, $compid__255, $prevCompid__255);
+        }, $compid__832, $prevCompid__832);
         return {
-          $anonymousCallee__14: $anonymousCallee__14,
-          $compid__255: $compid__255,
+          _$indexKey2: _$indexKey2,
+          $loopState__temp2: $loopState__temp2,
+          $anonymousCallee__79: $anonymousCallee__79,
+          $compid__832: $compid__832,
           $original: item.$original
         };
       });
@@ -252,10 +271,10 @@ var MySale = (_dec = (0, _redux.connect)(function (_ref) {
         "current": current,
         "tabList": titleList,
         "onClick": this.handleClick.bind(this)
-      }, $compid__256, $prevCompid__256);
+      }, $compid__833, $prevCompid__833);
       Object.assign(this.__state, {
-        loopArray97: loopArray97,
-        $compid__256: $compid__256
+        loopArray357: loopArray357,
+        $compid__833: $compid__833
       });
       return this.__state;
     }
@@ -272,10 +291,23 @@ var MySale = (_dec = (0, _redux.connect)(function (_ref) {
 
       return this.anonymousFunc0Map[_$indexKey] && (_anonymousFunc0Map = this.anonymousFunc0Map)[_$indexKey].apply(_anonymousFunc0Map, e);
     }
+  }, {
+    key: 'anonymousFunc1',
+    value: function anonymousFunc1(_$indexKey2) {
+      var _anonymousFunc1Map;
+
+      ;
+
+      for (var _len3 = arguments.length, e = Array(_len3 > 1 ? _len3 - 1 : 0), _key3 = 1; _key3 < _len3; _key3++) {
+        e[_key3 - 1] = arguments[_key3];
+      }
+
+      return this.anonymousFunc1Map[_$indexKey2] && (_anonymousFunc1Map = this.anonymousFunc1Map)[_$indexKey2].apply(_anonymousFunc1Map, e);
+    }
   }]);
 
   return MySale;
-}(_taroWeapp.Component), _class2.$$events = ["anonymousFunc0"], _class2.$$componentPath = "pagesC/pages/mySale/index", _temp2)) || _class);
+}(_taroWeapp.Component), _class2.$$events = ["anonymousFunc0", "anonymousFunc1"], _class2.$$componentPath = "pagesC/pages/mySale/index", _temp2)) || _class);
 exports.default = MySale;
 
 Component(__webpack_require__(/*! @tarojs/taro-weapp */ "./node_modules/_@tarojs_taro-weapp@2.0.6@@tarojs/taro-weapp/index.js").default.createComponent(MySale, true));

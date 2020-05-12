@@ -71,7 +71,7 @@ var MyOrder = (_dec = (0, _redux.connect)(function (_ref) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = MyOrder.__proto__ || Object.getPrototypeOf(MyOrder)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["anonymousState__temp3", "anonymousState__temp4", "anonymousState__temp5", "loopArray136", "loopArray137", "$compid__360", "$compid__361", "$compid__362", "$compid__363", "$compid__364", "$compid__365", "titleList", "creditCardList", "orderList", "current", "orderStatus", "pageNum", "pageSize", "openPayType", "isOpenCard", "payOrderInfo"], _this.state = {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = MyOrder.__proto__ || Object.getPrototypeOf(MyOrder)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["anonymousState__temp3", "anonymousState__temp4", "anonymousState__temp5", "loopArray350", "loopArray351", "$compid__816", "$compid__817", "$compid__818", "$compid__819", "$compid__820", "$compid__821", "titleList", "creditCardList", "orderList", "current", "orderStatus", "pageNum", "pageSize", "openPayType", "isOpenCard", "payOrderInfo"], _this.state = {
       titleList: [{ title: '全部订单' }, { title: '待使用' }, { title: '已使用' }, { title: '退款/售后' }],
       current: 0,
       orderStatus: 0,
@@ -86,7 +86,7 @@ var MyOrder = (_dec = (0, _redux.connect)(function (_ref) {
       navigationBarTitleText: '我的订单',
       "enablePullDownRefresh": true,
       onReachBottomDistance: 50
-    }, _this.anonymousFunc0Map = {}, _this.anonymousFunc1Map = {}, _this.anonymousFunc2Map = {}, _this.anonymousFunc3Map = {}, _this.anonymousFunc4Map = {}, _this.anonymousFunc9Map = {}, _this.customComponents = ["AtTabs", "AtTabsPane", "AtActionSheet", "AtActionSheetItem", "AtIcon", "AtModal", "AtModalContent"], _temp), _possibleConstructorReturn(_this, _ret);
+    }, _this.anonymousFunc0Map = {}, _this.anonymousFunc1Map = {}, _this.anonymousFunc2Map = {}, _this.anonymousFunc3Map = {}, _this.anonymousFunc4Map = {}, _this.anonymousFunc5Map = {}, _this.anonymousFunc10Map = {}, _this.anonymousFunc11Map = {}, _this.customComponents = ["AtTabs", "AtTabsPane", "AtActionSheet", "AtActionSheetItem", "AtIcon", "AtModal", "AtModalContent"], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(MyOrder, [{
@@ -102,7 +102,9 @@ var MyOrder = (_dec = (0, _redux.connect)(function (_ref) {
   }, {
     key: 'componentDidMount',
     value: function componentDidMount() {
-      this.getList();
+      if (_taroWeapp2.default.getStorageSync('token') != '') {
+        this.getList();
+      }
     }
   }, {
     key: 'componentWillReceiveProps',
@@ -417,9 +419,39 @@ var MyOrder = (_dec = (0, _redux.connect)(function (_ref) {
       };
     }
   }, {
+    key: 'deleteCard',
+    value: function deleteCard(item, index) {
+      var _this9 = this;
+
+      var creditCardList = this.state.creditCardList;
+
+      var newArr = creditCardList;
+      _api2.default.post('/pay/delCard', { cardId: item.cardId }).then(function (res) {
+        console.log('ppp', res);
+        if (res.data.code == 200) {
+          newArr.splice(index, 1);
+          _taroWeapp2.default.showToast({
+            title: '信用卡删除成功！',
+            icon: 'none',
+            mask: true
+          });
+          _this9.setState({
+            creditCardList: newArr
+          });
+        }
+      });
+    }
+  }, {
+    key: 'goLogin',
+    value: function goLogin() {
+      _taroWeapp2.default.switchTab({
+        url: "/pages/my/index"
+      });
+    }
+  }, {
     key: '_createData',
     value: function _createData() {
-      var _this9 = this;
+      var _this10 = this;
 
       this.__state = arguments[0] || this.state || {};
       this.__props = arguments[1] || this.props || {};
@@ -427,35 +459,35 @@ var MyOrder = (_dec = (0, _redux.connect)(function (_ref) {
       var __prefix = this.$prefix;
       ;
 
-      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__360"),
+      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__816"),
           _genCompid2 = _slicedToArray(_genCompid, 2),
-          $prevCompid__360 = _genCompid2[0],
-          $compid__360 = _genCompid2[1];
+          $prevCompid__816 = _genCompid2[0],
+          $compid__816 = _genCompid2[1];
 
-      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__361"),
+      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__817"),
           _genCompid4 = _slicedToArray(_genCompid3, 2),
-          $prevCompid__361 = _genCompid4[0],
-          $compid__361 = _genCompid4[1];
+          $prevCompid__817 = _genCompid4[0],
+          $compid__817 = _genCompid4[1];
 
-      var _genCompid5 = (0, _taroWeapp.genCompid)(__prefix + "$compid__362"),
+      var _genCompid5 = (0, _taroWeapp.genCompid)(__prefix + "$compid__818"),
           _genCompid6 = _slicedToArray(_genCompid5, 2),
-          $prevCompid__362 = _genCompid6[0],
-          $compid__362 = _genCompid6[1];
+          $prevCompid__818 = _genCompid6[0],
+          $compid__818 = _genCompid6[1];
 
-      var _genCompid7 = (0, _taroWeapp.genCompid)(__prefix + "$compid__363"),
+      var _genCompid7 = (0, _taroWeapp.genCompid)(__prefix + "$compid__819"),
           _genCompid8 = _slicedToArray(_genCompid7, 2),
-          $prevCompid__363 = _genCompid8[0],
-          $compid__363 = _genCompid8[1];
+          $prevCompid__819 = _genCompid8[0],
+          $compid__819 = _genCompid8[1];
 
-      var _genCompid9 = (0, _taroWeapp.genCompid)(__prefix + "$compid__364"),
+      var _genCompid9 = (0, _taroWeapp.genCompid)(__prefix + "$compid__820"),
           _genCompid10 = _slicedToArray(_genCompid9, 2),
-          $prevCompid__364 = _genCompid10[0],
-          $compid__364 = _genCompid10[1];
+          $prevCompid__820 = _genCompid10[0],
+          $compid__820 = _genCompid10[1];
 
-      var _genCompid11 = (0, _taroWeapp.genCompid)(__prefix + "$compid__365"),
+      var _genCompid11 = (0, _taroWeapp.genCompid)(__prefix + "$compid__821"),
           _genCompid12 = _slicedToArray(_genCompid11, 2),
-          $prevCompid__365 = _genCompid12[0],
-          $compid__365 = _genCompid12[1];
+          $prevCompid__821 = _genCompid12[0],
+          $compid__821 = _genCompid12[1];
 
       var _state3 = this.__state,
           titleList = _state3.titleList,
@@ -466,79 +498,87 @@ var MyOrder = (_dec = (0, _redux.connect)(function (_ref) {
           isOpenCard = _state3.isOpenCard;
 
 
-      this.anonymousFunc5 = function () {
-        return _this9.handleClose();
+      this.anonymousFunc6 = function () {
+        return _this10.handleClose();
       };
 
-      this.anonymousFunc6 = function () {
-        return _this9.clickGoPay(1);
+      this.anonymousFunc7 = function () {
+        return _this10.clickGoPay(1);
       };
 
       var anonymousState__temp3 = __webpack_require__(/*! ./../../../image/xiny.png */ "./src/image/xiny.png");
 
-      this.anonymousFunc7 = function () {
-        return _this9.creditCardPay();
+      this.anonymousFunc8 = function () {
+        return _this10.creditCardPay();
       };
 
       var anonymousState__temp4 = __webpack_require__(/*! ./../../../image/xiny.png */ "./src/image/xiny.png");
 
       var anonymousState__temp5 = __webpack_require__(/*! ./../../../image/friend.png */ "./src/image/friend.png");
 
-      this.anonymousFunc8 = function () {
-        return _this9.closeCard();
+      this.anonymousFunc9 = function () {
+        return _this10.closeCard();
       };
 
-      this.anonymousFunc10 = function () {
-        return _this9.addNewCard();
+      this.anonymousFunc12 = function () {
+        return _this10.addNewCard();
       };
 
-      this.anonymousFunc11 = function () {
-        return _this9.clickGoPay(2);
+      this.anonymousFunc13 = function () {
+        return _this10.clickGoPay(2);
       };
 
-      var loopArray136 = titleList.map(function (item, index) {
+      var loopArray350 = titleList.map(function (item, index) {
         item = {
           $original: (0, _taroWeapp.internal_get_original)(item)
         };
-        var $anonymousCallee__22 = orderList.length > 0 ? orderList.map(function (item2, index2) {
+
+        var _$indexKey6 = "ffizz" + index;
+
+        _this10.anonymousFunc5Map[_$indexKey6] = function () {
+          return _this10.goLogin();
+        };
+
+        var $loopState__temp7 = _taroWeapp2.default.getStorageSync('token') != '';
+        var $anonymousCallee__67 = orderList.length > 0 ? orderList.map(function (item2, index2) {
           item2 = {
             $original: (0, _taroWeapp.internal_get_original)(item2)
           };
-          var _$indexKey2 = 'bgjzz' + index + '-' + index2;
+          var _$indexKey2 = 'ffezz' + index + '-' + index2;
 
-          _this9.anonymousFunc1Map[_$indexKey2] = function () {
-            return _this9.goDetail(item2.$original);
+          _this10.anonymousFunc1Map[_$indexKey2] = function () {
+            return _this10.goDetail(item2.$original);
           };
 
-          var _$indexKey3 = 'bhazz' + index + '-' + index2;
+          var _$indexKey3 = 'fffzz' + index + '-' + index2;
 
-          _this9.anonymousFunc2Map[_$indexKey3] = function () {
-            return _this9.goPay(item2.$original);
+          _this10.anonymousFunc2Map[_$indexKey3] = function () {
+            return _this10.goPay(item2.$original);
           };
 
-          var _$indexKey4 = 'bhbzz' + index + '-' + index2;
+          var _$indexKey4 = 'ffgzz' + index + '-' + index2;
 
-          _this9.anonymousFunc3Map[_$indexKey4] = function () {
-            return _this9.refundClick(item2.$original);
+          _this10.anonymousFunc3Map[_$indexKey4] = function () {
+            return _this10.refundClick(item2.$original);
           };
 
-          var _$indexKey5 = 'bhczz' + index + '-' + index2;
+          var _$indexKey5 = 'ffhzz' + index + '-' + index2;
 
-          _this9.anonymousFunc4Map[_$indexKey5] = function () {
-            return _this9.refundClick(item2.$original);
+          _this10.anonymousFunc4Map[_$indexKey5] = function () {
+            return _this10.refundClick(item2.$original);
           };
 
-          var $anonymousCallee__21 = orderList.length > 0 ? item2.$original.orderItemList.map(function (item3, index3) {
+          var $anonymousCallee__66 = orderList.length > 0 ? item2.$original.orderItemList.map(function (item3, index3) {
             item3 = {
               $original: (0, _taroWeapp.internal_get_original)(item3)
             };
-            var _$indexKey = 'bgizz' + index + '-' + index2 + '-' + index3;
+            var _$indexKey = 'ffdzz' + index + '-' + index2 + '-' + index3;
 
-            _this9.anonymousFunc0Map[_$indexKey] = function () {
-              return _this9.goDetail(item2.$original);
+            _this10.anonymousFunc0Map[_$indexKey] = function () {
+              return _this10.goDetail(item2.$original);
             };
 
-            var $loopState__temp2 = orderList.length > 0 ? _this9.getOrderStatus(item2.$original.orderStatus) : null;
+            var $loopState__temp2 = orderList.length > 0 ? _this10.getOrderStatus(item2.$original.orderStatus) : null;
             return {
               _$indexKey: _$indexKey,
               $loopState__temp2: $loopState__temp2,
@@ -550,39 +590,48 @@ var MyOrder = (_dec = (0, _redux.connect)(function (_ref) {
             _$indexKey3: _$indexKey3,
             _$indexKey4: _$indexKey4,
             _$indexKey5: _$indexKey5,
-            $anonymousCallee__21: $anonymousCallee__21,
+            $anonymousCallee__66: $anonymousCallee__66,
             $original: item2.$original
           };
         }) : [];
 
-        var _genCompid13 = (0, _taroWeapp.genCompid)(__prefix + 'bhezzzzzzz' + index, true),
+        var _genCompid13 = (0, _taroWeapp.genCompid)(__prefix + 'fgbzzzzzzz' + index, true),
             _genCompid14 = _slicedToArray(_genCompid13, 2),
-            $prevCompid__359 = _genCompid14[0],
-            $compid__359 = _genCompid14[1];
+            $prevCompid__815 = _genCompid14[0],
+            $compid__815 = _genCompid14[1];
 
         _taroWeapp.propsManager.set({
           "current": current,
           "index": index
-        }, $compid__359, $prevCompid__359);
+        }, $compid__815, $prevCompid__815);
         return {
-          $anonymousCallee__22: $anonymousCallee__22,
-          $compid__359: $compid__359,
+          _$indexKey6: _$indexKey6,
+          $loopState__temp7: $loopState__temp7,
+          $anonymousCallee__67: $anonymousCallee__67,
+          $compid__815: $compid__815,
           $original: item.$original
         };
       });
-      var loopArray137 = creditCardList.length > 0 ? creditCardList.map(function (item, index) {
+      var loopArray351 = creditCardList.length > 0 ? creditCardList.map(function (item, index) {
         item = {
           $original: (0, _taroWeapp.internal_get_original)(item)
         };
 
-        var _$indexKey6 = "bhdzz" + index;
+        var _$indexKey7 = "ffjzz" + index;
 
-        _this9.anonymousFunc9Map[_$indexKey6] = function () {
-          return _this9.clickChooseCard(index);
+        _this10.anonymousFunc10Map[_$indexKey7] = function () {
+          return _this10.clickChooseCard(index);
+        };
+
+        var _$indexKey8 = "fgazz" + index;
+
+        _this10.anonymousFunc11Map[_$indexKey8] = function () {
+          return _this10.deleteCard(item.$original, index);
         };
 
         return {
-          _$indexKey6: _$indexKey6,
+          _$indexKey7: _$indexKey7,
+          _$indexKey8: _$indexKey8,
           $original: item.$original
         };
       }) : [];
@@ -590,41 +639,41 @@ var MyOrder = (_dec = (0, _redux.connect)(function (_ref) {
         "current": current,
         "tabList": titleList,
         "onClick": this.handleClick.bind(this)
-      }, $compid__360, $prevCompid__360);
+      }, $compid__816, $prevCompid__816);
       _taroWeapp.propsManager.set({
         "isOpened": openPayType,
-        "onClose": this.anonymousFunc5
-      }, $compid__361, $prevCompid__361);
+        "onClose": this.anonymousFunc6
+      }, $compid__817, $prevCompid__817);
       _taroWeapp.propsManager.set({
         "value": "chevron-right",
         "size": "20",
         "color": "#999"
-      }, $compid__362, $prevCompid__362);
+      }, $compid__818, $prevCompid__818);
       _taroWeapp.propsManager.set({
         "value": "chevron-right",
         "size": "20",
         "color": "#999"
-      }, $compid__363, $prevCompid__363);
+      }, $compid__819, $prevCompid__819);
       _taroWeapp.propsManager.set({
         "value": "chevron-right",
         "size": "20",
         "color": "#999"
-      }, $compid__364, $prevCompid__364);
+      }, $compid__820, $prevCompid__820);
       _taroWeapp.propsManager.set({
         "isOpened": isOpenCard
-      }, $compid__365, $prevCompid__365);
+      }, $compid__821, $prevCompid__821);
       Object.assign(this.__state, {
         anonymousState__temp3: anonymousState__temp3,
         anonymousState__temp4: anonymousState__temp4,
         anonymousState__temp5: anonymousState__temp5,
-        loopArray136: loopArray136,
-        loopArray137: loopArray137,
-        $compid__360: $compid__360,
-        $compid__361: $compid__361,
-        $compid__362: $compid__362,
-        $compid__363: $compid__363,
-        $compid__364: $compid__364,
-        $compid__365: $compid__365
+        loopArray350: loopArray350,
+        loopArray351: loopArray351,
+        $compid__816: $compid__816,
+        $compid__817: $compid__817,
+        $compid__818: $compid__818,
+        $compid__819: $compid__819,
+        $compid__820: $compid__820,
+        $compid__821: $compid__821
       });
       return this.__state;
     }
@@ -695,8 +744,16 @@ var MyOrder = (_dec = (0, _redux.connect)(function (_ref) {
     }
   }, {
     key: 'anonymousFunc5',
-    value: function anonymousFunc5(e) {
+    value: function anonymousFunc5(_$indexKey6) {
+      var _anonymousFunc5Map;
+
       ;
+
+      for (var _len7 = arguments.length, e = Array(_len7 > 1 ? _len7 - 1 : 0), _key7 = 1; _key7 < _len7; _key7++) {
+        e[_key7 - 1] = arguments[_key7];
+      }
+
+      return this.anonymousFunc5Map[_$indexKey6] && (_anonymousFunc5Map = this.anonymousFunc5Map)[_$indexKey6].apply(_anonymousFunc5Map, e);
     }
   }, {
     key: 'anonymousFunc6',
@@ -715,31 +772,49 @@ var MyOrder = (_dec = (0, _redux.connect)(function (_ref) {
     }
   }, {
     key: 'anonymousFunc9',
-    value: function anonymousFunc9(_$indexKey6) {
-      var _anonymousFunc9Map;
-
+    value: function anonymousFunc9(e) {
       ;
-
-      for (var _len7 = arguments.length, e = Array(_len7 > 1 ? _len7 - 1 : 0), _key7 = 1; _key7 < _len7; _key7++) {
-        e[_key7 - 1] = arguments[_key7];
-      }
-
-      return this.anonymousFunc9Map[_$indexKey6] && (_anonymousFunc9Map = this.anonymousFunc9Map)[_$indexKey6].apply(_anonymousFunc9Map, e);
     }
   }, {
     key: 'anonymousFunc10',
-    value: function anonymousFunc10(e) {
+    value: function anonymousFunc10(_$indexKey7) {
+      var _anonymousFunc10Map;
+
       ;
+
+      for (var _len8 = arguments.length, e = Array(_len8 > 1 ? _len8 - 1 : 0), _key8 = 1; _key8 < _len8; _key8++) {
+        e[_key8 - 1] = arguments[_key8];
+      }
+
+      return this.anonymousFunc10Map[_$indexKey7] && (_anonymousFunc10Map = this.anonymousFunc10Map)[_$indexKey7].apply(_anonymousFunc10Map, e);
     }
   }, {
     key: 'anonymousFunc11',
-    value: function anonymousFunc11(e) {
+    value: function anonymousFunc11(_$indexKey8) {
+      var _anonymousFunc11Map;
+
+      ;
+
+      for (var _len9 = arguments.length, e = Array(_len9 > 1 ? _len9 - 1 : 0), _key9 = 1; _key9 < _len9; _key9++) {
+        e[_key9 - 1] = arguments[_key9];
+      }
+
+      return this.anonymousFunc11Map[_$indexKey8] && (_anonymousFunc11Map = this.anonymousFunc11Map)[_$indexKey8].apply(_anonymousFunc11Map, e);
+    }
+  }, {
+    key: 'anonymousFunc12',
+    value: function anonymousFunc12(e) {
+      ;
+    }
+  }, {
+    key: 'anonymousFunc13',
+    value: function anonymousFunc13(e) {
       ;
     }
   }]);
 
   return MyOrder;
-}(_taroWeapp.Component), _class2.$$events = ["anonymousFunc0", "anonymousFunc1", "anonymousFunc2", "anonymousFunc3", "anonymousFunc4", "anonymousFunc6", "anonymousFunc7", "anonymousFunc8", "anonymousFunc9", "anonymousFunc10", "anonymousFunc11"], _class2.$$componentPath = "pagesC/pages/myOrder/index", _temp2)) || _class);
+}(_taroWeapp.Component), _class2.$$events = ["anonymousFunc0", "anonymousFunc1", "anonymousFunc2", "anonymousFunc3", "anonymousFunc4", "anonymousFunc5", "anonymousFunc7", "anonymousFunc8", "anonymousFunc9", "anonymousFunc10", "anonymousFunc11", "anonymousFunc12", "anonymousFunc13"], _class2.$$componentPath = "pagesC/pages/myOrder/index", _temp2)) || _class);
 exports.default = MyOrder;
 
 Component(__webpack_require__(/*! @tarojs/taro-weapp */ "./node_modules/_@tarojs_taro-weapp@2.0.6@@tarojs/taro-weapp/index.js").default.createComponent(MyOrder, true));

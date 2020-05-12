@@ -65,7 +65,7 @@ var AddFuwu = (_dec = (0, _redux.connect)(function (_ref) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = AddFuwu.__proto__ || Object.getPrototypeOf(AddFuwu)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["$compid__238", "$compid__239", "$compid__240", "$compid__241", "$compid__242", "$compid__243", "foodImg", "picList", "name", "price", "detail", "note", "description", "isOpen", "toast", "pageType", "itemIndex"], _this.config = {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = AddFuwu.__proto__ || Object.getPrototypeOf(AddFuwu)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["$compid__241", "$compid__242", "$compid__243", "$compid__244", "$compid__245", "$compid__246", "foodImg", "picList", "name", "price", "detail", "note", "description", "isOpen", "toast", "pageType", "itemIndex"], _this.config = {
       navigationBarTitleText: '美城美食365'
     }, _this.customComponents = ["AtForm", "ChooseImage", "AtTextarea", "AtButton", "AtToast"], _temp), _possibleConstructorReturn(_this, _ret);
   }
@@ -286,35 +286,35 @@ var AddFuwu = (_dec = (0, _redux.connect)(function (_ref) {
       var __prefix = this.$prefix;
       ;
 
-      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__238"),
+      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__241"),
           _genCompid2 = _slicedToArray(_genCompid, 2),
-          $prevCompid__238 = _genCompid2[0],
-          $compid__238 = _genCompid2[1];
+          $prevCompid__241 = _genCompid2[0],
+          $compid__241 = _genCompid2[1];
 
-      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__239"),
+      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__242"),
           _genCompid4 = _slicedToArray(_genCompid3, 2),
-          $prevCompid__239 = _genCompid4[0],
-          $compid__239 = _genCompid4[1];
+          $prevCompid__242 = _genCompid4[0],
+          $compid__242 = _genCompid4[1];
 
-      var _genCompid5 = (0, _taroWeapp.genCompid)(__prefix + "$compid__240"),
+      var _genCompid5 = (0, _taroWeapp.genCompid)(__prefix + "$compid__243"),
           _genCompid6 = _slicedToArray(_genCompid5, 2),
-          $prevCompid__240 = _genCompid6[0],
-          $compid__240 = _genCompid6[1];
+          $prevCompid__243 = _genCompid6[0],
+          $compid__243 = _genCompid6[1];
 
-      var _genCompid7 = (0, _taroWeapp.genCompid)(__prefix + "$compid__241"),
+      var _genCompid7 = (0, _taroWeapp.genCompid)(__prefix + "$compid__244"),
           _genCompid8 = _slicedToArray(_genCompid7, 2),
-          $prevCompid__241 = _genCompid8[0],
-          $compid__241 = _genCompid8[1];
+          $prevCompid__244 = _genCompid8[0],
+          $compid__244 = _genCompid8[1];
 
-      var _genCompid9 = (0, _taroWeapp.genCompid)(__prefix + "$compid__242"),
+      var _genCompid9 = (0, _taroWeapp.genCompid)(__prefix + "$compid__245"),
           _genCompid10 = _slicedToArray(_genCompid9, 2),
-          $prevCompid__242 = _genCompid10[0],
-          $compid__242 = _genCompid10[1];
+          $prevCompid__245 = _genCompid10[0],
+          $compid__245 = _genCompid10[1];
 
-      var _genCompid11 = (0, _taroWeapp.genCompid)(__prefix + "$compid__243"),
+      var _genCompid11 = (0, _taroWeapp.genCompid)(__prefix + "$compid__246"),
           _genCompid12 = _slicedToArray(_genCompid11, 2),
-          $prevCompid__243 = _genCompid12[0],
-          $compid__243 = _genCompid12[1];
+          $prevCompid__246 = _genCompid12[0],
+          $compid__246 = _genCompid12[1];
 
       this.anonymousFunc0 = function () {
         return _this2.goAddFood();
@@ -325,40 +325,40 @@ var AddFuwu = (_dec = (0, _redux.connect)(function (_ref) {
         "onFilesValue": this.getOnFilesValue.bind(this),
         "returnImgSrc": this.getReturnImgSrc.bind(this),
         "deleteImgSrc": this.deleteImgSrc.bind(this)
-      }, $compid__238, $prevCompid__238);
+      }, $compid__241, $prevCompid__241);
       _taroWeapp.propsManager.set({
         "className": "text",
         "count": false,
         "value": this.__state.detail,
         "onChange": this.shuomingChange.bind(this)
-      }, $compid__239, $prevCompid__239);
+      }, $compid__242, $prevCompid__242);
       _taroWeapp.propsManager.set({
         "className": "text",
         "count": false,
         "value": this.__state.note,
         "onChange": this.noteChange.bind(this)
-      }, $compid__240, $prevCompid__240);
+      }, $compid__243, $prevCompid__243);
       _taroWeapp.propsManager.set({
         "className": "text",
         "count": false,
         "value": this.__state.description,
         "onChange": this.descriptionChange.bind(this)
-      }, $compid__241, $prevCompid__241);
+      }, $compid__244, $prevCompid__244);
       _taroWeapp.propsManager.set({
         "className": "btn",
         "onClick": this.anonymousFunc0
-      }, $compid__242, $prevCompid__242);
+      }, $compid__245, $prevCompid__245);
       _taroWeapp.propsManager.set({
         "isOpened": this.__state.isOpen,
         "text": this.__state.toast
-      }, $compid__243, $prevCompid__243);
+      }, $compid__246, $prevCompid__246);
       Object.assign(this.__state, {
-        $compid__238: $compid__238,
-        $compid__239: $compid__239,
-        $compid__240: $compid__240,
         $compid__241: $compid__241,
         $compid__242: $compid__242,
-        $compid__243: $compid__243
+        $compid__243: $compid__243,
+        $compid__244: $compid__244,
+        $compid__245: $compid__245,
+        $compid__246: $compid__246
       });
       return this.__state;
     }

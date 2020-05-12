@@ -65,7 +65,7 @@ var ChangeSecondhand = (_dec = (0, _redux.connect)(function (_ref) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = ChangeSecondhand.__proto__ || Object.getPrototypeOf(ChangeSecondhand)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["loopArray142", "loopArray143", "loopArray144", "$compid__384", "$compid__385", "$compid__386", "$compid__387", "$compid__388", "$compid__389", "$compid__390", "$compid__391", "ershouImgList", "typeChoose", "imgList", "picList", "name", "isOpencity", "cityName", "city", "address", "price", "detail", "note", "weixinno", "telephone", "email", "isOpen", "toast", "areaList", "typeList", "longitude", "latitude", "id"], _this.config = {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = ChangeSecondhand.__proto__ || Object.getPrototypeOf(ChangeSecondhand)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["loopArray145", "loopArray146", "loopArray147", "$compid__397", "$compid__398", "$compid__399", "$compid__400", "$compid__401", "$compid__402", "$compid__403", "$compid__404", "ershouImgList", "typeChoose", "imgList", "picList", "name", "isOpencity", "cityName", "city", "address", "price", "detail", "note", "weixinno", "telephone", "email", "isOpen", "toast", "areaList", "typeList", "longitude", "latitude", "id"], _this.config = {
       navigationBarTitleText: '二手'
     }, _this.anonymousFunc0Map = {}, _this.anonymousFunc3Map = {}, _this.anonymousFunc5Map = {}, _this.customComponents = ["AtForm", "ChooseImage", "AtIcon", "AtActionSheet", "AtActionSheetItem", "AtTextarea", "AtButton", "AtToast"], _temp), _possibleConstructorReturn(_this, _ret);
   }
@@ -506,45 +506,45 @@ var ChangeSecondhand = (_dec = (0, _redux.connect)(function (_ref) {
       var __prefix = this.$prefix;
       ;
 
-      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__384"),
+      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__397"),
           _genCompid2 = _slicedToArray(_genCompid, 2),
-          $prevCompid__384 = _genCompid2[0],
-          $compid__384 = _genCompid2[1];
+          $prevCompid__397 = _genCompid2[0],
+          $compid__397 = _genCompid2[1];
 
-      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__385"),
+      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__398"),
           _genCompid4 = _slicedToArray(_genCompid3, 2),
-          $prevCompid__385 = _genCompid4[0],
-          $compid__385 = _genCompid4[1];
+          $prevCompid__398 = _genCompid4[0],
+          $compid__398 = _genCompid4[1];
 
-      var _genCompid5 = (0, _taroWeapp.genCompid)(__prefix + "$compid__386"),
+      var _genCompid5 = (0, _taroWeapp.genCompid)(__prefix + "$compid__399"),
           _genCompid6 = _slicedToArray(_genCompid5, 2),
-          $prevCompid__386 = _genCompid6[0],
-          $compid__386 = _genCompid6[1];
+          $prevCompid__399 = _genCompid6[0],
+          $compid__399 = _genCompid6[1];
 
-      var _genCompid7 = (0, _taroWeapp.genCompid)(__prefix + "$compid__387"),
+      var _genCompid7 = (0, _taroWeapp.genCompid)(__prefix + "$compid__400"),
           _genCompid8 = _slicedToArray(_genCompid7, 2),
-          $prevCompid__387 = _genCompid8[0],
-          $compid__387 = _genCompid8[1];
+          $prevCompid__400 = _genCompid8[0],
+          $compid__400 = _genCompid8[1];
 
-      var _genCompid9 = (0, _taroWeapp.genCompid)(__prefix + "$compid__388"),
+      var _genCompid9 = (0, _taroWeapp.genCompid)(__prefix + "$compid__401"),
           _genCompid10 = _slicedToArray(_genCompid9, 2),
-          $prevCompid__388 = _genCompid10[0],
-          $compid__388 = _genCompid10[1];
+          $prevCompid__401 = _genCompid10[0],
+          $compid__401 = _genCompid10[1];
 
-      var _genCompid11 = (0, _taroWeapp.genCompid)(__prefix + "$compid__389"),
+      var _genCompid11 = (0, _taroWeapp.genCompid)(__prefix + "$compid__402"),
           _genCompid12 = _slicedToArray(_genCompid11, 2),
-          $prevCompid__389 = _genCompid12[0],
-          $compid__389 = _genCompid12[1];
+          $prevCompid__402 = _genCompid12[0],
+          $compid__402 = _genCompid12[1];
 
-      var _genCompid13 = (0, _taroWeapp.genCompid)(__prefix + "$compid__390"),
+      var _genCompid13 = (0, _taroWeapp.genCompid)(__prefix + "$compid__403"),
           _genCompid14 = _slicedToArray(_genCompid13, 2),
-          $prevCompid__390 = _genCompid14[0],
-          $compid__390 = _genCompid14[1];
+          $prevCompid__403 = _genCompid14[0],
+          $compid__403 = _genCompid14[1];
 
-      var _genCompid15 = (0, _taroWeapp.genCompid)(__prefix + "$compid__391"),
+      var _genCompid15 = (0, _taroWeapp.genCompid)(__prefix + "$compid__404"),
           _genCompid16 = _slicedToArray(_genCompid15, 2),
-          $prevCompid__391 = _genCompid16[0],
-          $compid__391 = _genCompid16[1];
+          $prevCompid__404 = _genCompid16[0],
+          $compid__404 = _genCompid16[1];
 
       var _state2 = this.__state,
           typeChoose = _state2.typeChoose,
@@ -567,12 +567,12 @@ var ChangeSecondhand = (_dec = (0, _redux.connect)(function (_ref) {
         return _this5.submitForm();
       };
 
-      var loopArray142 = ershouImgList.length > 0 ? ershouImgList.map(function (item, index) {
+      var loopArray145 = ershouImgList.length > 0 ? ershouImgList.map(function (item, index) {
         item = {
           $original: (0, _taroWeapp.internal_get_original)(item)
         };
 
-        var _$indexKey = "biazz" + index;
+        var _$indexKey = "bjdzz" + index;
 
         _this5.anonymousFunc0Map[_$indexKey] = function () {
           return _this5.deleteChooseImg(index);
@@ -584,38 +584,38 @@ var ChangeSecondhand = (_dec = (0, _redux.connect)(function (_ref) {
         };
       }) : [];
 
-      var loopArray143 = this.__state.areaList.map(function (item, index) {
+      var loopArray146 = this.__state.areaList.map(function (item, index) {
         item = {
           $original: (0, _taroWeapp.internal_get_original)(item)
         };
 
-        var _$indexKey2 = "bibzz" + index;
+        var _$indexKey2 = "bjezz" + index;
 
         _this5.anonymousFunc3Map[_$indexKey2] = function () {
           return _this5.selectCity(item.$original);
         };
 
-        var _genCompid17 = (0, _taroWeapp.genCompid)(__prefix + 'bidzzzzzzz' + index, true),
+        var _genCompid17 = (0, _taroWeapp.genCompid)(__prefix + 'bjgzzzzzzz' + index, true),
             _genCompid18 = _slicedToArray(_genCompid17, 2),
-            $prevCompid__383 = _genCompid18[0],
-            $compid__383 = _genCompid18[1];
+            $prevCompid__396 = _genCompid18[0],
+            $compid__396 = _genCompid18[1];
 
         _taroWeapp.propsManager.set({
           "onClick": _this5.anonymousFunc3.bind(_this5, _$indexKey2)
-        }, $compid__383, $prevCompid__383);
+        }, $compid__396, $prevCompid__396);
         return {
           _$indexKey2: _$indexKey2,
-          $compid__383: $compid__383,
+          $compid__396: $compid__396,
           $original: item.$original
         };
       });
 
-      var loopArray144 = this.__state.typeList.map(function (item, index) {
+      var loopArray147 = this.__state.typeList.map(function (item, index) {
         item = {
           $original: (0, _taroWeapp.internal_get_original)(item)
         };
 
-        var _$indexKey3 = "biczz" + index;
+        var _$indexKey3 = "bjfzz" + index;
 
         _this5.anonymousFunc5Map[_$indexKey3] = function () {
           return _this5.typeClick(index);
@@ -632,53 +632,53 @@ var ChangeSecondhand = (_dec = (0, _redux.connect)(function (_ref) {
         "onFilesValue": this.getOnFilesValue.bind(this),
         "returnImgSrc": this.getReturnImgSrc.bind(this),
         "deleteImgSrc": this.deleteImgSrc.bind(this)
-      }, $compid__384, $prevCompid__384);
+      }, $compid__397, $prevCompid__397);
       _taroWeapp.propsManager.set({
         "value": "chevron-down",
         "size": "13",
         "color": "#999"
-      }, $compid__385, $prevCompid__385);
+      }, $compid__398, $prevCompid__398);
       _taroWeapp.propsManager.set({
         "isOpened": this.__state.isOpencity,
         "onClose": this.anonymousFunc2
-      }, $compid__386, $prevCompid__386);
+      }, $compid__399, $prevCompid__399);
       _taroWeapp.propsManager.set({
         "value": "map-pin",
         "size": "13",
         "color": "#999"
-      }, $compid__387, $prevCompid__387);
+      }, $compid__400, $prevCompid__400);
       _taroWeapp.propsManager.set({
         "className": "text",
         "count": false,
         "value": this.__state.detail,
         "onChange": this.shuomingChange.bind(this)
-      }, $compid__388, $prevCompid__388);
+      }, $compid__401, $prevCompid__401);
       _taroWeapp.propsManager.set({
         "className": "text",
         "count": false,
         "value": this.__state.note,
         "onChange": this.noteChange.bind(this)
-      }, $compid__389, $prevCompid__389);
+      }, $compid__402, $prevCompid__402);
       _taroWeapp.propsManager.set({
         "className": "btn",
         "onClick": this.anonymousFunc6
-      }, $compid__390, $prevCompid__390);
+      }, $compid__403, $prevCompid__403);
       _taroWeapp.propsManager.set({
         "isOpened": this.__state.isOpen,
         "text": this.__state.toast
-      }, $compid__391, $prevCompid__391);
+      }, $compid__404, $prevCompid__404);
       Object.assign(this.__state, {
-        loopArray142: loopArray142,
-        loopArray143: loopArray143,
-        loopArray144: loopArray144,
-        $compid__384: $compid__384,
-        $compid__385: $compid__385,
-        $compid__386: $compid__386,
-        $compid__387: $compid__387,
-        $compid__388: $compid__388,
-        $compid__389: $compid__389,
-        $compid__390: $compid__390,
-        $compid__391: $compid__391
+        loopArray145: loopArray145,
+        loopArray146: loopArray146,
+        loopArray147: loopArray147,
+        $compid__397: $compid__397,
+        $compid__398: $compid__398,
+        $compid__399: $compid__399,
+        $compid__400: $compid__400,
+        $compid__401: $compid__401,
+        $compid__402: $compid__402,
+        $compid__403: $compid__403,
+        $compid__404: $compid__404
       });
       return this.__state;
     }

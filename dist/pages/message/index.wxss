@@ -84,9 +84,34 @@
 }
 .noData {
   width: 100vw;
-  line-height: 200rpx;
+  margin-top: 120rpx;
+  font-size: 28rpx;
+  color: #666;
+  text-align: center;
+}
+.bigBox {
+  width: 100vw;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 60rpx;
+}
+.bigBox .loginBtn {
+  width: 200rpx;
+  height: 70rpx;
+  line-height: 70rpx;
   text-align: center;
   font-size: 30rpx;
-  color: #666;
+  color: #fff;
+  background: #24c8b2;
+  border-radius: 10rpx;
 }
 

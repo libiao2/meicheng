@@ -1,8 +1,9 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View, Text, Button, Image } from '@tarojs/components'
 import {
-  AtIcon,
-  AtGrid
+  AtModal,
+  AtModalHeader,
+  AtModalContent
 } from "taro-ui"
 import { connect } from '@tarojs/redux'
 import { addChat } from '../../actions/counter'
@@ -26,6 +27,7 @@ class My extends Component {
       { num: 0, title: '我的订单' },
     ],
     userInfo: {},
+    isGetInfo: false, // 获取用户信息弹框
   };
 
   config = {
@@ -38,7 +40,7 @@ class My extends Component {
     })
   }
   componentDidMount() {
-    this.getData()
+    
   }
   componentWillReceiveProps (nextProps) {
     console.log(this.props, nextProps)
@@ -49,6 +51,9 @@ class My extends Component {
   }
 
   componentDidShow () {
+    if(Taro.getStorageSync('userInfo') != '') {
+      this.getData()
+    }
   }
 
   componentDidHide () { }
@@ -70,23 +75,24 @@ class My extends Component {
   }
 
   goMy(index) {
-    switch(index) {
-      case 0:
-        Taro.navigateTo({
-          url: '/pagesB/pages/myPublish/index'
-        })
-        break;
-      case 1:
-        Taro.navigateTo({
-          url: '/pagesC/pages/mySale/index'
-        })
-        break;
-      case 2:
-        Taro.navigateTo({
-          url: '/pagesC/pages/myOrder/index'
-        })
-        break;
-    }
+      switch(index) {
+        case 0:
+          Taro.navigateTo({
+            url: '/pagesB/pages/myPublish/index'
+          })
+          break;
+        case 1:
+          Taro.navigateTo({
+            url: '/pagesC/pages/mySale/index'
+          })
+          break;
+        case 2:
+          Taro.navigateTo({
+            url: '/pagesC/pages/myOrder/index'
+          })
+          break;
+      }
+    
   }
 
 qrCode(){
@@ -123,16 +129,85 @@ qrCode(){
     })
   }
 
+  getUserInfo() {
+    this.setState({
+      isGetInfo: true,
+    })
+  }
+
+  noShou() {
+    this.setState({
+      isGetInfo: false,
+    })
+  }
+
+  bindGetUserInfo(value) {
+    let that = this;
+    if(value.detail.userInfo) {
+      console.log('授权成功！')
+      // 保存用户信息微信登录
+      Taro.setStorageSync('userInfo', value.detail.userInfo);
+
+      this.setState({
+        isGetInfo: false,
+      });
+      let that = this;
+      Taro.login({
+        success: function (res) {
+          if (res.code) {
+            let obj = {
+              withCredentials: true,
+            }
+            Taro.getSetting().then(a => {
+              console.log('999900000', a)
+              if (a.authSetting['scope.userInfo']) {
+                Taro.getUserInfo(obj).then(e=> {
+                  Taro.setStorageSync('userInfo', JSON.parse(e.rawData));
+                  that.setState({
+                    userInfo: Taro.getStorageSync('userInfo')
+                  })
+                  api.post('/me/weixiLogin',{
+                    encryptedData: e.encryptedData,
+                    code: res.code,
+                    iv: e.iv
+                  }).then(v => {
+                    if(v.data.code == 200) {
+                      Taro.setStorageSync('token', v.data.data.token);
+                      Taro.setStorageSync('userId', v.data.data.userId);
+                      that.getData();
+                      
+                    }
+                  });
+                })
+              }
+            })
+          } else {
+            console.log('登录失败！' + res.errMsg)
+          }
+        }
+      })
+    }
+  }
+
 
   render () {
-    const { userInfo } = this.state;
+    const { userInfo, isGetInfo } = this.state;
     return (
       <View className='container'>
         <View className='header'>
-          <View className='headerLeft'>
-            <Image className='img' src={userInfo.avatarUrl} />
-            <Text className='name'>{userInfo.nickName}</Text>
+          {
+            Taro.getStorageSync('userInfo') != '' ?
+            <View className='headerLeft'>
+              <Image className='img' src={userInfo.avatarUrl} />
+              <Text className='name'>{userInfo.nickName}</Text>
+            </View>
+            :
+            <View className='headerLeft' onClick={() => this.getUserInfo()}>
+              <Image className='img' src={require('./../../image/toux.jpg')} />
+              <Text className='clickname'>点击登录！</Text>
           </View>
+          }
+          
           <Image className='headerRight' src={require('./../../image/qr.png')} onClick={() => this.qrCode()}/>
         </View>
         <View className='tabBox'>
@@ -171,6 +246,24 @@ qrCode(){
             <View className='smallBox'></View>
           </View>
         </View>
+
+        {/* 授权操作 */}
+        <AtModal isOpened={isGetInfo}>
+          <AtModalHeader>授权提示</AtModalHeader>
+          <AtModalContent>
+            <View className='shouquan'>
+              <Text style='margin-top: 10px'>需要使用你的微信昵称和头像</Text>
+              <View className='btnList'>
+                
+                <Button className='myBtn noBtn' onClick={() => this.noShou()}>暂不授权</Button>
+                <Button
+                  className='myBtn'
+                  open-type='getUserInfo'
+                  onGetUserInfo={this.bindGetUserInfo}>点击授权</Button>
+              </View>
+            </View>
+          </AtModalContent>
+        </AtModal>
       </View>
     )
   }

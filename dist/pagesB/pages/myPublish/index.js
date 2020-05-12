@@ -67,7 +67,7 @@ var MyPublish = (_dec = (0, _redux.connect)(function (_ref) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = MyPublish.__proto__ || Object.getPrototypeOf(MyPublish)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["loopArray93", "dataList"], _this.state = {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = MyPublish.__proto__ || Object.getPrototypeOf(MyPublish)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["anonymousState__temp3", "loopArray365", "dataList"], _this.state = {
       dataList: []
     }, _this.config = {
       navigationBarTitleText: '我的发布'
@@ -87,7 +87,9 @@ var MyPublish = (_dec = (0, _redux.connect)(function (_ref) {
   }, {
     key: 'componentDidMount',
     value: function componentDidMount() {
-      this.getData();
+      if (_taroWeapp2.default.getStorageSync('token') != '') {
+        this.getData();
+      }
     }
   }, {
     key: 'componentWillReceiveProps',
@@ -155,6 +157,13 @@ var MyPublish = (_dec = (0, _redux.connect)(function (_ref) {
       }
     }
   }, {
+    key: 'goLogin',
+    value: function goLogin() {
+      _taroWeapp2.default.switchTab({
+        url: "/pages/my/index"
+      });
+    }
+  }, {
     key: '_createData',
     value: function _createData() {
       var _this3 = this;
@@ -167,13 +176,19 @@ var MyPublish = (_dec = (0, _redux.connect)(function (_ref) {
 
       var dataList = this.__state.dataList;
 
-      var loopArray93 = dataList.map(function (item, index) {
+
+      this.anonymousFunc1 = function () {
+        return _this3.goLogin();
+      };
+
+      var anonymousState__temp3 = _taroWeapp2.default.getStorageSync('token') != '';
+      var loopArray365 = dataList.map(function (item, index) {
         item = {
           $original: (0, _taroWeapp.internal_get_original)(item)
         };
         var $loopState__temp2 = item.$original.picList.length > 0 ? (0, _taroWeapp.internal_inline_style)({ width: 260 * item.$original.picList.length + 'rpx' }) : null;
 
-        var _$indexKey = "bcczz" + index;
+        var _$indexKey = "fihzz" + index;
 
         _this3.anonymousFunc0Map[_$indexKey] = function () {
           return _this3.goChange(item.$original);
@@ -186,7 +201,8 @@ var MyPublish = (_dec = (0, _redux.connect)(function (_ref) {
         };
       });
       Object.assign(this.__state, {
-        loopArray93: loopArray93
+        anonymousState__temp3: anonymousState__temp3,
+        loopArray365: loopArray365
       });
       return this.__state;
     }
@@ -203,10 +219,15 @@ var MyPublish = (_dec = (0, _redux.connect)(function (_ref) {
 
       return this.anonymousFunc0Map[_$indexKey] && (_anonymousFunc0Map = this.anonymousFunc0Map)[_$indexKey].apply(_anonymousFunc0Map, e);
     }
+  }, {
+    key: 'anonymousFunc1',
+    value: function anonymousFunc1(e) {
+      ;
+    }
   }]);
 
   return MyPublish;
-}(_taroWeapp.Component), _class2.$$events = ["anonymousFunc0"], _class2.$$componentPath = "pagesB/pages/myPublish/index", _temp2)) || _class);
+}(_taroWeapp.Component), _class2.$$events = ["anonymousFunc0", "anonymousFunc1"], _class2.$$componentPath = "pagesB/pages/myPublish/index", _temp2)) || _class);
 exports.default = MyPublish;
 
 Component(__webpack_require__(/*! @tarojs/taro-weapp */ "./node_modules/_@tarojs_taro-weapp@2.0.6@@tarojs/taro-weapp/index.js").default.createComponent(MyPublish, true));

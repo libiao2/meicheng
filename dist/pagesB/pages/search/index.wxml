@@ -2,17 +2,17 @@
     <view class="container">
         <view class="searchHeader">
             <view class="searchBox">
-                <at-search-bar compid="{{$compid__250}}"></at-search-bar>
+                <at-search-bar compid="{{$compid__650}}"></at-search-bar>
             </view>
             <block wx:if="{{!hasFocus && value == ''}}"><text bindtap="anonymousFunc3" class="cancel">取消</text>
             </block>
         </view>
         <view class="typeBox"><text class="title">指定搜索:</text>
-            <view class="{{'box ' + (categoryId == index + 1 && 'chooseBox')}}" bindtap="anonymousFunc4" wx:for="{{loopArray94}}" wx:for-item="item" wx:for-index="index" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey}}"><text>{{item.$original.title}}</text>
+            <view class="{{'box ' + (categoryId == index + 1 && 'chooseBox')}}" bindtap="anonymousFunc4" wx:for="{{loopArray286}}" wx:for-item="item" wx:for-index="index" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey}}"><text>{{item.$original.title}}</text>
             </view>
         </view>
         <view class="listBox">
-            <view class="itemBox" bindtap="anonymousFunc5" wx:for="{{loopArray95}}" wx:for-item="item" wx:for-index="index" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey2}}">
+            <view class="itemBox" bindtap="anonymousFunc5" wx:for="{{loopArray287}}" wx:for-item="item" wx:for-index="index" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey2}}">
                 <image class="img" src="{{item.$original.pic}}"></image>
                 <view class="rightPart">
                     <view class="nameBox"><text class="name">{{item.$original.name}}</text>
@@ -24,6 +24,6 @@
                 </view>
             </view>
         </view>
-        <at-toast compid="{{$compid__251}}"></at-toast>
+        <at-toast compid="{{$compid__651}}"></at-toast>
     </view>
 </block>

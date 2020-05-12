@@ -48,6 +48,7 @@
   width: 120rpx;
   height: 120rpx;
   margin: 0 15rpx;
+  border-radius: 10rpx;
 }
 .container .listBox .itemBox .bottomList .bottomBox .rightPart {
   -webkit-flex: 1;
@@ -169,8 +170,42 @@
   border: 1rpx solid #c4c4c4;
   border-radius: 4rpx;
   margin-right: 15rpx;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding-bottom: 10rpx;
 }
-.chooseCicle {
+.bigBox {
+  width: 100vw;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 60rpx;
+}
+.bigBox .loginBtn {
+  width: 200rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  text-align: center;
+  font-size: 30rpx;
+  color: #fff;
   background: #24c8b2;
+  border-radius: 10rpx;
 }
 

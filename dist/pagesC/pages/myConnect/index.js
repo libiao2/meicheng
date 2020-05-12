@@ -63,7 +63,7 @@ var MyConnect = (_dec = (0, _redux.connect)(function (_ref) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = MyConnect.__proto__ || Object.getPrototypeOf(MyConnect)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["$compid__257", "$compid__258", "$compid__259", "$compid__260", "email", "phone", "weachat", "isOpenToast", "toastText"], _this.state = {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = MyConnect.__proto__ || Object.getPrototypeOf(MyConnect)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["$compid__864", "$compid__865", "$compid__866", "$compid__867", "email", "phone", "weachat", "isOpenToast", "toastText"], _this.state = {
       email: '',
       phone: '',
       weachat: '',
@@ -87,7 +87,9 @@ var MyConnect = (_dec = (0, _redux.connect)(function (_ref) {
   }, {
     key: 'componentDidMount',
     value: function componentDidMount() {
-      this.getData();
+      if (_taroWeapp2.default.getStorageSync('token') != '') {
+        this.getData();
+      }
     }
   }, {
     key: 'componentWillReceiveProps',
@@ -148,6 +150,12 @@ var MyConnect = (_dec = (0, _redux.connect)(function (_ref) {
           phone = _state.phone,
           weachat = _state.weachat;
 
+      if (_taroWeapp2.default.getStorageSync('token') == '') {
+        _taroWeapp2.default.switchTab({
+          url: "/pages/my/index"
+        });
+        return;
+      }
       var obj = {
         email: email,
         telephone: phone,
@@ -186,25 +194,25 @@ var MyConnect = (_dec = (0, _redux.connect)(function (_ref) {
       var __prefix = this.$prefix;
       ;
 
-      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__257"),
+      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__864"),
           _genCompid2 = _slicedToArray(_genCompid, 2),
-          $prevCompid__257 = _genCompid2[0],
-          $compid__257 = _genCompid2[1];
+          $prevCompid__864 = _genCompid2[0],
+          $compid__864 = _genCompid2[1];
 
-      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__258"),
+      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__865"),
           _genCompid4 = _slicedToArray(_genCompid3, 2),
-          $prevCompid__258 = _genCompid4[0],
-          $compid__258 = _genCompid4[1];
+          $prevCompid__865 = _genCompid4[0],
+          $compid__865 = _genCompid4[1];
 
-      var _genCompid5 = (0, _taroWeapp.genCompid)(__prefix + "$compid__259"),
+      var _genCompid5 = (0, _taroWeapp.genCompid)(__prefix + "$compid__866"),
           _genCompid6 = _slicedToArray(_genCompid5, 2),
-          $prevCompid__259 = _genCompid6[0],
-          $compid__259 = _genCompid6[1];
+          $prevCompid__866 = _genCompid6[0],
+          $compid__866 = _genCompid6[1];
 
-      var _genCompid7 = (0, _taroWeapp.genCompid)(__prefix + "$compid__260"),
+      var _genCompid7 = (0, _taroWeapp.genCompid)(__prefix + "$compid__867"),
           _genCompid8 = _slicedToArray(_genCompid7, 2),
-          $prevCompid__260 = _genCompid8[0],
-          $compid__260 = _genCompid8[1];
+          $prevCompid__867 = _genCompid8[0],
+          $compid__867 = _genCompid8[1];
 
       var _state2 = this.__state,
           email = _state2.email,
@@ -223,28 +231,28 @@ var MyConnect = (_dec = (0, _redux.connect)(function (_ref) {
         "placeholder": '\u8BF7\u8F93\u5165\u90AE\u7BB1',
         "value": email,
         "onChange": this.emailChange.bind(this)
-      }, $compid__257, $prevCompid__257);
+      }, $compid__864, $prevCompid__864);
       _taroWeapp.propsManager.set({
         "type": "text",
         "placeholder": '\u8BF7\u8F93\u5165\u7535\u8BDD\u53F7',
         "value": phone,
         "onChange": this.phoneChange.bind(this)
-      }, $compid__258, $prevCompid__258);
+      }, $compid__865, $prevCompid__865);
       _taroWeapp.propsManager.set({
         "type": "text",
         "placeholder": '\u8BF7\u8F93\u5165\u5FAE\u4FE1\u53F7',
         "value": weachat,
         "onChange": this.weachatChange.bind(this)
-      }, $compid__259, $prevCompid__259);
+      }, $compid__866, $prevCompid__866);
       _taroWeapp.propsManager.set({
         "isOpened": isOpenToast,
         "text": toastText
-      }, $compid__260, $prevCompid__260);
+      }, $compid__867, $prevCompid__867);
       Object.assign(this.__state, {
-        $compid__257: $compid__257,
-        $compid__258: $compid__258,
-        $compid__259: $compid__259,
-        $compid__260: $compid__260
+        $compid__864: $compid__864,
+        $compid__865: $compid__865,
+        $compid__866: $compid__866,
+        $compid__867: $compid__867
       });
       return this.__state;
     }

@@ -53,7 +53,7 @@ class Home extends Component {
         { name: '部落', pic: require('./../../image/buluo.png')  },
       ],
       typeKey: 0,
-      isGetInfo: false, // 获取用户信息弹框
+      
       isMove: true,
       recommendList: [],
       stationMessage: '',
@@ -72,7 +72,7 @@ class Home extends Component {
       if(arr[0] == 0) { /// 店铺
         if(arr[1] == 1) { ///1->美食；2->休闲；3->生活；4->二手；5->房源；6->部落
           Taro.navigateTo({
-            url: `/pagesA/pages/foodDetail/index?id=${arr[2]}`,
+            url: `/pagesB/pages/foodDetail/index?id=${arr[2]}`,
           })
         } else if(arr[1] == 2) {
           Taro.navigateTo({
@@ -89,13 +89,7 @@ class Home extends Component {
     
   }
   componentDidMount() {
-    if(Taro.getStorageSync('userInfo') == '') {
-      setTimeout(() => {
-        this.setState({
-          isGetInfo: true,
-        });
-      },100)
-    } else {
+    if(Taro.getStorageSync('userInfo') != '') {
       this.getCarCount();
     }
 
@@ -241,13 +235,20 @@ class Home extends Component {
   }
 
   typeChoose(e) {
-    this.setState({
-      typeKey: e,
-      categoryId: e + 1,
-      pageNum: 1,
-      dataList: [],
-    }, () => {this.getList()});
-
+    let timer = null;
+    let that = this;
+    if(timer) {
+      clearTimeout(timer);
+    }
+    timer = setTimeout(function(){
+      console.log('0000000', that.state)
+      that.setState({
+        typeKey: e,
+        categoryId: e + 1,
+        pageNum: 1,
+        dataList: [],
+      }, () => {that.getList()});
+    },700)
   }
   initList(){
     this.setState({
@@ -259,9 +260,7 @@ class Home extends Component {
     Taro.stopPullDownRefresh();
   }
   getList() {
-    console.log('555555555555555555550000000000000调用接口了')
     const { city, categoryId, pageNum, pageSize } = this.state;
-
     let obj = {
       city,
       categoryId,
@@ -273,10 +272,17 @@ class Home extends Component {
       console.log('$$$$$', res)
       if(res.data.code == 200) {
         let list = this.state.dataList;
-        this.setState({
-          dataList: [...list, ...res.data.data.list],
-          listInfo: res.data.data
-        })
+        if(pageNum == 1) {
+          this.setState({
+            dataList: res.data.data.list,
+            listInfo: res.data.data
+          })
+        } else {
+          this.setState({
+            dataList: [...list, ...res.data.data.list],
+            listInfo: res.data.data
+          })
+        }
       }
     });
   }
@@ -288,7 +294,7 @@ class Home extends Component {
   }
 
   goSearch() {
-    const { city, categoryId } = this.state;
+    const { city } = this.state;
     Taro.navigateTo({
       url: `/pagesB/pages/search/index?city=${city}`,
     })
@@ -319,57 +325,14 @@ class Home extends Component {
       isSearch: false
     });
   }
-  bindGetUserInfo(value) {
-    console.log('ffg', value);
-    let that = this;
-    if(value.detail.userInfo) {
-      console.log('授权成功！')
-      // 保存用户信息微信登录
-      Taro.setStorageSync('userInfo', value.detail.userInfo);
-
-      this.setState({
-        isGetInfo: false,
-      });
-      let that = this;
-      Taro.login({
-        success: function (res) {
-          if (res.code) {
-            let obj = {
-              withCredentials: true,
-            }
-            Taro.getSetting().then(a => {
-              console.log('999900000', a)
-              if (a.authSetting['scope.userInfo']) {
-                Taro.getUserInfo(obj).then(e=> {
-                  Taro.setStorageSync('userInfo', JSON.parse(e.rawData));
-                  api.post('/me/weixiLogin',{
-                    encryptedData: e.encryptedData,
-                    code: res.code,
-                    iv: e.iv
-                  }).then(v => {
-                    if(v.data.code == 200) {
-                      Taro.setStorageSync('token', v.data.data.token);
-                      Taro.setStorageSync('userId', v.data.data.userId);
-                      that.getCarCount();
-                    }
-                  });
-                })
-              }
-            })
-          } else {
-            console.log('登录失败！' + res.errMsg)
-          }
-        }
-      })
-    }
-  }
+  
 
   swiperClick(index) {
     const { imgList } = this.state;
     console.log('00000', imgList[index]);
     let url='';
       if(imgList[index].linkType==0&&imgList[index].categoryId==1){
-          url= `/pagesA/pages/foodDetail/index?id=${imgList[index].linkId}`;
+          url= `/pagesB/pages/foodDetail/index?id=${imgList[index].linkId}`;
       }else  if(imgList[index].linkType==0&&imgList[index].categoryId==2){
           url=`/pagesC/pages/leisureDetail/index?id=${imgList[index].linkId}`;
       }else if(imgList[index].linkType==1&&imgList[index].categoryId==1){
@@ -377,9 +340,17 @@ class Home extends Component {
       }else if(imgList[index].linkType==1&&imgList[index].categoryId==2){
           url= `/pagesC/pages/leisureInfo/index?id=${imgList[index].linkId}`;
       }
-    Taro.navigateTo({
-        url:url
-    })
+    if(Taro.getStorageSync('userInfo') != '') {
+      Taro.navigateTo({
+          url:url
+      })
+    } else {
+      Taro.showToast({
+        title: "请先去'我的'页面进行登录！",
+        icon: 'none',
+        mask:true,
+      });
+    }
   }
 
   onShareAppMessage() {
@@ -408,8 +379,9 @@ class Home extends Component {
         <View className='swiperBox'>
           <Swiper
             className='swiper'
-            indicatorColor='#999'
-            indicatorActiveColor='#333'
+            indicatorDots='true'
+            indicatorColor='rgba(0,0,0,0.3)'
+            indicatorActiveColor='rgba(36, 200, 178,0.8)'
             circular
             autoplay>
               {
@@ -489,16 +461,7 @@ class Home extends Component {
             })
           }
         </AtActionSheet>
-        {/* 授权操作 */}
-        <AtModal isOpened={this.state.isGetInfo}>
-          <AtModalHeader>授权提示</AtModalHeader>
-          <AtModalContent>
-            <View className='shouquan'>
-              <Text>需要使用你的微信昵称和头像</Text>
-              <Button className='myBtn' open-type='getUserInfo' onGetUserInfo={this.bindGetUserInfo}>点击授权</Button>
-            </View>
-          </AtModalContent>
-        </AtModal>
+        
       </View>
     )
   }

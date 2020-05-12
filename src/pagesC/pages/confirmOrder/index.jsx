@@ -425,6 +425,25 @@ class ConfirmOrder extends Component {
     })
   }
 
+  deleteCard(item, index) {
+    const { creditCardList } = this.state;
+    let newArr = creditCardList;
+    api.post('/pay/delCard',{cardId: item.cardId}).then(res => {
+      console.log('ppp', res)
+      if(res.data.code == 200) {
+        newArr.splice(index, 1);
+        Taro.showToast({
+          title: '信用卡删除成功！',
+          icon: 'none',
+          mask:true,
+        });
+        this.setState({
+          creditCardList: newArr
+        })
+      }
+    })
+  }
+
 
   render () {
     const {
@@ -481,7 +500,7 @@ class ConfirmOrder extends Component {
         <View className='infoList'>
           <View className='infoOne'>
             <Text className='left'>小计</Text>
-            <Text className='pay'>${dataInfo.totalFee}</Text>
+            <Text className='pay'>${dataInfo.totalFee && (dataInfo.totalFee).toFixed(2)}</Text>
           </View>
           <View className='infoOne'>
             <Text className='left'>抵用券/折扣券</Text>
@@ -489,7 +508,11 @@ class ConfirmOrder extends Component {
           </View>
           <View className='infoOne'>
             <Text className='left'>实付金额</Text>
-            <Text className='paySure'>${dataInfo.payFeeUSD}</Text>
+            <Text className='paySure'>${dataInfo.payFeeUSD && (dataInfo.payFeeUSD).toFixed(2)}
+              <Text className='paySure' style='margin-left: 8px'>
+                ￥{dataInfo.payFeeUSD && (dataInfo.payFeeUSD * 7.069).toFixed(2)}
+              </Text>
+            </Text>
           </View>
           <View className='infoOne'>
             <Text className='left'>外卖</Text>
@@ -579,9 +602,12 @@ class ConfirmOrder extends Component {
               {
                 creditCardList.length > 0 &&
                 creditCardList.map((item,index) => {
-                  return <View onClick={() => this.clickChooseCard(index)} className={`oneCard ${item.defaultSource && 'isChooseCard'}`}>
-                    <Text>卡号后四位</Text>
-                    <Text style='color: #333'>({item.last4})</Text>
+                  return <View className={`oneCard ${item.defaultSource && 'isChooseCard'}`}>
+                    <View className='leftCard' onClick={() => this.clickChooseCard(index)}>
+                      <Text>卡号后四位</Text>
+                      <Text style='color: #333'>({item.last4})</Text>
+                    </View>
+                    <View onClick={() => this.deleteCard(item, index)} className='deleteCard'>X</View>
                   </View>
                 })
               }

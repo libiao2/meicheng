@@ -332,6 +332,7 @@
   width: 170rpx;
   height: 110rpx;
   margin-right: 15rpx;
+  border-radius: 10rpx;
 }
 .goodsBigBox .goodsItemBox .content {
   -webkit-flex: 1;

@@ -53,7 +53,7 @@ var DateTimePicker = (_temp2 = _class = function (_BaseComponent) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = DateTimePicker.__proto__ || Object.getPrototypeOf(DateTimePicker)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["loopArray114", "loopArray115", "loopArray116", "loopArray117", "loopArray118", "$compid__299", "current", "visible", "selectIndexList", "yearList", "monthLsit", "dayList", "hourList", "minuteList", "placeholder", "fmtInitValue", "hasChange", "year", "month", "day", "hour", "minute", "initValue"], _this.state = {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = DateTimePicker.__proto__ || Object.getPrototypeOf(DateTimePicker)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["loopArray114", "loopArray115", "loopArray116", "loopArray117", "loopArray118", "$compid__304", "current", "visible", "selectIndexList", "yearList", "monthLsit", "dayList", "hourList", "minuteList", "placeholder", "fmtInitValue", "hasChange", "year", "month", "day", "hour", "minute", "initValue"], _this.state = {
       yearList: [], //年 -下拉
       monthLsit: [], //月 -下拉
       dayList: [], //日 -下拉
@@ -228,10 +228,10 @@ var DateTimePicker = (_temp2 = _class = function (_BaseComponent) {
       var __prefix = this.$prefix;
       ;
 
-      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__299"),
+      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__304"),
           _genCompid2 = _slicedToArray(_genCompid, 2),
-          $prevCompid__299 = _genCompid2[0],
-          $compid__299 = _genCompid2[1];
+          $prevCompid__304 = _genCompid2[0],
+          $compid__304 = _genCompid2[1];
 
       var _state = this.__state,
           visible = _state.visible,
@@ -299,14 +299,14 @@ var DateTimePicker = (_temp2 = _class = function (_BaseComponent) {
         "value": "close-circle",
         "size": "20",
         "onClick": this.clear
-      }, $compid__299, $prevCompid__299);
+      }, $compid__304, $prevCompid__304);
       Object.assign(this.__state, {
         loopArray114: loopArray114,
         loopArray115: loopArray115,
         loopArray116: loopArray116,
         loopArray117: loopArray117,
         loopArray118: loopArray118,
-        $compid__299: $compid__299,
+        $compid__304: $compid__304,
         placeholder: placeholder
       });
       return this.__state;

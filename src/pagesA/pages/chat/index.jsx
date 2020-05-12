@@ -1,7 +1,8 @@
 import Taro, { Component } from '@tarojs/taro'
-import { View, Text, Swiper, SwiperItem, Image, ScrollView } from '@tarojs/components'
+import { View, Text, Textarea, Image, ScrollView } from '@tarojs/components'
 import {
-  AtIcon
+  AtIcon,
+  AtTextarea
 } from "taro-ui"
 import { connect } from '@tarojs/redux'
 import { addChat } from '../../../actions/counter'
@@ -24,6 +25,7 @@ class Chat extends Component {
     message: '',
     SocketTask: getGlobalData("SocketTask"),
     pageFrom: null,
+    noShow: false
   };
 
   componentWillMount() {
@@ -122,7 +124,6 @@ class Chat extends Component {
         sendToName: this.state.info.nickname
       }),
       success: res => {
-        console.log('-------======', res)
         this.setState({
           message: ''
         })
@@ -133,14 +134,13 @@ class Chat extends Component {
 
   render () {
     let chatlist = [];
-    const { thisState } = this.state;
+    const { message, info, noShow } = this.state;
     this.props.counter.allChat.map(item => {
-      if(item.id == this.state.info.memberId) {
+      if(item.id == info.memberId) {
         chatlist = item.list
       }
     })
     this.scrollMsgBottom()
-    console.log('????????', chatlist, Taro.getStorageSync('userId'))
     return (
     <View className='chatCcontainer' id='chatCcontainer'>
         <ScrollView>
@@ -155,7 +155,7 @@ class Chat extends Component {
                       <Image className='peopleImg' src={item.sendImg} />
                     </View>
                     :
-                    item.sendId == this.state.info.memberId ?
+                    item.sendId == info.memberId ?
                     <View className='left'>
                       <Image style='margin-right: 10px' className='peopleImg' src={item.sendImg} />
                       <Text className='text'>{item.content}</Text>
@@ -171,13 +171,17 @@ class Chat extends Component {
         <View id='hideBox' style='float:left;clear: both' ref={(el) => { this.messagesEnd = el; }}></View>
         <View className='footer'>
           <View className='box'>
-            <Input
-              type='text'
-              className='input'
-              value={this.state.message}
-              onChange={this.messageChange.bind(this)}
-            />
-            <AtIcon onClick={()=>this.sendMessage()} value='edit' size='26' color='#999'></AtIcon>
+            <Textarea
+              contenteditable="true"
+              auto-height="true"
+              class='input'
+              showConfirmBar={noShow}
+              cursorSpacing={140}
+              value={message}
+              maxlength='750'
+              onInput={this.messageChange.bind(this)}
+            ></Textarea>
+            <AtIcon onClick={()=>this.sendMessage()} value='edit' size='30' color='rgb(36, 200, 178)'></AtIcon>
           </View>
         </View>
       </View>

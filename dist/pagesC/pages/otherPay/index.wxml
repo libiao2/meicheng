@@ -1,19 +1,22 @@
 <block wx:if="{{$taroCompReady}}">
     <view class="container">
-        <at-modal compid="{{$compid__263}}">
+        <at-modal compid="{{$compid__268}}">
             <at-modal-content>
                 <view class="titleBox"><text>选择信用卡支付</text><text class="delet" bindtap="anonymousFunc0">X</text>
                 </view>
                 <view class="toastBox">
                     <block wx:if="{{creditCardList.length > 0}}">
-                        <view bindtap="anonymousFunc1" class="{{'oneCard ' + (item.$original.defaultSource && 'isChooseCard')}}" wx:for="{{loopArray101}}" wx:for-item="item" wx:for-index="index" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey}}"><text>卡号后四位</text><text style="color: #333">({{item.$original.last4}})</text>
+                        <view class="{{'oneCard ' + (item.$original.defaultSource && 'isChooseCard')}}" wx:for="{{loopArray101}}" wx:for-item="item" wx:for-index="index">
+                            <view class="leftCard" bindtap="anonymousFunc1" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey}}"><text>卡号后四位</text><text style="color: #333">({{item.$original.last4}})</text>
+                            </view>
+                            <view bindtap="anonymousFunc2" class="deleteCard" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey2}}">X</view>
                         </view>
                     </block>
-                    <view class="addPayCard" bindtap="anonymousFunc2"><text>+添加新卡支付</text>
+                    <view class="addPayCard" bindtap="anonymousFunc3"><text>+添加新卡支付</text>
                     </view>
                 </view>
                 <view class="surePayBtn">
-                    <view class="payBtn" bindtap="anonymousFunc3"><text>立即支付</text>
+                    <view class="payBtn" bindtap="anonymousFunc4"><text>立即支付</text>
                     </view>
                 </view>
             </at-modal-content>

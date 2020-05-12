@@ -65,20 +65,21 @@ class Search extends Component {
     this.setState({
       city: parseInt(parmars.city),
     })
-
-    Taro.getLocation({
-      type: 'wgs84',
-      success: (res) => {
-        console.log('成功：', res)
-        that.setState({
-          lat: res.latitude,
-          lon: res.longitude
-        })
-      },
-      fail: (res) => {
-        console.log('失败：', res)
-      },
-    })
+    if(Taro.getStorageSync('token') != '') {
+      Taro.getLocation({
+        type: 'wgs84',
+        success: (res) => {
+          console.log('成功：', res)
+          that.setState({
+            lat: res.latitude,
+            lon: res.longitude
+          })
+        },
+        fail: (res) => {
+          console.log('失败：', res)
+        },
+      })
+    }
   }
   componentWillReceiveProps (nextProps) {
     console.log(this.props, nextProps)
@@ -100,7 +101,6 @@ class Search extends Component {
   }
 
   onReachBottom(){ //上拉事件监听
-    console.log('sssssssssssss');
     this.setState({
       pageNum: this.state.pageNum + 1,
     }, () => {this.getData()})
@@ -200,7 +200,7 @@ class Search extends Component {
     switch(item.categoryId) {
       case 1: // 美食
         Taro.navigateTo({
-          url: `/pagesA/pages/foodDetail/index?id=${item.id}`,
+          url: `/pagesB/pages/foodDetail/index?id=${item.id}`,
         })
         break;
       case 2: // 休闲

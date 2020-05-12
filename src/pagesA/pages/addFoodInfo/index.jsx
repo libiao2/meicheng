@@ -57,7 +57,7 @@ class AddFoodInfo extends Component {
       type: parmars.index,
     })
     if(parmars.type == 'change') {
-      let obj = JSON.parse(parmars.obj);
+      let obj = JSON.parse(decodeURIComponent(parmars.obj));
       console.log('))))))))', obj)
       this.setState({
         foodImg: obj.foodImg,
@@ -161,7 +161,7 @@ class AddFoodInfo extends Component {
 
     if(picList.length == 0) {
       Taro.showToast({
-        title: '请上传菜品图片',
+        title: `请上传${type == 1 ? '菜品' : '菜单'}图片`,
         icon: 'none',
         mask:true,
       });
@@ -216,12 +216,13 @@ class AddFoodInfo extends Component {
 
 
   render () {
+    const { type } = this.state;
     return (
       <View className='container'>
         <AtForm>
           <View className='shopImgBox'>
             <View className='shopTop'>
-              <Text className='left'>请添加菜品图片</Text>
+              <Text className='left'>请添加{type == 1 ? '菜品' : '菜单'}图片</Text>
               <Text className='right'>(可上传1-30张图片)</Text>
             </View>
             <View className='imgBox'>
@@ -252,7 +253,7 @@ class AddFoodInfo extends Component {
               value={this.state.price}
               onChange={this.priceChange.bind(this)}
             />
-            <Text className='rightText'>元</Text>
+            <Text className='rightText'>$</Text>
           </View>
           <View style='height: 5px;background:#f1f1f1'></View>
           <View className='textBox'>

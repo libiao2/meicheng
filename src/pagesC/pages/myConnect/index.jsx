@@ -29,7 +29,9 @@ class MyConnect extends Component {
   componentWillMount() {
   }
   componentDidMount() {
-    this.getData()
+    if(Taro.getStorageSync('token') != '') {
+      this.getData()
+    }
   }
   componentWillReceiveProps (nextProps) {
     console.log(this.props, nextProps)
@@ -77,6 +79,12 @@ class MyConnect extends Component {
 
   submitClick() {
     const { email, phone, weachat } = this.state;
+    if(Taro.getStorageSync('token') == '') {
+      Taro.switchTab({
+        url: `/pages/my/index`
+      })
+      return
+    }
     let obj ={
       email,
       telephone: phone,

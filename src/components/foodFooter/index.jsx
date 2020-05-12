@@ -45,18 +45,27 @@ class FoodFooter extends Component {
       ],
       isOpenToast: false,
       toastText: '',
-      openShare: false
+      openShare: false,
+      shopDian: null,
     };
   }
 
   thumbUp() {
-    const {shopId} = this.props;
+    const {shopId, dianCount} = this.props;
     api.post('/product/upvote',{id: shopId}).then(res => {
       console.log('ddddd', res)
-      this.setState({
-        isOpenToast: true,
-        toastText: '点赞成功！'
-      })
+      if(res.data.code == 200) {
+        Taro.showToast({
+          title: '点赞成功！',
+          icon: 'none',
+          mask:true,
+        });
+        let count = dianCount;
+        this.setState({
+          shopDian: count + 1
+        })
+        this.props.changeDian();
+      }
     })
   }
 
@@ -72,28 +81,40 @@ class FoodFooter extends Component {
   }
 
   handleClick(e) {
-    const { shopId, shopName } = this.props;
-    console.log('???????????????', shopName)
-    switch(e) {
-      case 0:
-        this.thumbUp();
-        break;
-      case 1:
-        Taro.switchTab({
-          url: '/pages/car/index'
-        })
-        break;
-      case 2:
-        this.setState({
-          openShare: true
-        })
-        break;
-      case 3:
-        Taro.navigateTo({
-          url: `/pagesB/pages/menu/index?list=${encodeURIComponent(JSON.stringify(this.props.list))}&shopId=${shopId}&shopName=${shopName}`
-        })
-        break;
-    }
+    const { shopId, shopName, list } = this.props;
+    
+      switch(e) {
+        case 0:
+          if(Taro.getStorageSync('userInfo') != '') {
+            this.thumbUp();
+          }else {
+            Taro.switchTab({
+              url: `/pages/my/index`
+            })
+          }
+          break;
+        case 1:
+          if(Taro.getStorageSync('userInfo') != '') {
+            Taro.switchTab({
+              url: '/pages/car/index'
+            })
+          } else {
+            Taro.switchTab({
+              url: `/pages/my/index`
+            })
+          }
+          break;
+        case 2:
+            this.setState({
+              openShare: true
+            })
+          break;
+        case 3:
+          Taro.navigateTo({
+            url: `/pagesB/pages/menu/index?list=${encodeURIComponent(JSON.stringify(list))}&shopId=${shopId}&shopName=${shopName}`
+          })
+          break;
+      }
   }
 
   handleClose() {
@@ -110,7 +131,6 @@ class FoodFooter extends Component {
       mask:true,
     })
     api.post('/product/shareProd',{id: shopId}).then(res => {
-      console.log('gggggg', res)
       if(res.data.code == 200) {
         let imgUrl = res.data.data;
 
@@ -147,8 +167,8 @@ class FoodFooter extends Component {
 
 
   render() {
-    const { openShare } = this.state;
-    const { isDian } = this.props;
+    const { openShare, shopDian } = this.state;
+    const { isDian, carCount, dianCount } = this.props;
     return (
       <View className='footer'>
         <View className='box'>
@@ -160,6 +180,14 @@ class FoodFooter extends Component {
                     <Image src={index == 0 && isDian ? require('./../../image/dianzan.png') : item.pic } className='iconImg' />
                     <Text>{item.title}</Text>
                   </View>
+                  {
+                    index == 1 && parseInt(carCount) > 0 &&
+                    <View className='count'>{carCount}</View>
+                  }
+                  {
+                    index == 0 && parseInt(dianCount) > 0 &&
+                    <View className='count'>{shopDian || dianCount}</View>
+                  }
                 </View>
               )
             })

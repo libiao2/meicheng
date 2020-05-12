@@ -61,7 +61,7 @@ var AddCoupon = (_dec = (0, _redux.connect)(function (_ref) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = AddCoupon.__proto__ || Object.getPrototypeOf(AddCoupon)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["loopArray181", "$compid__478", "$compid__479", "$compid__480", "$compid__481", "$compid__482", "$compid__483", "$compid__484", "$compid__485", "chooseCouponImgList", "chooseShopImg", "picList", "name", "detail", "note", "description", "groupPrice", "price", "peopleCount", "startTime", "startTimeMiao", "endTime", "endTimeMiao", "isOpen", "toast", "pageType"], _this.config = {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = AddCoupon.__proto__ || Object.getPrototypeOf(AddCoupon)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["loopArray138", "$compid__370", "$compid__371", "$compid__372", "$compid__373", "$compid__374", "$compid__375", "$compid__376", "$compid__377", "chooseCouponImgList", "chooseShopImg", "picList", "name", "detail", "note", "description", "groupPrice", "price", "peopleCount", "startTime", "startTimeMiao", "endTime", "endTimeMiao", "isOpen", "toast", "pageType"], _this.config = {
       navigationBarTitleText: '美城美食365'
     }, _this.anonymousFunc0Map = {}, _this.customComponents = ["AtForm", "ChooseImage", "AtTextarea", "DetaPick", "AtButton", "AtToast"], _temp), _possibleConstructorReturn(_this, _ret);
   }
@@ -320,51 +320,58 @@ var AddCoupon = (_dec = (0, _redux.connect)(function (_ref) {
           chooseCouponImgList = _state.chooseCouponImgList;
 
       if (picList.length == 0 && chooseCouponImgList.length == 0) {
-        this.setState({
-          isOpen: true,
-          toast: '请上传团购图片'
+        _taroWeapp2.default.showToast({
+          title: '请上传团购图片',
+          icon: 'none',
+          mask: true
         });
         return;
       }
       if (name == '') {
-        this.setState({
-          isOpen: true,
-          toast: '请填写团购名称'
+        _taroWeapp2.default.showToast({
+          title: '请填写团购名称',
+          icon: 'none',
+          mask: true
         });
         return;
       }
       if (groupPrice == '') {
-        this.setState({
-          isOpen: true,
-          toast: '请填写团购价格'
+        _taroWeapp2.default.showToast({
+          title: '请填写团购价格',
+          icon: 'none',
+          mask: true
         });
         return;
       }
       if (price == '') {
-        this.setState({
-          isOpen: true,
-          toast: '请填写原价格'
+        _taroWeapp2.default.showToast({
+          title: '请填写原价格',
+          icon: 'none',
+          mask: true
         });
         return;
       }
       if (peopleCount == '') {
-        this.setState({
-          isOpen: true,
-          toast: '请填写原人数'
+        _taroWeapp2.default.showToast({
+          title: '请填写团购人数',
+          icon: 'none',
+          mask: true
         });
         return;
       }
       if (startTime == '') {
-        this.setState({
-          isOpen: true,
-          toast: '请选择开始时间'
+        _taroWeapp2.default.showToast({
+          title: '请选择开始时间',
+          icon: 'none',
+          mask: true
         });
         return;
       }
       if (endTime == '') {
-        this.setState({
-          isOpen: true,
-          toast: '请选择结束时间'
+        _taroWeapp2.default.showToast({
+          title: '请选择结束时间',
+          icon: 'none',
+          mask: true
         });
         return;
       }
@@ -405,45 +412,45 @@ var AddCoupon = (_dec = (0, _redux.connect)(function (_ref) {
       var __prefix = this.$prefix;
       ;
 
-      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__478"),
+      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__370"),
           _genCompid2 = _slicedToArray(_genCompid, 2),
-          $prevCompid__478 = _genCompid2[0],
-          $compid__478 = _genCompid2[1];
+          $prevCompid__370 = _genCompid2[0],
+          $compid__370 = _genCompid2[1];
 
-      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__479"),
+      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__371"),
           _genCompid4 = _slicedToArray(_genCompid3, 2),
-          $prevCompid__479 = _genCompid4[0],
-          $compid__479 = _genCompid4[1];
+          $prevCompid__371 = _genCompid4[0],
+          $compid__371 = _genCompid4[1];
 
-      var _genCompid5 = (0, _taroWeapp.genCompid)(__prefix + "$compid__480"),
+      var _genCompid5 = (0, _taroWeapp.genCompid)(__prefix + "$compid__372"),
           _genCompid6 = _slicedToArray(_genCompid5, 2),
-          $prevCompid__480 = _genCompid6[0],
-          $compid__480 = _genCompid6[1];
+          $prevCompid__372 = _genCompid6[0],
+          $compid__372 = _genCompid6[1];
 
-      var _genCompid7 = (0, _taroWeapp.genCompid)(__prefix + "$compid__481"),
+      var _genCompid7 = (0, _taroWeapp.genCompid)(__prefix + "$compid__373"),
           _genCompid8 = _slicedToArray(_genCompid7, 2),
-          $prevCompid__481 = _genCompid8[0],
-          $compid__481 = _genCompid8[1];
+          $prevCompid__373 = _genCompid8[0],
+          $compid__373 = _genCompid8[1];
 
-      var _genCompid9 = (0, _taroWeapp.genCompid)(__prefix + "$compid__482"),
+      var _genCompid9 = (0, _taroWeapp.genCompid)(__prefix + "$compid__374"),
           _genCompid10 = _slicedToArray(_genCompid9, 2),
-          $prevCompid__482 = _genCompid10[0],
-          $compid__482 = _genCompid10[1];
+          $prevCompid__374 = _genCompid10[0],
+          $compid__374 = _genCompid10[1];
 
-      var _genCompid11 = (0, _taroWeapp.genCompid)(__prefix + "$compid__483"),
+      var _genCompid11 = (0, _taroWeapp.genCompid)(__prefix + "$compid__375"),
           _genCompid12 = _slicedToArray(_genCompid11, 2),
-          $prevCompid__483 = _genCompid12[0],
-          $compid__483 = _genCompid12[1];
+          $prevCompid__375 = _genCompid12[0],
+          $compid__375 = _genCompid12[1];
 
-      var _genCompid13 = (0, _taroWeapp.genCompid)(__prefix + "$compid__484"),
+      var _genCompid13 = (0, _taroWeapp.genCompid)(__prefix + "$compid__376"),
           _genCompid14 = _slicedToArray(_genCompid13, 2),
-          $prevCompid__484 = _genCompid14[0],
-          $compid__484 = _genCompid14[1];
+          $prevCompid__376 = _genCompid14[0],
+          $compid__376 = _genCompid14[1];
 
-      var _genCompid15 = (0, _taroWeapp.genCompid)(__prefix + "$compid__485"),
+      var _genCompid15 = (0, _taroWeapp.genCompid)(__prefix + "$compid__377"),
           _genCompid16 = _slicedToArray(_genCompid15, 2),
-          $prevCompid__485 = _genCompid16[0],
-          $compid__485 = _genCompid16[1];
+          $prevCompid__377 = _genCompid16[0],
+          $compid__377 = _genCompid16[1];
 
       var chooseCouponImgList = this.__state.chooseCouponImgList;
 
@@ -452,12 +459,12 @@ var AddCoupon = (_dec = (0, _redux.connect)(function (_ref) {
         return _this2.goAddFood();
       };
 
-      var loopArray181 = chooseCouponImgList.length > 0 ? chooseCouponImgList.map(function (item, index) {
+      var loopArray138 = chooseCouponImgList.length > 0 ? chooseCouponImgList.map(function (item, index) {
         item = {
           $original: (0, _taroWeapp.internal_get_original)(item)
         };
 
-        var _$indexKey = "cebzz" + index;
+        var _$indexKey = "biezz" + index;
 
         _this2.anonymousFunc0Map[_$indexKey] = function () {
           return _this2.deleteChooseImg(index);
@@ -473,51 +480,51 @@ var AddCoupon = (_dec = (0, _redux.connect)(function (_ref) {
         "onFilesValue": this.getOnFilesValue.bind(this),
         "returnImgSrc": this.getReturnImgSrc.bind(this),
         "deleteImgSrc": this.deleteImgSrc.bind(this)
-      }, $compid__478, $prevCompid__478);
+      }, $compid__370, $prevCompid__370);
       _taroWeapp.propsManager.set({
         "className": "text",
         "count": false,
         "value": this.__state.detail,
         "onChange": this.detailChange.bind(this)
-      }, $compid__479, $prevCompid__479);
+      }, $compid__371, $prevCompid__371);
       _taroWeapp.propsManager.set({
         "className": "text",
         "count": false,
         "value": this.__state.note,
         "onChange": this.needKnowChange.bind(this)
-      }, $compid__480, $prevCompid__480);
+      }, $compid__372, $prevCompid__372);
       _taroWeapp.propsManager.set({
         "className": "text",
         "count": false,
         "value": this.__state.description,
         "onChange": this.otherKnowChange.bind(this)
-      }, $compid__481, $prevCompid__481);
+      }, $compid__373, $prevCompid__373);
       _taroWeapp.propsManager.set({
         "onOk": this.startOnOK.bind(this),
         "initValue": "2020/4/15 17:22:37"
-      }, $compid__482, $prevCompid__482);
+      }, $compid__374, $prevCompid__374);
       _taroWeapp.propsManager.set({
         "onOk": this.endOnOK.bind(this),
         "initValue": "2020/4/15 17:22:37"
-      }, $compid__483, $prevCompid__483);
+      }, $compid__375, $prevCompid__375);
       _taroWeapp.propsManager.set({
         "className": "btn",
         "onClick": this.anonymousFunc1
-      }, $compid__484, $prevCompid__484);
+      }, $compid__376, $prevCompid__376);
       _taroWeapp.propsManager.set({
         "isOpened": this.__state.isOpen,
         "text": this.__state.toast
-      }, $compid__485, $prevCompid__485);
+      }, $compid__377, $prevCompid__377);
       Object.assign(this.__state, {
-        loopArray181: loopArray181,
-        $compid__478: $compid__478,
-        $compid__479: $compid__479,
-        $compid__480: $compid__480,
-        $compid__481: $compid__481,
-        $compid__482: $compid__482,
-        $compid__483: $compid__483,
-        $compid__484: $compid__484,
-        $compid__485: $compid__485
+        loopArray138: loopArray138,
+        $compid__370: $compid__370,
+        $compid__371: $compid__371,
+        $compid__372: $compid__372,
+        $compid__373: $compid__373,
+        $compid__374: $compid__374,
+        $compid__375: $compid__375,
+        $compid__376: $compid__376,
+        $compid__377: $compid__377
       });
       return this.__state;
     }

@@ -69,7 +69,7 @@ var OrderRefund = (_dec = (0, _redux.connect)(function (_ref) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = OrderRefund.__proto__ || Object.getPrototypeOf(OrderRefund)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["loopArray99", "$compid__261", "reasonList", "orderDetail", "reason", "reasonIndex", "myReason"], _this.state = {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = OrderRefund.__proto__ || Object.getPrototypeOf(OrderRefund)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["loopArray99", "$compid__264", "reasonList", "orderDetail", "reason", "reasonIndex", "myReason"], _this.state = {
       reasonList: [{
         title: '计划有变，没时间消费',
         isChecked: false
@@ -193,10 +193,10 @@ var OrderRefund = (_dec = (0, _redux.connect)(function (_ref) {
       var __prefix = this.$prefix;
       ;
 
-      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__261"),
+      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__264"),
           _genCompid2 = _slicedToArray(_genCompid, 2),
-          $prevCompid__261 = _genCompid2[0],
-          $compid__261 = _genCompid2[1];
+          $prevCompid__264 = _genCompid2[0],
+          $compid__264 = _genCompid2[1];
 
       var _state2 = this.__state,
           reasonList = _state2.reasonList,
@@ -213,7 +213,7 @@ var OrderRefund = (_dec = (0, _redux.connect)(function (_ref) {
           $original: (0, _taroWeapp.internal_get_original)(item)
         };
 
-        var _$indexKey = "bchzz" + index;
+        var _$indexKey = "bdczz" + index;
 
         _this2.anonymousFunc0Map[_$indexKey] = function () {
           return _this2.chooseReason(index);
@@ -229,10 +229,10 @@ var OrderRefund = (_dec = (0, _redux.connect)(function (_ref) {
         "count": false,
         "value": myReason,
         "onChange": this.reasonChange.bind(this)
-      }, $compid__261, $prevCompid__261);
+      }, $compid__264, $prevCompid__264);
       Object.assign(this.__state, {
         loopArray99: loopArray99,
-        $compid__261: $compid__261
+        $compid__264: $compid__264
       });
       return this.__state;
     }

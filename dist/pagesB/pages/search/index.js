@@ -71,7 +71,7 @@ var Search = (_dec = (0, _redux.connect)(function (_ref) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = Search.__proto__ || Object.getPrototypeOf(Search)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["loopArray94", "loopArray95", "$compid__250", "$compid__251", "value", "categoryId", "typeList", "dataList", "keyword", "hasFocus", "city", "pageNum", "pageSize", "isOpenToast", "toastText"], _this.state = {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = Search.__proto__ || Object.getPrototypeOf(Search)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["loopArray286", "loopArray287", "$compid__650", "$compid__651", "value", "categoryId", "typeList", "dataList", "keyword", "hasFocus", "city", "pageNum", "pageSize", "isOpenToast", "toastText"], _this.state = {
       keyword: '',
       hasFocus: false,
       typeList: [{
@@ -119,20 +119,21 @@ var Search = (_dec = (0, _redux.connect)(function (_ref) {
       this.setState({
         city: parseInt(parmars.city)
       });
-
-      _taroWeapp2.default.getLocation({
-        type: 'wgs84',
-        success: function success(res) {
-          console.log('成功：', res);
-          that.setState({
-            lat: res.latitude,
-            lon: res.longitude
-          });
-        },
-        fail: function fail(res) {
-          console.log('失败：', res);
-        }
-      });
+      if (_taroWeapp2.default.getStorageSync('token') != '') {
+        _taroWeapp2.default.getLocation({
+          type: 'wgs84',
+          success: function success(res) {
+            console.log('成功：', res);
+            that.setState({
+              lat: res.latitude,
+              lon: res.longitude
+            });
+          },
+          fail: function fail(res) {
+            console.log('失败：', res);
+          }
+        });
+      }
     }
   }, {
     key: 'componentWillReceiveProps',
@@ -160,7 +161,6 @@ var Search = (_dec = (0, _redux.connect)(function (_ref) {
       var _this2 = this;
 
       //上拉事件监听
-      console.log('sssssssssssss');
       this.setState({
         pageNum: this.state.pageNum + 1
       }, function () {
@@ -281,7 +281,7 @@ var Search = (_dec = (0, _redux.connect)(function (_ref) {
         case 1:
           // 美食
           _taroWeapp2.default.navigateTo({
-            url: "/pagesA/pages/foodDetail/index?id=" + item.id
+            url: "/pagesB/pages/foodDetail/index?id=" + item.id
           });
           break;
         case 2:
@@ -327,15 +327,15 @@ var Search = (_dec = (0, _redux.connect)(function (_ref) {
       var __prefix = this.$prefix;
       ;
 
-      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__250"),
+      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__650"),
           _genCompid2 = _slicedToArray(_genCompid, 2),
-          $prevCompid__250 = _genCompid2[0],
-          $compid__250 = _genCompid2[1];
+          $prevCompid__650 = _genCompid2[0],
+          $compid__650 = _genCompid2[1];
 
-      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__251"),
+      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__651"),
           _genCompid4 = _slicedToArray(_genCompid3, 2),
-          $prevCompid__251 = _genCompid4[0],
-          $compid__251 = _genCompid4[1];
+          $prevCompid__651 = _genCompid4[0],
+          $compid__651 = _genCompid4[1];
 
       var _state3 = this.__state,
           value = _state3.value,
@@ -362,12 +362,12 @@ var Search = (_dec = (0, _redux.connect)(function (_ref) {
         return _this5.goHome();
       };
 
-      var loopArray94 = typeList.map(function (item, index) {
+      var loopArray286 = typeList.map(function (item, index) {
         item = {
           $original: (0, _taroWeapp.internal_get_original)(item)
         };
 
-        var _$indexKey = "bcdzz" + index;
+        var _$indexKey = "diezz" + index;
 
         _this5.anonymousFunc4Map[_$indexKey] = function () {
           return _this5.chooseType(index);
@@ -378,12 +378,12 @@ var Search = (_dec = (0, _redux.connect)(function (_ref) {
           $original: item.$original
         };
       });
-      var loopArray95 = dataList.map(function (item, index) {
+      var loopArray287 = dataList.map(function (item, index) {
         item = {
           $original: (0, _taroWeapp.internal_get_original)(item)
         };
 
-        var _$indexKey2 = "bcezz" + index;
+        var _$indexKey2 = "difzz" + index;
 
         _this5.anonymousFunc5Map[_$indexKey2] = function () {
           return _this5.goDetail(item.$original);
@@ -402,16 +402,16 @@ var Search = (_dec = (0, _redux.connect)(function (_ref) {
         "onChange": this.valueChange.bind(this),
         "onActionClick": this.onActionClick.bind(this),
         "onConfirm": this.anonymousFunc2
-      }, $compid__250, $prevCompid__250);
+      }, $compid__650, $prevCompid__650);
       _taroWeapp.propsManager.set({
         "isOpened": isOpenToast,
         "text": toastText
-      }, $compid__251, $prevCompid__251);
+      }, $compid__651, $prevCompid__651);
       Object.assign(this.__state, {
-        loopArray94: loopArray94,
-        loopArray95: loopArray95,
-        $compid__250: $compid__250,
-        $compid__251: $compid__251,
+        loopArray286: loopArray286,
+        loopArray287: loopArray287,
+        $compid__650: $compid__650,
+        $compid__651: $compid__651,
         value: value
       });
       return this.__state;

@@ -20,7 +20,7 @@
                 </view>
             </block>
         </view>
-        <at-modal compid="{{$compid__226}}">
+        <at-modal compid="{{$compid__685}}">
             <at-modal-content>
                 <view class="toastBox"><text class="text">手机号：{{item.telephone == '' ? '暂无' : item.telephone}}</text><text class="text">微信号：{{item.weixinno == '' ? '暂无' : item.weixinno}}</text><text class="text">邮箱号：{{item.email == '' ? '暂无' : item.email}}</text><text class="text last" bindtap="anonymousFunc3">站内消息</text>
                 </view>

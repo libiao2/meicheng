@@ -71,7 +71,7 @@ var MoreFavorable = (_dec = (0, _redux.connect)(function (_ref) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = MoreFavorable.__proto__ || Object.getPrototypeOf(MoreFavorable)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["loopArray91", "dataList", "num"], _this.state = {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = MoreFavorable.__proto__ || Object.getPrototypeOf(MoreFavorable)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["loopArray92", "dataList", "num"], _this.state = {
       dataList: [],
       num: ''
     }, _this.config = {
@@ -184,12 +184,12 @@ var MoreFavorable = (_dec = (0, _redux.connect)(function (_ref) {
 
       var dataList = this.__state.dataList;
 
-      var loopArray91 = dataList.map(function (item, index) {
+      var loopArray92 = dataList.map(function (item, index) {
         item = {
           $original: (0, _taroWeapp.internal_get_original)(item)
         };
 
-        var _$indexKey = "bbfzz" + index;
+        var _$indexKey = "bcezz" + index;
 
         _this3.anonymousFunc0Map[_$indexKey] = function () {
           return _this3.goDetail(item.$original);
@@ -197,32 +197,32 @@ var MoreFavorable = (_dec = (0, _redux.connect)(function (_ref) {
 
         var $loopState__temp2 = item.$original.processingIs ? { hours: ':', minutes: ':', seconds: '' } : null;
 
-        var _$indexKey2 = "bbgzz" + index;
+        var _$indexKey2 = "bcfzz" + index;
 
         _this3.anonymousFunc1Map[_$indexKey2] = function () {
           return _this3.goPay(item.$original);
         };
 
-        var _genCompid = (0, _taroWeapp.genCompid)(__prefix + 'bbhzzzzzzz' + index, true),
+        var _genCompid = (0, _taroWeapp.genCompid)(__prefix + 'bcgzzzzzzz' + index, true),
             _genCompid2 = _slicedToArray(_genCompid, 2),
-            $prevCompid__247 = _genCompid2[0],
-            $compid__247 = _genCompid2[1];
+            $prevCompid__252 = _genCompid2[0],
+            $compid__252 = _genCompid2[1];
 
         item.$original.processingIs && _taroWeapp.propsManager.set({
           "format": $loopState__temp2,
           "seconds": item.$original.countdownSecond,
           "onTimeUp": _this3.onTimeUp.bind(_this3)
-        }, $compid__247, $prevCompid__247);
+        }, $compid__252, $prevCompid__252);
         return {
           _$indexKey: _$indexKey,
           $loopState__temp2: $loopState__temp2,
           _$indexKey2: _$indexKey2,
-          $compid__247: $compid__247,
+          $compid__252: $compid__252,
           $original: item.$original
         };
       });
       Object.assign(this.__state, {
-        loopArray91: loopArray91
+        loopArray92: loopArray92
       });
       return this.__state;
     }

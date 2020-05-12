@@ -3,9 +3,9 @@
         <view class="goodsBox">
             <image class="goodsImg" src="{{item.pic}}"></image><text class="goodsName">{{item.name}}</text>
             <view class="priceBox">
-                <view class="box"><text class="newPrice">${{item.price}}</text>
-                </view>
-            </view><text class="countInfo">半年售{{item.sale}}</text>
+                <view class="box"><text class="newPrice">${{item.price}}</text><text class="countInfo">{{item.upvote}}点赞</text>
+                </view><text class="countInfo">半年售{{item.sale}}</text>
+            </view>
         </view>
     </view>
 </block>

@@ -18,9 +18,10 @@
 }
 .container .itemBox .item .img {
   width: 160rpx;
-  height: 110rpx;
+  height: 130rpx;
   margin-right: 15rpx;
   margin-left: 25rpx;
+  border-radius: 10rpx;
 }
 .container .itemBox .item .right {
   -webkit-flex: 1;

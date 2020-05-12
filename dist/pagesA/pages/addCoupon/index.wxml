@@ -5,7 +5,7 @@
                 <view class="shopTop"><text class="left">请添加团购图片</text><text class="right">(可上传1-30张图片)</text>
                 </view>
                 <view class="imgBox">
-                    <choose-image compid="{{$compid__300}}"></choose-image>
+                    <choose-image compid="{{$compid__305}}"></choose-image>
                 </view>
             </view>
             <view class="itemBox"><text class="leftPart">标题名称:</text>
@@ -13,17 +13,18 @@
             </view>
             <view style="height: 5px;background:#f1f1f1"></view>
             <view class="textBox"><text class="title">详细说明:</text>
-                <at-textarea compid="{{$compid__301}}"></at-textarea>
+                <at-textarea compid="{{$compid__306}}"></at-textarea>
             </view>
             <view style="height: 5px;background:#f1f1f1"></view>
             <view class="textBox"><text class="title">购买须知:</text>
-                <at-textarea compid="{{$compid__302}}"></at-textarea>
+                <at-textarea compid="{{$compid__307}}"></at-textarea>
             </view>
             <view style="height: 5px;background:#f1f1f1"></view>
             <view class="textBox"><text class="title">其他说明:</text>
-                <at-textarea compid="{{$compid__303}}"></at-textarea>
+                <at-textarea compid="{{$compid__308}}"></at-textarea>
             </view>
             <view style="height: 5px;background:#f1f1f1"></view>
+            <view class="tip">(以下价格均为美元！)</view>
             <view class="bottomBox">
                 <view class="onSmallBox"><text class="title">团购价:</text>
                     <input type="text" class="smallInput" value="{{groupPrice}}" bindchange="tuanPriceChange" data-e-change-so="this" />
@@ -37,17 +38,17 @@
             </view>
             <view class="timeBox"><text class="timeTitle">开始时间:</text>
                 <view class="timeInputBox">
-                    <deta-pick wrap-class="my-class" select-item-class="mySelector" compid="{{$compid__304}}"></deta-pick>
+                    <deta-pick wrap-class="my-class" select-item-class="mySelector" compid="{{$compid__309}}"></deta-pick>
                 </view>
             </view>
             <view class="timeBox"><text class="timeTitle">结束时间:</text>
                 <view class="timeInputBox">
-                    <deta-pick wrap-class="my-class" select-item-class="mySelector" compid="{{$compid__305}}"></deta-pick>
+                    <deta-pick wrap-class="my-class" select-item-class="mySelector" compid="{{$compid__310}}"></deta-pick>
                 </view>
             </view>
-            <at-button compid="{{$compid__306}}">确认</at-button>
+            <at-button compid="{{$compid__311}}">确认</at-button>
             <view style="height: 30px;background:#fff"></view>
         </at-form>
-        <at-toast compid="{{$compid__307}}"></at-toast>
+        <at-toast compid="{{$compid__312}}"></at-toast>
     </view>
 </block>

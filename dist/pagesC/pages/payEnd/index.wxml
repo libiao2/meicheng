@@ -13,7 +13,7 @@
         <view class="btnBox">
             <view class="btn" bindtap="anonymousFunc0">查看订单</view>
         </view>
-        <at-modal compid="{{$compid__264}}">
+        <at-modal compid="{{$compid__266}}">
             <at-modal-content>
                 <view class="toastBox">
                     <view class="toastTopBox">
@@ -25,7 +25,7 @@
                         <view class="goodsInfoBox"><text class="goodsName">{{goodsInfo.name}}</text><text class="goodsDetail">{{goodsInfo.detail}}</text>
                             <view class="priceBox"><text class="now">现价:${{goodsInfo.groupPrice}}</text><text class="oldBox">原价: <text class="old">${{goodsInfo.price}}</text></text>
                             </view>
-                            <at-countdown compid="{{$compid__265}}"></at-countdown>
+                            <at-countdown compid="{{$compid__267}}"></at-countdown>
                         </view>
                     </view>
                     <view class="line"></view>

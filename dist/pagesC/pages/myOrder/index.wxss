@@ -42,6 +42,7 @@
 .container .orderBox .orderInfo .imgBox .img {
   width: 120rpx;
   height: 120rpx;
+  border-radius: 10rpx;
 }
 .container .orderBox .orderInfo .imgBox .type {
   position: absolute;
@@ -55,12 +56,13 @@
   color: #fff;
   text-align: center;
   background: #24c8b2;
+  border-top-left-radius: 10rpx;
 }
 .container .orderBox .orderInfo .countInfo {
   -webkit-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  height: 120rpx;
+  height: 118rpx;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -70,10 +72,13 @@
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding-left: 20rpx;
+  padding-left: 30rpx;
   font-size: 26rpx;
   color: #999;
-  background: #e2e2e2;
+  border: 1rpx dotted #c5c5c5;
+  border-left: none;
+  border-top-right-radius: 10rpx;
+  border-bottom-right-radius: 10rpx;
 }
 .container .orderBox .tuan {
   font-size: 24rpx;
@@ -202,6 +207,25 @@
   color: #666;
   border-bottom: 1rpx solid #d1d1d1;
   padding: 0 20rpx;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.toastBox .oneCard .leftCard {
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+.toastBox .oneCard .deleteCard {
+  width: 100rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: right;
+  font-size: 26rpx;
+  color: #666;
 }
 .toastBox .isChooseCard {
   border: 2rpx solid #24c8b2;
@@ -243,7 +267,16 @@
   margin-bottom: 40rpx;
 }
 .noData {
-  width: 100%;
+  width: 100vw;
+  margin-top: 120rpx;
+  font-size: 28rpx;
+  color: #666;
+  text-align: center;
+}
+.bigBox {
+  width: 100vw;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -253,9 +286,17 @@
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin: 200rpx 0;
-  font-size: 28rpx;
-  color: #999;
+  margin-top: 60rpx;
+}
+.bigBox .loginBtn {
+  width: 200rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  text-align: center;
+  font-size: 30rpx;
+  color: #fff;
+  background: #24c8b2;
+  border-radius: 10rpx;
 }
 button::after {
   border: none;

@@ -4,7 +4,7 @@
             <view class="select-item select-item-class" bindtap="openModal">{{current || placeholder}}</view>
             <block wx:if="{{current}}">
                 <view class="clear-icon">
-                    <at-icon compid="{{$compid__299}}"></at-icon>
+                    <at-icon compid="{{$compid__304}}"></at-icon>
                 </view>
             </block>
         </view>

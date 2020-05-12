@@ -71,7 +71,7 @@ var Car = (_dec = (0, _redux.connect)(function (_ref) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = Car.__proto__ || Object.getPrototypeOf(Car)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["anonymousState__temp3", "anonymousState__temp4", "loopArray113", "$compid__298", "dataList", "checkAll", "buyCount", "payMoney", "isOpenToast", "toastText"], _this.state = {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = Car.__proto__ || Object.getPrototypeOf(Car)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["anonymousState__temp3", "anonymousState__temp4", "anonymousState__temp5", "loopArray335", "$compid__776", "$compid__777", "dataList", "checkAll", "buyCount", "payMoney", "isOpenToast", "toastText"], _this.state = {
       checkAll: false,
       dataList: [],
       payMoney: 0,
@@ -80,7 +80,7 @@ var Car = (_dec = (0, _redux.connect)(function (_ref) {
       toastText: ''
     }, _this.config = {
       navigationBarTitleText: '购物车'
-    }, _this.anonymousFunc0Map = {}, _this.anonymousFunc1Map = {}, _this.anonymousFunc2Map = {}, _this.customComponents = ["AtSwipeAction", "AtInputNumber", "AtToast"], _temp), _possibleConstructorReturn(_this, _ret);
+    }, _this.anonymousFunc0Map = {}, _this.anonymousFunc1Map = {}, _this.anonymousFunc2Map = {}, _this.customComponents = ["AtIcon", "AtSwipeAction", "AtInputNumber", "AtToast"], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(Car, [{
@@ -95,9 +95,7 @@ var Car = (_dec = (0, _redux.connect)(function (_ref) {
     value: function componentWillMount() {}
   }, {
     key: 'componentDidMount',
-    value: function componentDidMount() {
-      console.log('%%%%%%%%%%???????');
-    }
+    value: function componentDidMount() {}
   }, {
     key: 'componentWillReceiveProps',
     value: function componentWillReceiveProps(nextProps) {
@@ -109,9 +107,10 @@ var Car = (_dec = (0, _redux.connect)(function (_ref) {
   }, {
     key: 'componentDidShow',
     value: function componentDidShow() {
-      console.log('YYYYYYYY');
-      this.getData();
-      this.getCarCount();
+      if (_taroWeapp2.default.getStorageSync('userInfo') != '') {
+        this.getData();
+        this.getCarCount();
+      }
     }
   }, {
     key: 'componentDidHide',
@@ -323,6 +322,13 @@ var Car = (_dec = (0, _redux.connect)(function (_ref) {
       });
     }
   }, {
+    key: 'goLogin',
+    value: function goLogin() {
+      _taroWeapp2.default.switchTab({
+        url: "/pages/my/index"
+      });
+    }
+  }, {
     key: 'goPay',
     value: function goPay() {
       var _state2 = this.state,
@@ -374,10 +380,15 @@ var Car = (_dec = (0, _redux.connect)(function (_ref) {
       var __prefix = this.$prefix;
       ;
 
-      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__298"),
+      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__776"),
           _genCompid2 = _slicedToArray(_genCompid, 2),
-          $prevCompid__298 = _genCompid2[0],
-          $compid__298 = _genCompid2[1];
+          $prevCompid__776 = _genCompid2[0],
+          $compid__776 = _genCompid2[1];
+
+      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__777"),
+          _genCompid4 = _slicedToArray(_genCompid3, 2),
+          $prevCompid__777 = _genCompid4[0],
+          $compid__777 = _genCompid4[1];
 
       var _state3 = this.__state,
           dataList = _state3.dataList,
@@ -399,22 +410,27 @@ var Car = (_dec = (0, _redux.connect)(function (_ref) {
         return _this5.goPay();
       };
 
-      var loopArray113 = dataList.map(function (item, index1) {
+      this.anonymousFunc5 = function () {
+        return _this5.goLogin();
+      };
+
+      var anonymousState__temp5 = _taroWeapp2.default.getStorageSync('token') != '';
+      var loopArray335 = dataList.map(function (item, index1) {
         item = {
           $original: (0, _taroWeapp.internal_get_original)(item)
         };
 
-        var _$indexKey = "bebzz" + index1;
+        var _$indexKey = "ejhzz" + index1;
 
         _this5.anonymousFunc0Map[_$indexKey] = function () {
           return _this5.checkShopChange(index1);
         };
 
-        var $anonymousCallee__17 = item.$original.cartItemList.map(function (item2, index2) {
+        var $anonymousCallee__55 = item.$original.cartItemList.map(function (item2, index2) {
           item2 = {
             $original: (0, _taroWeapp.internal_get_original)(item2)
           };
-          var _$indexKey2 = 'beczz' + index1 + '-' + index2;
+          var _$indexKey2 = 'ejizz' + index1 + '-' + index2;
 
           _this5.anonymousFunc1Map[_$indexKey2] = function () {
             return _this5.handleClick(index1, index2);
@@ -426,57 +442,88 @@ var Car = (_dec = (0, _redux.connect)(function (_ref) {
               backgroundColor: '#FF4949'
             }
           }];
-          var _$indexKey3 = 'bedzz' + index1 + '-' + index2;
+          var _$indexKey3 = 'ejjzz' + index1 + '-' + index2;
 
           _this5.anonymousFunc2Map[_$indexKey3] = function () {
             return _this5.checkboxChange(index1, index2);
           };
 
-          var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + 'beezzzzzzz' + index1 + "-" + index2, true),
-              _genCompid4 = _slicedToArray(_genCompid3, 2),
-              $prevCompid__296 = _genCompid4[0],
-              $compid__296 = _genCompid4[1];
+          var _genCompid5 = (0, _taroWeapp.genCompid)(__prefix + 'faazzzzzzz' + index1 + "-" + index2, true),
+              _genCompid6 = _slicedToArray(_genCompid5, 2),
+              $prevCompid__772 = _genCompid6[0],
+              $compid__772 = _genCompid6[1];
 
           _taroWeapp.propsManager.set({
             "onClick": _this5.anonymousFunc1.bind(_this5, _$indexKey2),
             "options": $loopState__temp2
-          }, $compid__296, $prevCompid__296);
+          }, $compid__772, $prevCompid__772);
 
-          var _genCompid5 = (0, _taroWeapp.genCompid)(__prefix + 'befzzzzzzz' + index1 + "-" + index2, true),
-              _genCompid6 = _slicedToArray(_genCompid5, 2),
-              $prevCompid__297 = _genCompid6[0],
-              $compid__297 = _genCompid6[1];
+          var _genCompid7 = (0, _taroWeapp.genCompid)(__prefix + 'fabzzzzzzz' + index1 + "-" + index2, true),
+              _genCompid8 = _slicedToArray(_genCompid7, 2),
+              $prevCompid__773 = _genCompid8[0],
+              $compid__773 = _genCompid8[1];
+
+          item2.$original.checked && _taroWeapp.propsManager.set({
+            "value": "check",
+            "size": "14",
+            "color": "rgb(36, 200, 178)"
+          }, $compid__773, $prevCompid__773);
+
+          var _genCompid9 = (0, _taroWeapp.genCompid)(__prefix + 'faczzzzzzz' + index1 + "-" + index2, true),
+              _genCompid10 = _slicedToArray(_genCompid9, 2),
+              $prevCompid__774 = _genCompid10[0],
+              $compid__774 = _genCompid10[1];
 
           _taroWeapp.propsManager.set({
             "min": 1,
             "step": 1,
             "value": item2.$original.quantity,
             "onChange": _this5.countChange.bind(_this5, index1, index2, item2.$original.id)
-          }, $compid__297, $prevCompid__297);
+          }, $compid__774, $prevCompid__774);
           return {
             _$indexKey2: _$indexKey2,
             $loopState__temp2: $loopState__temp2,
             _$indexKey3: _$indexKey3,
-            $compid__296: $compid__296,
-            $compid__297: $compid__297,
+            $compid__772: $compid__772,
+            $compid__773: $compid__773,
+            $compid__774: $compid__774,
             $original: item2.$original
           };
         });
+
+        var _genCompid11 = (0, _taroWeapp.genCompid)(__prefix + 'fadzzzzzzz' + index1, true),
+            _genCompid12 = _slicedToArray(_genCompid11, 2),
+            $prevCompid__775 = _genCompid12[0],
+            $compid__775 = _genCompid12[1];
+
+        item.$original.checked && _taroWeapp.propsManager.set({
+          "value": "check",
+          "size": "14",
+          "color": "rgb(36, 200, 178)"
+        }, $compid__775, $prevCompid__775);
         return {
           _$indexKey: _$indexKey,
-          $anonymousCallee__17: $anonymousCallee__17,
+          $anonymousCallee__55: $anonymousCallee__55,
+          $compid__775: $compid__775,
           $original: item.$original
         };
       });
+      checkAll && _taroWeapp.propsManager.set({
+        "value": "check",
+        "size": "14",
+        "color": "rgb(36, 200, 178)"
+      }, $compid__776, $prevCompid__776);
       _taroWeapp.propsManager.set({
         "isOpened": isOpenToast,
         "text": toastText
-      }, $compid__298, $prevCompid__298);
+      }, $compid__777, $prevCompid__777);
       Object.assign(this.__state, {
         anonymousState__temp3: anonymousState__temp3,
         anonymousState__temp4: anonymousState__temp4,
-        loopArray113: loopArray113,
-        $compid__298: $compid__298
+        anonymousState__temp5: anonymousState__temp5,
+        loopArray335: loopArray335,
+        $compid__776: $compid__776,
+        $compid__777: $compid__777
       });
       return this.__state;
     }
@@ -529,10 +576,15 @@ var Car = (_dec = (0, _redux.connect)(function (_ref) {
     value: function anonymousFunc4(e) {
       ;
     }
+  }, {
+    key: 'anonymousFunc5',
+    value: function anonymousFunc5(e) {
+      ;
+    }
   }]);
 
   return Car;
-}(_taroWeapp.Component), _class2.$$events = ["anonymousFunc0", "anonymousFunc2", "anonymousFunc3", "anonymousFunc4"], _class2.$$componentPath = "pages/car/index", _temp2)) || _class);
+}(_taroWeapp.Component), _class2.$$events = ["anonymousFunc0", "anonymousFunc2", "anonymousFunc3", "anonymousFunc4", "anonymousFunc5"], _class2.$$componentPath = "pages/car/index", _temp2)) || _class);
 exports.default = Car;
 
 Component(__webpack_require__(/*! @tarojs/taro-weapp */ "./node_modules/_@tarojs_taro-weapp@2.0.6@@tarojs/taro-weapp/index.js").default.createComponent(Car, true));

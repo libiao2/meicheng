@@ -940,6 +940,7 @@ class AddFood extends Component {
                     value={this.state.takeawayFee}
                     onChange={this.deliverFeeChange.bind(this)}
                   />
+                  <Text className='doller'>$</Text>
                 </View>
               }
               <View className='leixing'>
@@ -965,8 +966,8 @@ class AddFood extends Component {
               <View className='quanBox' onClick={() => this.goAddCoupon()}>
                 <Text className='leftPart'>优惠券</Text>
                 <View className='moreBox'>
-                  <Text className='more'>添加优惠券</Text>
-                  <AtIcon value='chevron-right' size='12' color='#999'></AtIcon>
+                  <Text className='more'>点击添加优惠券</Text>
+                  <AtIcon value='chevron-right' size='15' color='rgb(36, 200, 178)'></AtIcon>
                 </View>
               </View>
               <View className='youhuiList'>
@@ -1009,8 +1010,8 @@ class AddFood extends Component {
               <View className='quanBox' onClick={() => this.goAddcai(1)}>
                 <Text className='leftPart'>推荐菜</Text>
                 <View className='moreBox'>
-                  <Text className='more'>添加推荐菜</Text>
-                  <AtIcon value='chevron-right' size='12' color='#999'></AtIcon>
+                  <Text className='more'>点击添加推荐菜</Text>
+                  <AtIcon value='chevron-right' size='15' color='rgb(36, 200, 178)'></AtIcon>
                 </View>
               </View>
               <View className='youhuiList'>
@@ -1066,8 +1067,8 @@ class AddFood extends Component {
               <View className='quanBox' onClick={() => this.goAddcai(2)}>
                 <Text className='leftPart'>上传菜单</Text>
                 <View className='moreBox'>
-                  <Text className='more'>添加菜单</Text>
-                  <AtIcon value='chevron-right' size='12' color='#999'></AtIcon>
+                  <Text className='more'>点击添加菜单</Text>
+                  <AtIcon value='chevron-right' size='15' color='rgb(36, 200, 178)'></AtIcon>
                 </View>
               </View>
               <View className='youhuiList'>

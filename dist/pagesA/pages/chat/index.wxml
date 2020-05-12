@@ -25,8 +25,8 @@
         <view id="hideBox" style="float:left;clear: both"></view>
         <view class="footer">
             <view class="box">
-                <input type="text" class="input" value="{{message}}" bindchange="messageChange" data-e-change-so="this" />
-                <at-icon compid="{{$compid__244}}"></at-icon>
+                <textarea contenteditable="true" auto-height="true" class="input" show-confirm-bar="{{noShow}}" cursor-spacing="{{140}}" value="{{message}}" maxlength="750" bindinput="messageChange" data-e-input-so="this"></textarea>
+                <at-icon compid="{{$compid__247}}"></at-icon>
             </view>
         </view>
     </view>

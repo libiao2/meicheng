@@ -9,7 +9,7 @@
                         <image class="goodsImg" src="{{item2.$original.pic}}"></image>
                         <view class="goodsBox"><text class="goodsName">{{item2.$original.productItemName}}</text>
                             <view class="goodsCount"><text class="price">${{item2.$original.price}}</text>
-                                <at-input-number compid="{{item2.$compid__412}}"></at-input-number>
+                                <at-input-number compid="{{item2.$compid__416}}"></at-input-number>
                             </view>
                         </view>
                     </view>
@@ -17,11 +17,11 @@
             </block>
         </view>
         <view class="infoList">
-            <view class="infoOne"><text class="left">小计</text><text class="pay">${{dataInfo.totalFee}}</text>
+            <view class="infoOne"><text class="left">小计</text><text class="pay">${{anonymousState__temp}}</text>
             </view>
             <view class="infoOne"><text class="left">抵用券/折扣券</text><text class="no">暂无可用</text>
             </view>
-            <view class="infoOne"><text class="left">实付金额</text><text class="paySure">${{dataInfo.payFeeUSD}}</text>
+            <view class="infoOne"><text class="left">实付金额</text><text class="paySure">${{anonymousState__temp2}}<text class="paySure" style="margin-left: 8px">￥{{anonymousState__temp3}}</text></text>
             </view>
             <view class="infoOne"><text class="left">外卖</text>
                 <view class="waimaiChoose">
@@ -48,55 +48,58 @@
             <view class="btnBox"><text>确认下单</text>
             </view>
         </view>
-        <at-action-sheet compid="{{$compid__413}}">
+        <at-action-sheet compid="{{$compid__417}}">
             <at-action-sheet-item>
                 <view class="payTitle"><text>请选择支付方式</text>
                 </view>
                 <view class="payBox">
                     <view class="oneBox" bindtap="anonymousFunc5">
                         <view class="payImgBox">
-                            <image class="payImg" src="{{anonymousState__temp}}"></image><text>微信支付(人民币)</text>
+                            <image class="payImg" src="{{anonymousState__temp4}}"></image><text>微信支付(人民币)</text>
                         </view>
-                        <at-icon compid="{{$compid__414}}"></at-icon>
+                        <at-icon compid="{{$compid__418}}"></at-icon>
                     </view>
                     <view class="oneBox" bindtap="anonymousFunc6">
                         <view class="payImgBox">
-                            <image class="payImg" src="{{anonymousState__temp2}}"></image><text>信用卡支付(外币)</text>
+                            <image class="payImg" src="{{anonymousState__temp5}}"></image><text>信用卡支付(外币)</text>
                         </view>
-                        <at-icon compid="{{$compid__415}}"></at-icon>
+                        <at-icon compid="{{$compid__419}}"></at-icon>
                     </view>
                     <view class="oneBox" bindtap="anonymousFunc7">
                         <view class="payImgBox">
-                            <image class="payImg" src="{{anonymousState__temp3}}"></image><text>好友代付(外币)</text>
+                            <image class="payImg" src="{{anonymousState__temp6}}"></image><text>好友代付(外币)</text>
                         </view>
-                        <at-icon compid="{{$compid__416}}"></at-icon>
+                        <at-icon compid="{{$compid__420}}"></at-icon>
                     </view>
                 </view>
             </at-action-sheet-item>
         </at-action-sheet>
-        <at-modal compid="{{$compid__417}}">
+        <at-modal compid="{{$compid__421}}">
             <at-modal-content>
                 <view class="titleBox"><text>选择信用卡支付</text><text class="delet" bindtap="anonymousFunc8">X</text>
                 </view>
                 <view class="toastBox">
                     <block wx:if="{{creditCardList.length > 0}}">
-                        <view bindtap="anonymousFunc9" class="{{'oneCard ' + (item.$original.defaultSource && 'isChooseCard')}}" wx:for="{{loopArray151}}" wx:for-item="item" wx:for-index="index" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey}}"><text>卡号后四位</text><text style="color: #333">({{item.$original.last4}})</text>
+                        <view class="{{'oneCard ' + (item.$original.defaultSource && 'isChooseCard')}}" wx:for="{{loopArray151}}" wx:for-item="item" wx:for-index="index">
+                            <view class="leftCard" bindtap="anonymousFunc9" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey}}"><text>卡号后四位</text><text style="color: #333">({{item.$original.last4}})</text>
+                            </view>
+                            <view bindtap="anonymousFunc10" class="deleteCard" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey2}}">X</view>
                         </view>
                     </block>
-                    <view class="addPayCard" bindtap="anonymousFunc10"><text>+添加新卡支付</text>
+                    <view class="addPayCard" bindtap="anonymousFunc11"><text>+添加新卡支付</text>
                     </view>
                 </view>
                 <view class="surePayBtn">
-                    <view class="payBtn" bindtap="anonymousFunc11"><text>立即支付</text>
+                    <view class="payBtn" bindtap="anonymousFunc12"><text>立即支付</text>
                     </view>
                 </view>
             </at-modal-content>
         </at-modal>
-        <at-modal compid="{{$compid__418}}">
+        <at-modal compid="{{$compid__422}}">
             <at-modal-content>
                 <view class="shareFriendBox">
                     <view class="topTitleBox"><text class="shareTitle">确定让好友代付？</text>
-                        <view class="cha" bindtap="anonymousFunc12">x</view>
+                        <view class="cha" bindtap="anonymousFunc13">x</view>
                     </view>
                     <view class="shareFriendBtnBox">
                         <button open-type="share" class="shareFriendBtn okBtn">确定</button>

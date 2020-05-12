@@ -1,7 +1,7 @@
 <block wx:if="{{$taroCompReady}}">
     <view class="container">
         <view class="content">
-            <view class="item" wx:key="key" bindtap="anonymousFunc0" wx:for="{{loopArray85}}" wx:for-item="item" wx:for-index="__index0" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey}}">
+            <view class="item" wx:key="key" bindtap="anonymousFunc0" wx:for="{{loopArray323}}" wx:for-item="item" wx:for-index="__index0" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey}}">
                 <view class="yuan">
                     <image src="{{item.$original.img}}" class="img"></image>
                 </view><text class="text">{{item.$original.title}}</text>

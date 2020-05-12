@@ -253,6 +253,64 @@ class AddLife extends Component {
     })
   }
 
+  emailBlur(e) {
+    let reg = /^(\w-*\.*)+@(\w-?)+(\.\w{2,})+$/;
+    if(!reg.test(e.detail.value)){
+      Taro.showToast({
+        title: '请输入正确邮箱',
+        icon: 'none',
+        mask:true,
+      });
+      this.setState({
+        email: ''
+      })
+      return;
+    }
+  }
+
+  weixinBlur(e) {
+    let reg = /^[a-zA-Z\d_]{5,}$/;
+    if(!reg.test(e.detail.value)){
+      Taro.showToast({
+        title: '请输入正确微信号',
+        icon: 'none',
+        mask:true,
+      });
+      this.setState({
+        weixinno: ''
+      })
+      return;
+    }
+  }
+
+  phoneBlur(e) {
+    console.log('.....',e.detail.value);
+    let reg = /\D/g;
+    if(reg.test(parseFloat(e.detail.value))){
+      Taro.showToast({
+        title: '请输入正确手机号',
+        icon: 'none',
+        mask:true,
+      });
+      this.setState({
+        telephone: ''
+      })
+      return
+    } else {
+      if(e.detail.value.length > 11 || e.detail.value.length < 10) {
+        Taro.showToast({
+          title: '请输入正确手机号',
+          icon: 'none',
+          mask:true,
+        });
+        this.setState({
+          telephone: ''
+        })
+        return
+      }
+    }
+  }
+
   submitForm() {
     const {
       picList,
@@ -403,6 +461,7 @@ class AddLife extends Component {
                   className='shopNameInput'
                   placeholder='请输入手机号'
                   value={this.state.telephone}
+                  onBlur={this.phoneBlur.bind(this)}
                   onChange={this.phoneChange.bind(this)}
                 />
               </View>
@@ -413,6 +472,7 @@ class AddLife extends Component {
                   className='shopNameInput'
                   placeholder='请输入微信'
                   value={this.state.weixinno}
+                  onBlur={this.weixinBlur.bind(this)}
                   onChange={this.weixinnoChange.bind(this)}
                 />
               </View>
@@ -423,6 +483,7 @@ class AddLife extends Component {
                   className='shopNameInput'
                   placeholder='请输入邮箱'
                   value={this.state.email}
+                  onBlur={this.emailBlur.bind(this)}
                   onChange={this.emailChange.bind(this)}
                 />
               </View>

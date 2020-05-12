@@ -48,7 +48,7 @@ var ChooseImage = (_temp2 = _class = function (_BaseComponent) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = ChooseImage.__proto__ || Object.getPrototypeOf(ChooseImage)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["$compid__225", "files", "showUploadBtn", "upLoadImg", "ee", "chooseImg", "chooseImgshowUploadBtn", "deleteImgSrc", "returnImgSrc"], _this.toUpload = function () {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = ChooseImage.__proto__ || Object.getPrototypeOf(ChooseImage)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["$compid__229", "files", "showUploadBtn", "upLoadImg", "ee", "chooseImg", "chooseImgshowUploadBtn", "deleteImgSrc", "returnImgSrc"], _this.toUpload = function () {
       var files = _this.state.files;
 
       if (files.length > 0) {
@@ -268,10 +268,10 @@ var ChooseImage = (_temp2 = _class = function (_BaseComponent) {
       var __prefix = this.$prefix;
       ;
 
-      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__225"),
+      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__229"),
           _genCompid2 = _slicedToArray(_genCompid, 2),
-          $prevCompid__225 = _genCompid2[0],
-          $compid__225 = _genCompid2[1];
+          $prevCompid__229 = _genCompid2[0],
+          $compid__229 = _genCompid2[1];
 
       var _state = this.__state,
           showUploadBtn = _state.showUploadBtn,
@@ -286,9 +286,9 @@ var ChooseImage = (_temp2 = _class = function (_BaseComponent) {
         "onFail": this.onFail.bind(this),
         "onImageClick": this.onImageClick.bind(this),
         "showAddBtn": showUploadBtn
-      }, $compid__225, $prevCompid__225);
+      }, $compid__229, $prevCompid__229);
       Object.assign(this.__state, {
-        $compid__225: $compid__225
+        $compid__229: $compid__229
       });
       return this.__state;
     }

@@ -37,6 +37,11 @@
   color: #fff;
   margin-bottom: 20rpx;
 }
+.container .header .headerLeft .clickname {
+  font-size: 34rpx;
+  font-weight: 500;
+  color: #fff;
+}
 .container .header .headerRight {
   margin-bottom: 80rpx;
   width: 80rpx;
@@ -145,5 +150,41 @@ button::after {
 .iconImg {
   width: 55rpx;
   height: 55rpx;
+}
+.shouquan {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.shouquan .btnList {
+  width: 100%;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-bottom: 40rpx;
+}
+.shouquan .btnList .myBtn {
+  width: 200rpx;
+  height: 60rpx;
+  font-size: 24rpx;
+  color: #fff;
+  background: #24c8b2;
+}
+.shouquan .btnList .noBtn {
+  background: transparent;
+  border: 1rpx solid #d1d1d1;
+  color: #333;
 }
 

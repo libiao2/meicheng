@@ -38,6 +38,7 @@
   height: 150rpx;
   border: 1rpx solid #e1e1e1;
   margin-right: 15rpx;
+  border-radius: 10rpx;
 }
 .container .orderBox .goodsInfo .goodsDetail {
   -webkit-flex: 1;
@@ -104,7 +105,16 @@
   border: 1rpx solid #24c8b2;
 }
 .noData {
-  width: 100%;
+  width: 100vw;
+  margin-top: 120rpx;
+  font-size: 28rpx;
+  color: #666;
+  text-align: center;
+}
+.bigBox {
+  width: 100vw;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -114,8 +124,16 @@
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin: 200rpx 0;
-  font-size: 28rpx;
-  color: #999;
+  margin-top: 60rpx;
+}
+.bigBox .loginBtn {
+  width: 200rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  text-align: center;
+  font-size: 30rpx;
+  color: #fff;
+  background: #24c8b2;
+  border-radius: 10rpx;
 }
 

@@ -1,12 +1,12 @@
 <block wx:if="{{$taroCompReady}}">
     <view class="{{anonymousState__temp}}" style="{{anonymousState__temp2}}">
         <block wx:if="{{isShowDay}}">
-            <at-countdown-item compid="{{$compid__282}}"></at-countdown-item>
+            <at-countdown-item compid="{{$compid__285}}"></at-countdown-item>
         </block>
         <block wx:if="{{isShowHour}}">
-            <at-countdown-item compid="{{$compid__283}}"></at-countdown-item>
+            <at-countdown-item compid="{{$compid__286}}"></at-countdown-item>
         </block>
-        <at-countdown-item compid="{{$compid__284}}"></at-countdown-item>
-        <at-countdown-item compid="{{$compid__285}}"></at-countdown-item>
+        <at-countdown-item compid="{{$compid__287}}"></at-countdown-item>
+        <at-countdown-item compid="{{$compid__288}}"></at-countdown-item>
     </view>
 </block>

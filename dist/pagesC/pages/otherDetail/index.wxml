@@ -20,16 +20,16 @@
             <view class="timeBox bt">
                 <block>
                     <block wx:if="{{type != 5}}">
-                        <view class="left">
-                            <at-icon compid="{{$compid__352}}"></at-icon><text class="info">{{goodsInfo.address}}</text>
+                        <view class="left" bindtap="anonymousFunc0">
+                            <image src="{{anonymousState__temp}}" style="width:15px;height:15px;margin-right: 6px"></image><text class="info">{{goodsInfo.address}}</text>
                         </view>
                     </block>
                     <block wx:else>
                         <view class="left"></view>
                     </block>
                 </block>
-                <view class="share" bindtap="anonymousFunc0">
-                    <image class="img" src="{{anonymousState__temp}}"></image><text class="text">分享</text>
+                <view class="share" bindtap="anonymousFunc1">
+                    <image class="img" src="{{anonymousState__temp2}}"></image><text class="text">分享</text>
                 </view>
             </view>
             <view class="fuwu">
@@ -50,20 +50,20 @@
             </block>
             <view class="pingjia">
                 <view class="titleBox"><text class="title">评价</text>
-                    <view class="pinglunBox" bindtap="anonymousFunc1"><text class="pinglun">我要评论</text>
-                        <at-icon compid="{{$compid__353}}"></at-icon>
+                    <view class="pinglunBox" bindtap="anonymousFunc2"><text class="pinglun">我要评论</text>
+                        <at-icon compid="{{$compid__701}}"></at-icon>
                     </view>
                 </view>
                 <block>
                     <block wx:if="{{chatList.length > 0}}">
                         <view class="pinjiaList">
-                            <view class="bigBxo" wx:for="{{loopArray135}}" wx:for-item="item" wx:for-index="index">
+                            <view class="bigBxo" wx:for="{{loopArray321}}" wx:for-item="item" wx:for-index="index">
                                 <view class="pinglunItem">
                                     <image class="img" src="{{item.$original.memberIcon}}"></image>
                                     <view class="right"><text class="name">{{item.$original.memberNickName}}</text>
                                         <view class="detailBox"><text>{{item.$original.content}}</text>
                                         </view>
-                                        <view class="huifuBox" bindtap="anonymousFunc2" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey}}"><text>{{item.$original.createTimeString}}</text>
+                                        <view class="huifuBox" bindtap="anonymousFunc3" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey}}"><text>{{item.$original.createTimeString}}</text>
                                             <view class="huifu"><text>回复</text>
                                             </view>
                                         </view>
@@ -84,33 +84,33 @@
                 </block>
             </view>
         </view>
-        <at-toast compid="{{$compid__354}}"></at-toast>
-        <at-action-sheet compid="{{$compid__355}}">
+        <at-toast compid="{{$compid__702}}"></at-toast>
+        <at-action-sheet compid="{{$compid__703}}">
             <at-action-sheet-item>
                 <view class="messageToastBox">
                     <view class="title"><text>发表评论</text>
                     </view>
-                    <at-textarea compid="{{$compid__356}}"></at-textarea>
+                    <at-textarea compid="{{$compid__704}}"></at-textarea>
                     <view class="btn">
-                        <view class="btnBox" bindtap="anonymousFunc4"><text>发布</text>
+                        <view class="btnBox" bindtap="anonymousFunc5"><text>发布</text>
                         </view>
                     </view>
                 </view>
             </at-action-sheet-item>
         </at-action-sheet>
-        <at-action-sheet compid="{{$compid__357}}">
+        <at-action-sheet compid="{{$compid__705}}">
             <at-action-sheet-item>
                 <view class="shareTitle"><text>分享</text>
                 </view>
                 <view class="shareBox">
                     <button class="shareItem" open-type="share">
                         <view class="wechatBox">
-                            <image src="{{anonymousState__temp2}}" class="wechatIconImg"></image><text>微信好友</text>
+                            <image src="{{anonymousState__temp3}}" class="wechatIconImg"></image><text>微信好友</text>
                         </view>
                     </button>
-                    <button class="shareItem" bindtap="anonymousFunc6">
+                    <button class="shareItem" bindtap="anonymousFunc7">
                         <view class="wechatBox">
-                            <image src="{{anonymousState__temp3}}" class="wechatIconImg"></image><text>朋友圈</text>
+                            <image src="{{anonymousState__temp4}}" class="wechatIconImg"></image><text>朋友圈</text>
                         </view>
                     </button>
                 </view>

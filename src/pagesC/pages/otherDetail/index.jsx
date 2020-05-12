@@ -110,10 +110,16 @@ class OtherDetail extends Component {
   }
 
   openMessage() {
-    this.setState({
-      openMessage: true,
-      isOpenToast: false,
-    })
+    if(Taro.getStorageSync('token') != '') {
+      this.setState({
+        openMessage: true,
+        isOpenToast: false,
+      })
+    } else {
+      Taro.switchTab({
+        url: `/pages/my/index`
+      })
+    }
   }
 
   handleClose() {
@@ -129,11 +135,16 @@ class OtherDetail extends Component {
   }
 
   aa(item) {
-    console.log('????')
-    this.setState({
-      openMessage: true,
-      memberId: item.id
-    })
+    if(Taro.getStorageSync('token') != '') {
+      this.setState({
+        openMessage: true,
+        memberId: item.id
+      })
+    } else {
+      Taro.switchTab({
+        url: `/pages/my/index`
+      })
+    }
 
   }
 
@@ -243,6 +254,15 @@ class OtherDetail extends Component {
     })
   }
 
+  openMap() {
+    const { goodsInfo } = this.state;
+    ////使用微信内置地图查看标记点位置，并进行导航
+    Taro.openLocation({
+      latitude: parseInt(goodsInfo.latitude),//要去的纬度-地址
+      longitude: parseInt(goodsInfo.longitude),//要去的经度-地址
+    })
+  }
+
 
   render () {
     const {
@@ -296,8 +316,10 @@ class OtherDetail extends Component {
           <View className='timeBox bt'>
             {
               type != 5 ?
-              <View className='left'>
-                <AtIcon className='icon' value='phone' size='16' color='#666'></AtIcon>
+              <View className='left' onClick={() => this.openMap()}>
+                <Image
+                src={require('./../../../image/dingwei.png')}
+                style='width:15px;height:15px;margin-right: 6px' />
                 <Text className='info'>{goodsInfo.address}</Text>
               </View>
               :

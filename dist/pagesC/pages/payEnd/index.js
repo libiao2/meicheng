@@ -63,7 +63,7 @@ var PayEnd = (_dec = (0, _redux.connect)(function (_ref) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = PayEnd.__proto__ || Object.getPrototypeOf(PayEnd)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["anonymousState__temp", "anonymousState__temp2", "anonymousState__temp3", "$compid__264", "$compid__265", "userImg", "goodsInfo", "isShow", "pingID"], _this.state = {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = PayEnd.__proto__ || Object.getPrototypeOf(PayEnd)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["anonymousState__temp", "anonymousState__temp2", "anonymousState__temp3", "$compid__266", "$compid__267", "userImg", "goodsInfo", "isShow", "pingID"], _this.state = {
       isShow: false,
       pingID: '',
       goodsInfo: {}
@@ -151,11 +151,13 @@ var PayEnd = (_dec = (0, _redux.connect)(function (_ref) {
   }, {
     key: 'onShareAppMessage',
     value: function onShareAppMessage() {
-      var pingID = this.state.pingID;
+      var _state = this.state,
+          pingID = _state.pingID,
+          goodsInfo = _state.goodsInfo;
 
 
       return {
-        title: '拼团分享',
+        title: goodsInfo.name + ',\u539F\u4EF7' + goodsInfo.price + ',\u73B0\u4EF7' + goodsInfo.groupPrice + ',\u9650\u65F6\u56E2\u8D2D',
         path: "/pagesA/pages/foodTuan/index?goodsId=" + pingID,
         success: function success(res) {
           console.log('成功', res);
@@ -173,19 +175,19 @@ var PayEnd = (_dec = (0, _redux.connect)(function (_ref) {
       var __prefix = this.$prefix;
       ;
 
-      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__264"),
+      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__266"),
           _genCompid2 = _slicedToArray(_genCompid, 2),
-          $prevCompid__264 = _genCompid2[0],
-          $compid__264 = _genCompid2[1];
+          $prevCompid__266 = _genCompid2[0],
+          $compid__266 = _genCompid2[1];
 
-      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__265"),
+      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__267"),
           _genCompid4 = _slicedToArray(_genCompid3, 2),
-          $prevCompid__265 = _genCompid4[0],
-          $compid__265 = _genCompid4[1];
+          $prevCompid__267 = _genCompid4[0],
+          $compid__267 = _genCompid4[1];
 
-      var _state = this.__state,
-          isShow = _state.isShow,
-          goodsInfo = _state.goodsInfo;
+      var _state2 = this.__state,
+          isShow = _state2.isShow,
+          goodsInfo = _state2.goodsInfo;
 
       var userImg = _taroWeapp2.default.getStorageSync('userInfo').avatarUrl;
 
@@ -200,18 +202,18 @@ var PayEnd = (_dec = (0, _redux.connect)(function (_ref) {
       var anonymousState__temp3 = { hours: ':', minutes: ':', seconds: '' };
       _taroWeapp.propsManager.set({
         "isOpened": isShow
-      }, $compid__264, $prevCompid__264);
+      }, $compid__266, $prevCompid__266);
       _taroWeapp.propsManager.set({
         "format": anonymousState__temp3,
         "seconds": 30,
         "onTimeUp": this.onTimeUp.bind(this)
-      }, $compid__265, $prevCompid__265);
+      }, $compid__267, $prevCompid__267);
       Object.assign(this.__state, {
         anonymousState__temp: anonymousState__temp,
         anonymousState__temp2: anonymousState__temp2,
         anonymousState__temp3: anonymousState__temp3,
-        $compid__264: $compid__264,
-        $compid__265: $compid__265,
+        $compid__266: $compid__266,
+        $compid__267: $compid__267,
         userImg: userImg
       });
       return this.__state;

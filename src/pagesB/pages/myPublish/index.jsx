@@ -30,7 +30,9 @@ class MyPublish extends Component {
   componentWillMount() {
   }
   componentDidMount() {
-    this.getData()
+    if(Taro.getStorageSync('token') != '') {
+      this.getData()
+    }
   }
   componentWillReceiveProps (nextProps) {
     console.log(this.props, nextProps)
@@ -92,6 +94,11 @@ class MyPublish extends Component {
     }
   }
 
+  goLogin() {
+    Taro.switchTab({
+      url: `/pages/my/index`
+    })
+  }
 
   render () {
     const { dataList } = this.state;
@@ -138,8 +145,18 @@ class MyPublish extends Component {
         </View>
         {
           dataList.length == 0 &&
-          <View className='noPinglun'>
-            <Text>暂无数据~~</Text>
+          <View className='noData'>
+            {
+              Taro.getStorageSync('token') != '' ?
+              <Text>暂无数据~~</Text>
+              :
+              <View>
+                <Text>暂未登录~~</Text>
+                <View className='bigBox' onClick={() => this.goLogin()}>
+                  <View className='loginBtn'>登录</View>
+                </View>
+              </View>
+            }
           </View>
         }
       </View>

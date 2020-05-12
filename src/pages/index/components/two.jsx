@@ -20,29 +20,33 @@ export default class Two extends Component {
   }
 
   sendMessage(item) {
-    console.log('uuuu', item)
     this.setState({
       isOpen:false
     })
-    if(item.memberId == Taro.getStorageSync('userId')) {
-      Taro.showToast({
-        title: '不能给自己发送消息哦~~',
-        icon: 'none',
-        mask:true,
-      })
-      return;
-    }
-    api.post('/ws/openMessage',{sendToId: item.memberId,}).then(res => {
-      if(res.data.code == 200) {
-        Taro.navigateTo({
-          url: `/pagesA/pages/chat/index?obj=${encodeURIComponent(JSON.stringify(item))}&dataList=${encodeURIComponent(JSON.stringify(res.data.data))}&pageFrom='index'`
+    if(Taro.getStorageSync('token') != '') {
+      if(item.memberId == Taro.getStorageSync('userId')) {
+        Taro.showToast({
+          title: '不能给自己发送消息哦~~',
+          icon: 'none',
+          mask:true,
         })
+        return;
       }
-    })
+      api.post('/ws/openMessage',{sendToId: item.memberId,}).then(res => {
+        if(res.data.code == 200) {
+          Taro.navigateTo({
+            url: `/pagesA/pages/chat/index?obj=${encodeURIComponent(JSON.stringify(item))}&dataList=${encodeURIComponent(JSON.stringify(res.data.data))}&pageFrom='index'`
+          })
+        }
+      })
+    } else {
+      Taro.switchTab({
+        url: `/pages/my/index`
+      })
+    }
   }
 
   goDetail(item) {
-    console.log('vv',item)
     Taro.navigateTo({
       url: `/pagesC/pages/otherDetail/index?id=${item.id}&type=${this.props.type}`
     })
@@ -50,7 +54,6 @@ export default class Two extends Component {
 
   render () {
     const { item, type } = this.props;
-    console.log('-----------------', item)
     return (
       <View className='twoBox'>
         <View className="top">

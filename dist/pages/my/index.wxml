@@ -1,27 +1,36 @@
 <block wx:if="{{$taroCompReady}}">
     <view class="container">
         <view class="header">
-            <view class="headerLeft">
-                <image class="img" src="{{userInfo.avatarUrl}}"></image><text class="name">{{userInfo.nickName}}</text>
-            </view>
-            <image class="headerRight" src="{{anonymousState__temp}}" bindtap="anonymousFunc0"></image>
+            <block>
+                <block wx:if="{{anonymousState__temp6}}">
+                    <view class="headerLeft">
+                        <image class="img" src="{{userInfo.avatarUrl}}"></image><text class="name">{{userInfo.nickName}}</text>
+                    </view>
+                </block>
+                <block wx:else>
+                    <view class="headerLeft" bindtap="anonymousFunc0">
+                        <image class="img" src="{{anonymousState__temp}}"></image><text class="clickname">点击登录！</text>
+                    </view>
+                </block>
+            </block>
+            <image class="headerRight" src="{{anonymousState__temp2}}" bindtap="anonymousFunc1"></image>
         </view>
         <view class="tabBox">
             <view class="tab">
-                <view class="box" bindtap="anonymousFunc1" wx:for="{{loopArray84}}" wx:for-item="item" wx:for-index="index" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey}}"><text class="top">{{item.$original.num}}</text><text>{{item.$original.title}}</text>
+                <view class="box" bindtap="anonymousFunc2" wx:for="{{loopArray369}}" wx:for-item="item" wx:for-index="index" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey}}"><text class="top">{{item.$original.num}}</text><text>{{item.$original.title}}</text>
                 </view>
             </view>
         </view>
         <view class="bottom">
             <view class="flexBox">
-                <view class="smallBox" bindtap="anonymousFunc2">
-                    <image class="iconImg" src="{{anonymousState__temp2}}"></image><text class="text">联系方式</text>
-                </view>
                 <view class="smallBox" bindtap="anonymousFunc3">
-                    <image class="iconImg" src="{{anonymousState__temp3}}"></image><text class="text">拼团详情</text>
+                    <image class="iconImg" src="{{anonymousState__temp3}}"></image><text class="text">联系方式</text>
+                </view>
+                <view class="smallBox" bindtap="anonymousFunc4">
+                    <image class="iconImg" src="{{anonymousState__temp4}}"></image><text class="text">拼团详情</text>
                 </view>
                 <button class="smallBox" open-type="contact">
-                    <image class="iconImg" src="{{anonymousState__temp4}}"></image><text class="text">联系客服</text>
+                    <image class="iconImg" src="{{anonymousState__temp5}}"></image><text class="text">联系客服</text>
                 </button>
                 <view class="smallBox"></view>
                 <view class="smallBox"></view>
@@ -31,5 +40,16 @@
                 <view class="smallBox"></view>
             </view>
         </view>
+        <at-modal compid="{{$compid__869}}">
+            <at-modal-header>授权提示</at-modal-header>
+            <at-modal-content>
+                <view class="shouquan"><text style="margin-top: 10px">需要使用你的微信昵称和头像</text>
+                    <view class="btnList">
+                        <button class="myBtn noBtn" bindtap="anonymousFunc5">暂不授权</button>
+                        <button class="myBtn" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">点击授权</button>
+                    </view>
+                </view>
+            </at-modal-content>
+        </at-modal>
     </view>
 </block>

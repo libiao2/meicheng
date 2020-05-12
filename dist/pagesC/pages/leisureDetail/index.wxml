@@ -7,12 +7,12 @@
                 </swiper-item>
             </swiper>
             <view class="nameBox"><text class="name">{{goodsInfo.name}}</text>
-                <at-icon compid="{{$compid__346}}"></at-icon>
+                <at-icon compid="{{$compid__351}}"></at-icon>
             </view>
             <view class="timeBox">
                 <image src="{{anonymousState__temp}}" style="width:15px;height:15px;margin-right: 6px"></image><text class="info">营业时间: {{goodsInfo.openTimeStart}}-{{goodsInfo.openTimeEnd}}</text>
             </view>
-            <view class="timeBox">
+            <view class="timeBox" bindtap="anonymousFunc1">
                 <image src="{{anonymousState__temp2}}" style="width:15px;height:15px;margin-right: 6px"></image><text class="info">{{goodsInfo.address}}</text>
             </view>
             <block wx:if="{{goodsInfo.commonList && goodsInfo.commonList.length > 0}}">
@@ -22,10 +22,10 @@
                     <view class="youhuiItmeBox">
                         <block wx:if="{{goodsInfo.commonList && goodsInfo.commonList.length > 0}}">
                             <view class="itemBox" wx:for="{{loopArray132}}" wx:for-item="item" wx:for-index="index">
-                                <image class="img" src="{{item.$original.pic}}" bindtap="anonymousFunc1" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey}}"></image>
-                                <view class="content" bindtap="anonymousFunc2" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey2}}"><text class="name">{{item.$original.name}}</text><text class="detail">{{item.$original.detail}}</text><text class="price">${{item.$original.price}}</text>
+                                <image class="img" src="{{item.$original.pic}}" bindtap="anonymousFunc2" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey}}"></image>
+                                <view class="content" bindtap="anonymousFunc3" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey2}}"><text class="name">{{item.$original.name}}</text><text class="detail">{{item.$original.detail}}</text><text class="price">${{item.$original.price}}</text>
                                 </view>
-                                <view class="carBtn" bindtap="anonymousFunc3" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey3}}">
+                                <view class="carBtn" bindtap="anonymousFunc4" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey3}}">
                                     <image class="car" src="{{item.$loopState__temp4}}"></image><text>已售{{item.$original.sale}}份</text>
                                 </view>
                             </view>
@@ -47,8 +47,8 @@
             </view>
             <view class="pingjia">
                 <view class="titleBox"><text class="title">评价</text>
-                    <view class="pinglunBox" bindtap="anonymousFunc4"><text class="pinglun">我要评论</text>
-                        <at-icon compid="{{$compid__347}}"></at-icon>
+                    <view class="pinglunBox" bindtap="anonymousFunc5"><text class="pinglun">我要评论</text>
+                        <at-icon compid="{{$compid__352}}"></at-icon>
                     </view>
                 </view>
                 <block>
@@ -60,7 +60,7 @@
                                     <view class="right"><text class="name">{{item.$original.memberNickName}}</text>
                                         <view class="detailBox"><text>{{item.$original.content}}</text>
                                         </view>
-                                        <view class="huifuBox" bindtap="anonymousFunc5" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey4}}"><text>{{item.$original.createTimeString}}</text>
+                                        <view class="huifuBox" bindtap="anonymousFunc6" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey4}}"><text>{{item.$original.createTimeString}}</text>
                                             <view class="huifu"><text>回复</text>
                                             </view>
                                         </view>
@@ -81,18 +81,18 @@
                 </block>
             </view>
         </view>
-        <footer compid="{{$compid__348}}"></footer>
-        <at-toast compid="{{$compid__349}}"></at-toast>
-        <at-action-sheet compid="{{$compid__350}}">
+        <footer compid="{{$compid__353}}"></footer>
+        <at-toast compid="{{$compid__354}}"></at-toast>
+        <at-action-sheet compid="{{$compid__355}}">
             <at-action-sheet-item>
                 <view class="messageToastBox">
                     <view class="title"><text>发表评论</text>
                     </view>
-                    <at-textarea compid="{{$compid__351}}"></at-textarea>
+                    <at-textarea compid="{{$compid__356}}"></at-textarea>
                     <view class="btn">
-                        <view class="btnBox" bindtap="anonymousFunc7"><text>匿名发布</text>
+                        <view class="btnBox" bindtap="anonymousFunc8"><text>匿名发布</text>
                         </view>
-                        <view class="btnBox otherBtn" bindtap="anonymousFunc8"><text>发布</text>
+                        <view class="btnBox" bindtap="anonymousFunc9"><text>发布</text>
                         </view>
                     </view>
                 </view>

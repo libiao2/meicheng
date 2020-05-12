@@ -8,7 +8,7 @@ export default class One extends Component {
     const { type } = this.props;
     if(type == 1) {
       Taro.navigateTo({
-        url: `/pagesA/pages/foodDetail/index?id=${id}`,
+        url: `/pagesB/pages/foodDetail/index?id=${id}`,
       })
     }
     if(type == 2) {
@@ -16,6 +16,7 @@ export default class One extends Component {
         url: `/pagesC/pages/leisureDetail/index?id=${id}`,
       })
     }
+    
     
   }
 
@@ -30,11 +31,11 @@ export default class One extends Component {
           <View className='priceBox'>
             <View className='box'>
               <Text className='newPrice'>${item.price}</Text>
-              {/* <Text className='oldPrice'>$68</Text> */}
+              <Text className='countInfo'>{item.upvote}点赞</Text>
             </View>
-            {/* <View className='priceBtn'>已减20元</View> */}
+            <Text className='countInfo'>半年售{item.sale}</Text>
           </View>
-          <Text className='countInfo'>半年售{item.sale}</Text>
+          
         </View>
       </View>
     )

@@ -69,7 +69,7 @@ var Menu = (_dec = (0, _redux.connect)(function (_ref) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = Menu.__proto__ || Object.getPrototypeOf(Menu)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["loopArray92", "$compid__249", "list", "shopId", "shopName", "isOpenToast", "toastText"], _this.state = {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = Menu.__proto__ || Object.getPrototypeOf(Menu)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["loopArray91", "$compid__251", "list", "shopId", "shopName", "isOpenToast", "toastText"], _this.state = {
       list: [],
       shopId: '',
       shopName: '',
@@ -94,7 +94,6 @@ var Menu = (_dec = (0, _redux.connect)(function (_ref) {
     key: 'componentDidMount',
     value: function componentDidMount() {
       var params = this.$router.params;
-      console.log('***((())))+++++', params);
       this.setState({
         list: JSON.parse(decodeURIComponent(params.list)),
         shopId: parseInt(params.shopId),
@@ -184,64 +183,64 @@ var Menu = (_dec = (0, _redux.connect)(function (_ref) {
       var __prefix = this.$prefix;
       ;
 
-      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__249"),
+      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__251"),
           _genCompid2 = _slicedToArray(_genCompid, 2),
-          $prevCompid__249 = _genCompid2[0],
-          $compid__249 = _genCompid2[1];
+          $prevCompid__251 = _genCompid2[0],
+          $compid__251 = _genCompid2[1];
 
       var _state2 = this.__state,
           list = _state2.list,
           toastText = _state2.toastText,
           isOpenToast = _state2.isOpenToast;
 
-      var loopArray92 = list.map(function (item, index) {
+      var loopArray91 = list.map(function (item, index) {
         item = {
           $original: (0, _taroWeapp.internal_get_original)(item)
         };
 
-        var _$indexKey = "bbizz" + index;
+        var _$indexKey = "bcazz" + index;
 
         _this3.anonymousFunc0Map[_$indexKey] = function () {
           return _this3.goDetail(item.$original);
         };
 
-        var _$indexKey2 = "bbjzz" + index;
+        var _$indexKey2 = "bcbzz" + index;
 
         _this3.anonymousFunc1Map[_$indexKey2] = function () {
           return _this3.goDetail(item.$original);
         };
 
-        var _$indexKey3 = "bcazz" + index;
+        var _$indexKey3 = "bcczz" + index;
 
         _this3.anonymousFunc2Map[_$indexKey3] = function () {
           return _this3.addCar(item.$original);
         };
 
-        var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + 'bcbzzzzzzz' + index, true),
+        var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + 'bcdzzzzzzz' + index, true),
             _genCompid4 = _slicedToArray(_genCompid3, 2),
-            $prevCompid__248 = _genCompid4[0],
-            $compid__248 = _genCompid4[1];
+            $prevCompid__250 = _genCompid4[0],
+            $compid__250 = _genCompid4[1];
 
         _taroWeapp.propsManager.set({
           "value": "add-circle",
           "size": "22",
           "color": "rgb(36, 200, 178)"
-        }, $compid__248, $prevCompid__248);
+        }, $compid__250, $prevCompid__250);
         return {
           _$indexKey: _$indexKey,
           _$indexKey2: _$indexKey2,
           _$indexKey3: _$indexKey3,
-          $compid__248: $compid__248,
+          $compid__250: $compid__250,
           $original: item.$original
         };
       });
       _taroWeapp.propsManager.set({
         "isOpened": isOpenToast,
         "text": toastText
-      }, $compid__249, $prevCompid__249);
+      }, $compid__251, $prevCompid__251);
       Object.assign(this.__state, {
-        loopArray92: loopArray92,
-        $compid__249: $compid__249
+        loopArray91: loopArray91,
+        $compid__251: $compid__251
       });
       return this.__state;
     }

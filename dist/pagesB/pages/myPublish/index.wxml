@@ -1,7 +1,7 @@
 <block wx:if="{{$taroCompReady}}">
     <view class="container">
         <view class="list">
-            <view class="itmeBox" wx:for="{{loopArray93}}" wx:for-item="item" wx:for-index="index">
+            <view class="itmeBox" wx:for="{{loopArray365}}" wx:for-item="item" wx:for-index="index">
                 <view class="nameInfo"><text class="name">{{item.$original.name}}</text>
                     <block>
                         <block wx:if="{{item.$original.price}}"><text class="price">${{item.$original.price}}</text>
@@ -24,7 +24,18 @@
             </view>
         </view>
         <block wx:if="{{dataList.length == 0}}">
-            <view class="noPinglun"><text>暂无数据~~</text>
+            <view class="noData">
+                <block>
+                    <block wx:if="{{anonymousState__temp3}}"><text>暂无数据~~</text>
+                    </block>
+                    <block wx:else>
+                        <view><text>暂未登录~~</text>
+                            <view class="bigBox" bindtap="anonymousFunc1">
+                                <view class="loginBtn">登录</view>
+                            </view>
+                        </view>
+                    </block>
+                </block>
             </view>
         </block>
     </view>

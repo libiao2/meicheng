@@ -129,7 +129,7 @@ class OrderRefund extends Component {
         <View className='titleBox'>订单号</View>
         <View className='orderNo'>{orderDetail.orderNo}</View>
         <View className='titleBox'>退款内容</View>
-        <View className='money'>现金：<Text style='color: red'>20元</Text></View>
+        <View className='money'>现金：<Text style='color: red'>{orderDetail.orderFee}$</Text></View>
         <View className='titleBox'>退款原因(至少选一项)</View>
         <View className='listBox'>
           {

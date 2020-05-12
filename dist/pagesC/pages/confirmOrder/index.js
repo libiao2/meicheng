@@ -63,7 +63,7 @@ var ConfirmOrder = (_dec = (0, _redux.connect)(function (_ref) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = ConfirmOrder.__proto__ || Object.getPrototypeOf(ConfirmOrder)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["anonymousState__temp", "anonymousState__temp2", "anonymousState__temp3", "dataInfo", "loopArray150", "loopArray151", "$compid__413", "$compid__414", "$compid__415", "$compid__416", "$compid__417", "$compid__418", "takeaway", "telephone", "remark", "creditCardList", "address", "openPayType", "isOpenCard", "orderType", "pingTuanId", "groupNo", "isShareFriend"], _this.state = {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = ConfirmOrder.__proto__ || Object.getPrototypeOf(ConfirmOrder)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["anonymousState__temp", "anonymousState__temp2", "anonymousState__temp3", "anonymousState__temp4", "anonymousState__temp5", "anonymousState__temp6", "dataInfo", "loopArray150", "loopArray151", "$compid__417", "$compid__418", "$compid__419", "$compid__420", "$compid__421", "$compid__422", "takeaway", "telephone", "remark", "creditCardList", "address", "openPayType", "isOpenCard", "orderType", "pingTuanId", "groupNo", "isShareFriend"], _this.state = {
       dataInfo: {},
       takeaway: false,
       openPayType: false,
@@ -78,7 +78,7 @@ var ConfirmOrder = (_dec = (0, _redux.connect)(function (_ref) {
       isShareFriend: false
     }, _this.config = {
       navigationBarTitleText: '确认下单'
-    }, _this.anonymousFunc9Map = {}, _this.customComponents = ["AtInputNumber", "AtActionSheet", "AtActionSheetItem", "AtIcon", "AtModal", "AtModalContent"], _temp), _possibleConstructorReturn(_this, _ret);
+    }, _this.anonymousFunc9Map = {}, _this.anonymousFunc10Map = {}, _this.customComponents = ["AtInputNumber", "AtActionSheet", "AtActionSheetItem", "AtIcon", "AtModal", "AtModalContent"], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(ConfirmOrder, [{
@@ -513,9 +513,32 @@ var ConfirmOrder = (_dec = (0, _redux.connect)(function (_ref) {
       });
     }
   }, {
+    key: 'deleteCard',
+    value: function deleteCard(item, index) {
+      var _this7 = this;
+
+      var creditCardList = this.state.creditCardList;
+
+      var newArr = creditCardList;
+      _api2.default.post('/pay/delCard', { cardId: item.cardId }).then(function (res) {
+        console.log('ppp', res);
+        if (res.data.code == 200) {
+          newArr.splice(index, 1);
+          _taroWeapp2.default.showToast({
+            title: '信用卡删除成功！',
+            icon: 'none',
+            mask: true
+          });
+          _this7.setState({
+            creditCardList: newArr
+          });
+        }
+      });
+    }
+  }, {
     key: '_createData',
     value: function _createData() {
-      var _this7 = this;
+      var _this8 = this;
 
       this.__state = arguments[0] || this.state || {};
       this.__props = arguments[1] || this.props || {};
@@ -523,35 +546,35 @@ var ConfirmOrder = (_dec = (0, _redux.connect)(function (_ref) {
       var __prefix = this.$prefix;
       ;
 
-      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__413"),
+      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__417"),
           _genCompid2 = _slicedToArray(_genCompid, 2),
-          $prevCompid__413 = _genCompid2[0],
-          $compid__413 = _genCompid2[1];
+          $prevCompid__417 = _genCompid2[0],
+          $compid__417 = _genCompid2[1];
 
-      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__414"),
+      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__418"),
           _genCompid4 = _slicedToArray(_genCompid3, 2),
-          $prevCompid__414 = _genCompid4[0],
-          $compid__414 = _genCompid4[1];
+          $prevCompid__418 = _genCompid4[0],
+          $compid__418 = _genCompid4[1];
 
-      var _genCompid5 = (0, _taroWeapp.genCompid)(__prefix + "$compid__415"),
+      var _genCompid5 = (0, _taroWeapp.genCompid)(__prefix + "$compid__419"),
           _genCompid6 = _slicedToArray(_genCompid5, 2),
-          $prevCompid__415 = _genCompid6[0],
-          $compid__415 = _genCompid6[1];
+          $prevCompid__419 = _genCompid6[0],
+          $compid__419 = _genCompid6[1];
 
-      var _genCompid7 = (0, _taroWeapp.genCompid)(__prefix + "$compid__416"),
+      var _genCompid7 = (0, _taroWeapp.genCompid)(__prefix + "$compid__420"),
           _genCompid8 = _slicedToArray(_genCompid7, 2),
-          $prevCompid__416 = _genCompid8[0],
-          $compid__416 = _genCompid8[1];
+          $prevCompid__420 = _genCompid8[0],
+          $compid__420 = _genCompid8[1];
 
-      var _genCompid9 = (0, _taroWeapp.genCompid)(__prefix + "$compid__417"),
+      var _genCompid9 = (0, _taroWeapp.genCompid)(__prefix + "$compid__421"),
           _genCompid10 = _slicedToArray(_genCompid9, 2),
-          $prevCompid__417 = _genCompid10[0],
-          $compid__417 = _genCompid10[1];
+          $prevCompid__421 = _genCompid10[0],
+          $compid__421 = _genCompid10[1];
 
-      var _genCompid11 = (0, _taroWeapp.genCompid)(__prefix + "$compid__418"),
+      var _genCompid11 = (0, _taroWeapp.genCompid)(__prefix + "$compid__422"),
           _genCompid12 = _slicedToArray(_genCompid11, 2),
-          $prevCompid__418 = _genCompid12[0],
-          $compid__418 = _genCompid12[1];
+          $prevCompid__422 = _genCompid12[0],
+          $compid__422 = _genCompid12[1];
 
       var _state3 = this.__state,
           dataInfo = _state3.dataInfo,
@@ -564,59 +587,62 @@ var ConfirmOrder = (_dec = (0, _redux.connect)(function (_ref) {
           isShareFriend = _state3.isShareFriend,
           address = _state3.address;
 
+      var anonymousState__temp = dataInfo.totalFee && dataInfo.totalFee.toFixed(2);
+      var anonymousState__temp2 = dataInfo.payFeeUSD && dataInfo.payFeeUSD.toFixed(2);
+      var anonymousState__temp3 = dataInfo.payFeeUSD && (dataInfo.payFeeUSD * 7.069).toFixed(2);
 
       this.anonymousFunc0 = function () {
-        return _this7.chooseWai(true);
+        return _this8.chooseWai(true);
       };
 
       this.anonymousFunc1 = function () {
-        return _this7.chooseWai(false);
+        return _this8.chooseWai(false);
       };
 
       this.anonymousFunc2 = function () {
-        return _this7.openMap();
+        return _this8.openMap();
       };
 
       this.anonymousFunc3 = function () {
-        return _this7.choosePayType();
+        return _this8.choosePayType();
       };
 
       this.anonymousFunc4 = function () {
-        return _this7.handleClose();
+        return _this8.handleClose();
       };
 
       this.anonymousFunc5 = function () {
-        return _this7.clickGoPay(1);
+        return _this8.clickGoPay(1);
       };
 
-      var anonymousState__temp = __webpack_require__(/*! ./../../../image/xiny.png */ "./src/image/xiny.png");
+      var anonymousState__temp4 = __webpack_require__(/*! ./../../../image/xiny.png */ "./src/image/xiny.png");
 
       this.anonymousFunc6 = function () {
-        return _this7.creditCardPay();
+        return _this8.creditCardPay();
       };
 
-      var anonymousState__temp2 = __webpack_require__(/*! ./../../../image/xiny.png */ "./src/image/xiny.png");
+      var anonymousState__temp5 = __webpack_require__(/*! ./../../../image/xiny.png */ "./src/image/xiny.png");
 
       this.anonymousFunc7 = function () {
-        return _this7.openFriendPay();
+        return _this8.openFriendPay();
       };
 
-      var anonymousState__temp3 = __webpack_require__(/*! ./../../../image/friend.png */ "./src/image/friend.png");
+      var anonymousState__temp6 = __webpack_require__(/*! ./../../../image/friend.png */ "./src/image/friend.png");
 
       this.anonymousFunc8 = function () {
-        return _this7.closeCard();
-      };
-
-      this.anonymousFunc10 = function () {
-        return _this7.addNewCard();
+        return _this8.closeCard();
       };
 
       this.anonymousFunc11 = function () {
-        return _this7.clickGoPay(2);
+        return _this8.addNewCard();
       };
 
       this.anonymousFunc12 = function () {
-        return _this7.cancelFriendPay();
+        return _this8.clickGoPay(2);
+      };
+
+      this.anonymousFunc13 = function () {
+        return _this8.cancelFriendPay();
       };
 
       var loopArray150 = dataInfo.orderItemMap && dataInfo.orderItemMap.length > 0 ? dataInfo.orderItemMap.map(function (item, index) {
@@ -628,19 +654,19 @@ var ConfirmOrder = (_dec = (0, _redux.connect)(function (_ref) {
             $original: (0, _taroWeapp.internal_get_original)(item2)
           };
 
-          var _genCompid13 = (0, _taroWeapp.genCompid)(__prefix + 'bjdzzzzzzz' + index + "-" + index2, true),
+          var _genCompid13 = (0, _taroWeapp.genCompid)(__prefix + 'cadzzzzzzz' + index + "-" + index2, true),
               _genCompid14 = _slicedToArray(_genCompid13, 2),
-              $prevCompid__412 = _genCompid14[0],
-              $compid__412 = _genCompid14[1];
+              $prevCompid__416 = _genCompid14[0],
+              $compid__416 = _genCompid14[1];
 
           _taroWeapp.propsManager.set({
             "min": 1,
             "step": 1,
             "value": item2.$original.quantity,
-            "onChange": _this7.countChange.bind(_this7, index, index2)
-          }, $compid__412, $prevCompid__412);
+            "onChange": _this8.countChange.bind(_this8, index, index2)
+          }, $compid__416, $prevCompid__416);
           return {
-            $compid__412: $compid__412,
+            $compid__416: $compid__416,
             $original: item2.$original
           };
         }) : [];
@@ -654,54 +680,64 @@ var ConfirmOrder = (_dec = (0, _redux.connect)(function (_ref) {
           $original: (0, _taroWeapp.internal_get_original)(item)
         };
 
-        var _$indexKey = "bjczz" + index;
+        var _$indexKey = "cabzz" + index;
 
-        _this7.anonymousFunc9Map[_$indexKey] = function () {
-          return _this7.clickChooseCard(index);
+        _this8.anonymousFunc9Map[_$indexKey] = function () {
+          return _this8.clickChooseCard(index);
+        };
+
+        var _$indexKey2 = "caczz" + index;
+
+        _this8.anonymousFunc10Map[_$indexKey2] = function () {
+          return _this8.deleteCard(item.$original, index);
         };
 
         return {
           _$indexKey: _$indexKey,
+          _$indexKey2: _$indexKey2,
           $original: item.$original
         };
       }) : [];
       _taroWeapp.propsManager.set({
         "isOpened": openPayType,
         "onClose": this.anonymousFunc4
-      }, $compid__413, $prevCompid__413);
-      _taroWeapp.propsManager.set({
-        "value": "chevron-right",
-        "size": "20",
-        "color": "#999"
-      }, $compid__414, $prevCompid__414);
-      _taroWeapp.propsManager.set({
-        "value": "chevron-right",
-        "size": "20",
-        "color": "#999"
-      }, $compid__415, $prevCompid__415);
-      _taroWeapp.propsManager.set({
-        "value": "chevron-right",
-        "size": "20",
-        "color": "#999"
-      }, $compid__416, $prevCompid__416);
-      _taroWeapp.propsManager.set({
-        "isOpened": isOpenCard
       }, $compid__417, $prevCompid__417);
       _taroWeapp.propsManager.set({
-        "isOpened": isShareFriend
+        "value": "chevron-right",
+        "size": "20",
+        "color": "#999"
       }, $compid__418, $prevCompid__418);
+      _taroWeapp.propsManager.set({
+        "value": "chevron-right",
+        "size": "20",
+        "color": "#999"
+      }, $compid__419, $prevCompid__419);
+      _taroWeapp.propsManager.set({
+        "value": "chevron-right",
+        "size": "20",
+        "color": "#999"
+      }, $compid__420, $prevCompid__420);
+      _taroWeapp.propsManager.set({
+        "isOpened": isOpenCard
+      }, $compid__421, $prevCompid__421);
+      _taroWeapp.propsManager.set({
+        "isOpened": isShareFriend
+      }, $compid__422, $prevCompid__422);
       Object.assign(this.__state, {
         anonymousState__temp: anonymousState__temp,
         anonymousState__temp2: anonymousState__temp2,
         anonymousState__temp3: anonymousState__temp3,
+        anonymousState__temp4: anonymousState__temp4,
+        anonymousState__temp5: anonymousState__temp5,
+        anonymousState__temp6: anonymousState__temp6,
         loopArray150: loopArray150,
         loopArray151: loopArray151,
-        $compid__413: $compid__413,
-        $compid__414: $compid__414,
-        $compid__415: $compid__415,
-        $compid__416: $compid__416,
         $compid__417: $compid__417,
-        $compid__418: $compid__418
+        $compid__418: $compid__418,
+        $compid__419: $compid__419,
+        $compid__420: $compid__420,
+        $compid__421: $compid__421,
+        $compid__422: $compid__422
       });
       return this.__state;
     }
@@ -765,8 +801,16 @@ var ConfirmOrder = (_dec = (0, _redux.connect)(function (_ref) {
     }
   }, {
     key: 'anonymousFunc10',
-    value: function anonymousFunc10(e) {
+    value: function anonymousFunc10(_$indexKey2) {
+      var _anonymousFunc10Map;
+
       ;
+
+      for (var _len3 = arguments.length, e = Array(_len3 > 1 ? _len3 - 1 : 0), _key3 = 1; _key3 < _len3; _key3++) {
+        e[_key3 - 1] = arguments[_key3];
+      }
+
+      return this.anonymousFunc10Map[_$indexKey2] && (_anonymousFunc10Map = this.anonymousFunc10Map)[_$indexKey2].apply(_anonymousFunc10Map, e);
     }
   }, {
     key: 'anonymousFunc11',
@@ -778,10 +822,15 @@ var ConfirmOrder = (_dec = (0, _redux.connect)(function (_ref) {
     value: function anonymousFunc12(e) {
       ;
     }
+  }, {
+    key: 'anonymousFunc13',
+    value: function anonymousFunc13(e) {
+      ;
+    }
   }]);
 
   return ConfirmOrder;
-}(_taroWeapp.Component), _class2.$$events = ["anonymousFunc0", "anonymousFunc1", "telephoneChange", "anonymousFunc2", "remarkChange", "anonymousFunc3", "anonymousFunc5", "anonymousFunc6", "anonymousFunc7", "anonymousFunc8", "anonymousFunc9", "anonymousFunc10", "anonymousFunc11", "anonymousFunc12"], _class2.$$componentPath = "pagesC/pages/confirmOrder/index", _temp2)) || _class);
+}(_taroWeapp.Component), _class2.$$events = ["anonymousFunc0", "anonymousFunc1", "telephoneChange", "anonymousFunc2", "remarkChange", "anonymousFunc3", "anonymousFunc5", "anonymousFunc6", "anonymousFunc7", "anonymousFunc8", "anonymousFunc9", "anonymousFunc10", "anonymousFunc11", "anonymousFunc12", "anonymousFunc13"], _class2.$$componentPath = "pagesC/pages/confirmOrder/index", _temp2)) || _class);
 exports.default = ConfirmOrder;
 
 Component(__webpack_require__(/*! @tarojs/taro-weapp */ "./node_modules/_@tarojs_taro-weapp@2.0.6@@tarojs/taro-weapp/index.js").default.createComponent(ConfirmOrder, true));

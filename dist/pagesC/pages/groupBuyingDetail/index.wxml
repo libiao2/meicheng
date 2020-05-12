@@ -2,7 +2,7 @@
     <view class="container">
         <block>
             <block wx:if="{{dataList.length > 0}}">
-                <view class="itemBox" wx:for="{{loopArray100}}" wx:for-item="item" wx:for-index="index">
+                <view class="itemBox" wx:for="{{loopArray375}}" wx:for-item="item" wx:for-index="index">
                     <view class="titleBox">
                         <view class="title">
                             <image class="shopIcon" src="{{item.$loopState__temp2}}"></image>
@@ -10,7 +10,7 @@
                         </view>
                         <view class="needP">待分享，差{{item.$original.chaNum}}人</view>
                     </view>
-                    <view class="listBox" wx:for="{{item.$anonymousCallee__15}}" wx:for-item="item2" wx:for-index="index2">
+                    <view class="listBox" wx:for="{{item.$anonymousCallee__93}}" wx:for-item="item2" wx:for-index="index2">
                         <view class="orderInfoBox">
                             <image class="goodsImg" src="{{item2.$original.pic}}"></image>
                             <view class="rightInfo">
@@ -32,10 +32,22 @@
                 </view>
             </block>
             <block wx:else>
-                <view class="noData">暂无更多数据~</view>
+                <view class="noData">
+                    <block>
+                        <block wx:if="{{anonymousState__temp4}}"><text>暂无更多数据~~</text>
+                        </block>
+                        <block wx:else>
+                            <view><text>暂未登录~~</text>
+                                <view class="bigBox" bindtap="anonymousFunc1">
+                                    <view class="loginBtn">登录</view>
+                                </view>
+                            </view>
+                        </block>
+                    </block>
+                </view>
             </block>
         </block>
-        <at-action-sheet compid="{{$compid__262}}">
+        <at-action-sheet compid="{{$compid__875}}">
             <at-action-sheet-item>
                 <view class="shareTitle"><text>邀请好友拼团</text>
                 </view>

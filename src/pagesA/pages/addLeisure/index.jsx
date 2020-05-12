@@ -349,6 +349,34 @@ class AddLeisure extends Component {
     }
   }
 
+  phoneBlur(e) {
+    console.log('.....',e.detail.value);
+    let reg = /\D/g;
+    if(reg.test(parseFloat(e.detail.value))){
+      Taro.showToast({
+        title: '请输入正确手机号',
+        icon: 'none',
+        mask:true,
+      });
+      this.setState({
+        telephone: ''
+      })
+      return
+    } else {
+      if(e.detail.value.length > 11 || e.detail.value.length < 10) {
+        Taro.showToast({
+          title: '请输入正确手机号',
+          icon: 'none',
+          mask:true,
+        });
+        this.setState({
+          telephone: ''
+        })
+        return
+      }
+    }
+  }
+
   projectNameChange(e) {
     this.setState({
       projectName: e.detail.value
@@ -590,7 +618,7 @@ class AddLeisure extends Component {
                   value={this.state.price}
                   onChange={this.priceChange.bind(this)}
                 />
-                <Text className='yuan'>元</Text>
+                <Text className='yuan'>$</Text>
               </View>
               <View className='itemBox'>
                 <Text className='leftPart'>联系电话:</Text>
@@ -598,6 +626,7 @@ class AddLeisure extends Component {
                   type='number'
                   className='shopNameInput'
                   placeholder='请输入联系电话'
+                  onBlur={this.phoneBlur.bind(this)}
                   value={this.state.telephone}
                   onChange={this.phoneChange.bind(this)}
                 />

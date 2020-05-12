@@ -3,13 +3,14 @@ import { View, Text, Checkbox, CheckboxGroup} from '@tarojs/components'
 import {
   AtInputNumber,
   AtToast,
-  AtSwipeAction
+  AtSwipeAction,
+  AtIcon
 } from "taro-ui"
 import { connect } from '@tarojs/redux'
 import { addChat } from '../../actions/counter'
 import './index.less'
-import { getGlobalData } from './../../utils/global_data';
-import api from './../../utils/api'
+import { getGlobalData } from '../../utils/global_data';
+import api from '../../utils/api'
 
 @connect(({ counter }) => ({
   counter
@@ -37,7 +38,6 @@ class Car extends Component {
   componentWillMount() {
   }
   componentDidMount() {
-    console.log('%%%%%%%%%%???????')
   }
   componentWillReceiveProps (nextProps) {
     console.log(this.props, nextProps)
@@ -48,9 +48,11 @@ class Car extends Component {
   }
 
   componentDidShow () {
-    console.log('YYYYYYYY')
-    this.getData();
-    this.getCarCount()
+    if(Taro.getStorageSync('userInfo') != '') {
+      this.getData();
+      this.getCarCount()
+    }
+    
   }
 
   componentDidHide () { }
@@ -241,6 +243,12 @@ class Car extends Component {
     })
   }
 
+  goLogin() {
+    Taro.switchTab({
+      url: `/pages/my/index`
+    })
+  }
+
   goPay() {
     const { buyCount, dataList } = this.state;
     if(buyCount == 0) {
@@ -293,7 +301,11 @@ class Car extends Component {
                     <View className='topBox'>
                       <View
                         onClick={() => this.checkShopChange(index1)}
-                        className={`cicle ${item.checked && 'chooseCicle'}`}>
+                        className='cicle'>
+                          {
+                            item.checked &&
+                            <AtIcon value='check' size='14' color='rgb(36, 200, 178)'></AtIcon>
+                          }
                       </View>
                       <Text>{item.name}</Text>
                     </View>
@@ -315,7 +327,11 @@ class Car extends Component {
                               <View className='bottomBox'>
                                 <View
                                   onClick={() => this.checkboxChange(index1,index2)}
-                                  className={`cicle ${item2.checked && 'chooseCicle'}`}>
+                                  className='cicle'>
+                                  {
+                                    item2.checked &&
+                                    <AtIcon value='check' size='14' color='rgb(36, 200, 178)'></AtIcon>
+                                  }
                                 </View>
                                 <Image className='pic' src={item2.productPic} />
                                 <View className='rightPart'>
@@ -347,7 +363,11 @@ class Car extends Component {
             <View className='leftFooter'>
               <View
                 onClick={() => this.checkAllChange()}
-                className={`cicle ${checkAll && 'chooseCicle'}`}>
+                className='cicle'>
+                  {
+                    checkAll &&
+                    <AtIcon value='check' size='14' color='rgb(36, 200, 178)'></AtIcon>
+                  }
               </View>
               <Text className='allText'>全选</Text>
               <View className='priceBox'>
@@ -365,7 +385,17 @@ class Car extends Component {
         {
           dataList.length == 0 &&
           <View className='noData'>
-            <Text>暂无数据~~</Text>
+            {
+              Taro.getStorageSync('token') != '' ?
+              <Text>暂无数据~~</Text>
+              :
+              <View>
+                <Text>暂未登录~~</Text>
+                <View className='bigBox' onClick={() => this.goLogin()}>
+                  <View className='loginBtn'>登录</View>
+                </View>
+              </View>
+            }
           </View>
         }
         <AtToast

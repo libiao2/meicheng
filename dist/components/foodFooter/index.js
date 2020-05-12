@@ -58,7 +58,7 @@ var FoodFooter = (_temp2 = _class = function (_BaseComponent) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = FoodFooter.__proto__ || Object.getPrototypeOf(FoodFooter)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["anonymousState__temp3", "anonymousState__temp4", "loopArray88", "$compid__231", "$compid__232", "$compid__233", "current", "typeList", "isOpenToast", "toastText", "openShare", "shopId", "url", "shopName", "list", "isDian"], _this.anonymousFunc0Map = {}, _this.customComponents = ["AtActionSheet", "AtActionSheetItem", "AtToast"], _temp), _possibleConstructorReturn(_this, _ret);
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = FoodFooter.__proto__ || Object.getPrototypeOf(FoodFooter)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["anonymousState__temp3", "anonymousState__temp4", "loopArray261", "$compid__611", "$compid__612", "$compid__613", "carCount", "shopDian", "dianCount", "current", "typeList", "isOpenToast", "toastText", "openShare", "shopId", "changeDian", "url", "shopName", "list", "isDian"], _this.anonymousFunc0Map = {}, _this.customComponents = ["AtActionSheet", "AtActionSheetItem", "AtToast"], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(FoodFooter, [{
@@ -82,7 +82,8 @@ var FoodFooter = (_temp2 = _class = function (_BaseComponent) {
         }],
         isOpenToast: false,
         toastText: '',
-        openShare: false
+        openShare: false,
+        shopDian: null
       };
       this.$$refs = new _taroWeapp2.default.RefsArray();
     }
@@ -91,14 +92,24 @@ var FoodFooter = (_temp2 = _class = function (_BaseComponent) {
     value: function thumbUp() {
       var _this2 = this;
 
-      var shopId = this.props.shopId;
+      var _props = this.props,
+          shopId = _props.shopId,
+          dianCount = _props.dianCount;
 
       _api2.default.post('/product/upvote', { id: shopId }).then(function (res) {
         console.log('ddddd', res);
-        _this2.setState({
-          isOpenToast: true,
-          toastText: '点赞成功！'
-        });
+        if (res.data.code == 200) {
+          _taroWeapp2.default.showToast({
+            title: '点赞成功！',
+            icon: 'none',
+            mask: true
+          });
+          var count = dianCount;
+          _this2.setState({
+            shopDian: count + 1
+          });
+          _this2.props.changeDian();
+        }
       });
     }
   }, {
@@ -116,19 +127,32 @@ var FoodFooter = (_temp2 = _class = function (_BaseComponent) {
   }, {
     key: "handleClick",
     value: function handleClick(e) {
-      var _props = this.props,
-          shopId = _props.shopId,
-          shopName = _props.shopName;
+      var _props2 = this.props,
+          shopId = _props2.shopId,
+          shopName = _props2.shopName,
+          list = _props2.list;
 
-      console.log('???????????????', shopName);
+
       switch (e) {
         case 0:
-          this.thumbUp();
+          if (_taroWeapp2.default.getStorageSync('userInfo') != '') {
+            this.thumbUp();
+          } else {
+            _taroWeapp2.default.switchTab({
+              url: "/pages/my/index"
+            });
+          }
           break;
         case 1:
-          _taroWeapp2.default.switchTab({
-            url: '/pages/car/index'
-          });
+          if (_taroWeapp2.default.getStorageSync('userInfo') != '') {
+            _taroWeapp2.default.switchTab({
+              url: '/pages/car/index'
+            });
+          } else {
+            _taroWeapp2.default.switchTab({
+              url: "/pages/my/index"
+            });
+          }
           break;
         case 2:
           this.setState({
@@ -137,7 +161,7 @@ var FoodFooter = (_temp2 = _class = function (_BaseComponent) {
           break;
         case 3:
           _taroWeapp2.default.navigateTo({
-            url: "/pagesB/pages/menu/index?list=" + encodeURIComponent(JSON.stringify(this.props.list)) + "&shopId=" + shopId + "&shopName=" + shopName
+            url: "/pagesB/pages/menu/index?list=" + encodeURIComponent(JSON.stringify(list)) + "&shopId=" + shopId + "&shopName=" + shopName
           });
           break;
       }
@@ -160,7 +184,6 @@ var FoodFooter = (_temp2 = _class = function (_BaseComponent) {
         mask: true
       });
       _api2.default.post('/product/shareProd', { id: shopId }).then(function (res) {
-        console.log('gggggg', res);
         if (res.data.code == 200) {
           var imgUrl = res.data.data;
 
@@ -206,23 +229,28 @@ var FoodFooter = (_temp2 = _class = function (_BaseComponent) {
       var __prefix = this.$prefix;
       ;
 
-      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__231"),
+      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__611"),
           _genCompid2 = _slicedToArray(_genCompid, 2),
-          $prevCompid__231 = _genCompid2[0],
-          $compid__231 = _genCompid2[1];
+          $prevCompid__611 = _genCompid2[0],
+          $compid__611 = _genCompid2[1];
 
-      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__232"),
+      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__612"),
           _genCompid4 = _slicedToArray(_genCompid3, 2),
-          $prevCompid__232 = _genCompid4[0],
-          $compid__232 = _genCompid4[1];
+          $prevCompid__612 = _genCompid4[0],
+          $compid__612 = _genCompid4[1];
 
-      var _genCompid5 = (0, _taroWeapp.genCompid)(__prefix + "$compid__233"),
+      var _genCompid5 = (0, _taroWeapp.genCompid)(__prefix + "$compid__613"),
           _genCompid6 = _slicedToArray(_genCompid5, 2),
-          $prevCompid__233 = _genCompid6[0],
-          $compid__233 = _genCompid6[1];
+          $prevCompid__613 = _genCompid6[0],
+          $compid__613 = _genCompid6[1];
 
-      var openShare = this.__state.openShare;
-      var isDian = this.__props.isDian;
+      var _state = this.__state,
+          openShare = _state.openShare,
+          shopDian = _state.shopDian;
+      var _props3 = this.__props,
+          isDian = _props3.isDian,
+          carCount = _props3.carCount,
+          dianCount = _props3.dianCount;
 
 
       this.anonymousFunc1 = function () {
@@ -241,21 +269,25 @@ var FoodFooter = (_temp2 = _class = function (_BaseComponent) {
 
       var anonymousState__temp4 = __webpack_require__(/*! ./../../image/wechatP.png */ "./src/image/wechatP.png");
 
-      var loopArray88 = this.__state.typeList.map(function (item, index) {
+      var loopArray261 = this.__state.typeList.map(function (item, index) {
         item = {
           $original: (0, _taroWeapp.internal_get_original)(item)
         };
 
-        var _$indexKey = "bbdzz" + index;
+        var _$indexKey = "dffzz" + index;
 
         _this3.anonymousFunc0Map[_$indexKey] = function () {
           return _this3.handleClick(index);
         };
 
         var $loopState__temp2 = index == 0 && isDian ? __webpack_require__(/*! ./../../image/dianzan.png */ "./src/image/dianzan.png") : item.$original.pic;
+        var $loopState__temp6 = index == 1 && parseInt(carCount) > 0;
+        var $loopState__temp8 = index == 0 && parseInt(dianCount) > 0;
         return {
           _$indexKey: _$indexKey,
           $loopState__temp2: $loopState__temp2,
+          $loopState__temp6: $loopState__temp6,
+          $loopState__temp8: $loopState__temp8,
           $original: item.$original
         };
       });
@@ -263,21 +295,23 @@ var FoodFooter = (_temp2 = _class = function (_BaseComponent) {
       _taroWeapp.propsManager.set({
         "isOpened": openShare,
         "onClose": this.anonymousFunc1
-      }, $compid__231, $prevCompid__231);
+      }, $compid__611, $prevCompid__611);
       _taroWeapp.propsManager.set({
         "onClick": this.anonymousFunc2
-      }, $compid__232, $prevCompid__232);
+      }, $compid__612, $prevCompid__612);
       _taroWeapp.propsManager.set({
         "isOpened": this.__state.isOpenToast,
         "text": this.__state.toastText
-      }, $compid__233, $prevCompid__233);
+      }, $compid__613, $prevCompid__613);
       Object.assign(this.__state, {
         anonymousState__temp3: anonymousState__temp3,
         anonymousState__temp4: anonymousState__temp4,
-        loopArray88: loopArray88,
-        $compid__231: $compid__231,
-        $compid__232: $compid__232,
-        $compid__233: $compid__233
+        loopArray261: loopArray261,
+        $compid__611: $compid__611,
+        $compid__612: $compid__612,
+        $compid__613: $compid__613,
+        carCount: carCount,
+        dianCount: dianCount
       });
       return this.__state;
     }

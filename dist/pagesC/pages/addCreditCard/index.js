@@ -69,7 +69,7 @@ var AddCreditCard = (_dec = (0, _redux.connect)(function (_ref) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = AddCreditCard.__proto__ || Object.getPrototypeOf(AddCreditCard)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["$compid__358", "name", "number", "cvc", "shippingName", "country", "state", "city", "postalCode", "line1", "line2", "endTime", "startTime"], _this.state = {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = AddCreditCard.__proto__ || Object.getPrototypeOf(AddCreditCard)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["$compid__369", "name", "number", "cvc", "endTime", "state", "startTime", "shippingName", "postalCode", "line1", "line2"], _this.state = {
       name: '',
       number: '', /// 卡号
       startTime: '',
@@ -244,68 +244,68 @@ var AddCreditCard = (_dec = (0, _redux.connect)(function (_ref) {
         });
         return;
       }
-      if (shippingName == '') {
-        _taroWeapp2.default.showToast({
-          title: '请填写持卡人姓名！',
-          icon: 'none',
-          mask: true
-        });
-        return;
-      }
-      if (country == '') {
-        _taroWeapp2.default.showToast({
-          title: '请填写国家！',
-          icon: 'none',
-          mask: true
-        });
-        return;
-      }
-      if (state == '') {
-        _taroWeapp2.default.showToast({
-          title: '请填写州！',
-          icon: 'none',
-          mask: true
-        });
-        return;
-      }
-      if (city == '') {
-        _taroWeapp2.default.showToast({
-          title: '请填写城市！',
-          icon: 'none',
-          mask: true
-        });
-        return;
-      }
-      if (postalCode == '') {
-        _taroWeapp2.default.showToast({
-          title: '请填写邮编！',
-          icon: 'none',
-          mask: true
-        });
-        return;
-      }
-      if (line1 == '') {
-        _taroWeapp2.default.showToast({
-          title: '请填写街道地址！',
-          icon: 'none',
-          mask: true
-        });
-        return;
-      }
+      // if(shippingName == '') {
+      //   Taro.showToast({
+      //     title: '请填写持卡人姓名！',
+      //     icon: 'none',
+      //     mask:true,
+      //   });
+      //   return;
+      // }
+      // if(country == '') {
+      //   Taro.showToast({
+      //     title: '请填写国家！',
+      //     icon: 'none',
+      //     mask:true,
+      //   });
+      //   return;
+      // }
+      // if(state == '') {
+      //   Taro.showToast({
+      //     title: '请填写州！',
+      //     icon: 'none',
+      //     mask:true,
+      //   });
+      //   return;
+      // }
+      // if(city == '') {
+      //   Taro.showToast({
+      //     title: '请填写城市！',
+      //     icon: 'none',
+      //     mask:true,
+      //   });
+      //   return;
+      // }
+      // if(postalCode == '') {
+      //   Taro.showToast({
+      //     title: '请填写邮编！',
+      //     icon: 'none',
+      //     mask:true,
+      //   });
+      //   return;
+      // }
+      // if(line1 == '') {
+      //   Taro.showToast({
+      //     title: '请填写街道地址！',
+      //     icon: 'none',
+      //     mask:true,
+      //   });
+      //   return;
+      // }
       var timeArr = endTime.split('-');
       var obj = {
         number: number,
         name: name,
         expYear: timeArr[0],
         expMonth: timeArr[1],
-        cvc: cvc,
-        shippingName: shippingName,
-        state: state,
-        city: city,
-        postalCode: postalCode,
-        line1: line1,
-        line2: line2,
-        country: country
+        cvc: cvc
+        // shippingName,
+        // state,
+        // city,
+        // postalCode,
+        // line1,
+        // line2,
+        // country
       };
       console.log('PPPP', obj);
       _api2.default.post('/pay/addCard', obj).then(function (res) {
@@ -339,10 +339,10 @@ var AddCreditCard = (_dec = (0, _redux.connect)(function (_ref) {
       var __prefix = this.$prefix;
       ;
 
-      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__358"),
+      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__369"),
           _genCompid2 = _slicedToArray(_genCompid, 2),
-          $prevCompid__358 = _genCompid2[0],
-          $compid__358 = _genCompid2[1];
+          $prevCompid__369 = _genCompid2[0],
+          $compid__369 = _genCompid2[1];
 
       var _state2 = this.__state,
           number = _state2.number,
@@ -367,12 +367,10 @@ var AddCreditCard = (_dec = (0, _redux.connect)(function (_ref) {
         "value": "chevron-down",
         "size": "16",
         "color": "#999"
-      }, $compid__358, $prevCompid__358);
+      }, $compid__369, $prevCompid__369);
       Object.assign(this.__state, {
-        $compid__358: $compid__358,
-        country: country,
-        state: state,
-        city: city
+        $compid__369: $compid__369,
+        state: state
       });
       return this.__state;
     }
@@ -384,7 +382,7 @@ var AddCreditCard = (_dec = (0, _redux.connect)(function (_ref) {
   }]);
 
   return AddCreditCard;
-}(_taroWeapp.Component), _class2.$$events = ["nameChange", "numberChange", "onEndDateChange", "cvcChange", "shippingNameChange", "countryChange", "stateChange", "cityChange", "postalCodeChange", "line1Change", "line2Change", "anonymousFunc0"], _class2.$$componentPath = "pagesC/pages/addCreditCard/index", _temp2)) || _class);
+}(_taroWeapp.Component), _class2.$$events = ["nameChange", "numberChange", "onEndDateChange", "cvcChange", "anonymousFunc0"], _class2.$$componentPath = "pagesC/pages/addCreditCard/index", _temp2)) || _class);
 exports.default = AddCreditCard;
 
 Component(__webpack_require__(/*! @tarojs/taro-weapp */ "./node_modules/_@tarojs_taro-weapp@2.0.6@@tarojs/taro-weapp/index.js").default.createComponent(AddCreditCard, true));

@@ -71,7 +71,7 @@ var AddFoodInfo = (_dec = (0, _redux.connect)(function (_ref) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = AddFoodInfo.__proto__ || Object.getPrototypeOf(AddFoodInfo)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["$compid__234", "$compid__235", "$compid__236", "$compid__237", "foodImg", "picList", "name", "price", "detail", "isOpen", "toast", "type", "pageType", "itemIndex"], _this.config = {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = AddFoodInfo.__proto__ || Object.getPrototypeOf(AddFoodInfo)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["$compid__237", "$compid__238", "$compid__239", "$compid__240", "type", "foodImg", "picList", "name", "price", "detail", "isOpen", "toast", "pageType", "itemIndex"], _this.config = {
       navigationBarTitleText: '美城美食365'
     }, _this.customComponents = ["AtForm", "ChooseImage", "AtTextarea", "AtButton", "AtToast"], _temp), _possibleConstructorReturn(_this, _ret);
   }
@@ -106,7 +106,7 @@ var AddFoodInfo = (_dec = (0, _redux.connect)(function (_ref) {
         type: parmars.index
       });
       if (parmars.type == 'change') {
-        var obj = JSON.parse(parmars.obj);
+        var obj = JSON.parse(decodeURIComponent(parmars.obj));
         console.log('))))))))', obj);
         this.setState({
           foodImg: obj.foodImg,
@@ -224,7 +224,7 @@ var AddFoodInfo = (_dec = (0, _redux.connect)(function (_ref) {
 
       if (picList.length == 0) {
         _taroWeapp2.default.showToast({
-          title: '请上传菜品图片',
+          title: '\u8BF7\u4E0A\u4F20' + (type == 1 ? '菜品' : '菜单') + '\u56FE\u7247',
           icon: 'none',
           mask: true
         });
@@ -287,25 +287,28 @@ var AddFoodInfo = (_dec = (0, _redux.connect)(function (_ref) {
       var __prefix = this.$prefix;
       ;
 
-      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__234"),
+      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__237"),
           _genCompid2 = _slicedToArray(_genCompid, 2),
-          $prevCompid__234 = _genCompid2[0],
-          $compid__234 = _genCompid2[1];
+          $prevCompid__237 = _genCompid2[0],
+          $compid__237 = _genCompid2[1];
 
-      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__235"),
+      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__238"),
           _genCompid4 = _slicedToArray(_genCompid3, 2),
-          $prevCompid__235 = _genCompid4[0],
-          $compid__235 = _genCompid4[1];
+          $prevCompid__238 = _genCompid4[0],
+          $compid__238 = _genCompid4[1];
 
-      var _genCompid5 = (0, _taroWeapp.genCompid)(__prefix + "$compid__236"),
+      var _genCompid5 = (0, _taroWeapp.genCompid)(__prefix + "$compid__239"),
           _genCompid6 = _slicedToArray(_genCompid5, 2),
-          $prevCompid__236 = _genCompid6[0],
-          $compid__236 = _genCompid6[1];
+          $prevCompid__239 = _genCompid6[0],
+          $compid__239 = _genCompid6[1];
 
-      var _genCompid7 = (0, _taroWeapp.genCompid)(__prefix + "$compid__237"),
+      var _genCompid7 = (0, _taroWeapp.genCompid)(__prefix + "$compid__240"),
           _genCompid8 = _slicedToArray(_genCompid7, 2),
-          $prevCompid__237 = _genCompid8[0],
-          $compid__237 = _genCompid8[1];
+          $prevCompid__240 = _genCompid8[0],
+          $compid__240 = _genCompid8[1];
+
+      var type = this.__state.type;
+
 
       this.anonymousFunc0 = function () {
         return _this2.goAddFood();
@@ -316,26 +319,26 @@ var AddFoodInfo = (_dec = (0, _redux.connect)(function (_ref) {
         "onFilesValue": this.getOnFilesValue.bind(this),
         "returnImgSrc": this.getReturnImgSrc.bind(this),
         "deleteImgSrc": this.deleteImgSrc.bind(this)
-      }, $compid__234, $prevCompid__234);
+      }, $compid__237, $prevCompid__237);
       _taroWeapp.propsManager.set({
         "className": "text",
         "count": false,
         "value": this.__state.detail,
         "onChange": this.shuomingChange.bind(this)
-      }, $compid__235, $prevCompid__235);
+      }, $compid__238, $prevCompid__238);
       _taroWeapp.propsManager.set({
         "className": "btn",
         "onClick": this.anonymousFunc0
-      }, $compid__236, $prevCompid__236);
+      }, $compid__239, $prevCompid__239);
       _taroWeapp.propsManager.set({
         "isOpened": this.__state.isOpen,
         "text": this.__state.toast
-      }, $compid__237, $prevCompid__237);
+      }, $compid__240, $prevCompid__240);
       Object.assign(this.__state, {
-        $compid__234: $compid__234,
-        $compid__235: $compid__235,
-        $compid__236: $compid__236,
-        $compid__237: $compid__237
+        $compid__237: $compid__237,
+        $compid__238: $compid__238,
+        $compid__239: $compid__239,
+        $compid__240: $compid__240
       });
       return this.__state;
     }

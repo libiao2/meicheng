@@ -171,54 +171,54 @@ class AddCreditCard extends Component {
       });
       return;
     }
-    if(shippingName == '') {
-      Taro.showToast({
-        title: '请填写持卡人姓名！',
-        icon: 'none',
-        mask:true,
-      });
-      return;
-    }
-    if(country == '') {
-      Taro.showToast({
-        title: '请填写国家！',
-        icon: 'none',
-        mask:true,
-      });
-      return;
-    }
-    if(state == '') {
-      Taro.showToast({
-        title: '请填写州！',
-        icon: 'none',
-        mask:true,
-      });
-      return;
-    }
-    if(city == '') {
-      Taro.showToast({
-        title: '请填写城市！',
-        icon: 'none',
-        mask:true,
-      });
-      return;
-    }
-    if(postalCode == '') {
-      Taro.showToast({
-        title: '请填写邮编！',
-        icon: 'none',
-        mask:true,
-      });
-      return;
-    }
-    if(line1 == '') {
-      Taro.showToast({
-        title: '请填写街道地址！',
-        icon: 'none',
-        mask:true,
-      });
-      return;
-    }
+    // if(shippingName == '') {
+    //   Taro.showToast({
+    //     title: '请填写持卡人姓名！',
+    //     icon: 'none',
+    //     mask:true,
+    //   });
+    //   return;
+    // }
+    // if(country == '') {
+    //   Taro.showToast({
+    //     title: '请填写国家！',
+    //     icon: 'none',
+    //     mask:true,
+    //   });
+    //   return;
+    // }
+    // if(state == '') {
+    //   Taro.showToast({
+    //     title: '请填写州！',
+    //     icon: 'none',
+    //     mask:true,
+    //   });
+    //   return;
+    // }
+    // if(city == '') {
+    //   Taro.showToast({
+    //     title: '请填写城市！',
+    //     icon: 'none',
+    //     mask:true,
+    //   });
+    //   return;
+    // }
+    // if(postalCode == '') {
+    //   Taro.showToast({
+    //     title: '请填写邮编！',
+    //     icon: 'none',
+    //     mask:true,
+    //   });
+    //   return;
+    // }
+    // if(line1 == '') {
+    //   Taro.showToast({
+    //     title: '请填写街道地址！',
+    //     icon: 'none',
+    //     mask:true,
+    //   });
+    //   return;
+    // }
     let timeArr = endTime.split('-');
     let obj = {
       number,
@@ -226,13 +226,13 @@ class AddCreditCard extends Component {
       expYear: timeArr[0],
       expMonth: timeArr[1],
       cvc,
-      shippingName,
-      state,
-      city,
-      postalCode,
-      line1,
-      line2,
-      country
+      // shippingName,
+      // state,
+      // city,
+      // postalCode,
+      // line1,
+      // line2,
+      // country
     }
     console.log('PPPP', obj)
     api.post('/pay/addCard',obj).then(res => {
@@ -272,6 +272,9 @@ class AddCreditCard extends Component {
       country } = this.state;
     return (
       <View className='container'>
+        <View className='tip'>
+        以下内容会走到信用卡公司，美城美事365绝对不会也没有权限查看信用卡信息,请放心使用
+        </View>
         <View className='titleBox'>
           <Text>基本信息</Text>
         </View>
@@ -325,10 +328,10 @@ class AddCreditCard extends Component {
             onChange={this.cvcChange.bind(this)}
           />
         </View>
-        <View className='titleBox'>
+        {/* <View className='titleBox'>
           <Text>账单邮寄地址</Text>
-        </View>
-        <View className='itemBox'>
+        </View> */}
+        {/* <View className='itemBox'>
           <Text className='leftPart'>持卡人姓名:</Text>
           <Input
             type='text'
@@ -337,8 +340,8 @@ class AddCreditCard extends Component {
             value={shippingName}
             onChange={this.shippingNameChange.bind(this)}
           />
-        </View>
-        <View className='itemBox'>
+        </View> */}
+        {/* <View className='itemBox'>
           <Text className='leftPart'>国家:</Text>
           <Input
             type='text'
@@ -355,8 +358,8 @@ class AddCreditCard extends Component {
             value={state}
             onChange={this.stateChange.bind(this)}
           />
-        </View>
-        <View className='itemBox'>
+        </View> */}
+        {/* <View className='itemBox'>
           <Text className='leftPart'>城市:</Text>
           <Input
             type='text'
@@ -373,8 +376,8 @@ class AddCreditCard extends Component {
             value={postalCode}
             onChange={this.postalCodeChange.bind(this)}
           />
-        </View>
-        <View className='itemBox'>
+        </View> */}
+        {/* <View className='itemBox'>
           <Text className='leftPart'>街道1:</Text>
           <Input
             type='text'
@@ -383,8 +386,8 @@ class AddCreditCard extends Component {
             value={line1}
             onChange={this.line1Change.bind(this)}
           />
-        </View>
-        <View className='itemBox'>
+        </View> */}
+        {/* <View className='itemBox'>
           <Text className='leftPart'>街道2:</Text>
           <Input
             type='text'
@@ -393,7 +396,7 @@ class AddCreditCard extends Component {
             value={line2}
             onChange={this.line2Change.bind(this)}
           />
-        </View>
+        </View> */}
         <View className='btn'>
           <View className='btnBox' onClick={() => this.submitClick()}>
             <Text>添加信用卡</Text>

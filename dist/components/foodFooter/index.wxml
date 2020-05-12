@@ -1,14 +1,20 @@
 <block wx:if="{{$taroCompReady}}">
     <view class="footer">
         <view class="box">
-            <view class="item" bindtap="anonymousFunc0" wx:for="{{loopArray88}}" wx:for-item="item" wx:for-index="index" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey}}">
+            <view class="item" bindtap="anonymousFunc0" wx:for="{{loopArray261}}" wx:for-item="item" wx:for-index="index" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey}}">
                 <view class="boxItem">
                     <image src="{{item.$loopState__temp2}}" class="iconImg"></image><text>{{item.$original.title}}</text>
                 </view>
+                <block wx:if="{{item.$loopState__temp6}}">
+                    <view class="count">{{carCount}}</view>
+                </block>
+                <block wx:if="{{item.$loopState__temp8}}">
+                    <view class="count">{{shopDian || dianCount}}</view>
+                </block>
             </view>
         </view>
-        <at-action-sheet compid="{{$compid__231}}">
-            <at-action-sheet-item wx:key="index" compid="{{$compid__232}}">
+        <at-action-sheet compid="{{$compid__611}}">
+            <at-action-sheet-item wx:key="index" compid="{{$compid__612}}">
                 <view class="shareTitle"><text>分享</text>
                 </view>
                 <view class="shareBox">
@@ -25,6 +31,6 @@
                 </view>
             </at-action-sheet-item>
         </at-action-sheet>
-        <at-toast compid="{{$compid__233}}"></at-toast>
+        <at-toast compid="{{$compid__613}}"></at-toast>
     </view>
 </block>

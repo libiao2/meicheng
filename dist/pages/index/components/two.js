@@ -54,7 +54,7 @@ var Two = (_temp2 = _class = function (_BaseComponent) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Two.__proto__ || Object.getPrototypeOf(Two)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["anonymousState__temp", "item", "$compid__226", "type", "isOpen"], _this.state = {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Two.__proto__ || Object.getPrototypeOf(Two)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["anonymousState__temp", "item", "$compid__685", "type", "isOpen"], _this.state = {
       isOpen: false
     }, _this.customComponents = ["AtModal", "AtModalContent"], _temp), _possibleConstructorReturn(_this, _ret);
   }
@@ -82,30 +82,34 @@ var Two = (_temp2 = _class = function (_BaseComponent) {
   }, {
     key: "sendMessage",
     value: function sendMessage(item) {
-      console.log('uuuu', item);
       this.setState({
         isOpen: false
       });
-      if (item.memberId == _taroWeapp2.default.getStorageSync('userId')) {
-        _taroWeapp2.default.showToast({
-          title: '不能给自己发送消息哦~~',
-          icon: 'none',
-          mask: true
-        });
-        return;
-      }
-      _api2.default.post('/ws/openMessage', { sendToId: item.memberId }).then(function (res) {
-        if (res.data.code == 200) {
-          _taroWeapp2.default.navigateTo({
-            url: "/pagesA/pages/chat/index?obj=" + encodeURIComponent(JSON.stringify(item)) + "&dataList=" + encodeURIComponent(JSON.stringify(res.data.data)) + "&pageFrom='index'"
+      if (_taroWeapp2.default.getStorageSync('token') != '') {
+        if (item.memberId == _taroWeapp2.default.getStorageSync('userId')) {
+          _taroWeapp2.default.showToast({
+            title: '不能给自己发送消息哦~~',
+            icon: 'none',
+            mask: true
           });
+          return;
         }
-      });
+        _api2.default.post('/ws/openMessage', { sendToId: item.memberId }).then(function (res) {
+          if (res.data.code == 200) {
+            _taroWeapp2.default.navigateTo({
+              url: "/pagesA/pages/chat/index?obj=" + encodeURIComponent(JSON.stringify(item)) + "&dataList=" + encodeURIComponent(JSON.stringify(res.data.data)) + "&pageFrom='index'"
+            });
+          }
+        });
+      } else {
+        _taroWeapp2.default.switchTab({
+          url: "/pages/my/index"
+        });
+      }
     }
   }, {
     key: "goDetail",
     value: function goDetail(item) {
-      console.log('vv', item);
       _taroWeapp2.default.navigateTo({
         url: "/pagesC/pages/otherDetail/index?id=" + item.id + "&type=" + this.props.type
       });
@@ -121,16 +125,15 @@ var Two = (_temp2 = _class = function (_BaseComponent) {
       var __prefix = this.$prefix;
       ;
 
-      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__226"),
+      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__685"),
           _genCompid2 = _slicedToArray(_genCompid, 2),
-          $prevCompid__226 = _genCompid2[0],
-          $compid__226 = _genCompid2[1];
+          $prevCompid__685 = _genCompid2[0],
+          $compid__685 = _genCompid2[1];
 
       var _props = this.__props,
           item = _props.item,
           type = _props.type;
 
-      console.log('-----------------', item);
 
       this.anonymousFunc0 = function () {
         return _this2.goDetail(item);
@@ -152,11 +155,11 @@ var Two = (_temp2 = _class = function (_BaseComponent) {
 
       _taroWeapp.propsManager.set({
         "isOpened": this.__state.isOpen
-      }, $compid__226, $prevCompid__226);
+      }, $compid__685, $prevCompid__685);
       Object.assign(this.__state, {
         anonymousState__temp: anonymousState__temp,
         item: item,
-        $compid__226: $compid__226,
+        $compid__685: $compid__685,
         type: type
       });
       return this.__state;

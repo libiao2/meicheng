@@ -6,7 +6,7 @@
                 </view>
                 <block wx:if="{{changeHomeImgList.length > 0}}">
                     <view class="chooseImgList">
-                        <view class="chooseImgBox" wx:for="{{loopArray145}}" wx:for-item="item" wx:for-index="index">
+                        <view class="chooseImgBox" wx:for="{{loopArray139}}" wx:for-item="item" wx:for-index="index">
                             <image class="shooseImg" src="{{item.$original}}"></image>
                             <view class="deleteImg" bindtap="anonymousFunc0" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey}}"><text>x</text>
                             </view>
@@ -14,7 +14,7 @@
                     </view>
                 </block>
                 <view class="imgBox">
-                    <choose-image compid="{{$compid__393}}"></choose-image>
+                    <choose-image compid="{{$compid__379}}"></choose-image>
                 </view>
             </view><text class="concentTitle">基本信息</text>
             <view class="itemBox"><text class="leftPart">标题名称:</text>
@@ -22,22 +22,22 @@
             </view>
             <view class="itemBox"><text class="leftPart">所在城市:</text>
                 <view class="cityChooseBox" bindtap="anonymousFunc1"><text>{{cityName}}</text>
-                    <at-icon compid="{{$compid__394}}"></at-icon>
+                    <at-icon compid="{{$compid__380}}"></at-icon>
                 </view>
-                <at-action-sheet compid="{{$compid__395}}">
-                    <at-action-sheet-item wx:key="index" wx:for="{{loopArray146}}" wx:for-item="item" wx:for-index="index" compid="{{item.$compid__392}}">{{item.$original.name}}</at-action-sheet-item>
+                <at-action-sheet compid="{{$compid__381}}">
+                    <at-action-sheet-item wx:key="index" wx:for="{{loopArray140}}" wx:for-item="item" wx:for-index="index" compid="{{item.$compid__378}}">{{item.$original.name}}</at-action-sheet-item>
                 </at-action-sheet>
             </view>
             <view class="itemBox"> <text class="leftPart">地址:</text>
                 <view class="areaBox" bindtap="anonymousFunc4">
                     <input type="text" class="areaInput" placeholder="点击地区图标定位当前地址" value="{{address}}" bindchange="areaNameChange" data-e-change-so="this" />
                     <view class="iconBox">
-                        <at-icon compid="{{$compid__396}}"></at-icon>
+                        <at-icon compid="{{$compid__382}}"></at-icon>
                     </view>
                 </view>
             </view>
             <view class="itemBox"><text class="leftPart">价格:</text>
-                <input type="text" class="shopNameInput" placeholder="请输入价格" value="{{price}}" bindchange="priceChange" data-e-change-so="this" /><text style="font-size: 12px;color: #333;margin-left: 6px">元</text>
+                <input type="text" class="shopNameInput" placeholder="请输入价格" value="{{price}}" bindchange="priceChange" data-e-change-so="this" /><text style="font-size: 12px;color: #333;margin-left: 6px">$</text>
             </view>
             <view class="itemBox flexEnd"><text class="leftPart" style="margin-top: 20rpx">联系方式:</text>
                 <view>
@@ -54,20 +54,20 @@
             </view>
             <view style="height: 5px;background:#f1f1f1"></view>
             <view class="typeListBox">
-                <view bindtap="anonymousFunc5" class="{{'textListBox ' + (typeChoose == index && 'isChoose')}}" wx:for="{{loopArray147}}" wx:for-item="item" wx:for-index="index" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey3}}"><text>{{item.$original.title}}</text>
+                <view bindtap="anonymousFunc5" class="{{'textListBox ' + (typeChoose == index && 'isChoose')}}" wx:for="{{loopArray141}}" wx:for-item="item" wx:for-index="index" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey3}}"><text>{{item.$original.title}}</text>
                 </view>
             </view>
             <view style="height: 5px;background:#f1f1f1"></view>
             <view class="textBox"><text class="title">详细说明:</text>
-                <at-textarea compid="{{$compid__397}}"></at-textarea>
+                <at-textarea compid="{{$compid__383}}"></at-textarea>
             </view>
             <view style="height: 5px;background:#f1f1f1"></view>
             <view class="textBox"><text class="title">购买须知:</text>
-                <at-textarea compid="{{$compid__398}}"></at-textarea>
+                <at-textarea compid="{{$compid__384}}"></at-textarea>
             </view>
-            <at-button compid="{{$compid__399}}">确认</at-button>
+            <at-button compid="{{$compid__385}}">确认</at-button>
             <view style="height: 30px;background:#fff"></view>
         </at-form>
-        <at-toast compid="{{$compid__400}}"></at-toast>
+        <at-toast compid="{{$compid__386}}"></at-toast>
     </view>
 </block>

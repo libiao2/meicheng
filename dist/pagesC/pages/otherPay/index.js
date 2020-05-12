@@ -63,13 +63,13 @@ var OtherPay = (_dec = (0, _redux.connect)(function (_ref) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = OtherPay.__proto__ || Object.getPrototypeOf(OtherPay)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["loopArray101", "$compid__263", "creditCardList", "isOpenCard", "payNo"], _this.state = {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = OtherPay.__proto__ || Object.getPrototypeOf(OtherPay)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["loopArray101", "$compid__268", "creditCardList", "isOpenCard", "payNo"], _this.state = {
       isOpenCard: false,
       creditCardList: [],
       payNo: ''
     }, _this.config = {
       navigationBarTitleText: '支付'
-    }, _this.anonymousFunc1Map = {}, _this.customComponents = ["AtModal", "AtModalContent"], _temp), _possibleConstructorReturn(_this, _ret);
+    }, _this.anonymousFunc1Map = {}, _this.anonymousFunc2Map = {}, _this.customComponents = ["AtModal", "AtModalContent"], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(OtherPay, [{
@@ -269,9 +269,32 @@ var OtherPay = (_dec = (0, _redux.connect)(function (_ref) {
       });
     }
   }, {
+    key: 'deleteCard',
+    value: function deleteCard(item, index) {
+      var _this4 = this;
+
+      var creditCardList = this.state.creditCardList;
+
+      var newArr = creditCardList;
+      _api2.default.post('/pay/delCard', { cardId: item.cardId }).then(function (res) {
+        console.log('ppp', res);
+        if (res.data.code == 200) {
+          newArr.splice(index, 1);
+          _taroWeapp2.default.showToast({
+            title: '信用卡删除成功！',
+            icon: 'none',
+            mask: true
+          });
+          _this4.setState({
+            creditCardList: newArr
+          });
+        }
+      });
+    }
+  }, {
     key: '_createData',
     value: function _createData() {
-      var _this4 = this;
+      var _this5 = this;
 
       this.__state = arguments[0] || this.state || {};
       this.__props = arguments[1] || this.props || {};
@@ -279,10 +302,10 @@ var OtherPay = (_dec = (0, _redux.connect)(function (_ref) {
       var __prefix = this.$prefix;
       ;
 
-      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__263"),
+      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__268"),
           _genCompid2 = _slicedToArray(_genCompid, 2),
-          $prevCompid__263 = _genCompid2[0],
-          $compid__263 = _genCompid2[1];
+          $prevCompid__268 = _genCompid2[0],
+          $compid__268 = _genCompid2[1];
 
       var _state2 = this.__state,
           isOpenCard = _state2.isOpenCard,
@@ -290,15 +313,15 @@ var OtherPay = (_dec = (0, _redux.connect)(function (_ref) {
 
 
       this.anonymousFunc0 = function () {
-        return _this4.closeCard();
-      };
-
-      this.anonymousFunc2 = function () {
-        return _this4.addNewCard();
+        return _this5.closeCard();
       };
 
       this.anonymousFunc3 = function () {
-        return _this4.clickGoPay(2);
+        return _this5.addNewCard();
+      };
+
+      this.anonymousFunc4 = function () {
+        return _this5.clickGoPay(2);
       };
 
       var loopArray101 = creditCardList.length > 0 ? creditCardList.map(function (item, index) {
@@ -306,23 +329,30 @@ var OtherPay = (_dec = (0, _redux.connect)(function (_ref) {
           $original: (0, _taroWeapp.internal_get_original)(item)
         };
 
-        var _$indexKey = "bcjzz" + index;
+        var _$indexKey = "bdezz" + index;
 
-        _this4.anonymousFunc1Map[_$indexKey] = function () {
-          return _this4.clickChooseCard(index);
+        _this5.anonymousFunc1Map[_$indexKey] = function () {
+          return _this5.clickChooseCard(index);
+        };
+
+        var _$indexKey2 = "bdfzz" + index;
+
+        _this5.anonymousFunc2Map[_$indexKey2] = function () {
+          return _this5.deleteCard(item.$original, index);
         };
 
         return {
           _$indexKey: _$indexKey,
+          _$indexKey2: _$indexKey2,
           $original: item.$original
         };
       }) : [];
       _taroWeapp.propsManager.set({
         "isOpened": isOpenCard
-      }, $compid__263, $prevCompid__263);
+      }, $compid__268, $prevCompid__268);
       Object.assign(this.__state, {
         loopArray101: loopArray101,
-        $compid__263: $compid__263
+        $compid__268: $compid__268
       });
       return this.__state;
     }
@@ -346,18 +376,31 @@ var OtherPay = (_dec = (0, _redux.connect)(function (_ref) {
     }
   }, {
     key: 'anonymousFunc2',
-    value: function anonymousFunc2(e) {
+    value: function anonymousFunc2(_$indexKey2) {
+      var _anonymousFunc2Map;
+
       ;
+
+      for (var _len3 = arguments.length, e = Array(_len3 > 1 ? _len3 - 1 : 0), _key3 = 1; _key3 < _len3; _key3++) {
+        e[_key3 - 1] = arguments[_key3];
+      }
+
+      return this.anonymousFunc2Map[_$indexKey2] && (_anonymousFunc2Map = this.anonymousFunc2Map)[_$indexKey2].apply(_anonymousFunc2Map, e);
     }
   }, {
     key: 'anonymousFunc3',
     value: function anonymousFunc3(e) {
       ;
     }
+  }, {
+    key: 'anonymousFunc4',
+    value: function anonymousFunc4(e) {
+      ;
+    }
   }]);
 
   return OtherPay;
-}(_taroWeapp.Component), _class2.$$events = ["anonymousFunc0", "anonymousFunc1", "anonymousFunc2", "anonymousFunc3"], _class2.$$componentPath = "pagesC/pages/otherPay/index", _temp2)) || _class);
+}(_taroWeapp.Component), _class2.$$events = ["anonymousFunc0", "anonymousFunc1", "anonymousFunc2", "anonymousFunc3", "anonymousFunc4"], _class2.$$componentPath = "pagesC/pages/otherPay/index", _temp2)) || _class);
 exports.default = OtherPay;
 
 Component(__webpack_require__(/*! @tarojs/taro-weapp */ "./node_modules/_@tarojs_taro-weapp@2.0.6@@tarojs/taro-weapp/index.js").default.createComponent(OtherPay, true));

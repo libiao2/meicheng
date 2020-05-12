@@ -1,0 +1,114 @@
+<block wx:if="{{$taroCompReady}}">
+    <view class="container">
+        <view class="topBox">
+            <swiper class="swiper" indicator-color="#999" indicator-active-color="#fff" circular="{{true}}" indicator-dots="{{true}}" autoplay="{{true}}">
+                <swiper-item wx:key="index" wx:for="{{goodsInfo.picList}}" wx:for-item="item" wx:for-index="index">
+                    <image src="{{item}}" class="swiperImg"></image>
+                </swiper-item>
+            </swiper>
+            <view class="nameBox"><text class="name">{{goodsInfo.name}}</text>
+                <at-icon compid="{{$compid__596}}"></at-icon>
+            </view>
+            <view class="timeBox">
+                <image src="{{anonymousState__temp}}" style="width:15px;height:15px;margin-right: 6px;"></image><text class="info">营业时间: {{goodsInfo.openTimeStart}}-{{goodsInfo.openTimeEnd}}</text>
+            </view>
+            <view class="timeBox" bindtap="anonymousFunc1">
+                <image src="{{anonymousState__temp2}}" style="width:15px;height:15px;margin-right: 6px"></image><text class="info">{{goodsInfo.address}}</text>
+            </view>
+            <block wx:if="{{goodsInfo.groupList && goodsInfo.groupList.length > 0}}">
+                <view class="youhui">
+                    <view class="titleBox"><text class="title">优惠</text>
+                    </view>
+                    <view class="youhuiItmeBox">
+                        <block wx:if="{{goodsInfo.groupList && goodsInfo.groupList.length > 0}}">
+                            <view class="itemBox" bindtap="anonymousFunc2" wx:for="{{loopArray255}}" wx:for-item="item" wx:for-index="index" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey}}">
+                                <image class="img" src="{{item.$original.pic}}"></image>
+                                <view class="content"><text class="name">{{item.$original.name}}</text><text class="detail">{{item.$original.detail}}</text>
+                                    <view class="priceBox"><text class="nowTitle">现价:</text><text class="danw">$</text><text class="nowPrice">{{item.$original.groupPrice}}</text>
+                                        <view class="oldBox"><text>原价:</text><text class="price">${{item.$original.price}}</text>
+                                        </view>
+                                    </view>
+                                </view>
+                                <view class="btn">团</view>
+                            </view>
+                        </block>
+                    </view>
+                </view>
+            </block>
+            <block wx:if="{{hotL && hotL.length > 0}}">
+                <view class="tuijian">
+                    <view class="titleBox" bindtap="anonymousFunc3"><text class="title">推荐菜</text><text class="readMore">查看更多</text>
+                    </view>
+                    <view class="tuijianItemBox">
+                        <view class="item" wx:for="{{loopArray256}}" wx:for-item="item" wx:for-index="index">
+                            <image class="img" src="{{item.$original.pic}}" bindtap="anonymousFunc4" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey2}}"></image>
+                            <view class="info">
+                                <view class="smallBox" bindtap="anonymousFunc5" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey3}}"><text class="name">{{item.$original.name}}</text><text class="price">${{item.$original.price}}</text>
+                                </view>
+                                <view bindtap="anonymousFunc6" class="addBox" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey4}}">
+                                    <at-icon compid="{{item.$compid__595}}"></at-icon>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </block>
+            <view class="fuwu">
+                <view class="titleBox"><text class="title">服务支持</text>
+                </view><text>{{goodsInfo.serviceSupport}}</text>
+            </view>
+            <view class="pingjia">
+                <view class="titleBox"><text class="title">评价</text>
+                    <view class="pinglunBox" bindtap="anonymousFunc7"><text class="pinglun">我要评论</text>
+                        <at-icon compid="{{$compid__597}}"></at-icon>
+                    </view>
+                </view>
+                <block>
+                    <block wx:if="{{chatList.length > 0}}">
+                        <view class="pinjiaList">
+                            <view class="bigBxo" wx:for="{{loopArray257}}" wx:for-item="item" wx:for-index="index">
+                                <view class="pinglunItem">
+                                    <image class="img" src="{{item.$original.memberIcon}}"></image>
+                                    <view class="right"><text class="name">{{item.$original.memberNickName}}</text>
+                                        <view class="detailBox"><text>{{item.$original.content}}</text>
+                                        </view>
+                                        <view class="huifuBox" bindtap="anonymousFunc8" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey5}}"><text>{{item.$original.createTimeString}}</text>
+                                            <view class="huifu"><text>回复</text>
+                                            </view>
+                                        </view>
+                                    </view>
+                                </view>
+                                <view class="othersPinglun" wx:for="{{item.$original.commentReplayList}}" wx:for-item="item2" wx:for-index="_anonIdx2">
+                                    <image class="otherImg" src="{{item2.memberIcon}}"></image>
+                                    <view class="otherDetail"><text class="otherName">{{item2.memberNickName}}</text><text>{{item2.content}}</text>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </block>
+                    <block wx:else>
+                        <view class="noPinglun"><text>暂无评论~~</text>
+                        </view>
+                    </block>
+                </block>
+            </view>
+        </view>
+        <footer compid="{{$compid__598}}"></footer>
+        <at-toast compid="{{$compid__599}}"></at-toast>
+        <at-action-sheet compid="{{$compid__600}}">
+            <at-action-sheet-item>
+                <view class="messageToastBox">
+                    <view class="title"><text>发表评论</text>
+                    </view>
+                    <at-textarea compid="{{$compid__601}}"></at-textarea>
+                    <view class="btn">
+                        <view class="btnBox" bindtap="anonymousFunc10"><text>匿名发布</text>
+                        </view>
+                        <view class="btnBox" bindtap="anonymousFunc11"><text>发布</text>
+                        </view>
+                    </view>
+                </view>
+            </at-action-sheet-item>
+        </at-action-sheet>
+    </view>
+</block>

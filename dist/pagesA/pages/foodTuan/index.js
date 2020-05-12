@@ -69,14 +69,14 @@ var FoodTuan = (_dec = (0, _redux.connect)(function (_ref) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = FoodTuan.__proto__ || Object.getPrototypeOf(FoodTuan)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["anonymousState__temp", "anonymousState__temp2", "anonymousState__temp3", "anonymousState__temp6", "anonymousState__temp7", "goodsInfo", "loopArray128", "$compid__334", "$compid__335", "$compid__336", "goodsId", "openShare", "isOpenToast", "toastText"], _this.state = {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = FoodTuan.__proto__ || Object.getPrototypeOf(FoodTuan)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["anonymousState__temp", "anonymousState__temp2", "anonymousState__temp3", "anonymousState__temp6", "anonymousState__temp7", "goodsInfo", "loopArray269", "$compid__627", "$compid__628", "$compid__629", "goodsId", "openShare", "isOpenToast", "toastText"], _this.state = {
       goodsId: '',
       openShare: false,
       isOpenToast: false,
       toastText: ''
     }, _this.config = {
       navigationBarTitleText: '美城美食365'
-    }, _this.anonymousFunc3Map = {}, _this.customComponents = ["AtIcon", "AtCountdown", "AtActionSheet", "AtActionSheetItem", "AtToast"], _temp), _possibleConstructorReturn(_this, _ret);
+    }, _this.anonymousFunc4Map = {}, _this.customComponents = ["AtIcon", "AtCountdown", "AtActionSheet", "AtActionSheetItem", "AtToast"], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(FoodTuan, [{
@@ -167,7 +167,6 @@ var FoodTuan = (_dec = (0, _redux.connect)(function (_ref) {
   }, {
     key: 'onShareAppMessage',
     value: function onShareAppMessage() {
-      console.log('nnnmmm');
       var goodsId = this.state.goodsId;
 
       return {
@@ -226,39 +225,62 @@ var FoodTuan = (_dec = (0, _redux.connect)(function (_ref) {
     value: function goPay() {
       var goodsInfo = this.state.goodsInfo;
 
-      var obj = {
-        orderItemList: [{
-          productItemId: goodsInfo.id,
-          quantity: 1
-        }]
-      };
+      if (_taroWeapp2.default.getStorageSync('token') != '') {
+        var obj = {
+          orderItemList: [{
+            productItemId: goodsInfo.id,
+            quantity: 1
+          }]
+        };
 
-      _api2.default.post('/order/confirmOrder', obj).then(function (res) {
-        if (res.data.code == 200) {
-          _taroWeapp2.default.navigateTo({
-            url: "/pagesC/pages/confirmOrder/index?data=" + encodeURIComponent(JSON.stringify(res.data.data)) + "&isPing=2&goodsId=" + goodsInfo.id
-          });
-        }
-      });
+        _api2.default.post('/order/confirmOrder', obj).then(function (res) {
+          if (res.data.code == 200) {
+            _taroWeapp2.default.navigateTo({
+              url: "/pagesC/pages/confirmOrder/index?data=" + encodeURIComponent(JSON.stringify(res.data.data)) + "&isPing=2&goodsId=" + goodsInfo.id
+            });
+          }
+        });
+      } else {
+        _taroWeapp2.default.switchTab({
+          url: "/pages/my/index"
+        });
+      }
     }
   }, {
     key: 'goPay2',
     value: function goPay2(num) {
       var goodsInfo = this.state.goodsInfo;
 
-      var obj = {
-        orderItemList: [{
-          productItemId: goodsInfo.id,
-          quantity: 1
-        }]
-      };
+      if (_taroWeapp2.default.getStorageSync('token') != '') {
+        var obj = {
+          orderItemList: [{
+            productItemId: goodsInfo.id,
+            quantity: 1
+          }]
+        };
 
-      _api2.default.post('/order/confirmOrder', obj).then(function (res) {
-        if (res.data.code == 200) {
-          _taroWeapp2.default.navigateTo({
-            url: "/pagesC/pages/confirmOrder/index?data=" + encodeURIComponent(JSON.stringify(res.data.data)) + "&isPing=2&goodsId=" + goodsInfo.id + "&groupNo=" + num
-          });
-        }
+        _api2.default.post('/order/confirmOrder', obj).then(function (res) {
+          if (res.data.code == 200) {
+            _taroWeapp2.default.navigateTo({
+              url: "/pagesC/pages/confirmOrder/index?data=" + encodeURIComponent(JSON.stringify(res.data.data)) + "&isPing=2&goodsId=" + goodsInfo.id + "&groupNo=" + num
+            });
+          }
+        });
+      } else {
+        _taroWeapp2.default.switchTab({
+          url: "/pages/my/index"
+        });
+      }
+    }
+  }, {
+    key: 'openMap',
+    value: function openMap() {
+      var goodsInfo = this.state.goodsInfo;
+      ////使用微信内置地图查看标记点位置，并进行导航
+
+      _taroWeapp2.default.openLocation({
+        latitude: parseInt(goodsInfo.latitude), //要去的纬度-地址
+        longitude: parseInt(goodsInfo.longitude) //要去的经度-地址
       });
     }
   }, {
@@ -272,20 +294,20 @@ var FoodTuan = (_dec = (0, _redux.connect)(function (_ref) {
       var __prefix = this.$prefix;
       ;
 
-      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__334"),
+      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__627"),
           _genCompid2 = _slicedToArray(_genCompid, 2),
-          $prevCompid__334 = _genCompid2[0],
-          $compid__334 = _genCompid2[1];
+          $prevCompid__627 = _genCompid2[0],
+          $compid__627 = _genCompid2[1];
 
-      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__335"),
+      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__628"),
           _genCompid4 = _slicedToArray(_genCompid3, 2),
-          $prevCompid__335 = _genCompid4[0],
-          $compid__335 = _genCompid4[1];
+          $prevCompid__628 = _genCompid4[0],
+          $compid__628 = _genCompid4[1];
 
-      var _genCompid5 = (0, _taroWeapp.genCompid)(__prefix + "$compid__336"),
+      var _genCompid5 = (0, _taroWeapp.genCompid)(__prefix + "$compid__629"),
           _genCompid6 = _slicedToArray(_genCompid5, 2),
-          $prevCompid__336 = _genCompid6[0],
-          $compid__336 = _genCompid6[1];
+          $prevCompid__629 = _genCompid6[0],
+          $compid__629 = _genCompid6[1];
 
       var _state = this.__state,
           goodsInfo = _state.goodsInfo,
@@ -300,56 +322,60 @@ var FoodTuan = (_dec = (0, _redux.connect)(function (_ref) {
 
       var anonymousState__temp = __webpack_require__(/*! ./../../../image/time.png */ "./src/image/time.png");
 
+      this.anonymousFunc1 = function () {
+        return _this3.openMap();
+      };
+
       var anonymousState__temp2 = __webpack_require__(/*! ./../../../image/dingwei.png */ "./src/image/dingwei.png");
 
-      this.anonymousFunc1 = function () {
+      this.anonymousFunc2 = function () {
         return _this3.shareClick();
       };
 
       var anonymousState__temp3 = __webpack_require__(/*! ./../../../image/share.png */ "./src/image/share.png");
 
-      this.anonymousFunc2 = function () {
+      this.anonymousFunc3 = function () {
         return _this3.goPay();
       };
 
-      this.anonymousFunc4 = function () {
+      this.anonymousFunc5 = function () {
         return _this3.handleClose();
       };
 
       var anonymousState__temp6 = __webpack_require__(/*! ./../../../image/wechatP.png */ "./src/image/wechatP.png");
 
-      this.anonymousFunc5 = function () {
+      this.anonymousFunc6 = function () {
         return _this3.shareFriend();
       };
 
       var anonymousState__temp7 = __webpack_require__(/*! ./../../../image/wechatP.png */ "./src/image/wechatP.png");
 
-      var loopArray128 = goodsInfo && goodsInfo.groupList ? goodsInfo.groupList.map(function (item, index) {
+      var loopArray269 = goodsInfo && goodsInfo.groupList ? goodsInfo.groupList.map(function (item, index) {
         item = {
           $original: (0, _taroWeapp.internal_get_original)(item)
         };
         var $loopState__temp5 = item.$original && item.$original.groupTime ? { hours: ':', minutes: ':', seconds: '' } : null;
 
-        var _$indexKey = "bfizz" + index;
+        var _$indexKey = "dgczz" + index;
 
-        _this3.anonymousFunc3Map[_$indexKey] = function () {
+        _this3.anonymousFunc4Map[_$indexKey] = function () {
           return _this3.goPay2(item.$original.groupNo);
         };
 
-        var _genCompid7 = (0, _taroWeapp.genCompid)(__prefix + 'bfjzzzzzzz' + index, true),
+        var _genCompid7 = (0, _taroWeapp.genCompid)(__prefix + 'dgdzzzzzzz' + index, true),
             _genCompid8 = _slicedToArray(_genCompid7, 2),
-            $prevCompid__333 = _genCompid8[0],
-            $compid__333 = _genCompid8[1];
+            $prevCompid__626 = _genCompid8[0],
+            $compid__626 = _genCompid8[1];
 
         item.$original && item.$original.groupTime && _taroWeapp.propsManager.set({
           "format": $loopState__temp5,
           "seconds": item.$original.countdownSecond,
           "onTimeUp": _this3.onTimeUp.bind(_this3)
-        }, $compid__333, $prevCompid__333);
+        }, $compid__626, $prevCompid__626);
         return {
           $loopState__temp5: $loopState__temp5,
           _$indexKey: _$indexKey,
-          $compid__333: $compid__333,
+          $compid__626: $compid__626,
           $original: item.$original
         };
       }) : [];
@@ -359,15 +385,15 @@ var FoodTuan = (_dec = (0, _redux.connect)(function (_ref) {
         "value": "phone",
         "size": "26",
         "color": "#666"
-      }, $compid__334, $prevCompid__334);
+      }, $compid__627, $prevCompid__627);
       _taroWeapp.propsManager.set({
         "isOpened": openShare,
-        "onClose": this.anonymousFunc4
-      }, $compid__335, $prevCompid__335);
+        "onClose": this.anonymousFunc5
+      }, $compid__628, $prevCompid__628);
       _taroWeapp.propsManager.set({
         "isOpened": isOpenToast,
         "text": toastText
-      }, $compid__336, $prevCompid__336);
+      }, $compid__629, $prevCompid__629);
       Object.assign(this.__state, {
         anonymousState__temp: anonymousState__temp,
         anonymousState__temp2: anonymousState__temp2,
@@ -375,10 +401,10 @@ var FoodTuan = (_dec = (0, _redux.connect)(function (_ref) {
         anonymousState__temp6: anonymousState__temp6,
         anonymousState__temp7: anonymousState__temp7,
         goodsInfo: goodsInfo,
-        loopArray128: loopArray128,
-        $compid__334: $compid__334,
-        $compid__335: $compid__335,
-        $compid__336: $compid__336
+        loopArray269: loopArray269,
+        $compid__627: $compid__627,
+        $compid__628: $compid__628,
+        $compid__629: $compid__629
       });
       return this.__state;
     }
@@ -399,8 +425,13 @@ var FoodTuan = (_dec = (0, _redux.connect)(function (_ref) {
     }
   }, {
     key: 'anonymousFunc3',
-    value: function anonymousFunc3(_$indexKey) {
-      var _anonymousFunc3Map;
+    value: function anonymousFunc3(e) {
+      ;
+    }
+  }, {
+    key: 'anonymousFunc4',
+    value: function anonymousFunc4(_$indexKey) {
+      var _anonymousFunc4Map;
 
       ;
 
@@ -408,22 +439,22 @@ var FoodTuan = (_dec = (0, _redux.connect)(function (_ref) {
         e[_key2 - 1] = arguments[_key2];
       }
 
-      return this.anonymousFunc3Map[_$indexKey] && (_anonymousFunc3Map = this.anonymousFunc3Map)[_$indexKey].apply(_anonymousFunc3Map, e);
-    }
-  }, {
-    key: 'anonymousFunc4',
-    value: function anonymousFunc4(e) {
-      ;
+      return this.anonymousFunc4Map[_$indexKey] && (_anonymousFunc4Map = this.anonymousFunc4Map)[_$indexKey].apply(_anonymousFunc4Map, e);
     }
   }, {
     key: 'anonymousFunc5',
     value: function anonymousFunc5(e) {
       ;
     }
+  }, {
+    key: 'anonymousFunc6',
+    value: function anonymousFunc6(e) {
+      ;
+    }
   }]);
 
   return FoodTuan;
-}(_taroWeapp.Component), _class2.$$events = ["anonymousFunc1", "anonymousFunc2", "anonymousFunc3", "anonymousFunc5"], _class2.$$componentPath = "pagesA/pages/foodTuan/index", _temp2)) || _class);
+}(_taroWeapp.Component), _class2.$$events = ["anonymousFunc1", "anonymousFunc2", "anonymousFunc3", "anonymousFunc4", "anonymousFunc6"], _class2.$$componentPath = "pagesA/pages/foodTuan/index", _temp2)) || _class);
 exports.default = FoodTuan;
 
 Component(__webpack_require__(/*! @tarojs/taro-weapp */ "./node_modules/_@tarojs_taro-weapp@2.0.6@@tarojs/taro-weapp/index.js").default.createComponent(FoodTuan, true));

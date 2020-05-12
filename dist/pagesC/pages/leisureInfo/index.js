@@ -69,7 +69,7 @@ var leisureInfo = (_dec = (0, _redux.connect)(function (_ref) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = leisureInfo.__proto__ || Object.getPrototypeOf(leisureInfo)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["anonymousState__temp", "anonymousState__temp2", "anonymousState__temp3", "anonymousState__temp4", "anonymousState__temp5", "goodsInfo", "$compid__252", "$compid__253", "$compid__254", "goodsId", "openShare", "isOpenToast", "toastText"], _this.state = {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = leisureInfo.__proto__ || Object.getPrototypeOf(leisureInfo)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["anonymousState__temp", "anonymousState__temp2", "anonymousState__temp3", "anonymousState__temp4", "anonymousState__temp5", "goodsInfo", "$compid__255", "$compid__256", "$compid__257", "goodsId", "openShare", "isOpenToast", "toastText"], _this.state = {
       goodsId: '',
       openShare: false,
       isOpenToast: false,
@@ -213,6 +213,17 @@ var leisureInfo = (_dec = (0, _redux.connect)(function (_ref) {
       });
     }
   }, {
+    key: 'openMap',
+    value: function openMap() {
+      var goodsInfo = this.state.goodsInfo;
+      ////使用微信内置地图查看标记点位置，并进行导航
+
+      _taroWeapp2.default.openLocation({
+        latitude: parseInt(goodsInfo.latitude), //要去的纬度-地址
+        longitude: parseInt(goodsInfo.longitude) //要去的经度-地址
+      });
+    }
+  }, {
     key: '_createData',
     value: function _createData() {
       var _this3 = this;
@@ -223,20 +234,20 @@ var leisureInfo = (_dec = (0, _redux.connect)(function (_ref) {
       var __prefix = this.$prefix;
       ;
 
-      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__252"),
+      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__255"),
           _genCompid2 = _slicedToArray(_genCompid, 2),
-          $prevCompid__252 = _genCompid2[0],
-          $compid__252 = _genCompid2[1];
+          $prevCompid__255 = _genCompid2[0],
+          $compid__255 = _genCompid2[1];
 
-      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__253"),
+      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__256"),
           _genCompid4 = _slicedToArray(_genCompid3, 2),
-          $prevCompid__253 = _genCompid4[0],
-          $compid__253 = _genCompid4[1];
+          $prevCompid__256 = _genCompid4[0],
+          $compid__256 = _genCompid4[1];
 
-      var _genCompid5 = (0, _taroWeapp.genCompid)(__prefix + "$compid__254"),
+      var _genCompid5 = (0, _taroWeapp.genCompid)(__prefix + "$compid__257"),
           _genCompid6 = _slicedToArray(_genCompid5, 2),
-          $prevCompid__254 = _genCompid6[0],
-          $compid__254 = _genCompid6[1];
+          $prevCompid__257 = _genCompid6[0],
+          $compid__257 = _genCompid6[1];
 
       var _state = this.__state,
           goodsInfo = _state.goodsInfo,
@@ -251,21 +262,25 @@ var leisureInfo = (_dec = (0, _redux.connect)(function (_ref) {
 
       var anonymousState__temp = __webpack_require__(/*! ./../../../image/time.png */ "./src/image/time.png");
 
+      this.anonymousFunc1 = function () {
+        return _this3.openMap();
+      };
+
       var anonymousState__temp2 = __webpack_require__(/*! ./../../../image/dingwei.png */ "./src/image/dingwei.png");
 
-      this.anonymousFunc1 = function () {
+      this.anonymousFunc2 = function () {
         return _this3.shareClick();
       };
 
       var anonymousState__temp3 = __webpack_require__(/*! ./../../../image/share.png */ "./src/image/share.png");
 
-      this.anonymousFunc2 = function () {
+      this.anonymousFunc3 = function () {
         return _this3.handleClose();
       };
 
       var anonymousState__temp4 = __webpack_require__(/*! ./../../../image/wechatP.png */ "./src/image/wechatP.png");
 
-      this.anonymousFunc3 = function () {
+      this.anonymousFunc4 = function () {
         return _this3.shareFriend();
       };
 
@@ -277,15 +292,15 @@ var leisureInfo = (_dec = (0, _redux.connect)(function (_ref) {
         "value": "phone",
         "size": "26",
         "color": "#666"
-      }, $compid__252, $prevCompid__252);
+      }, $compid__255, $prevCompid__255);
       _taroWeapp.propsManager.set({
         "isOpened": openShare,
-        "onClose": this.anonymousFunc2
-      }, $compid__253, $prevCompid__253);
+        "onClose": this.anonymousFunc3
+      }, $compid__256, $prevCompid__256);
       _taroWeapp.propsManager.set({
         "isOpened": isOpenToast,
         "text": toastText
-      }, $compid__254, $prevCompid__254);
+      }, $compid__257, $prevCompid__257);
       Object.assign(this.__state, {
         anonymousState__temp: anonymousState__temp,
         anonymousState__temp2: anonymousState__temp2,
@@ -293,9 +308,9 @@ var leisureInfo = (_dec = (0, _redux.connect)(function (_ref) {
         anonymousState__temp4: anonymousState__temp4,
         anonymousState__temp5: anonymousState__temp5,
         goodsInfo: goodsInfo,
-        $compid__252: $compid__252,
-        $compid__253: $compid__253,
-        $compid__254: $compid__254
+        $compid__255: $compid__255,
+        $compid__256: $compid__256,
+        $compid__257: $compid__257
       });
       return this.__state;
     }
@@ -319,10 +334,15 @@ var leisureInfo = (_dec = (0, _redux.connect)(function (_ref) {
     value: function anonymousFunc3(e) {
       ;
     }
+  }, {
+    key: 'anonymousFunc4',
+    value: function anonymousFunc4(e) {
+      ;
+    }
   }]);
 
   return leisureInfo;
-}(_taroWeapp.Component), _class2.$$events = ["anonymousFunc1", "anonymousFunc3"], _class2.$$componentPath = "pagesC/pages/leisureInfo/index", _temp2)) || _class);
+}(_taroWeapp.Component), _class2.$$events = ["anonymousFunc1", "anonymousFunc2", "anonymousFunc4"], _class2.$$componentPath = "pagesC/pages/leisureInfo/index", _temp2)) || _class);
 exports.default = leisureInfo;
 
 Component(__webpack_require__(/*! @tarojs/taro-weapp */ "./node_modules/_@tarojs_taro-weapp@2.0.6@@tarojs/taro-weapp/index.js").default.createComponent(leisureInfo, true));

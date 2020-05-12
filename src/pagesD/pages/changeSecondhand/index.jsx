@@ -508,7 +508,7 @@ class ChangeSecondhand extends Component {
               value={this.state.price}
               onChange={this.priceChange.bind(this)}
             />
-            <Text style="font-size: 12px;color: #333;margin-left: 6px">元</Text>
+            <Text style="font-size: 12px;color: #333;margin-left: 6px">$</Text>
           </View>
           <View className='itemBox flexEnd'>
             <Text className='leftPart' style='margin-top: 20rpx'>联系方式:</Text>

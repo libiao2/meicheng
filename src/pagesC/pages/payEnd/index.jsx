@@ -84,10 +84,10 @@ class PayEnd extends Component {
   }
 
   onShareAppMessage() {
-    const { pingID } = this.state;
+    const { pingID, goodsInfo } = this.state;
     
     return {
-      title: '拼团分享',
+      title: `${goodsInfo.name},原价${goodsInfo.price},现价${goodsInfo.groupPrice},限时团购`,
       path: `/pagesA/pages/foodTuan/index?goodsId=${pingID}`,
       success: function (res) {
         console.log('成功', res)

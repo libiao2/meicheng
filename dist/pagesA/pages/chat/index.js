@@ -67,11 +67,12 @@ var Chat = (_dec = (0, _redux.connect)(function (_ref) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = Chat.__proto__ || Object.getPrototypeOf(Chat)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["loopArray89", "$compid__244", "chatlist", "info", "message", "SocketTask", "pageFrom", "counter", "addChat"], _this.state = {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = Chat.__proto__ || Object.getPrototypeOf(Chat)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["loopArray89", "$compid__247", "chatlist", "info", "noShow", "message", "SocketTask", "pageFrom", "counter", "addChat"], _this.state = {
       info: {},
       message: '',
       SocketTask: (0, _global_data.getGlobalData)("SocketTask"),
-      pageFrom: null
+      pageFrom: null,
+      noShow: false
     }, _this.scrollMsgBottom = function () {
       var query = _taroWeapp2.default.createSelectorQuery();
       query.selectViewport().scrollOffset();
@@ -191,7 +192,6 @@ var Chat = (_dec = (0, _redux.connect)(function (_ref) {
           sendToName: this.state.info.nickname
         }),
         success: function success(res) {
-          console.log('-------======', res);
           _this2.setState({
             message: ''
           });
@@ -209,21 +209,23 @@ var Chat = (_dec = (0, _redux.connect)(function (_ref) {
       var __prefix = this.$prefix;
       ;
 
-      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__244"),
+      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__247"),
           _genCompid2 = _slicedToArray(_genCompid, 2),
-          $prevCompid__244 = _genCompid2[0],
-          $compid__244 = _genCompid2[1];
+          $prevCompid__247 = _genCompid2[0],
+          $compid__247 = _genCompid2[1];
 
       var chatlist = [];
-      var thisState = this.__state.thisState;
+      var _state = this.__state,
+          message = _state.message,
+          info = _state.info,
+          noShow = _state.noShow;
 
       this.__props.counter.allChat.map(function (item) {
-        if (item.id == _this3.__state.info.memberId) {
+        if (item.id == info.memberId) {
           chatlist = item.list;
         }
       });
       this.scrollMsgBottom();
-      console.log('????????', chatlist, _taroWeapp2.default.getStorageSync('userId'));
 
       this.anonymousFunc0 = function () {
         return _this3.sendMessage();
@@ -242,9 +244,9 @@ var Chat = (_dec = (0, _redux.connect)(function (_ref) {
       _taroWeapp.propsManager.set({
         "onClick": this.anonymousFunc0,
         "value": "edit",
-        "size": "26",
-        "color": "#999"
-      }, $compid__244, $prevCompid__244);
+        "size": "30",
+        "color": "rgb(36, 200, 178)"
+      }, $compid__247, $prevCompid__247);
       this.$$refs.pushRefs([{
         type: "dom",
         id: "hideBox",
@@ -255,7 +257,7 @@ var Chat = (_dec = (0, _redux.connect)(function (_ref) {
       }]);
       Object.assign(this.__state, {
         loopArray89: loopArray89,
-        $compid__244: $compid__244,
+        $compid__247: $compid__247,
         chatlist: chatlist
       });
       return this.__state;

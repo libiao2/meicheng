@@ -30,13 +30,13 @@
             <view class="itemBox flexEnd"><text class="leftPart" style="margin-top: 20rpx">联系方式:</text>
                 <view>
                     <view class="itemBox"><text class="leftPart ss">手机号:</text>
-                        <input type="text" class="shopNameInput" placeholder="请输入手机号" value="{{telephone}}" bindchange="phoneChange" data-e-change-so="this" />
+                        <input type="text" class="shopNameInput" placeholder="请输入手机号" value="{{telephone}}" bindblur="phoneBlur" bindchange="phoneChange" data-e-blur-so="this" data-e-change-so="this" />
                     </view>
                     <view class="itemBox"><text class="leftPart ss">微信:</text>
-                        <input type="text" class="shopNameInput" placeholder="请输入微信" value="{{weixinno}}" bindchange="weixinnoChange" data-e-change-so="this" />
+                        <input type="text" class="shopNameInput" placeholder="请输入微信" value="{{weixinno}}" bindblur="weixinBlur" bindchange="weixinnoChange" data-e-blur-so="this" data-e-change-so="this" />
                     </view>
                     <view class="itemBox"><text class="leftPart ss">邮箱:</text>
-                        <input type="text" class="shopNameInput" placeholder="请输入邮箱" value="{{email}}" bindchange="emailChange" data-e-change-so="this" />
+                        <input type="text" class="shopNameInput" placeholder="请输入邮箱" value="{{email}}" bindblur="emailBlur" bindchange="emailChange" data-e-blur-so="this" data-e-change-so="this" />
                     </view>
                 </view>
             </view>

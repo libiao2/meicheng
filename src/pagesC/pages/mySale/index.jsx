@@ -40,7 +40,9 @@ class MySale extends Component {
   componentWillMount() {
   }
   componentDidMount() {
-    this.getList()
+    if(Taro.getStorageSync('token') != '') {
+      this.getList()
+    }
   }
   componentWillReceiveProps (nextProps) {
     console.log(this.props, nextProps)
@@ -108,6 +110,11 @@ class MySale extends Component {
     })
   }
 
+  goLogin() {
+    Taro.switchTab({
+      url: `/pages/my/index`
+    })
+  }
 
   render () {
     const { titleList, current, orderList } = this.state;
@@ -161,7 +168,19 @@ class MySale extends Component {
                       )
                     })
                     :
-                    <View className='noData'>暂无更多数据~</View>
+                    <View className='noData'>
+                      {
+                        Taro.getStorageSync('token') != '' ?
+                        <Text>暂无更多数据~~</Text>
+                        :
+                        <View>
+                          <Text>暂未登录~~</Text>
+                          <View className='bigBox' onClick={() => this.goLogin()}>
+                            <View className='loginBtn'>登录</View>
+                          </View>
+                        </View>
+                      }
+                    </View>
                   }
                 </AtTabsPane>
               )

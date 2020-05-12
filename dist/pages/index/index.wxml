@@ -4,21 +4,21 @@
             <view class="left" bindtap="anonymousFunc0"><text>{{selectArea}}</text>
             </view>
             <view class="search" bindtap="anonymousFunc1">
-                <at-icon compid="{{$compid__291}}"></at-icon><text class="text">搜索</text>
+                <at-icon compid="{{$compid__676}}"></at-icon><text class="text">搜索</text>
             </view>
         </view>
         <view class="swiperBox">
-            <swiper class="swiper" indicator-color="#999" indicator-active-color="#333" circular="{{true}}" autoplay="{{true}}">
-                <swiper-item wx:key="index" bindtap="anonymousFunc2" wx:for="{{loopArray108}}" wx:for-item="item" wx:for-index="index" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey}}">
+            <swiper class="swiper" indicator-dots="true" indicator-color="rgba(0,0,0,0.3)" indicator-active-color="rgba(36, 200, 178,0.8)" circular="{{true}}" autoplay="{{true}}">
+                <swiper-item wx:key="index" bindtap="anonymousFunc2" wx:for="{{loopArray303}}" wx:for-item="item" wx:for-index="index" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey}}">
                     <image src="{{item.$original.pic}}" class="swiperImg"></image>
                 </swiper-item>
             </swiper>
             <view class="noticeBox">
-                <at-noticebar compid="{{$compid__292}}">{{stationMessage}}</at-noticebar>
+                <at-noticebar compid="{{$compid__677}}">{{stationMessage}}</at-noticebar>
             </view>
         </view>
         <view class="tpyeBox">
-            <view class="itemBox" wx:key="index" bindtap="anonymousFunc3" wx:for="{{loopArray109}}" wx:for-item="item" wx:for-index="index" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey2}}">
+            <view class="itemBox" wx:key="index" bindtap="anonymousFunc3" wx:for="{{loopArray304}}" wx:for-item="item" wx:for-index="index" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey2}}">
                 <view class="{{'yuan ' + (typeKey == index ? 'yuanChoose' : null)}}">
                     <image class="iconImg" src="{{item.$original.pic}}"></image>
                 </view><text class="{{'' + (typeKey == index ? 'chooseType' : null)}}">{{item.$original.name}}</text>
@@ -28,23 +28,23 @@
             <view class="xainshi">
                 <view class="topBox" bindtap="anonymousFunc4"><text class="title">限时特惠</text>
                     <view class="right"><text class="rightText">查看更多</text>
-                        <at-icon compid="{{$compid__293}}"></at-icon>
+                        <at-icon compid="{{$compid__678}}"></at-icon>
                     </view>
                 </view>
                 <view class="quanList">
-                    <image bindtap="anonymousFunc5" src="{{item.$original.pic}}" class="box" wx:for="{{loopArray110}}" wx:for-item="item" wx:for-index="index" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey3}}"></image>
+                    <image bindtap="anonymousFunc5" src="{{item.$original.pic}}" class="box" wx:for="{{loopArray305}}" wx:for-item="item" wx:for-index="index" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey3}}"></image>
                 </view>
             </view>
         </block>
         <view class="googsList">
             <block>
                 <block wx:if="{{dataList.length > 0}}">
-                    <block wx:for="{{loopArray111}}" wx:for-item="item" wx:for-index="index" wx:key="name">
+                    <block wx:for="{{loopArray306}}" wx:for-item="item" wx:for-index="index" wx:key="name">
                         <block wx:if="{{typeKey == 0 || typeKey == 1}}">
-                            <one compid="{{item.$compid__288}}"></one>
+                            <one compid="{{item.$compid__673}}"></one>
                         </block>
                         <block wx:else>
-                            <two wx:key="name" compid="{{item.$compid__289}}"></two>
+                            <two wx:key="name" compid="{{item.$compid__674}}"></two>
                         </block>
                     </block>
                 </block>
@@ -54,16 +54,8 @@
                 </block>
             </block>
         </view>
-        <at-action-sheet compid="{{$compid__294}}">
-            <at-action-sheet-item wx:key="index" wx:for="{{loopArray112}}" wx:for-item="item" wx:for-index="index" compid="{{item.$compid__290}}">{{item.$original.name}}</at-action-sheet-item>
+        <at-action-sheet compid="{{$compid__679}}">
+            <at-action-sheet-item wx:key="index" wx:for="{{loopArray307}}" wx:for-item="item" wx:for-index="index" compid="{{item.$compid__675}}">{{item.$original.name}}</at-action-sheet-item>
         </at-action-sheet>
-        <at-modal compid="{{$compid__295}}">
-            <at-modal-header>授权提示</at-modal-header>
-            <at-modal-content>
-                <view class="shouquan"><text>需要使用你的微信昵称和头像</text>
-                    <button class="myBtn" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">点击授权</button>
-                </view>
-            </at-modal-content>
-        </at-modal>
     </view>
 </block>

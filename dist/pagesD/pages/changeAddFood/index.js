@@ -65,7 +65,7 @@ var AddFood = (_dec = (0, _redux.connect)(function (_ref) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = AddFood.__proto__ || Object.getPrototypeOf(AddFood)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["loopArray161", "loopArray162", "loopArray163", "loopArray164", "loopArray165", "loopArray166", "loopArray167", "$compid__441", "$compid__442", "$compid__443", "$compid__444", "$compid__445", "$compid__446", "$compid__447", "$compid__448", "$compid__449", "chooseShopImgList", "serveList", "picList", "areaList", "foodType", "chooseShopImg", "isOpencity", "name", "cityName", "city", "address", "openTimeStart", "openTimeEnd", "telephone", "takeaway", "takeawayFee", "chooseFoodList", "groupList", "hotList", "commonList", "isOpenToast", "toastText", "longitude", "latitude", "id"], _this.config = {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = AddFood.__proto__ || Object.getPrototypeOf(AddFood)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["loopArray161", "loopArray162", "loopArray163", "loopArray164", "loopArray165", "loopArray166", "loopArray167", "$compid__445", "$compid__446", "$compid__447", "$compid__448", "$compid__449", "$compid__450", "$compid__451", "$compid__452", "$compid__453", "chooseShopImgList", "serveList", "picList", "areaList", "foodType", "chooseShopImg", "isOpencity", "name", "cityName", "city", "address", "openTimeStart", "openTimeEnd", "telephone", "takeaway", "takeawayFee", "chooseFoodList", "groupList", "hotList", "commonList", "isOpenToast", "toastText", "longitude", "latitude", "id"], _this.config = {
       navigationBarTitleText: '美城美食365'
     }, _this.anonymousFunc0Map = {}, _this.anonymousFunc3Map = {}, _this.anonymousFunc7Map = {}, _this.anonymousFunc9Map = {}, _this.anonymousFunc10Map = {}, _this.anonymousFunc12Map = {}, _this.anonymousFunc13Map = {}, _this.anonymousFunc14Map = {}, _this.anonymousFunc16Map = {}, _this.anonymousFunc17Map = {}, _this.customComponents = ["AtForm", "ChooseImage", "AtIcon", "AtActionSheet", "AtActionSheetItem", "AtButton", "AtToast"], _temp), _possibleConstructorReturn(_this, _ret);
   }
@@ -878,50 +878,50 @@ var AddFood = (_dec = (0, _redux.connect)(function (_ref) {
       var __prefix = this.$prefix;
       ;
 
-      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__441"),
+      var _genCompid = (0, _taroWeapp.genCompid)(__prefix + "$compid__445"),
           _genCompid2 = _slicedToArray(_genCompid, 2),
-          $prevCompid__441 = _genCompid2[0],
-          $compid__441 = _genCompid2[1];
+          $prevCompid__445 = _genCompid2[0],
+          $compid__445 = _genCompid2[1];
 
-      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__442"),
+      var _genCompid3 = (0, _taroWeapp.genCompid)(__prefix + "$compid__446"),
           _genCompid4 = _slicedToArray(_genCompid3, 2),
-          $prevCompid__442 = _genCompid4[0],
-          $compid__442 = _genCompid4[1];
+          $prevCompid__446 = _genCompid4[0],
+          $compid__446 = _genCompid4[1];
 
-      var _genCompid5 = (0, _taroWeapp.genCompid)(__prefix + "$compid__443"),
+      var _genCompid5 = (0, _taroWeapp.genCompid)(__prefix + "$compid__447"),
           _genCompid6 = _slicedToArray(_genCompid5, 2),
-          $prevCompid__443 = _genCompid6[0],
-          $compid__443 = _genCompid6[1];
+          $prevCompid__447 = _genCompid6[0],
+          $compid__447 = _genCompid6[1];
 
-      var _genCompid7 = (0, _taroWeapp.genCompid)(__prefix + "$compid__444"),
+      var _genCompid7 = (0, _taroWeapp.genCompid)(__prefix + "$compid__448"),
           _genCompid8 = _slicedToArray(_genCompid7, 2),
-          $prevCompid__444 = _genCompid8[0],
-          $compid__444 = _genCompid8[1];
+          $prevCompid__448 = _genCompid8[0],
+          $compid__448 = _genCompid8[1];
 
-      var _genCompid9 = (0, _taroWeapp.genCompid)(__prefix + "$compid__445"),
+      var _genCompid9 = (0, _taroWeapp.genCompid)(__prefix + "$compid__449"),
           _genCompid10 = _slicedToArray(_genCompid9, 2),
-          $prevCompid__445 = _genCompid10[0],
-          $compid__445 = _genCompid10[1];
+          $prevCompid__449 = _genCompid10[0],
+          $compid__449 = _genCompid10[1];
 
-      var _genCompid11 = (0, _taroWeapp.genCompid)(__prefix + "$compid__446"),
+      var _genCompid11 = (0, _taroWeapp.genCompid)(__prefix + "$compid__450"),
           _genCompid12 = _slicedToArray(_genCompid11, 2),
-          $prevCompid__446 = _genCompid12[0],
-          $compid__446 = _genCompid12[1];
+          $prevCompid__450 = _genCompid12[0],
+          $compid__450 = _genCompid12[1];
 
-      var _genCompid13 = (0, _taroWeapp.genCompid)(__prefix + "$compid__447"),
+      var _genCompid13 = (0, _taroWeapp.genCompid)(__prefix + "$compid__451"),
           _genCompid14 = _slicedToArray(_genCompid13, 2),
-          $prevCompid__447 = _genCompid14[0],
-          $compid__447 = _genCompid14[1];
+          $prevCompid__451 = _genCompid14[0],
+          $compid__451 = _genCompid14[1];
 
-      var _genCompid15 = (0, _taroWeapp.genCompid)(__prefix + "$compid__448"),
+      var _genCompid15 = (0, _taroWeapp.genCompid)(__prefix + "$compid__452"),
           _genCompid16 = _slicedToArray(_genCompid15, 2),
-          $prevCompid__448 = _genCompid16[0],
-          $compid__448 = _genCompid16[1];
+          $prevCompid__452 = _genCompid16[0],
+          $compid__452 = _genCompid16[1];
 
-      var _genCompid17 = (0, _taroWeapp.genCompid)(__prefix + "$compid__449"),
+      var _genCompid17 = (0, _taroWeapp.genCompid)(__prefix + "$compid__453"),
           _genCompid18 = _slicedToArray(_genCompid17, 2),
-          $prevCompid__449 = _genCompid18[0],
-          $compid__449 = _genCompid18[1];
+          $prevCompid__453 = _genCompid18[0],
+          $compid__453 = _genCompid18[1];
 
       var _state4 = this.__state,
           serveList = _state4.serveList,
@@ -969,7 +969,7 @@ var AddFood = (_dec = (0, _redux.connect)(function (_ref) {
           $original: (0, _taroWeapp.internal_get_original)(item)
         };
 
-        var _$indexKey = "cajzz" + index;
+        var _$indexKey = "cbjzz" + index;
 
         _this5.anonymousFunc0Map[_$indexKey] = function () {
           return _this5.deleteChooseImg(index);
@@ -986,23 +986,23 @@ var AddFood = (_dec = (0, _redux.connect)(function (_ref) {
           $original: (0, _taroWeapp.internal_get_original)(item)
         };
 
-        var _$indexKey2 = "cbazz" + index;
+        var _$indexKey2 = "ccazz" + index;
 
         _this5.anonymousFunc3Map[_$indexKey2] = function () {
           return _this5.selectCity(item.$original);
         };
 
-        var _genCompid19 = (0, _taroWeapp.genCompid)(__prefix + 'cbjzzzzzzz' + index, true),
+        var _genCompid19 = (0, _taroWeapp.genCompid)(__prefix + 'ccjzzzzzzz' + index, true),
             _genCompid20 = _slicedToArray(_genCompid19, 2),
-            $prevCompid__440 = _genCompid20[0],
-            $compid__440 = _genCompid20[1];
+            $prevCompid__444 = _genCompid20[0],
+            $compid__444 = _genCompid20[1];
 
         _taroWeapp.propsManager.set({
           "onClick": _this5.anonymousFunc3.bind(_this5, _$indexKey2)
-        }, $compid__440, $prevCompid__440);
+        }, $compid__444, $prevCompid__444);
         return {
           _$indexKey2: _$indexKey2,
-          $compid__440: $compid__440,
+          $compid__444: $compid__444,
           $original: item.$original
         };
       });
@@ -1012,7 +1012,7 @@ var AddFood = (_dec = (0, _redux.connect)(function (_ref) {
           $original: (0, _taroWeapp.internal_get_original)(item)
         };
 
-        var _$indexKey3 = "cbbzz" + index;
+        var _$indexKey3 = "ccbzz" + index;
 
         _this5.anonymousFunc7Map[_$indexKey3] = function () {
           return _this5.typeChoose(index);
@@ -1029,13 +1029,13 @@ var AddFood = (_dec = (0, _redux.connect)(function (_ref) {
           $original: (0, _taroWeapp.internal_get_original)(item)
         };
 
-        var _$indexKey4 = "cbczz" + index;
+        var _$indexKey4 = "ccczz" + index;
 
         _this5.anonymousFunc9Map[_$indexKey4] = function () {
           return _this5.deleteCoupon(index);
         };
 
-        var _$indexKey5 = "cbdzz" + index;
+        var _$indexKey5 = "ccdzz" + index;
 
         _this5.anonymousFunc10Map[_$indexKey5] = function () {
           return _this5.changeCoupon(index);
@@ -1053,13 +1053,13 @@ var AddFood = (_dec = (0, _redux.connect)(function (_ref) {
           $original: (0, _taroWeapp.internal_get_original)(item)
         };
 
-        var _$indexKey6 = "cbezz" + index;
+        var _$indexKey6 = "ccezz" + index;
 
         _this5.anonymousFunc12Map[_$indexKey6] = function () {
           return _this5.deleteHotItem(index);
         };
 
-        var _$indexKey7 = "cbfzz" + index;
+        var _$indexKey7 = "ccfzz" + index;
 
         _this5.anonymousFunc13Map[_$indexKey7] = function () {
           return _this5.changeHot(1, index);
@@ -1077,7 +1077,7 @@ var AddFood = (_dec = (0, _redux.connect)(function (_ref) {
           $original: (0, _taroWeapp.internal_get_original)(item)
         };
 
-        var _$indexKey8 = "cbgzz" + index;
+        var _$indexKey8 = "ccgzz" + index;
 
         _this5.anonymousFunc14Map[_$indexKey8] = function () {
           return _this5.hasFuwu(index);
@@ -1094,13 +1094,13 @@ var AddFood = (_dec = (0, _redux.connect)(function (_ref) {
           $original: (0, _taroWeapp.internal_get_original)(item)
         };
 
-        var _$indexKey9 = "cbhzz" + index;
+        var _$indexKey9 = "cchzz" + index;
 
         _this5.anonymousFunc16Map[_$indexKey9] = function () {
           return _this5.deleteCommonItem(index);
         };
 
-        var _$indexKey10 = "cbizz" + index;
+        var _$indexKey10 = "ccizz" + index;
 
         _this5.anonymousFunc17Map[_$indexKey10] = function () {
           return _this5.changeCaidan(2, index);
@@ -1118,44 +1118,44 @@ var AddFood = (_dec = (0, _redux.connect)(function (_ref) {
         "onFilesValue": this.getOnFilesValue.bind(this),
         "returnImgSrc": this.getReturnImgSrc.bind(this),
         "deleteImgSrc": this.deleteImgSrc.bind(this)
-      }, $compid__441, $prevCompid__441);
+      }, $compid__445, $prevCompid__445);
       _taroWeapp.propsManager.set({
         "value": "chevron-down",
         "size": "13",
         "color": "#999"
-      }, $compid__442, $prevCompid__442);
+      }, $compid__446, $prevCompid__446);
       _taroWeapp.propsManager.set({
         "isOpened": this.__state.isOpencity,
         "onClose": this.anonymousFunc2
-      }, $compid__443, $prevCompid__443);
+      }, $compid__447, $prevCompid__447);
       _taroWeapp.propsManager.set({
         "value": "map-pin",
         "size": "13",
         "color": "#999"
-      }, $compid__444, $prevCompid__444);
+      }, $compid__448, $prevCompid__448);
       _taroWeapp.propsManager.set({
         "value": "chevron-right",
-        "size": "12",
-        "color": "#999"
-      }, $compid__445, $prevCompid__445);
+        "size": "15",
+        "color": "rgb(36, 200, 178)"
+      }, $compid__449, $prevCompid__449);
       _taroWeapp.propsManager.set({
         "value": "chevron-right",
-        "size": "12",
-        "color": "#999"
-      }, $compid__446, $prevCompid__446);
+        "size": "15",
+        "color": "rgb(36, 200, 178)"
+      }, $compid__450, $prevCompid__450);
       _taroWeapp.propsManager.set({
         "value": "chevron-right",
-        "size": "12",
-        "color": "#999"
-      }, $compid__447, $prevCompid__447);
+        "size": "15",
+        "color": "rgb(36, 200, 178)"
+      }, $compid__451, $prevCompid__451);
       _taroWeapp.propsManager.set({
         "className": "btn",
         "onClick": this.anonymousFunc18
-      }, $compid__448, $prevCompid__448);
+      }, $compid__452, $prevCompid__452);
       _taroWeapp.propsManager.set({
         "isOpened": this.__state.isOpenToast,
         "text": this.__state.toastText
-      }, $compid__449, $prevCompid__449);
+      }, $compid__453, $prevCompid__453);
       Object.assign(this.__state, {
         loopArray161: loopArray161,
         loopArray162: loopArray162,
@@ -1164,15 +1164,15 @@ var AddFood = (_dec = (0, _redux.connect)(function (_ref) {
         loopArray165: loopArray165,
         loopArray166: loopArray166,
         loopArray167: loopArray167,
-        $compid__441: $compid__441,
-        $compid__442: $compid__442,
-        $compid__443: $compid__443,
-        $compid__444: $compid__444,
         $compid__445: $compid__445,
         $compid__446: $compid__446,
         $compid__447: $compid__447,
         $compid__448: $compid__448,
-        $compid__449: $compid__449
+        $compid__449: $compid__449,
+        $compid__450: $compid__450,
+        $compid__451: $compid__451,
+        $compid__452: $compid__452,
+        $compid__453: $compid__453
       });
       return this.__state;
     }
